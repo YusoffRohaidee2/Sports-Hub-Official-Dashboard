@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sports Hub Official Dashboard</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --bg-gradient: radial-gradient(circle at 50% 0%, #0d1b2a 0%, #050811 70%, #020408 100%);
+      --card-bg: rgba(15, 23, 42, 0.65);
+      --card-border: rgba(255, 255, 255, 0.08);
+      --neon-green: #00ff87;
+      --neon-cyan: #60efff;
+      --neon-pink: #ff007f;
+      --accent-gold: #ffd700;
+      --text-main: #f8fafc;
+      --text-sub: #94a3b8;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
+
+    body {
+      background: var(--bg-gradient);
+      background-attachment: fixed;
+      color: var(--text-main);
+      display: flex;
+      justify-content: center;
+      padding: 40px 16px;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      top: -200px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(0, 255, 135, 0.12) 0%, rgba(96, 239, 255, 0.05) 50%, transparent 70%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 580px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Header */
+    .profile-header {
+      text-align: center;
+      margin-bottom: 32px;
+    }
+
+    .logo-container {
+      position: relative;
+      display: inline-block;
+      margin-bottom: 16px;
+    }
+
+    .logo-glow {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      background: linear-gradient(45deg, var(--neon-green), var(--neon-cyan));
+      filter: blur(20px);
+      opacity: 0.6;
+      animation: pulseGlow 3s infinite alternate;
+    }
+
+    @keyframes pulseGlow {
+      0% { opacity: 0.4; filter: blur(15px); }
+      100% { opacity: 0.8; filter: blur(25px); }
+    }
+
+    .profile-logo {
+      position: relative;
+      width: 105px;
+      height: 105px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid rgba(255, 255, 255, 0.2);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+      transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    .profile-logo:hover {
+      transform: scale(1.08) rotate(3deg);
+    }
+
+    .profile-title {
+      font-size: 1.6rem;
+      font-weight: 900;
+      letter-spacing: -0.02em;
+      background: linear-gradient(135deg, #ffffff 30%, var(--neon-green) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 8px;
+      text-transform: uppercase;
+    }
+
+    .profile-desc {
+      font-size: 0.92rem;
+      color: var(--neon-cyan);
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      background: rgba(96, 239, 255, 0.08);
+      padding: 6px 16px;
+      border-radius: 20px;
+      border: 1px solid rgba(96, 239, 255, 0.2);
+      display: inline-block;
+      backdrop-filter: blur(8px);
+    }
+
+    /* Section Header */
+    .section-title {
+      width: 100%;
+      margin: 28px 0 14px 0;
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .section-main-label {
+      font-size: 0.85rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--text-main);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .section-sub-label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      color: var(--neon-cyan);
+      text-transform: uppercase;
+      margin-left: 26px;
+      opacity: 0.85;
+    }
+
+    /* Cards */
+    .link-card {
+      width: 100%;
+      background: var(--card-bg);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid var(--card-border);
+      border-radius: 18px;
+      padding: 18px 20px;
+      margin-bottom: 14px;
+      text-decoration: none;
+      color: var(--text-main);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    }
+
+    .link-card::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.08), transparent);
+      transition: 0.5s;
+    }
+
+    .link-card:hover::after {
+      left: 100%;
+    }
+
+    .link-card:hover {
+      background: rgba(30, 41, 69, 0.85);
+      border-color: rgba(0, 255, 135, 0.4);
+      transform: translateY(-4px) scale(1.01);
+      box-shadow: 0 12px 30px rgba(0, 255, 135, 0.15);
+    }
+
+    .card-info {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .live-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.7rem;
+      font-weight: 800;
+      color: var(--neon-pink);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .pulse-dot {
+      width: 6px;
+      height: 6px;
+      background-color: var(--neon-pink);
+      border-radius: 50%;
+      box-shadow: 0 0 8px var(--neon-pink);
+      animation: blink 1.2s infinite;
+    }
+
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.3; }
+    }
+
+    .match-teams {
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: #ffffff;
+      letter-spacing: -0.01em;
+    }
+
+    .match-time {
+      font-size: 0.8rem;
+      color: var(--text-sub);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-weight: 500;
+    }
+
+    /* Countdown Style */
+    .countdown-timer {
+      font-size: 0.78rem;
+      font-weight: 800;
+      color: var(--neon-green);
+      background: rgba(0, 255, 135, 0.1);
+      border: 1px solid rgba(0, 255, 135, 0.25);
+      padding: 3px 10px;
+      border-radius: 12px;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      width: fit-content;
+      margin-top: 2px;
+    }
+
+    .countdown-timer.is-live {
+      color: #ffffff;
+      background: var(--neon-pink);
+      border-color: var(--neon-pink);
+      box-shadow: 0 0 10px rgba(255, 0, 127, 0.5);
+    }
+
+    .site-name {
+      font-size: 1.02rem;
+      font-weight: 700;
+      letter-spacing: 0.01em;
+    }
+
+    .card-action-icon {
+      width: 38px;
+      height: 38px;
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-sub);
+      font-size: 0.9rem;
+      transition: all 0.3s ease;
+    }
+
+    .link-card:hover .card-action-icon {
+      background: var(--neon-green);
+      color: #000;
+      border-color: var(--neon-green);
+      box-shadow: 0 0 15px rgba(0, 255, 135, 0.5);
+      transform: rotate(-10deg);
+    }
+
+    .fav-btn {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      width: 38px;
+      height: 38px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-sub);
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .fav-btn:hover {
+      background: rgba(255, 215, 0, 0.15);
+      color: var(--accent-gold);
+      border-color: rgba(255, 215, 0, 0.4);
+      transform: scale(1.1);
+    }
+
+    .fav-btn.active {
+      color: var(--accent-gold);
+      background: rgba(255, 215, 0, 0.25);
+      border-color: var(--accent-gold);
+      box-shadow: 0 0 15px rgba(255, 215, 0, 0.4);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <!-- Profile Header -->
+    <div class="profile-header">
+      <div class="logo-container">
+        <div class="logo-glow"></div>
+        <img class="profile-logo" src="https://ugc.production.linktr.ee/38b8918a-0037-4894-8bda-19d3a54f1b5e_images.png?io=true&size=avatar-v3_0" alt="Sports Hub Logo">
+      </div>
+      <h1 class="profile-title">Sports Hub Official</h1>
+      <div class="profile-desc"><i class="fa-solid fa-bolt" style="margin-right: 4px;"></i> Watch any sports event for absolutely free!</div>
+    </div>
+
+    <!-- Hot Websites -->
+    <div class="section-title">
+      <div class="section-main-label"><i class="fa-solid fa-fire" style="color: var(--neon-pink);"></i> Hot Websites</div>
+    </div>
+
+    <!-- Match 1 -->
+    <a href="https://now-sports-live-event-website.vercel.app/" target="_blank" class="link-card">
+      <div class="card-info">
+        <span class="live-badge"><span class="pulse-dot"></span> ASEAN HYUNDAI CUP 2026</span>
+        <span class="match-teams">MALAYSIA VS THAILAND</span>
+        <span class="match-time"><i class="fa-regular fa-clock"></i> SUN, 9PM MYT • Now Sports Live Event</span>
+        <div class="countdown-timer" data-time="2026-08-16T21:00:00+08:00">
+          <i class="fa-solid fa-hourglass-half"></i> <span class="time-text">Loading...</span>
+        </div>
+      </div>
+      <div class="card-action-icon"><i class="fa-solid fa-play"></i></div>
+    </a>
+
+    <!-- Match 2 -->
+    <a href="https://now-sports-live-event-3-website.vercel.app/" target="_blank" class="link-card">
+      <div class="card-info">
+        <span class="live-badge"><span class="pulse-dot"></span> FA COMMUNITY SHIELD 2026</span>
+        <span class="match-teams">ARSENAL VS MANCHESTER CITY</span>
+        <span class="match-time"><i class="fa-regular fa-clock"></i> SUN, 10PM MYT • Now Sports Live Event 3</span>
+        <div class="countdown-timer" data-time="2026-08-16T22:00:00+08:00">
+          <i class="fa-solid fa-hourglass-half"></i> <span class="time-text">Loading...</span>
+        </div>
+      </div>
+      <div class="card-action-icon"><i class="fa-solid fa-play"></i></div>
+    </a>
+
+    <!-- Match 3 -->
+    <a href="https://now-sports-live-event-2.vercel.app/" target="_blank" class="link-card">
+      <div class="card-info">
+        <span class="live-badge"><span class="pulse-dot"></span> CLUB FRIENDLY</span>
+        <span class="match-teams">FC SCHALKE 04 VS LIVERPOOL FC</span>
+        <span class="match-time"><i class="fa-regular fa-clock"></i> SUN, 11PM MYT • Now Sports Live Event 2</span>
+        <div class="countdown-timer" data-time="2026-08-16T23:00:00+08:00">
+          <i class="fa-solid fa-hourglass-half"></i> <span class="time-text">Loading...</span>
+        </div>
+      </div>
+      <div class="card-action-icon"><i class="fa-solid fa-play"></i></div>
+    </a>
+
+    <!-- Match 4 -->
+    <a href="https://now-sports-live-event-4-website.vercel.app/" target="_blank" class="link-card">
+      <div class="card-info">
+        <span class="live-badge"><span class="pulse-dot"></span> CLUB FRIENDLY</span>
+        <span class="match-teams">LIVERPOOL FC VS COMO 1907</span>
+        <span class="match-time"><i class="fa-regular fa-clock"></i> MON, 1AM MYT • Now Sports Live Event 4</span>
+        <div class="countdown-timer" data-time="2026-08-17T01:00:00+08:00">
+          <i class="fa-solid fa-hourglass-half"></i> <span class="time-text">Loading...</span>
+        </div>
+      </div>
+      <div class="card-action-icon"><i class="fa-solid fa-play"></i></div>
+    </a>
+
+    <!-- Mini Website Project -->
+    <div class="section-title">
+      <div class="section-main-label"><i class="fa-solid fa-futbol" style="color: var(--neon-green);"></i> Mini Website Project</div>
+      <div class="section-sub-label">Football Media Center</div>
+    </div>
+
+    <a href="https://fifa-plus-live-stream-hub.vercel.app/" target="_blank" class="link-card">
+      <div class="card-info">
+        <span class="site-name">FIFA+ Live Stream Hub</span>
+      </div>
+      <div class="card-action-icon"><i class="fa-solid fa-arrow-up-right-from-square"></i></div>
+    </a>
+
+    <a href="https://home-of-premier-league-website.vercel.app/" target="_blank" class="link-card">
+      <div class="card-info">
+        <span class="site-name">Home of Premier League</span>
+      </div>
+      <div class="card-action-icon"><i class="fa-solid fa-arrow-up-right-from-square"></i></div>
+    </a>
+
+    <a href="https://home-of-uefa.vercel.app/" target="_blank" class="link-card">
+      <div class="card-info">
+        <span class="site-name">Home of UEFA</span>
+      </div>
+      <div class="card-action-icon"><i class="fa-solid fa-arrow-up-right-from-square"></i></div>
+    </a>
+
+    <a href="https://home-of-la-liga.vercel.app/" target="_blank" class="link-card">
+      <div class="card-info">
+        <span class="site-name">Home of La Liga</span>
+      </div>
+      <div class="card-action-icon"><i class="fa-solid fa-arrow-up-right-from-square"></i></div>
+    </a>
+
+    <!-- Other Websites -->
+    <div class="section-title">
+      <div class="section-main-label"><i class="fa-solid fa-star" style="color: var(--accent-gold);"></i> Other Websites</div>
+    </div>
+
+    <div class="link-card" style="cursor: pointer;" onclick="openLink('https://f1-live-streaming-hub.vercel.app/')">
+      <div class="card-info">
+        <span class="site-name">F1 Live Streaming Hub</span>
+      </div>
+      <button class="fav-btn" data-id="f1-hub" title="Favourite" onclick="toggleFav(event, 'f1-hub')">
+        <i class="fa-solid fa-star"></i>
+      </button>
+    </div>
+
+    <div class="link-card" style="cursor: pointer;" onclick="openLink('https://moto-gp-live-streaming-hub.vercel.app/')">
+      <div class="card-info">
+        <span class="site-name">MotoGP Live Streaming Hub</span>
+      </div>
+      <button class="fav-btn" data-id="motogp-hub" title="Favourite" onclick="toggleFav(event, 'motogp-hub')">
+        <i class="fa-solid fa-star"></i>
+      </button>
+    </div>
+
+  </div>
+
+  <script>
+    function openLink(url) {
+      window.open(url, '_blank');
+    }
+
+    function toggleFav(event, id) {
+      event.stopPropagation();
+      let favs = JSON.parse(localStorage.getItem('sportsHubFavs')) || [];
+      const index = favs.indexOf(id);
+
+      if (index === -1) {
+        favs.push(id);
+      } else {
+        favs.splice(index, 1);
+      }
+
+      localStorage.setItem('sportsHubFavs', JSON.stringify(favs));
+      updateFavUI();
+    }
+
+    function updateFavUI() {
+      const favs = JSON.parse(localStorage.getItem('sportsHubFavs')) || [];
+      document.querySelectorAll('.fav-btn').forEach(btn => {
+        const id = btn.getAttribute('data-id');
+        if (favs.includes(id)) {
+          btn.classList.add('active');
+        } else {
+          btn.classList.remove('active');
+        }
+      });
+    }
+
+    // Countdown Logic
+    function updateCountdowns() {
+      const timers = document.querySelectorAll('.countdown-timer');
+      const now = new Date().getTime();
+
+      timers.forEach(timer => {
+        const targetDate = new Date(timer.getAttribute('data-time')).getTime();
+        const distance = targetDate - now;
+
+        const timeText = timer.querySelector('.time-text');
+
+        if (distance < 0) {
+          timer.classList.add('is-live');
+          timer.innerHTML = `<i class="fa-solid fa-satellite-dish"></i> 🔴 LIVE NOW`;
+        } else {
+          const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+          const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+          const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+          let display = "";
+          if (hours > 0) display += `${hours}h `;
+          display += `${minutes}m ${seconds}s`;
+
+          timeText.innerText = `Starts in ${display}`;
+        }
+      });
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      updateFavUI();
+      updateCountdowns();
+      setInterval(updateCountdowns, 1000);
+    });
+  </script>
+</body>
+</html>
