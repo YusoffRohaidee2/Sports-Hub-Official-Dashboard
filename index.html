@@ -222,7 +222,7 @@
       opacity: 0.85;
     }
 
-    /* Link Cards */
+    /* Direct Link Cards (Bypasses popup blocker) */
     .link-card {
       width: 100%;
       background: var(--card-bg);
@@ -430,7 +430,7 @@
       <div class="section-main-label"><i class="fa-solid fa-fire" style="color: var(--neon-pink);"></i> Hot Websites</div>
     </div>
 
-    <div class="link-card" onclick="trackAndOpen('hot-1', 'https://now-sports-live-event-website.vercel.app/')">
+    <a class="link-card" href="https://now-sports-live-event-website.vercel.app/" target="_blank" rel="noopener noreferrer" data-track-id="hot-1">
       <div class="card-info">
         <span class="live-badge"><span class="live-dot"></span> ASEAN HYUNDAI CUP 2026</span>
         <span class="match-teams">MALAYSIA VS THAILAND</span>
@@ -443,9 +443,9 @@
       <div class="card-right-group">
         <div class="card-action-icon"><i class="fa-solid fa-play"></i></div>
       </div>
-    </div>
+    </a>
 
-    <div class="link-card" onclick="trackAndOpen('hot-2', 'https://now-sports-live-event-3-website.vercel.app/')">
+    <a class="link-card" href="https://now-sports-live-event-3-website.vercel.app/" target="_blank" rel="noopener noreferrer" data-track-id="hot-2">
       <div class="card-info">
         <span class="live-badge"><span class="live-dot"></span> FA COMMUNITY SHIELD 2026</span>
         <span class="match-teams">ARSENAL VS MANCHESTER CITY</span>
@@ -458,9 +458,9 @@
       <div class="card-right-group">
         <div class="card-action-icon"><i class="fa-solid fa-play"></i></div>
       </div>
-    </div>
+    </a>
 
-    <div class="link-card" onclick="trackAndOpen('hot-3', 'https://now-sports-live-event-2.vercel.app/')">
+    <a class="link-card" href="https://now-sports-live-event-2.vercel.app/" target="_blank" rel="noopener noreferrer" data-track-id="hot-3">
       <div class="card-info">
         <span class="live-badge"><span class="live-dot"></span> CLUB FRIENDLY</span>
         <span class="match-teams">FC SCHALKE 04 VS REAL MADRID CF</span>
@@ -473,9 +473,9 @@
       <div class="card-right-group">
         <div class="card-action-icon"><i class="fa-solid fa-play"></i></div>
       </div>
-    </div>
+    </a>
 
-    <div class="link-card" onclick="trackAndOpen('hot-4', 'https://now-sports-live-event-4-website.vercel.app/')">
+    <a class="link-card" href="https://now-sports-live-event-4-website.vercel.app/" target="_blank" rel="noopener noreferrer" data-track-id="hot-4">
       <div class="card-info">
         <span class="live-badge"><span class="live-dot"></span> CLUB FRIENDLY</span>
         <span class="match-teams">LIVERPOOL FC VS COMO 1907</span>
@@ -488,7 +488,7 @@
       <div class="card-right-group">
         <div class="card-action-icon"><i class="fa-solid fa-play"></i></div>
       </div>
-    </div>
+    </a>
 
     <!-- Mini Website Project -->
     <div class="section-title">
@@ -496,7 +496,7 @@
       <div class="section-sub-label">Football Media Center</div>
     </div>
 
-    <div class="link-card" onclick="trackAndOpen('fifa-plus', 'https://fifa-plus-live-stream-hub.vercel.app/')">
+    <a class="link-card" href="https://fifa-plus-live-stream-hub.vercel.app/" target="_blank" rel="noopener noreferrer" data-track-id="fifa-plus">
       <div class="card-info">
         <span class="site-name">FIFA+ Live Stream Hub</span>
         <span class="click-counter"><i class="fa-solid fa-eye"></i> <span id="click-fifa-plus">0</span> clicks</span>
@@ -504,9 +504,9 @@
       <div class="card-right-group">
         <div class="card-action-icon"><i class="fa-solid fa-arrow-up-right-from-square"></i></div>
       </div>
-    </div>
+    </a>
 
-    <div class="link-card" onclick="trackAndOpen('premier-league', 'https://home-of-premier-league-website.vercel.app/')">
+    <a class="link-card" href="https://home-of-premier-league-website.vercel.app/" target="_blank" rel="noopener noreferrer" data-track-id="premier-league">
       <div class="card-info">
         <span class="site-name">Home of Premier League</span>
         <span class="click-counter"><i class="fa-solid fa-eye"></i> <span id="click-premier-league">0</span> clicks</span>
@@ -514,9 +514,9 @@
       <div class="card-right-group">
         <div class="card-action-icon"><i class="fa-solid fa-arrow-up-right-from-square"></i></div>
       </div>
-    </div>
+    </a>
 
-    <div class="link-card" onclick="trackAndOpen('uefa', 'https://home-of-uefa.vercel.app/')">
+    <a class="link-card" href="https://home-of-uefa.vercel.app/" target="_blank" rel="noopener noreferrer" data-track-id="uefa">
       <div class="card-info">
         <span class="site-name">Home of UEFA</span>
         <span class="click-counter"><i class="fa-solid fa-eye"></i> <span id="click-uefa">0</span> clicks</span>
@@ -524,9 +524,9 @@
       <div class="card-right-group">
         <div class="card-action-icon"><i class="fa-solid fa-arrow-up-right-from-square"></i></div>
       </div>
-    </div>
+    </a>
 
-    <div class="link-card" onclick="trackAndOpen('la-liga', 'https://home-of-la-liga.vercel.app/')">
+    <a class="link-card" href="https://home-of-la-liga.vercel.app/" target="_blank" rel="noopener noreferrer" data-track-id="la-liga">
       <div class="card-info">
         <span class="site-name">Home of La Liga</span>
         <span class="click-counter"><i class="fa-solid fa-eye"></i> <span id="click-la-liga">0</span> clicks</span>
@@ -534,14 +534,14 @@
       <div class="card-right-group">
         <div class="card-action-icon"><i class="fa-solid fa-arrow-up-right-from-square"></i></div>
       </div>
-    </div>
+    </a>
 
     <!-- Other Websites -->
     <div class="section-title">
       <div class="section-main-label"><i class="fa-solid fa-star" style="color: var(--accent-gold);"></i> Other Websites</div>
     </div>
 
-    <div class="link-card" onclick="trackAndOpen('f1-hub', 'https://f1-live-streaming-hub.vercel.app/')">
+    <a class="link-card" href="https://f1-live-streaming-hub.vercel.app/" target="_blank" rel="noopener noreferrer" data-track-id="f1-hub">
       <div class="card-info">
         <span class="site-name">F1 Live Streaming Hub</span>
         <span class="click-counter"><i class="fa-solid fa-eye"></i> <span id="click-f1-hub">0</span> clicks</span>
@@ -551,9 +551,9 @@
           <i class="fa-solid fa-star"></i>
         </button>
       </div>
-    </div>
+    </a>
 
-    <div class="link-card" onclick="trackAndOpen('motogp-hub', 'https://moto-gp-live-streaming-hub.vercel.app/')">
+    <a class="link-card" href="https://moto-gp-live-streaming-hub.vercel.app/" target="_blank" rel="noopener noreferrer" data-track-id="motogp-hub">
       <div class="card-info">
         <span class="site-name">MotoGP Live Streaming Hub</span>
         <span class="click-counter"><i class="fa-solid fa-eye"></i> <span id="click-motogp-hub">0</span> clicks</span>
@@ -563,7 +563,7 @@
           <i class="fa-solid fa-star"></i>
         </button>
       </div>
-    </div>
+    </a>
 
   </div>
 
@@ -631,26 +631,17 @@
       document.getElementById('lifetime-count').innerText = count.toLocaleString();
     });
 
-    // --- 3. LINK CLICK TRACKER (EXPOSE TO WINDOW OBJECT) ---
-    let isClicking = false;
-
-    // PENTING: Didaftarkan ke window secara eksplisit supaya boleh dipanggil oleh HTML onclick
-    window.trackAndOpen = function(linkId, url) {
-      // Buka pautan dengan serta-merta tanpa menunggu jawapan Firebase
-      window.open(url, '_blank');
-
-      if (isClicking) return;
-      isClicking = true;
-
-      const linkStatRef = ref(db, `stats/link_clicks/${linkId}`);
-      runTransaction(linkStatRef, (current) => {
-        return (current || 0) + 1;
-      }).catch((err) => console.error("Firebase update failed:", err));
-
-      setTimeout(() => {
-        isClicking = false;
-      }, 1000);
-    };
+    // --- 3. BYPASS EVENT LISTENER UNTUK TRACKING KLIK ---
+    document.querySelectorAll('.link-card').forEach(card => {
+      card.addEventListener('click', (e) => {
+        const linkId = card.getAttribute('data-track-id');
+        if (linkId) {
+          const linkStatRef = ref(db, `stats/link_clicks/${linkId}`);
+          runTransaction(linkStatRef, (current) => (current || 0) + 1)
+            .catch(err => console.error("Firebase update error:", err));
+        }
+      });
+    });
 
     onValue(clicksRef, (snap) => {
       if (snap.exists()) {
@@ -668,6 +659,7 @@
   <!-- Script UI Dashboard -->
   <script>
     function toggleFav(event, id) {
+      event.preventDefault();
       event.stopPropagation();
       let favs = JSON.parse(localStorage.getItem('sportsHubFavs')) || [];
       const index = favs.indexOf(id);
