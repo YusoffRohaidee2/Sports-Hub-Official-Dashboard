@@ -356,7 +356,7 @@
       color: var(--text-sub);
       font-size: 0.9rem;
       transition: all 0.3s ease;
-      pointer-events: none; /* Klik menembus ke .link-card utama */
+      pointer-events: none;
     }
 
     .link-card:hover .card-action-icon {
@@ -581,7 +581,6 @@
       runTransaction 
     } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-database.js";
 
-    // Konfigurasi Firebase rasmi anda
     const firebaseConfig = {
       apiKey: "AIzaSyAnPp3fS8CbAEE0meJmCdq2OAQ1mmdJWfc",
       authDomain: "sports-hub-official-live-count.firebaseapp.com",
@@ -593,12 +592,10 @@
       measurementId: "G-8K8G3ZFDCD"
     };
 
-    // Inisialisasi Firebase
     const app = initializeApp(firebaseConfig);
     const analytics = getAnalytics(app);
     const db = getDatabase(app);
 
-    // Node Firebase Realtime Database
     const livePresenceRef = ref(db, 'stats/live_sessions');
     const lifetimeRef = ref(db, 'stats/lifetime_count');
     const clicksRef = ref(db, 'stats/link_clicks');
@@ -634,23 +631,25 @@
       document.getElementById('lifetime-count').innerText = count.toLocaleString();
     });
 
-    // --- 3. LINK CLICK TRACKER WITH SPAM PROTECTION ---
+    // --- 3. LINK CLICK TRACKER (EXPOSE TO WINDOW OBJECT) ---
     let isClicking = false;
 
+    // PENTING: Didaftarkan ke window secara eksplisit supaya boleh dipanggil oleh HTML onclick
     window.trackAndOpen = function(linkId, url) {
+      // Buka pautan dengan serta-merta tanpa menunggu jawapan Firebase
+      window.open(url, '_blank');
+
       if (isClicking) return;
       isClicking = true;
 
       const linkStatRef = ref(db, `stats/link_clicks/${linkId}`);
       runTransaction(linkStatRef, (current) => {
         return (current || 0) + 1;
-      }).catch((err) => console.error(err));
-
-      window.open(url, '_blank');
+      }).catch((err) => console.error("Firebase update failed:", err));
 
       setTimeout(() => {
         isClicking = false;
-      }, 1500);
+      }, 1000);
     };
 
     onValue(clicksRef, (snap) => {
