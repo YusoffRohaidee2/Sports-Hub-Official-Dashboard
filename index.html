@@ -62,7 +62,7 @@
     /* Header */
     .profile-header {
       text-align: center;
-      margin-bottom: 32px;
+      margin-bottom: 24px;
     }
 
     .logo-container {
@@ -129,6 +129,64 @@
       backdrop-filter: blur(8px);
     }
 
+    /* Visitor Stats Card */
+    .visitor-stats-card {
+      width: 100%;
+      background: rgba(15, 23, 42, 0.8);
+      backdrop-filter: blur(16px);
+      border: 1px solid rgba(0, 255, 135, 0.3);
+      border-radius: 18px;
+      padding: 16px;
+      margin-bottom: 24px;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      box-shadow: 0 0 20px rgba(0, 255, 135, 0.1);
+    }
+
+    .stat-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .stat-title {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--text-sub);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .stat-number {
+      font-size: 1.4rem;
+      font-weight: 900;
+    }
+
+    .stat-divider {
+      width: 1px;
+      height: 35px;
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    .live-dot {
+      width: 8px;
+      height: 8px;
+      background-color: var(--neon-pink);
+      border-radius: 50%;
+      box-shadow: 0 0 8px var(--neon-pink);
+      animation: blink 1.2s infinite;
+    }
+
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.3; }
+    }
+
     /* Section Header */
     .section-title {
       width: 100%;
@@ -159,7 +217,7 @@
       opacity: 0.85;
     }
 
-    /* Cards */
+    /* Link Cards */
     .link-card {
       width: 100%;
       background: var(--card-bg);
@@ -219,20 +277,6 @@
       letter-spacing: 0.08em;
     }
 
-    .pulse-dot {
-      width: 6px;
-      height: 6px;
-      background-color: var(--neon-pink);
-      border-radius: 50%;
-      box-shadow: 0 0 8px var(--neon-pink);
-      animation: blink 1.2s infinite;
-    }
-
-    @keyframes blink {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.3; }
-    }
-
     .match-teams {
       font-size: 1.05rem;
       font-weight: 800;
@@ -249,7 +293,6 @@
       font-weight: 500;
     }
 
-    /* Countdown Style */
     .countdown-timer {
       font-size: 0.78rem;
       font-weight: 800;
@@ -333,7 +376,7 @@
 <body>
 
   <div class="container">
-    <!-- Profile Header -->
+    <!-- Header -->
     <div class="profile-header">
       <div class="logo-container">
         <div class="logo-glow"></div>
@@ -343,15 +386,27 @@
       <div class="profile-desc"><i class="fa-solid fa-bolt" style="margin-right: 4px;"></i> Watch any sports event for absolutely free!</div>
     </div>
 
+    <!-- 📊 Visitor Counter Card -->
+    <div class="visitor-stats-card">
+      <div class="stat-item">
+        <div class="stat-title"><span class="live-dot"></span> Active Live</div>
+        <div class="stat-number" id="live-count" style="color: var(--neon-pink);">...</div>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item">
+        <div class="stat-title"><i class="fa-solid fa-users" style="color: var(--neon-green);"></i> Total Visitors</div>
+        <div class="stat-number" id="lifetime-count" style="color: var(--neon-green);">...</div>
+      </div>
+    </div>
+
     <!-- Hot Websites -->
     <div class="section-title">
       <div class="section-main-label"><i class="fa-solid fa-fire" style="color: var(--neon-pink);"></i> Hot Websites</div>
     </div>
 
-    <!-- Match 1 -->
     <a href="https://now-sports-live-event-website.vercel.app/" target="_blank" class="link-card">
       <div class="card-info">
-        <span class="live-badge"><span class="pulse-dot"></span> ASEAN HYUNDAI CUP 2026</span>
+        <span class="live-badge"><span class="live-dot"></span> ASEAN HYUNDAI CUP 2026</span>
         <span class="match-teams">MALAYSIA VS THAILAND</span>
         <span class="match-time"><i class="fa-regular fa-clock"></i> SUN, 9PM MYT • Now Sports Live Event</span>
         <div class="countdown-timer" data-time="2026-08-16T21:00:00+08:00">
@@ -361,10 +416,9 @@
       <div class="card-action-icon"><i class="fa-solid fa-play"></i></div>
     </a>
 
-    <!-- Match 2 -->
     <a href="https://now-sports-live-event-3-website.vercel.app/" target="_blank" class="link-card">
       <div class="card-info">
-        <span class="live-badge"><span class="pulse-dot"></span> FA COMMUNITY SHIELD 2026</span>
+        <span class="live-badge"><span class="live-dot"></span> FA COMMUNITY SHIELD 2026</span>
         <span class="match-teams">ARSENAL VS MANCHESTER CITY</span>
         <span class="match-time"><i class="fa-regular fa-clock"></i> SUN, 10PM MYT • Now Sports Live Event 3</span>
         <div class="countdown-timer" data-time="2026-08-16T22:00:00+08:00">
@@ -374,10 +428,9 @@
       <div class="card-action-icon"><i class="fa-solid fa-play"></i></div>
     </a>
 
-    <!-- Match 3 -->
     <a href="https://now-sports-live-event-2.vercel.app/" target="_blank" class="link-card">
       <div class="card-info">
-        <span class="live-badge"><span class="pulse-dot"></span> CLUB FRIENDLY</span>
+        <span class="live-badge"><span class="live-dot"></span> CLUB FRIENDLY</span>
         <span class="match-teams">FC SCHALKE 04 VS LIVERPOOL FC</span>
         <span class="match-time"><i class="fa-regular fa-clock"></i> SUN, 11PM MYT • Now Sports Live Event 2</span>
         <div class="countdown-timer" data-time="2026-08-16T23:00:00+08:00">
@@ -387,10 +440,9 @@
       <div class="card-action-icon"><i class="fa-solid fa-play"></i></div>
     </a>
 
-    <!-- Match 4 -->
     <a href="https://now-sports-live-event-4-website.vercel.app/" target="_blank" class="link-card">
       <div class="card-info">
-        <span class="live-badge"><span class="pulse-dot"></span> CLUB FRIENDLY</span>
+        <span class="live-badge"><span class="live-dot"></span> CLUB FRIENDLY</span>
         <span class="match-teams">LIVERPOOL FC VS COMO 1907</span>
         <span class="match-time"><i class="fa-regular fa-clock"></i> MON, 1AM MYT • Now Sports Live Event 4</span>
         <div class="countdown-timer" data-time="2026-08-17T01:00:00+08:00">
@@ -459,6 +511,74 @@
 
   </div>
 
+  <!-- Firebase JavaScript SDK Integration -->
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-analytics.js";
+    import { 
+      getDatabase, 
+      ref, 
+      onValue, 
+      push, 
+      onDisconnect, 
+      set, 
+      runTransaction 
+    } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-database.js";
+
+    // Konfigurasi Firebase rasmi anda
+    const firebaseConfig = {
+      apiKey: "AIzaSyAnPp3fS8CbAEE0meJmCdq2OAQ1mmdJWfc",
+      authDomain: "sports-hub-official-live-count.firebaseapp.com",
+      databaseURL: "https://sports-hub-official-live-count-default-rtdb.asia-southeast1.firebasedatabase.app",
+      projectId: "sports-hub-official-live-count",
+      storageBucket: "sports-hub-official-live-count.firebasestorage.app",
+      messagingSenderId: "93008076192",
+      appId: "1:93008076192:web:0501c4518affed0fb958c5",
+      measurementId: "G-8K8G3ZFDCD"
+    };
+
+    // Inisialisasi Firebase
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+    const db = getDatabase(app);
+
+    // Node Firebase Realtime Database
+    const livePresenceRef = ref(db, 'stats/live_sessions');
+    const lifetimeRef = ref(db, 'stats/lifetime_count');
+
+    // --- 1. LIVE VISITOR COUNTER ---
+    const connectedRef = ref(db, '.info/connected');
+
+    onValue(connectedRef, (snap) => {
+      if (snap.val() === true) {
+        const userSessionRef = push(livePresenceRef);
+        onDisconnect(userSessionRef).remove();
+        set(userSessionRef, true);
+      }
+    });
+
+    onValue(livePresenceRef, (snap) => {
+      const count = snap.exists() ? Object.keys(snap.val()).length : 0;
+      document.getElementById('live-count').innerText = count;
+    });
+
+    // --- 2. LIFETIME VISITOR COUNTER ---
+    const hasVisited = localStorage.getItem('sh_visited');
+    if (!hasVisited) {
+      runTransaction(lifetimeRef, (current) => {
+        return (current || 0) + 1;
+      }).then(() => {
+        localStorage.setItem('sh_visited', 'true');
+      });
+    }
+
+    onValue(lifetimeRef, (snap) => {
+      const count = snap.exists() ? snap.val() : 0;
+      document.getElementById('lifetime-count').innerText = count.toLocaleString();
+    });
+  </script>
+
+  <!-- Script UI Dashboard -->
   <script>
     function openLink(url) {
       window.open(url, '_blank');
@@ -491,7 +611,6 @@
       });
     }
 
-    // Countdown Logic
     function updateCountdowns() {
       const timers = document.querySelectorAll('.countdown-timer');
       const now = new Date().getTime();
@@ -499,8 +618,6 @@
       timers.forEach(timer => {
         const targetDate = new Date(timer.getAttribute('data-time')).getTime();
         const distance = targetDate - now;
-
-        const timeText = timer.querySelector('.time-text');
 
         if (distance < 0) {
           timer.classList.add('is-live');
@@ -514,7 +631,8 @@
           if (hours > 0) display += `${hours}h `;
           display += `${minutes}m ${seconds}s`;
 
-          timeText.innerText = `Starts in ${display}`;
+          const timeText = timer.querySelector('.time-text');
+          if (timeText) timeText.innerText = `Starts in ${display}`;
         }
       });
     }
