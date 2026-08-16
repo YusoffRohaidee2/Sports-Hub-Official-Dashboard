@@ -242,6 +242,7 @@
       overflow: hidden;
       box-shadow: 0 4px 20px rgba(0,0,0,0.2);
       cursor: pointer;
+      user-select: none;
     }
 
     .link-card::after {
@@ -355,6 +356,7 @@
       color: var(--text-sub);
       font-size: 0.9rem;
       transition: all 0.3s ease;
+      pointer-events: none; /* Klik menembus ke .link-card utama */
     }
 
     .link-card:hover .card-action-icon {
@@ -378,6 +380,8 @@
       font-size: 1rem;
       cursor: pointer;
       transition: all 0.3s ease;
+      position: relative;
+      z-index: 2;
     }
 
     .fav-btn:hover {
@@ -630,13 +634,23 @@
       document.getElementById('lifetime-count').innerText = count.toLocaleString();
     });
 
-    // --- 3. LINK CLICK TRACKER & DISPLAY ---
+    // --- 3. LINK CLICK TRACKER WITH SPAM PROTECTION ---
+    let isClicking = false;
+
     window.trackAndOpen = function(linkId, url) {
+      if (isClicking) return;
+      isClicking = true;
+
       const linkStatRef = ref(db, `stats/link_clicks/${linkId}`);
       runTransaction(linkStatRef, (current) => {
         return (current || 0) + 1;
-      });
+      }).catch((err) => console.error(err));
+
       window.open(url, '_blank');
+
+      setTimeout(() => {
+        isClicking = false;
+      }, 1500);
     };
 
     onValue(clicksRef, (snap) => {
