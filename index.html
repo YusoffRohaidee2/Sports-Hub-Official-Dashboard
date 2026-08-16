@@ -241,6 +241,7 @@
       position: relative;
       overflow: hidden;
       box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+      cursor: pointer;
     }
 
     .link-card::after {
@@ -326,6 +327,22 @@
       letter-spacing: 0.01em;
     }
 
+    .click-counter {
+      font-size: 0.72rem;
+      color: var(--neon-cyan);
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-weight: 600;
+      margin-top: 2px;
+    }
+
+    .card-right-group {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
     .card-action-icon {
       width: 38px;
       height: 38px;
@@ -409,7 +426,7 @@
       <div class="section-main-label"><i class="fa-solid fa-fire" style="color: var(--neon-pink);"></i> Hot Websites</div>
     </div>
 
-    <a href="https://now-sports-live-event-website.vercel.app/" target="_blank" class="link-card">
+    <div class="link-card" onclick="trackAndOpen('hot-1', 'https://now-sports-live-event-website.vercel.app/')">
       <div class="card-info">
         <span class="live-badge"><span class="live-dot"></span> ASEAN HYUNDAI CUP 2026</span>
         <span class="match-teams">MALAYSIA VS THAILAND</span>
@@ -417,11 +434,14 @@
         <div class="countdown-timer" data-time="2026-08-16T21:00:00+08:00">
           <i class="fa-solid fa-hourglass-half"></i> <span class="time-text">Loading...</span>
         </div>
+        <span class="click-counter"><i class="fa-solid fa-eye"></i> <span id="click-hot-1">0</span> clicks</span>
       </div>
-      <div class="card-action-icon"><i class="fa-solid fa-play"></i></div>
-    </a>
+      <div class="card-right-group">
+        <div class="card-action-icon"><i class="fa-solid fa-play"></i></div>
+      </div>
+    </div>
 
-    <a href="https://now-sports-live-event-3-website.vercel.app/" target="_blank" class="link-card">
+    <div class="link-card" onclick="trackAndOpen('hot-2', 'https://now-sports-live-event-3-website.vercel.app/')">
       <div class="card-info">
         <span class="live-badge"><span class="live-dot"></span> FA COMMUNITY SHIELD 2026</span>
         <span class="match-teams">ARSENAL VS MANCHESTER CITY</span>
@@ -429,11 +449,14 @@
         <div class="countdown-timer" data-time="2026-08-16T22:00:00+08:00">
           <i class="fa-solid fa-hourglass-half"></i> <span class="time-text">Loading...</span>
         </div>
+        <span class="click-counter"><i class="fa-solid fa-eye"></i> <span id="click-hot-2">0</span> clicks</span>
       </div>
-      <div class="card-action-icon"><i class="fa-solid fa-play"></i></div>
-    </a>
+      <div class="card-right-group">
+        <div class="card-action-icon"><i class="fa-solid fa-play"></i></div>
+      </div>
+    </div>
 
-    <a href="https://now-sports-live-event-2.vercel.app/" target="_blank" class="link-card">
+    <div class="link-card" onclick="trackAndOpen('hot-3', 'https://now-sports-live-event-2.vercel.app/')">
       <div class="card-info">
         <span class="live-badge"><span class="live-dot"></span> CLUB FRIENDLY</span>
         <span class="match-teams">FC SCHALKE 04 VS LIVERPOOL FC</span>
@@ -441,11 +464,14 @@
         <div class="countdown-timer" data-time="2026-08-16T23:00:00+08:00">
           <i class="fa-solid fa-hourglass-half"></i> <span class="time-text">Loading...</span>
         </div>
+        <span class="click-counter"><i class="fa-solid fa-eye"></i> <span id="click-hot-3">0</span> clicks</span>
       </div>
-      <div class="card-action-icon"><i class="fa-solid fa-play"></i></div>
-    </a>
+      <div class="card-right-group">
+        <div class="card-action-icon"><i class="fa-solid fa-play"></i></div>
+      </div>
+    </div>
 
-    <a href="https://now-sports-live-event-4-website.vercel.app/" target="_blank" class="link-card">
+    <div class="link-card" onclick="trackAndOpen('hot-4', 'https://now-sports-live-event-4-website.vercel.app/')">
       <div class="card-info">
         <span class="live-badge"><span class="live-dot"></span> CLUB FRIENDLY</span>
         <span class="match-teams">LIVERPOOL FC VS COMO 1907</span>
@@ -453,9 +479,12 @@
         <div class="countdown-timer" data-time="2026-08-17T01:00:00+08:00">
           <i class="fa-solid fa-hourglass-half"></i> <span class="time-text">Loading...</span>
         </div>
+        <span class="click-counter"><i class="fa-solid fa-eye"></i> <span id="click-hot-4">0</span> clicks</span>
       </div>
-      <div class="card-action-icon"><i class="fa-solid fa-play"></i></div>
-    </a>
+      <div class="card-right-group">
+        <div class="card-action-icon"><i class="fa-solid fa-play"></i></div>
+      </div>
+    </div>
 
     <!-- Mini Website Project -->
     <div class="section-title">
@@ -463,55 +492,73 @@
       <div class="section-sub-label">Football Media Center</div>
     </div>
 
-    <a href="https://fifa-plus-live-stream-hub.vercel.app/" target="_blank" class="link-card">
+    <div class="link-card" onclick="trackAndOpen('fifa-plus', 'https://fifa-plus-live-stream-hub.vercel.app/')">
       <div class="card-info">
         <span class="site-name">FIFA+ Live Stream Hub</span>
+        <span class="click-counter"><i class="fa-solid fa-eye"></i> <span id="click-fifa-plus">0</span> clicks</span>
       </div>
-      <div class="card-action-icon"><i class="fa-solid fa-arrow-up-right-from-square"></i></div>
-    </a>
+      <div class="card-right-group">
+        <div class="card-action-icon"><i class="fa-solid fa-arrow-up-right-from-square"></i></div>
+      </div>
+    </div>
 
-    <a href="https://home-of-premier-league-website.vercel.app/" target="_blank" class="link-card">
+    <div class="link-card" onclick="trackAndOpen('premier-league', 'https://home-of-premier-league-website.vercel.app/')">
       <div class="card-info">
         <span class="site-name">Home of Premier League</span>
+        <span class="click-counter"><i class="fa-solid fa-eye"></i> <span id="click-premier-league">0</span> clicks</span>
       </div>
-      <div class="card-action-icon"><i class="fa-solid fa-arrow-up-right-from-square"></i></div>
-    </a>
+      <div class="card-right-group">
+        <div class="card-action-icon"><i class="fa-solid fa-arrow-up-right-from-square"></i></div>
+      </div>
+    </div>
 
-    <a href="https://home-of-uefa.vercel.app/" target="_blank" class="link-card">
+    <div class="link-card" onclick="trackAndOpen('uefa', 'https://home-of-uefa.vercel.app/')">
       <div class="card-info">
         <span class="site-name">Home of UEFA</span>
+        <span class="click-counter"><i class="fa-solid fa-eye"></i> <span id="click-uefa">0</span> clicks</span>
       </div>
-      <div class="card-action-icon"><i class="fa-solid fa-arrow-up-right-from-square"></i></div>
-    </a>
+      <div class="card-right-group">
+        <div class="card-action-icon"><i class="fa-solid fa-arrow-up-right-from-square"></i></div>
+      </div>
+    </div>
 
-    <a href="https://home-of-la-liga.vercel.app/" target="_blank" class="link-card">
+    <div class="link-card" onclick="trackAndOpen('la-liga', 'https://home-of-la-liga.vercel.app/')">
       <div class="card-info">
         <span class="site-name">Home of La Liga</span>
+        <span class="click-counter"><i class="fa-solid fa-eye"></i> <span id="click-la-liga">0</span> clicks</span>
       </div>
-      <div class="card-action-icon"><i class="fa-solid fa-arrow-up-right-from-square"></i></div>
-    </a>
+      <div class="card-right-group">
+        <div class="card-action-icon"><i class="fa-solid fa-arrow-up-right-from-square"></i></div>
+      </div>
+    </div>
 
     <!-- Other Websites -->
     <div class="section-title">
       <div class="section-main-label"><i class="fa-solid fa-star" style="color: var(--accent-gold);"></i> Other Websites</div>
     </div>
 
-    <div class="link-card" style="cursor: pointer;" onclick="openLink('https://f1-live-streaming-hub.vercel.app/')">
+    <div class="link-card" onclick="trackAndOpen('f1-hub', 'https://f1-live-streaming-hub.vercel.app/')">
       <div class="card-info">
         <span class="site-name">F1 Live Streaming Hub</span>
+        <span class="click-counter"><i class="fa-solid fa-eye"></i> <span id="click-f1-hub">0</span> clicks</span>
       </div>
-      <button class="fav-btn" data-id="f1-hub" title="Favourite" onclick="toggleFav(event, 'f1-hub')">
-        <i class="fa-solid fa-star"></i>
-      </button>
+      <div class="card-right-group">
+        <button class="fav-btn" data-id="f1-hub" title="Favourite" onclick="toggleFav(event, 'f1-hub')">
+          <i class="fa-solid fa-star"></i>
+        </button>
+      </div>
     </div>
 
-    <div class="link-card" style="cursor: pointer;" onclick="openLink('https://moto-gp-live-streaming-hub.vercel.app/')">
+    <div class="link-card" onclick="trackAndOpen('motogp-hub', 'https://moto-gp-live-streaming-hub.vercel.app/')">
       <div class="card-info">
         <span class="site-name">MotoGP Live Streaming Hub</span>
+        <span class="click-counter"><i class="fa-solid fa-eye"></i> <span id="click-motogp-hub">0</span> clicks</span>
       </div>
-      <button class="fav-btn" data-id="motogp-hub" title="Favourite" onclick="toggleFav(event, 'motogp-hub')">
-        <i class="fa-solid fa-star"></i>
-      </button>
+      <div class="card-right-group">
+        <button class="fav-btn" data-id="motogp-hub" title="Favourite" onclick="toggleFav(event, 'motogp-hub')">
+          <i class="fa-solid fa-star"></i>
+        </button>
+      </div>
     </div>
 
   </div>
@@ -550,6 +597,7 @@
     // Node Firebase Realtime Database
     const livePresenceRef = ref(db, 'stats/live_sessions');
     const lifetimeRef = ref(db, 'stats/lifetime_count');
+    const clicksRef = ref(db, 'stats/link_clicks');
 
     // --- 1. LIVE VISITOR COUNTER ---
     const connectedRef = ref(db, '.info/connected');
@@ -581,14 +629,31 @@
       const count = snap.exists() ? snap.val() : 0;
       document.getElementById('lifetime-count').innerText = count.toLocaleString();
     });
+
+    // --- 3. LINK CLICK TRACKER & DISPLAY ---
+    window.trackAndOpen = function(linkId, url) {
+      const linkStatRef = ref(db, `stats/link_clicks/${linkId}`);
+      runTransaction(linkStatRef, (current) => {
+        return (current || 0) + 1;
+      });
+      window.open(url, '_blank');
+    };
+
+    onValue(clicksRef, (snap) => {
+      if (snap.exists()) {
+        const data = snap.val();
+        Object.keys(data).forEach(linkId => {
+          const el = document.getElementById(`click-${linkId}`);
+          if (el) {
+            el.innerText = data[linkId].toLocaleString();
+          }
+        });
+      }
+    });
   </script>
 
   <!-- Script UI Dashboard -->
   <script>
-    function openLink(url) {
-      window.open(url, '_blank');
-    }
-
     function toggleFav(event, id) {
       event.stopPropagation();
       let favs = JSON.parse(localStorage.getItem('sportsHubFavs')) || [];
