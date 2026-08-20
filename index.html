@@ -291,13 +291,34 @@
       letter-spacing: -0.01em;
     }
 
-    .match-time {
+    .match-details {
       font-size: 0.8rem;
       color: var(--text-sub);
       display: flex;
+      flex-direction: column;
+      gap: 3px;
+      font-weight: 500;
+    }
+
+    .match-details span {
+      display: flex;
       align-items: center;
       gap: 6px;
-      font-weight: 500;
+    }
+
+    .channel-list {
+      font-size: 0.74rem;
+      color: var(--neon-cyan);
+      font-weight: 600;
+    }
+
+    .sprint-tag {
+      font-size: 0.72rem;
+      color: var(--accent-gold);
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
     }
 
     .countdown-timer {
@@ -419,7 +440,7 @@
       <div class="profile-desc"><i class="fa-solid fa-bolt" style="margin-right: 4px;"></i> Watch any sports event for absolutely free!</div>
     </div>
 
-    <!-- 📊 Visitor Counter Card -->
+    <!-- Visitor Stats Card -->
     <div class="visitor-stats-card">
       <div class="stat-item">
         <div class="stat-title"><span class="live-dot"></span> Active Live</div>
@@ -442,7 +463,9 @@
       <div class="card-info">
         <span class="live-badge"><span class="live-dot"></span> ASEAN HYUNDAI CUP 2026 • FINAL (1ST LEG)</span>
         <span class="match-teams">THAILAND VS VIETNAM</span>
-        <span class="match-time"><i class="fa-regular fa-clock"></i> SAT, AUG 22 • 09:00 PM MYT • Now Sports Live Event</span>
+        <div class="match-details">
+          <span><i class="fa-regular fa-clock"></i> SAT, AUG 22 • 09:00 PM MYT • Now Sports Live Event</span>
+        </div>
         <div class="countdown-timer" data-time="2026-08-22T21:00:00+08:00">
           <i class="fa-solid fa-hourglass-half"></i> <span class="time-text">Loading...</span>
         </div>
@@ -501,12 +524,34 @@
       <div class="section-sub-label">Football Media Center</div>
     </div>
 
-    <!-- Home of LaLiga (Dikemaskini) -->
+    <!-- Home of Premier League -->
+    <a class="link-card" href="https://home-of-premier-league-website.vercel.app/" target="_blank" rel="noopener noreferrer" data-track-id="premier-league">
+      <div class="card-info">
+        <span class="live-badge"><span class="live-dot"></span> PREMIER LEAGUE MATCHWEEK 1</span>
+        <span class="match-teams">ARSENAL VS COVENTRY CITY</span>
+        <div class="match-details">
+          <span><i class="fa-regular fa-clock"></i> SAT, AUG 22 • 03:00 AM MYT • Home of Premier League</span>
+          <span><i class="fa-solid fa-location-dot"></i> Emirates Stadium</span>
+          <span class="channel-list"><i class="fa-solid fa-tv"></i> Sky Sports Premier League, Sky Sports UHD Main Event, USA Network</span>
+        </div>
+        <div class="countdown-timer" data-time="2026-08-22T03:00:00+08:00">
+          <i class="fa-solid fa-hourglass-half"></i> <span class="time-text">Loading...</span>
+        </div>
+        <span class="click-counter"><i class="fa-solid fa-eye"></i> <span id="click-premier-league">0</span> clicks</span>
+      </div>
+      <div class="card-right-group">
+        <div class="card-action-icon"><i class="fa-solid fa-play"></i></div>
+      </div>
+    </a>
+
+    <!-- Home of LaLiga -->
     <a class="link-card" href="https://home-of-la-liga.vercel.app/" target="_blank" rel="noopener noreferrer" data-track-id="la-liga">
       <div class="card-info">
         <span class="live-badge"><span class="live-dot"></span> LALIGA MATCHWEEK 1</span>
         <span class="match-teams">VALENCIA CF VS REAL BETIS</span>
-        <span class="match-time"><i class="fa-regular fa-clock"></i> WED, AUG 26 • 03:00 AM MYT • Home of LaLiga</span>
+        <div class="match-details">
+          <span><i class="fa-regular fa-clock"></i> WED, AUG 26 • 03:00 AM MYT • Home of LaLiga</span>
+        </div>
         <div class="countdown-timer" data-time="2026-08-26T03:00:00+08:00">
           <i class="fa-solid fa-hourglass-half"></i> <span class="time-text">Loading...</span>
         </div>
@@ -517,9 +562,13 @@
       </div>
     </a>
 
+    <!-- FIFA+ Live Stream Hub -->
     <a class="link-card" href="https://fifa-plus-live-stream-hub.vercel.app/" target="_blank" rel="noopener noreferrer" data-track-id="fifa-plus">
       <div class="card-info">
         <span class="site-name">FIFA+ Live Stream Hub</span>
+        <div class="match-details" style="margin-top: 2px;">
+          <span><i class="fa-solid fa-circle-info" style="color: var(--neon-cyan);"></i> Stream past world cup matches and other FIFA matches here!</span>
+        </div>
         <span class="click-counter"><i class="fa-solid fa-eye"></i> <span id="click-fifa-plus">0</span> clicks</span>
       </div>
       <div class="card-right-group">
@@ -527,16 +576,7 @@
       </div>
     </a>
 
-    <a class="link-card" href="https://home-of-premier-league-website.vercel.app/" target="_blank" rel="noopener noreferrer" data-track-id="premier-league">
-      <div class="card-info">
-        <span class="site-name">Home of Premier League</span>
-        <span class="click-counter"><i class="fa-solid fa-eye"></i> <span id="click-premier-league">0</span> clicks</span>
-      </div>
-      <div class="card-right-group">
-        <div class="card-action-icon"><i class="fa-solid fa-arrow-up-right-from-square"></i></div>
-      </div>
-    </a>
-
+    <!-- Home of UEFA -->
     <a class="link-card" href="https://home-of-uefa.vercel.app/" target="_blank" rel="noopener noreferrer" data-track-id="uefa">
       <div class="card-info">
         <span class="site-name">Home of UEFA</span>
@@ -552,9 +592,19 @@
       <div class="section-main-label"><i class="fa-solid fa-star" style="color: var(--accent-gold);"></i> Other Websites</div>
     </div>
 
+    <!-- F1 Live Streaming Hub -->
     <a class="link-card" href="https://f1-live-streaming-hub.vercel.app/" target="_blank" rel="noopener noreferrer" data-track-id="f1-hub">
-      <div class="card-info">
-        <span class="site-name">F1 Live Streaming Hub</span>
+      <div class="card-info" style="width: 100%;">
+        <span class="live-badge"><span class="live-dot"></span> FORMULA 1 HEINEKEN DUTCH GRAND PRIX 2026</span>
+        <span class="match-teams" id="f1-session-title">Free Practice 1 (FP1)</span>
+        <div class="match-details">
+          <span><i class="fa-solid fa-location-dot"></i> Circuit Zandvoort, Zandvoort, Netherlands</span>
+          <span class="sprint-tag"><i class="fa-solid fa-bolt"></i> Sprint Event Weekend</span>
+          <span id="f1-session-time"><i class="fa-regular fa-clock"></i> FRI, AUG 21 • 06:30 PM – 07:30 PM MYT • F1 Live Streaming Hub</span>
+        </div>
+        <div class="countdown-timer" id="f1-countdown">
+          <i class="fa-solid fa-hourglass-half"></i> <span class="time-text">Loading...</span>
+        </div>
         <span class="click-counter"><i class="fa-solid fa-eye"></i> <span id="click-f1-hub">0</span> clicks</span>
       </div>
       <div class="card-right-group">
@@ -564,6 +614,7 @@
       </div>
     </a>
 
+    <!-- MotoGP Live Streaming Hub -->
     <a class="link-card" href="https://moto-gp-live-streaming-hub.vercel.app/" target="_blank" rel="noopener noreferrer" data-track-id="motogp-hub">
       <div class="card-info">
         <span class="site-name">MotoGP Live Streaming Hub</span>
@@ -697,9 +748,97 @@
       });
     }
 
+    /* --- F1 AUTOMATED SCHEDULE SYSTEM --- */
+    const f1Sessions = [
+      {
+        name: "Free Practice 1 (FP1)",
+        displayTime: "FRI, AUG 21 • 06:30 PM – 07:30 PM MYT • F1 Live Streaming Hub",
+        start: new Date("2026-08-21T18:30:00+08:00").getTime(),
+        end: new Date("2026-08-21T19:30:00+08:00").getTime()
+      },
+      {
+        name: "Sprint Shootout (Sprint Qualifying)",
+        displayTime: "FRI, AUG 21 • 10:30 PM – 11:14 PM MYT • F1 Live Streaming Hub",
+        start: new Date("2026-08-21T22:30:00+08:00").getTime(),
+        end: new Date("2026-08-21T23:14:00+08:00").getTime()
+      },
+      {
+        name: "Sprint Race",
+        displayTime: "SAT, AUG 22 • 06:00 PM – 07:00 PM MYT • F1 Live Streaming Hub",
+        start: new Date("2026-08-22T18:00:00+08:00").getTime(),
+        end: new Date("2026-08-22T19:00:00+08:00").getTime()
+      },
+      {
+        name: "Qualifying",
+        displayTime: "SAT, AUG 22 • 10:00 PM – 11:00 PM MYT • F1 Live Streaming Hub",
+        start: new Date("2026-08-22T22:00:00+08:00").getTime(),
+        end: new Date("2026-08-22T23:00:00+08:00").getTime()
+      },
+      {
+        name: "Grand Prix Race",
+        displayTime: "SUN, AUG 23 • 09:00 PM MYT • F1 Live Streaming Hub",
+        start: new Date("2026-08-23T21:00:00+08:00").getTime(),
+        end: new Date("2026-08-23T23:00:00+08:00").getTime()
+      }
+    ];
+
+    function updateF1Card(now) {
+      const titleEl = document.getElementById('f1-session-title');
+      const timeEl = document.getElementById('f1-session-time');
+      const timerEl = document.getElementById('f1-countdown');
+
+      if (!titleEl || !timeEl || !timerEl) return;
+
+      let currentSession = null;
+      let nextSession = null;
+
+      for (let i = 0; i < f1Sessions.length; i++) {
+        if (now >= f1Sessions[i].start && now <= f1Sessions[i].end) {
+          currentSession = f1Sessions[i];
+          break;
+        }
+        if (now < f1Sessions[i].start) {
+          nextSession = f1Sessions[i];
+          break;
+        }
+      }
+
+      if (currentSession) {
+        titleEl.innerText = currentSession.name;
+        timeEl.innerHTML = `<i class="fa-regular fa-clock"></i> ${currentSession.displayTime}`;
+        timerEl.classList.add('is-live');
+        timerEl.innerHTML = `<i class="fa-solid fa-satellite-dish"></i> 🔴 LIVE NOW`;
+      } else if (nextSession) {
+        titleEl.innerText = nextSession.name;
+        timeEl.innerHTML = `<i class="fa-regular fa-clock"></i> ${nextSession.displayTime}`;
+        timerEl.classList.remove('is-live');
+
+        const distance = nextSession.start - now;
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        let display = "";
+        if (days > 0) display += `${days}d `;
+        if (hours > 0 || days > 0) display += `${hours}h `;
+        display += `${minutes}m ${seconds}s`;
+
+        timerEl.innerHTML = `<i class="fa-solid fa-hourglass-half"></i> Starts in ${display}`;
+      } else {
+        titleEl.innerText = "Dutch Grand Prix 2026 - Event Ended";
+        timeEl.innerHTML = `<i class="fa-regular fa-clock"></i> All sessions completed`;
+        timerEl.classList.remove('is-live');
+        timerEl.innerHTML = `<i class="fa-solid fa-flag-checkered"></i> COMPLETED`;
+      }
+    }
+
     function updateCountdowns() {
-      const timers = document.querySelectorAll('.countdown-timer');
       const now = new Date().getTime();
+
+      updateF1Card(now);
+
+      const timers = document.querySelectorAll('.countdown-timer:not(#f1-countdown)');
 
       timers.forEach(timer => {
         const targetDate = new Date(timer.getAttribute('data-time')).getTime();
