@@ -271,6 +271,7 @@
       display: flex;
       flex-direction: column;
       gap: 6px;
+      width: 100%;
     }
 
     .live-badge {
@@ -304,12 +305,6 @@
       display: flex;
       align-items: center;
       gap: 6px;
-    }
-
-    .channel-list {
-      font-size: 0.74rem;
-      color: var(--neon-cyan);
-      font-weight: 600;
     }
 
     .sprint-tag {
@@ -370,6 +365,7 @@
       display: flex;
       align-items: center;
       gap: 10px;
+      margin-left: 12px;
     }
 
     .card-action-icon {
@@ -424,6 +420,41 @@
       background: rgba(255, 215, 0, 0.25);
       border-color: var(--accent-gold);
       box-shadow: 0 0 15px rgba(255, 215, 0, 0.4);
+    }
+
+    /* Style Khas 3-in-1 Match Card */
+    .triple-match-container {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 6px;
+      margin-bottom: 6px;
+      width: 100%;
+    }
+
+    .sub-match-row {
+      background: rgba(255, 255, 255, 0.03);
+      border-left: 3px solid var(--neon-green);
+      padding: 8px 12px;
+      border-radius: 8px;
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .sub-match-teams {
+      font-size: 0.92rem;
+      font-weight: 800;
+      color: #ffffff;
+    }
+
+    .sub-match-channel {
+      font-size: 0.74rem;
+      color: var(--neon-cyan);
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 6px;
     }
   </style>
 </head>
@@ -524,17 +555,32 @@
       <div class="section-sub-label">Football Media Center</div>
     </div>
 
-    <!-- Home of Premier League -->
+    <!-- Home of Premier League (3 MATCHES DALAM 1 KAD) -->
     <a class="link-card" href="https://home-of-premier-league-website.vercel.app/" target="_blank" rel="noopener noreferrer" data-track-id="premier-league">
       <div class="card-info">
-        <span class="live-badge"><span class="live-dot"></span> PREMIER LEAGUE MATCHWEEK 1</span>
-        <span class="match-teams">ARSENAL VS COVENTRY CITY</span>
-        <div class="match-details">
-          <span><i class="fa-regular fa-clock"></i> SAT, AUG 22 • 03:00 AM MYT • Home of Premier League</span>
-          <span><i class="fa-solid fa-location-dot"></i> Emirates Stadium</span>
-          <span class="channel-list"><i class="fa-solid fa-tv"></i> Sky Sports Premier League, Sky Sports UHD Main Event, USA Network</span>
+        <span class="live-badge"><span class="live-dot"></span> PREMIER LEAGUE • 3 MATCHES CONCURRENT</span>
+        
+        <div class="match-details" style="margin-bottom: 4px;">
+          <span><i class="fa-regular fa-clock"></i> SAT, AUG 22 • 10:00 PM MYT • Home of Premier League</span>
         </div>
-        <div class="countdown-timer" data-time="2026-08-22T03:00:00+08:00">
+
+        <!-- Senarai 3 Match Dalam Kad Ini -->
+        <div class="triple-match-container">
+          <div class="sub-match-row">
+            <span class="sub-match-teams">EVERTON VS CRYSTAL PALACE</span>
+            <span class="sub-match-channel"><i class="fa-solid fa-tv"></i> USA Network</span>
+          </div>
+          <div class="sub-match-row">
+            <span class="sub-match-teams">IPSWICH TOWN VS SUNDERLAND</span>
+            <span class="sub-match-channel"><i class="fa-solid fa-tv"></i> NBC Sports Network</span>
+          </div>
+          <div class="sub-match-row">
+            <span class="sub-match-teams">NOTTINGHAM FOREST VS LEEDS UNITED</span>
+            <span class="sub-match-channel"><i class="fa-solid fa-tv"></i> Premier Sports ROI 1</span>
+          </div>
+        </div>
+
+        <div class="countdown-timer" data-time="2026-08-22T22:00:00+08:00">
           <i class="fa-solid fa-hourglass-half"></i> <span class="time-text">Loading...</span>
         </div>
         <span class="click-counter"><i class="fa-solid fa-eye"></i> <span id="click-premier-league">0</span> clicks</span>
@@ -544,7 +590,7 @@
       </div>
     </a>
 
-    <!-- Home of LaLiga (AUTOMATED MATCH SWITCHER) -->
+    <!-- Home of LaLiga -->
     <a class="link-card" href="https://home-of-la-liga.vercel.app/" target="_blank" rel="noopener noreferrer" data-track-id="la-liga">
       <div class="card-info">
         <span class="live-badge" id="laliga-badge"><span class="live-dot"></span> LALIGA</span>
@@ -663,9 +709,8 @@
     const lifetimeRef = ref(db, 'stats/lifetime_count');
     const clicksRef = ref(db, 'stats/link_clicks');
 
-    // --- 1. LIVE VISITOR COUNTER ---
+    // Live Visitor Counter
     const connectedRef = ref(db, '.info/connected');
-
     onValue(connectedRef, (snap) => {
       if (snap.val() === true) {
         const userSessionRef = push(livePresenceRef);
@@ -679,7 +724,7 @@
       document.getElementById('live-count').innerText = count;
     });
 
-    // --- 2. LIFETIME VISITOR COUNTER ---
+    // Lifetime Visitor Counter
     const hasVisited = localStorage.getItem('sh_visited');
     if (!hasVisited) {
       runTransaction(lifetimeRef, (current) => {
@@ -694,7 +739,7 @@
       document.getElementById('lifetime-count').innerText = count.toLocaleString();
     });
 
-    // --- 3. TRACKING KLIK ---
+    // Tracking Klik
     document.querySelectorAll('.link-card').forEach(card => {
       card.addEventListener('click', (e) => {
         const linkId = card.getAttribute('data-track-id');
@@ -749,9 +794,8 @@
       });
     }
 
-    /* --- LALIGA AUTOMATED MATCH SCHEDULE SYSTEM --- */
+    /* LaLiga Automated Match Schedule System */
     const laLigaMatches = [
-      // 21 Aug - 25 Aug
       {
         week: "LALIGA",
         teams: "RAYO VALLECANO VS DEPORTIVO ALAVÉS",
@@ -832,7 +876,6 @@
         start: new Date("2026-08-25T03:30:00+08:00").getTime(),
         end: new Date("2026-08-25T05:30:00+08:00").getTime()
       },
-      // 26 Aug - 28 Aug
       {
         week: "LALIGA",
         teams: "VALENCIA CF VS REAL BETIS",
@@ -857,7 +900,6 @@
         start: new Date("2026-08-28T03:00:00+08:00").getTime(),
         end: new Date("2026-08-28T05:00:00+08:00").getTime()
       },
-      // 29 Aug - 31 Aug
       {
         week: "LALIGA",
         teams: "REAL RACING CLUB VS ELCHE CF",
@@ -975,7 +1017,7 @@
       }
     }
 
-    /* --- F1 AUTOMATED SCHEDULE SYSTEM --- */
+    /* F1 Automated Schedule System */
     const f1Sessions = [
       {
         name: "Free Practice 1 (FP1)",
