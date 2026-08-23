@@ -422,7 +422,7 @@
       box-shadow: 0 0 15px rgba(255, 215, 0, 0.4);
     }
 
-    /* Style Khas 3-in-1 Match Card */
+    /* Style Multi-Match Card */
     .triple-match-container {
       display: flex;
       flex-direction: column;
@@ -555,32 +555,18 @@
       <div class="section-sub-label">Football Media Center</div>
     </div>
 
-    <!-- Home of Premier League (3 MATCHES DALAM 1 KAD) -->
+    <!-- Home of Premier League -->
     <a class="link-card" href="https://home-of-premier-league-website.vercel.app/" target="_blank" rel="noopener noreferrer" data-track-id="premier-league">
       <div class="card-info">
-        <span class="live-badge"><span class="live-dot"></span> PREMIER LEAGUE • 3 MATCHES CONCURRENT</span>
+        <span class="live-badge" id="epl-badge"><span class="live-dot"></span> PREMIER LEAGUE</span>
         
-        <div class="match-details" style="margin-bottom: 4px;">
-          <span><i class="fa-regular fa-clock"></i> SAT, AUG 22 • 10:00 PM MYT • Home of Premier League</span>
+        <div id="epl-matches-body"></div>
+
+        <div class="match-details" style="margin-top: 4px;">
+          <span id="epl-time"><i class="fa-regular fa-clock"></i> Loading...</span>
         </div>
 
-        <!-- Senarai 3 Match Dalam Kad Ini -->
-        <div class="triple-match-container">
-          <div class="sub-match-row">
-            <span class="sub-match-teams">EVERTON VS CRYSTAL PALACE</span>
-            <span class="sub-match-channel"><i class="fa-solid fa-tv"></i> USA Network</span>
-          </div>
-          <div class="sub-match-row">
-            <span class="sub-match-teams">IPSWICH TOWN VS SUNDERLAND</span>
-            <span class="sub-match-channel"><i class="fa-solid fa-tv"></i> NBC Sports Network</span>
-          </div>
-          <div class="sub-match-row">
-            <span class="sub-match-teams">NOTTINGHAM FOREST VS LEEDS UNITED</span>
-            <span class="sub-match-channel"><i class="fa-solid fa-tv"></i> Premier Sports ROI 1</span>
-          </div>
-        </div>
-
-        <div class="countdown-timer" data-time="2026-08-22T22:00:00+08:00">
+        <div class="countdown-timer" id="epl-countdown">
           <i class="fa-solid fa-hourglass-half"></i> <span class="time-text">Loading...</span>
         </div>
         <span class="click-counter"><i class="fa-solid fa-eye"></i> <span id="click-premier-league">0</span> clicks</span>
@@ -794,168 +780,176 @@
       });
     }
 
-    /* LaLiga Automated Match Schedule System */
-    const laLigaMatches = [
-      {
-        week: "LALIGA",
-        teams: "RAYO VALLECANO VS DEPORTIVO ALAVÉS",
-        displayTime: "FRI, AUG 21 • 03:00 AM MYT • Home of LaLiga",
-        stadium: "Vallecas",
-        start: new Date("2026-08-21T03:00:00+08:00").getTime(),
-        end: new Date("2026-08-21T05:00:00+08:00").getTime()
-      },
-      {
-        week: "LALIGA",
-        teams: "REAL BETIS VS REAL SOCIEDAD",
-        displayTime: "SAT, AUG 22 • 03:00 AM MYT • Home of LaLiga",
-        stadium: "Benito Villamarín",
-        start: new Date("2026-08-22T03:00:00+08:00").getTime(),
-        end: new Date("2026-08-22T05:00:00+08:00").getTime()
-      },
-      {
-        week: "LALIGA",
-        teams: "ATHLETIC CLUB VS SEVILLA FC",
-        displayTime: "SAT, AUG 22 • 11:00 PM MYT • Home of LaLiga",
-        stadium: "San Mamés",
-        start: new Date("2026-08-22T23:00:00+08:00").getTime(),
-        end: new Date("2026-08-23T01:00:00+08:00").getTime()
-      },
-      {
-        week: "LALIGA",
-        teams: "VALENCIA CF VS RC CELTA DE VIGO",
-        displayTime: "SUN, AUG 23 • 01:30 AM MYT • Home of LaLiga",
-        stadium: "Mestalla",
-        start: new Date("2026-08-23T01:30:00+08:00").getTime(),
-        end: new Date("2026-08-23T03:30:00+08:00").getTime()
-      },
-      {
-        week: "LALIGA",
-        teams: "RCD ESPANYOL VS REAL MADRID",
-        displayTime: "SUN, AUG 23 • 03:30 AM MYT • Home of LaLiga",
-        stadium: "RCDE Stadium",
-        start: new Date("2026-08-23T03:30:00+08:00").getTime(),
-        end: new Date("2026-08-23T05:30:00+08:00").getTime()
-      },
-      {
-        week: "LALIGA",
-        teams: "ATLÉTICO MADRID VS VILLARREAL CF",
-        displayTime: "SUN, AUG 23 • 11:00 PM MYT • Home of LaLiga",
-        stadium: "Riyadh Air Metropolitano",
-        start: new Date("2026-08-23T23:00:00+08:00").getTime(),
-        end: new Date("2026-08-24T01:00:00+08:00").getTime()
-      },
-      {
-        week: "LALIGA",
-        teams: "GETAFE CF VS REAL RACING CLUB",
-        displayTime: "MON, AUG 24 • 01:30 AM MYT • Home of LaLiga",
-        stadium: "Coliseum",
-        start: new Date("2026-08-24T01:30:00+08:00").getTime(),
-        end: new Date("2026-08-24T03:30:00+08:00").getTime()
-      },
-      {
-        week: "LALIGA",
-        teams: "ELCHE CF VS FC BARCELONA",
-        displayTime: "MON, AUG 24 • 03:30 AM MYT • Home of LaLiga",
-        stadium: "Manuel Martínez Valero",
-        start: new Date("2026-08-24T03:30:00+08:00").getTime(),
-        end: new Date("2026-08-24T05:30:00+08:00").getTime()
-      },
-      {
-        week: "LALIGA",
-        teams: "CA OSASUNA VS LEVANTE UD",
-        displayTime: "TUE, AUG 25 • 01:30 AM MYT • Home of LaLiga",
-        stadium: "El Sadar",
-        start: new Date("2026-08-25T01:30:00+08:00").getTime(),
-        end: new Date("2026-08-25T03:30:00+08:00").getTime()
-      },
-      {
-        week: "LALIGA",
-        teams: "MÁLAGA CF VS RC DEPORTIVO LA CORUÑA",
-        displayTime: "TUE, AUG 25 • 03:30 AM MYT • Home of LaLiga",
-        stadium: "La Rosaleda",
-        start: new Date("2026-08-25T03:30:00+08:00").getTime(),
-        end: new Date("2026-08-25T05:30:00+08:00").getTime()
-      },
-      {
-        week: "LALIGA",
-        teams: "VALENCIA CF VS REAL BETIS",
-        displayTime: "WED, AUG 26 • 03:00 AM MYT • Home of LaLiga",
-        stadium: "Mestalla",
-        start: new Date("2026-08-26T03:00:00+08:00").getTime(),
-        end: new Date("2026-08-26T05:00:00+08:00").getTime()
-      },
-      {
-        week: "LALIGA",
-        teams: "REAL MADRID VS REAL SOCIEDAD",
-        displayTime: "THU, AUG 27 • 03:00 AM MYT • Home of LaLiga",
-        stadium: "Santiago Bernabéu",
-        start: new Date("2026-08-27T03:00:00+08:00").getTime(),
-        end: new Date("2026-08-27T05:00:00+08:00").getTime()
-      },
-      {
-        week: "LALIGA",
-        teams: "FC BARCELONA VS ATHLETIC CLUB",
-        displayTime: "FRI, AUG 28 • 03:00 AM MYT • Home of LaLiga",
-        stadium: "Spotify Camp Nou",
-        start: new Date("2026-08-28T03:00:00+08:00").getTime(),
-        end: new Date("2026-08-28T05:00:00+08:00").getTime()
-      },
-      {
-        week: "LALIGA",
-        teams: "REAL RACING CLUB VS ELCHE CF",
-        displayTime: "SAT, AUG 29 • 01:00 AM MYT • Home of LaLiga",
-        stadium: "El Sardinero",
-        start: new Date("2026-08-29T01:00:00+08:00").getTime(),
-        end: new Date("2026-08-29T03:00:00+08:00").getTime()
-      },
-      {
-        week: "LALIGA",
-        teams: "DEPORTIVO ALAVÉS VS VILLARREAL CF",
-        displayTime: "SAT, AUG 29 • 03:30 AM MYT • Home of LaLiga",
-        stadium: "Mendizorrotza Stadium",
-        start: new Date("2026-08-29T03:30:00+08:00").getTime(),
-        end: new Date("2026-08-29T05:30:00+08:00").getTime()
-      },
-      {
-        week: "LALIGA",
-        teams: "LEVANTE UD VS REAL BETIS",
-        displayTime: "SAT, AUG 29 • 11:00 PM MYT • Home of LaLiga",
-        stadium: "Ciutat de València",
-        start: new Date("2026-08-29T23:00:00+08:00").getTime(),
-        end: new Date("2026-08-30T01:00:00+08:00").getTime()
-      },
-      {
-        week: "LALIGA",
-        teams: "REAL SOCIEDAD VS RCD ESPANYOL",
-        displayTime: "SUN, AUG 30 • 01:00 AM MYT • Home of LaLiga",
-        stadium: "Reale Arena",
-        start: new Date("2026-08-30T01:00:00+08:00").getTime(),
-        end: new Date("2026-08-30T03:00:00+08:00").getTime()
-      },
-      {
-        week: "LALIGA",
-        teams: "SEVILLA FC VS ATLÉTICO MADRID",
-        displayTime: "SUN, AUG 30 • 03:30 AM MYT • Home of LaLiga",
-        stadium: "Ramón Sánchez-Pizjuán",
-        start: new Date("2026-08-30T03:30:00+08:00").getTime(),
-        end: new Date("2026-08-30T05:30:00+08:00").getTime()
-      },
-      {
-        week: "LALIGA",
-        teams: "REAL MADRID VS MÁLAGA CF",
-        displayTime: "SUN, AUG 30 • 11:00 PM MYT • Home of LaLiga",
-        stadium: "Santiago Bernabéu",
-        start: new Date("2026-08-30T23:00:00+08:00").getTime(),
-        end: new Date("2026-08-31T01:00:00+08:00").getTime()
-      },
-      {
-        week: "LALIGA",
-        teams: "RC DEPORTIVO LA CORUÑA VS VALENCIA CF",
-        displayTime: "MON, AUG 31 • 01:30 AM MYT • Home of LaLiga",
-        stadium: "Abanca-Riazor",
-        start: new Date("2026-08-31T01:30:00+08:00").getTime(),
-        end: new Date("2026-08-31T03:30:00+08:00").getTime()
+    /* Fungsi pembantu untuk tambah masa bermula (minit) */
+    function createMatch(week, matches, displayTime, startTimeISO, durationMinutes = 120) {
+      const startMs = new Date(startTimeISO).getTime();
+      const endMs = startMs + (durationMinutes * 60 * 1000); // Automatik tambah 120 minit (2 jam)
+      return {
+        week: week,
+        matches: matches,
+        displayTime: displayTime,
+        start: startMs,
+        end: endMs
+      };
+    }
+
+    /* Premier League Schedule (120 Minit Auto-Reset) */
+    const eplMatches = [
+      createMatch("PREMIER LEAGUE", [
+        { teams: "BRIGHTON & HOVE ALBION VS ASTON VILLA", channel: "Sky Sports Premier League" },
+        { teams: "MANCHESTER CITY VS AFC BOURNEMOUTH", channel: "USA Network, Sky Sports UHD Main Event" }
+      ], "SUN, AUG 23 • 09:00 PM MYT • Home of Premier League", "2026-08-23T21:00:00+08:00"),
+
+      createMatch("PREMIER LEAGUE", [
+        { teams: "NEWCASTLE UNITED VS LIVERPOOL", channel: "Sky Sports Premier League, Sky Sports UHD Main Event, USA Network" }
+      ], "SUN, AUG 23 • 11:30 PM MYT • Home of Premier League", "2026-08-23T23:30:00+08:00"),
+
+      createMatch("PREMIER LEAGUE", [
+        { teams: "FULHAM VS CHELSEA", channel: "Sky Sports Premier League, Sky Sports UHD Main Event, USA Network" }
+      ], "TUE, AUG 25 • 03:00 AM MYT • Home of Premier League", "2026-08-25T03:00:00+08:00"),
+
+      createMatch("PREMIER LEAGUE", [
+        { teams: "CRYSTAL PALACE VS MANCHESTER CITY", channel: "Sky Sports Premier League, Sky Sports UHD Main Event, USA Network" }
+      ], "SAT, AUG 29 • 03:00 AM MYT • Home of Premier League", "2026-08-29T03:00:00+08:00"),
+
+      createMatch("PREMIER LEAGUE", [
+        { teams: "LIVERPOOL VS NOTTINGHAM FOREST", channel: "TNT Sports 1, USA Network" }
+      ], "SAT, AUG 29 • 07:30 PM MYT • Home of Premier League", "2026-08-29T19:30:00+08:00"),
+
+      createMatch("PREMIER LEAGUE", [
+        { teams: "AFC BOURNEMOUTH VS EVERTON", channel: "Premier Sports ROI 1" },
+        { teams: "COVENTRY CITY VS HULL CITY", channel: "USA Network" }
+      ], "SAT, AUG 29 • 10:00 PM MYT • Home of Premier League", "2026-08-29T22:00:00+08:00"),
+
+      createMatch("PREMIER LEAGUE", [
+        { teams: "TOTTENHAM HOTSPUR VS NEWCASTLE UNITED", channel: "Sky Sports Premier League, Sky Sports UHD Main Event" }
+      ], "SUN, AUG 30 • 12:30 AM MYT • Home of Premier League", "2026-08-30T00:30:00+08:00"),
+
+      createMatch("PREMIER LEAGUE", [
+        { teams: "CHELSEA VS BRIGHTON & HOVE ALBION", channel: "Sky Sports UHD Main Event" },
+        { teams: "LEEDS UNITED VS BRENTFORD", channel: "Sky Sports Premier League, USA Network" },
+        { teams: "SUNDERLAND VS FULHAM", channel: "Sky Sports Plus/+" }
+      ], "SUN, AUG 30 • 09:00 PM MYT • Home of Premier League", "2026-08-30T21:00:00+08:00"),
+
+      createMatch("PREMIER LEAGUE", [
+        { teams: "MANCHESTER UNITED VS IPSWICH TOWN", channel: "Sky Sports Premier League, Sky Sports UHD Main Event, USA Network" }
+      ], "SUN, AUG 30 • 11:30 PM MYT • Home of Premier League", "2026-08-30T23:30:00+08:00")
+    ];
+
+    function updateEPLCard(now) {
+      const badgeEl = document.getElementById('epl-badge');
+      const bodyEl = document.getElementById('epl-matches-body');
+      const timeEl = document.getElementById('epl-time');
+      const timerEl = document.getElementById('epl-countdown');
+
+      if (!badgeEl || !bodyEl || !timeEl || !timerEl) return;
+
+      let currentSlot = null;
+      let nextSlot = null;
+
+      for (let i = 0; i < eplMatches.length; i++) {
+        // Jika masa sekarang di antara Waktu Mula & Waktu Mula + 120 minit
+        if (now >= eplMatches[i].start && now < eplMatches[i].end) {
+          currentSlot = eplMatches[i];
+          break;
+        }
+        // Cari perlawanan akan datang
+        if (now < eplMatches[i].start) {
+          nextSlot = eplMatches[i];
+          break;
+        }
       }
+
+      const activeSlot = currentSlot || nextSlot;
+
+      if (activeSlot) {
+        const isLive = !!currentSlot;
+        const matchCount = activeSlot.matches.length;
+        
+        badgeEl.innerHTML = `<span class="live-dot"></span> ${activeSlot.week}${matchCount > 1 ? ` • ${matchCount} MATCHES CONCURRENT` : ''}`;
+        timeEl.innerHTML = `<i class="fa-regular fa-clock"></i> ${activeSlot.displayTime}`;
+
+        if (matchCount === 1) {
+          const m = activeSlot.matches[0];
+          bodyEl.innerHTML = `
+            <span class="match-teams">${m.teams}</span>
+            <div class="match-details" style="margin-top:2px;">
+              <span><i class="fa-solid fa-tv"></i> ${m.channel}</span>
+            </div>`;
+        } else {
+          let html = '<div class="triple-match-container">';
+          activeSlot.matches.forEach(m => {
+            html += `
+              <div class="sub-match-row">
+                <span class="sub-match-teams">${m.teams}</span>
+                <span class="sub-match-channel"><i class="fa-solid fa-tv"></i> ${m.channel}</span>
+              </div>`;
+          });
+          html += '</div>';
+          bodyEl.innerHTML = html;
+        }
+
+        if (isLive) {
+          timerEl.classList.add('is-live');
+          timerEl.innerHTML = `<i class="fa-solid fa-satellite-dish"></i> 🔴 LIVE NOW`;
+        } else {
+          timerEl.classList.remove('is-live');
+          const distance = activeSlot.start - now;
+          const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+          const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+          const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+          const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+          let display = "";
+          if (days > 0) display += `${days}d `;
+          if (hours > 0 || days > 0) display += `${hours}h `;
+          display += `${minutes}m ${seconds}s`;
+
+          timerEl.innerHTML = `<i class="fa-solid fa-hourglass-half"></i> Starts in ${display}`;
+        }
+      } else {
+        badgeEl.innerHTML = `<span class="live-dot"></span> PREMIER LEAGUE COMPLETED`;
+        bodyEl.innerHTML = `<span class="match-teams">ALL MATCHES COMPLETED</span>`;
+        timeEl.innerHTML = `<i class="fa-regular fa-clock"></i> Check back later for upcoming fixtures!`;
+        timerEl.classList.remove('is-live');
+        timerEl.innerHTML = `<i class="fa-solid fa-flag-checkered"></i> COMPLETED`;
+      }
+    }
+
+    /* LaLiga Automated Schedule System (120 Minit Auto-Reset) */
+    function createLaLigaMatch(week, teams, displayTime, stadium, startTimeISO, durationMinutes = 120) {
+      const startMs = new Date(startTimeISO).getTime();
+      return {
+        week: week,
+        teams: teams,
+        displayTime: displayTime,
+        stadium: stadium,
+        start: startMs,
+        end: startMs + (durationMinutes * 60 * 1000)
+      };
+    }
+
+    const laLigaMatches = [
+      createLaLigaMatch("LALIGA", "RAYO VALLECANO VS DEPORTIVO ALAVÉS", "FRI, AUG 21 • 03:00 AM MYT • Home of LaLiga", "Vallecas", "2026-08-21T03:00:00+08:00"),
+      createLaLigaMatch("LALIGA", "REAL BETIS VS REAL SOCIEDAD", "SAT, AUG 22 • 03:00 AM MYT • Home of LaLiga", "Benito Villamarín", "2026-08-22T03:00:00+08:00"),
+      createLaLigaMatch("LALIGA", "ATHLETIC CLUB VS SEVILLA FC", "SAT, AUG 22 • 11:00 PM MYT • Home of LaLiga", "San Mamés", "2026-08-22T23:00:00+08:00"),
+      createLaLigaMatch("LALIGA", "VALENCIA CF VS RC CELTA DE VIGO", "SUN, AUG 23 • 01:30 AM MYT • Home of LaLiga", "Mestalla", "2026-08-23T01:30:00+08:00"),
+      createLaLigaMatch("LALIGA", "RCD ESPANYOL VS REAL MADRID", "SUN, AUG 23 • 03:30 AM MYT • Home of LaLiga", "RCDE Stadium", "2026-08-23T03:30:00+08:00"),
+      createLaLigaMatch("LALIGA", "ATLÉTICO MADRID VS VILLARREAL CF", "SUN, AUG 23 • 11:00 PM MYT • Home of LaLiga", "Riyadh Air Metropolitano", "2026-08-23T23:00:00+08:00"),
+      createLaLigaMatch("LALIGA", "GETAFE CF VS REAL RACING CLUB", "MON, AUG 24 • 01:30 AM MYT • Home of LaLiga", "Coliseum", "2026-08-24T01:30:00+08:00"),
+      createLaLigaMatch("LALIGA", "ELCHE CF VS FC BARCELONA", "MON, AUG 24 • 03:30 AM MYT • Home of LaLiga", "Manuel Martínez Valero", "2026-08-24T03:30:00+08:00"),
+      createLaLigaMatch("LALIGA", "CA OSASUNA VS LEVANTE UD", "TUE, AUG 25 • 01:30 AM MYT • Home of LaLiga", "El Sadar", "2026-08-25T01:30:00+08:00"),
+      createLaLigaMatch("LALIGA", "MÁLAGA CF VS RC DEPORTIVO LA CORUÑA", "TUE, AUG 25 • 03:30 AM MYT • Home of LaLiga", "La Rosaleda", "2026-08-25T03:30:00+08:00"),
+      createLaLigaMatch("LALIGA", "VALENCIA CF VS REAL BETIS", "WED, AUG 26 • 03:00 AM MYT • Home of LaLiga", "Mestalla", "2026-08-26T03:00:00+08:00"),
+      createLaLigaMatch("LALIGA", "REAL MADRID VS REAL SOCIEDAD", "THU, AUG 27 • 03:00 AM MYT • Home of LaLiga", "Santiago Bernabéu", "2026-08-27T03:00:00+08:00"),
+      createLaLigaMatch("LALIGA", "FC BARCELONA VS ATHLETIC CLUB", "FRI, AUG 28 • 03:00 AM MYT • Home of LaLiga", "Spotify Camp Nou", "2026-08-28T03:00:00+08:00"),
+      createLaLigaMatch("LALIGA", "REAL RACING CLUB VS ELCHE CF", "SAT, AUG 29 • 01:00 AM MYT • Home of LaLiga", "El Sardinero", "2026-08-29T01:00:00+08:00"),
+      createLaLigaMatch("LALIGA", "DEPORTIVO ALAVÉS VS VILLARREAL CF", "SAT, AUG 29 • 03:30 AM MYT • Home of LaLiga", "Mendizorrotza Stadium", "2026-08-29T03:30:00+08:00"),
+      createLaLigaMatch("LALIGA", "LEVANTE UD VS REAL BETIS", "SAT, AUG 29 • 11:00 PM MYT • Home of LaLiga", "Ciutat de València", "2026-08-29T23:00:00+08:00"),
+      createLaLigaMatch("LALIGA", "REAL SOCIEDAD VS RCD ESPANYOL", "SUN, AUG 30 • 01:00 AM MYT • Home of LaLiga", "Reale Arena", "2026-08-30T01:00:00+08:00"),
+      createLaLigaMatch("LALIGA", "SEVILLA FC VS ATLÉTICO MADRID", "SUN, AUG 30 • 03:30 AM MYT • Home of LaLiga", "Ramón Sánchez-Pizjuán", "2026-08-30T03:30:00+08:00"),
+      createLaLigaMatch("LALIGA", "REAL MADRID VS MÁLAGA CF", "SUN, AUG 30 • 11:00 PM MYT • Home of LaLiga", "Santiago Bernabéu", "2026-08-30T23:00:00+08:00"),
+      createLaLigaMatch("LALIGA", "RC DEPORTIVO LA CORUÑA VS VALENCIA CF", "MON, AUG 31 • 01:30 AM MYT • Home of LaLiga", "Abanca-Riazor", "2026-08-31T01:30:00+08:00")
     ];
 
     function updateLaLigaCard(now) {
@@ -971,7 +965,7 @@
       let nextMatch = null;
 
       for (let i = 0; i < laLigaMatches.length; i++) {
-        if (now >= laLigaMatches[i].start && now <= laLigaMatches[i].end) {
+        if (now >= laLigaMatches[i].start && now < laLigaMatches[i].end) {
           currentMatch = laLigaMatches[i];
           break;
         }
@@ -1017,7 +1011,7 @@
       }
     }
 
-    /* F1 Automated Schedule System */
+    /* F1 Schedule System */
     const f1Sessions = [
       {
         name: "Free Practice 1 (FP1)",
@@ -1062,7 +1056,7 @@
       let nextSession = null;
 
       for (let i = 0; i < f1Sessions.length; i++) {
-        if (now >= f1Sessions[i].start && now <= f1Sessions[i].end) {
+        if (now >= f1Sessions[i].start && now < f1Sessions[i].end) {
           currentSession = f1Sessions[i];
           break;
         }
@@ -1102,22 +1096,22 @@
       }
     }
 
-    function updateCountdowns() {
-      const now = new Date().getTime();
-
-      updateF1Card(now);
-      updateLaLigaCard(now);
-
-      const timers = document.querySelectorAll('.countdown-timer:not(#f1-countdown):not(#laliga-countdown)');
+    /* Hot Card Generic Timer (120 Minit Auto-Reset) */
+    function updateGenericCards(now) {
+      const timers = document.querySelectorAll('.countdown-timer:not(#f1-countdown):not(#laliga-countdown):not(#epl-countdown)');
 
       timers.forEach(timer => {
-        const targetDate = new Date(timer.getAttribute('data-time')).getTime();
-        const distance = targetDate - now;
+        const startTime = new Date(timer.getAttribute('data-time')).getTime();
+        const endTime = startTime + (120 * 60 * 1000); // 120 Minit Auto-Reset
 
-        if (distance < 0) {
+        if (now >= startTime && now < endTime) {
           timer.classList.add('is-live');
           timer.innerHTML = `<i class="fa-solid fa-satellite-dish"></i> 🔴 LIVE NOW`;
+        } else if (now >= endTime) {
+          timer.classList.remove('is-live');
+          timer.innerHTML = `<i class="fa-solid fa-flag-checkered"></i> COMPLETED`;
         } else {
+          const distance = startTime - now;
           const days = Math.floor(distance / (1000 * 60 * 60 * 24));
           const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
           const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
@@ -1132,6 +1126,15 @@
           if (timeText) timeText.innerText = `Starts in ${display}`;
         }
       });
+    }
+
+    function updateCountdowns() {
+      const now = new Date().getTime();
+
+      updateF1Card(now);
+      updateLaLigaCard(now);
+      updateEPLCard(now);
+      updateGenericCards(now);
     }
 
     document.addEventListener('DOMContentLoaded', () => {
