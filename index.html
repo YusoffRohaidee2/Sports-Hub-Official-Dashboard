@@ -489,15 +489,15 @@
       <div class="section-main-label"><i class="fa-solid fa-fire" style="color: var(--neon-pink);"></i> Hot Websites</div>
     </div>
 
-    <!-- HOT-1 -->
+    <!-- HOT-1: ASEAN HYUNDAI CUP (2ND LEG) -->
     <a class="link-card" href="https://now-sports-live-event-website.vercel.app/" target="_blank" rel="noopener noreferrer" data-track-id="hot-1">
       <div class="card-info">
-        <span class="live-badge"><span class="live-dot"></span> ASEAN HYUNDAI CUP 2026 • FINAL (1ST LEG)</span>
-        <span class="match-teams">THAILAND VS VIETNAM</span>
+        <span class="live-badge"><span class="live-dot"></span> ASEAN HYUNDAI CUP 2026 • FINAL (2ND LEG)</span>
+        <span class="match-teams">VIETNAM VS THAILAND (AGG 2-0)</span>
         <div class="match-details">
-          <span><i class="fa-regular fa-clock"></i> SAT, AUG 22 • 09:00 PM MYT • Now Sports Live Event</span>
+          <span><i class="fa-regular fa-clock"></i> WED, AUG 26 • 09:00 PM MYT • Now Sports Live Event</span>
         </div>
-        <div class="countdown-timer" data-time="2026-08-22T21:00:00+08:00">
+        <div class="countdown-timer" data-time="2026-08-26T21:00:00+08:00">
           <i class="fa-solid fa-hourglass-half"></i> <span class="time-text">Loading...</span>
         </div>
         <span class="click-counter"><i class="fa-solid fa-eye"></i> <span id="click-hot-1">0</span> clicks</span>
@@ -848,12 +848,10 @@
       let nextSlot = null;
 
       for (let i = 0; i < eplMatches.length; i++) {
-        // Jika masa sekarang di antara Waktu Mula & Waktu Mula + 120 minit
         if (now >= eplMatches[i].start && now < eplMatches[i].end) {
           currentSlot = eplMatches[i];
           break;
         }
-        // Cari perlawanan akan datang
         if (now < eplMatches[i].start) {
           nextSlot = eplMatches[i];
           break;
@@ -1096,7 +1094,7 @@
       }
     }
 
-    /* Hot Card Generic Timer (120 Minit Auto-Reset) */
+    /* Hot Card Generic Timer (Auto LIVE & Reset Selepas 120 Minit) */
     function updateGenericCards(now) {
       const timers = document.querySelectorAll('.countdown-timer:not(#f1-countdown):not(#laliga-countdown):not(#epl-countdown)');
 
@@ -1123,7 +1121,11 @@
           display += `${minutes}m ${seconds}s`;
 
           const timeText = timer.querySelector('.time-text');
-          if (timeText) timeText.innerText = `Starts in ${display}`;
+          if (timeText) {
+            timeText.innerText = `Starts in ${display}`;
+          } else {
+            timer.innerHTML = `<i class="fa-solid fa-hourglass-half"></i> Starts in ${display}`;
+          }
         }
       });
     }
