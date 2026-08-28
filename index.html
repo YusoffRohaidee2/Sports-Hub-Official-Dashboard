@@ -489,15 +489,18 @@
       <div class="section-main-label"><i class="fa-solid fa-fire" style="color: var(--neon-pink);"></i> Hot Websites</div>
     </div>
 
-    <!-- HOT-1: ASEAN HYUNDAI CUP (2ND LEG) -->
+    <!-- HOT-1: UNIFI LIGA SUPER 2026 -->
     <a class="link-card" href="https://now-sports-live-event-website.vercel.app/" target="_blank" rel="noopener noreferrer" data-track-id="hot-1">
       <div class="card-info">
-        <span class="live-badge"><span class="live-dot"></span> ASEAN HYUNDAI CUP 2026 • FINAL (2ND LEG)</span>
-        <span class="match-teams">VIETNAM VS THAILAND (AGG 2-0)</span>
-        <div class="match-details">
-          <span><i class="fa-regular fa-clock"></i> WED, AUG 26 • 09:00 PM MYT • Now Sports Live Event</span>
+        <span class="live-badge" id="liga-super-badge"><span class="live-dot"></span> UNIFI LIGA SUPER 2026</span>
+        
+        <div id="liga-super-matches-body"></div>
+
+        <div class="match-details" style="margin-top: 4px;">
+          <span id="liga-super-time"><i class="fa-regular fa-clock"></i> Loading...</span>
         </div>
-        <div class="countdown-timer" data-time="2026-08-26T21:00:00+08:00">
+
+        <div class="countdown-timer" id="liga-super-countdown">
           <i class="fa-solid fa-hourglass-half"></i> <span class="time-text">Loading...</span>
         </div>
         <span class="click-counter"><i class="fa-solid fa-eye"></i> <span id="click-hot-1">0</span> clicks</span>
@@ -625,19 +628,10 @@
       <div class="section-main-label"><i class="fa-solid fa-star" style="color: var(--accent-gold);"></i> Other Websites</div>
     </div>
 
-    <!-- F1 Live Streaming Hub -->
+    <!-- F1 Live Streaming Hub (Generic Layout) -->
     <a class="link-card" href="https://f1-live-streaming-hub.vercel.app/" target="_blank" rel="noopener noreferrer" data-track-id="f1-hub">
-      <div class="card-info" style="width: 100%;">
-        <span class="live-badge"><span class="live-dot"></span> FORMULA 1 HEINEKEN DUTCH GRAND PRIX 2026</span>
-        <span class="match-teams" id="f1-session-title">Free Practice 1 (FP1)</span>
-        <div class="match-details">
-          <span><i class="fa-solid fa-location-dot"></i> Circuit Zandvoort, Zandvoort, Netherlands</span>
-          <span class="sprint-tag"><i class="fa-solid fa-bolt"></i> Sprint Event Weekend</span>
-          <span id="f1-session-time"><i class="fa-regular fa-clock"></i> FRI, AUG 21 • 06:30 PM – 07:30 PM MYT • F1 Live Streaming Hub</span>
-        </div>
-        <div class="countdown-timer" id="f1-countdown">
-          <i class="fa-solid fa-hourglass-half"></i> <span class="time-text">Loading...</span>
-        </div>
+      <div class="card-info">
+        <span class="site-name">F1 Live Streaming Hub</span>
         <span class="click-counter"><i class="fa-solid fa-eye"></i> <span id="click-f1-hub">0</span> clicks</span>
       </div>
       <div class="card-right-group">
@@ -783,7 +777,7 @@
     /* Fungsi pembantu untuk tambah masa bermula (minit) */
     function createMatch(week, matches, displayTime, startTimeISO, durationMinutes = 120) {
       const startMs = new Date(startTimeISO).getTime();
-      const endMs = startMs + (durationMinutes * 60 * 1000); // Automatik tambah 120 minit (2 jam)
+      const endMs = startMs + (durationMinutes * 60 * 1000);
       return {
         week: week,
         matches: matches,
@@ -791,6 +785,159 @@
         start: startMs,
         end: endMs
       };
+    }
+
+    /* Unifi Liga Super 2026 Schedule System (Now Sports Live Event 1) */
+    const ligaSuperMatches = [
+      createMatch("UNIFI LIGA SUPER 2026", [
+        { teams: "SABAH FC VS PENANG FC", venue: "Stadium Likas, Kota Kinabalu" }
+      ], "FRI, AUG 28 • 07:30 PM MYT • Now Sports Live Event", "2026-08-28T19:30:00+08:00"),
+
+      createMatch("UNIFI LIGA SUPER 2026", [
+        { teams: "TERENGGANU FC VS SELANGOR FC", venue: "Stadium Sultan Mizan Zainal Abidin" }
+      ], "FRI, AUG 28 • 09:00 PM MYT • Now Sports Live Event", "2026-08-28T21:00:00+08:00"),
+
+      createMatch("UNIFI LIGA SUPER 2026", [
+        { teams: "KUALA LUMPUR CITY FC VS DPMM FC", venue: "Stadium KLFA, Cheras" }
+      ], "SAT, AUG 29 • 05:30 PM MYT • Now Sports Live Event", "2026-08-29T17:30:00+08:00"),
+
+      createMatch("UNIFI LIGA SUPER 2026", [
+        { teams: "JOHOR DARUL TA'ZIM VS STAR CITY FC", venue: "Stadium Sultan Ibrahim" }
+      ], "SAT, AUG 29 • 08:15 PM MYT • Now Sports Live Event", "2026-08-29T20:15:00+08:00"),
+
+      createMatch("UNIFI LIGA SUPER 2026", [
+        { teams: "KELANTAN RED WARRIOR FC VS KUCHING CITY FC", venue: "Stadium Sultan Muhammad IV" }
+      ], "SAT, AUG 29 • 09:00 PM MYT • Now Sports Live Event", "2026-08-29T21:00:00+08:00"),
+
+      createMatch("UNIFI LIGA SUPER 2026", [
+        { teams: "MELAKA FC VS NEGERI SEMBILAN FC", venue: "Stadium Hang Jebat" }
+      ], "SUN, AUG 30 • 08:15 PM MYT • Now Sports Live Event", "2026-08-30T20:15:00+08:00"),
+
+      createMatch("UNIFI LIGA SUPER 2026", [
+        { teams: "DPMM FC VS JOHOR DARUL TA'ZIM", venue: "Stadium Negara Hassanal Bolkiah" }
+      ], "FRI, SEP 04 • 08:15 PM MYT • Now Sports Live Event", "2026-09-04T20:15:00+08:00"),
+
+      createMatch("UNIFI LIGA SUPER 2026", [
+        { teams: "KELANTAN RED WARRIOR FC VS KUALA LUMPUR CITY FC", venue: "Stadium Sultan Muhammad IV" }
+      ], "FRI, SEP 04 • 09:00 PM MYT • Now Sports Live Event", "2026-09-04T21:00:00+08:00"),
+
+      createMatch("UNIFI LIGA SUPER 2026", [
+        { teams: "NEGERI SEMBILAN FC VS STAR CITY FC", venue: "Stadium Tuanku Abdul Rahman" }
+      ], "SAT, SEP 05 • 04:45 PM MYT • Now Sports Live Event", "2026-09-05T16:45:00+08:00"),
+
+      createMatch("UNIFI LIGA SUPER 2026", [
+        { teams: "SABAH FC VS KUCHING CITY FC", venue: "Stadium Likas, Kota Kinabalu" }
+      ], "SAT, SEP 05 • 07:30 PM MYT • Now Sports Live Event", "2026-09-05T19:30:00+08:00"),
+
+      createMatch("UNIFI LIGA SUPER 2026", [
+        { teams: "TERENGGANU FC VS PENANG FC", venue: "Stadium Sultan Mizan Zainal Abidin" }
+      ], "SAT, SEP 05 • 09:00 PM MYT • Now Sports Live Event", "2026-09-05T21:00:00+08:00"),
+
+      createMatch("UNIFI LIGA SUPER 2026", [
+        { teams: "SELANGOR FC VS MELAKA FC", venue: "Stadium MBPJ, Kelana Jaya" }
+      ], "SUN, SEP 06 • 08:15 PM MYT • Now Sports Live Event", "2026-09-06T20:15:00+08:00"),
+
+      createMatch("UNIFI LIGA SUPER 2026", [
+        { teams: "JOHOR DARUL TA'ZIM VS NEGERI SEMBILAN FC", venue: "Stadium Sultan Ibrahim" }
+      ], "FRI, SEP 11 • 09:00 PM MYT • Now Sports Live Event", "2026-09-11T21:00:00+08:00"),
+
+      createMatch("UNIFI LIGA SUPER 2026", [
+        { teams: "PENANG FC VS KELANTAN RED WARRIOR FC", venue: "Stadium Bandaraya, Pulau Pinang" }
+      ], "SAT, SEP 12 • 04:45 PM MYT • Now Sports Live Event", "2026-09-12T16:45:00+08:00"),
+
+      createMatch("UNIFI LIGA SUPER 2026", [
+        { teams: "MELAKA FC VS KUCHING CITY FC", venue: "Stadium Hang Jebat" }
+      ], "SAT, SEP 12 • 08:15 PM MYT • Now Sports Live Event", "2026-09-12T20:15:00+08:00"),
+
+      createMatch("UNIFI LIGA SUPER 2026", [
+        { teams: "STAR CITY FC VS TERENGGANU FC", venue: "Stadium Utama" }
+      ], "SAT, SEP 12 • 09:00 PM MYT • Now Sports Live Event", "2026-09-12T21:00:00+08:00"),
+
+      createMatch("UNIFI LIGA SUPER 2026", [
+        { teams: "KUALA LUMPUR CITY FC VS SELANGOR FC", venue: "Stadium KLFA, Cheras" }
+      ], "SUN, SEP 13 • 05:30 PM MYT • Now Sports Live Event", "2026-09-13T17:30:00+08:00"),
+
+      createMatch("UNIFI LIGA SUPER 2026", [
+        { teams: "SABAH FC VS DPMM FC", venue: "Stadium Likas, Kota Kinabalu" }
+      ], "SUN, SEP 13 • 07:30 PM MYT • Now Sports Live Event", "2026-09-13T19:30:00+08:00")
+    ];
+
+    function updateLigaSuperCard(now) {
+      const badgeEl = document.getElementById('liga-super-badge');
+      const bodyEl = document.getElementById('liga-super-matches-body');
+      const timeEl = document.getElementById('liga-super-time');
+      const timerEl = document.getElementById('liga-super-countdown');
+
+      if (!badgeEl || !bodyEl || !timeEl || !timerEl) return;
+
+      let currentSlot = null;
+      let nextSlot = null;
+
+      for (let i = 0; i < ligaSuperMatches.length; i++) {
+        if (now >= ligaSuperMatches[i].start && now < ligaSuperMatches[i].end) {
+          currentSlot = ligaSuperMatches[i];
+          break;
+        }
+        if (now < ligaSuperMatches[i].start) {
+          nextSlot = ligaSuperMatches[i];
+          break;
+        }
+      }
+
+      const activeSlot = currentSlot || nextSlot;
+
+      if (activeSlot) {
+        const isLive = !!currentSlot;
+        const matchCount = activeSlot.matches.length;
+        
+        badgeEl.innerHTML = `<span class="live-dot"></span> ${activeSlot.week}${matchCount > 1 ? ` • ${matchCount} MATCHES CONCURRENT` : ''}`;
+        timeEl.innerHTML = `<i class="fa-regular fa-clock"></i> ${activeSlot.displayTime}`;
+
+        if (matchCount === 1) {
+          const m = activeSlot.matches[0];
+          bodyEl.innerHTML = `
+            <span class="match-teams">${m.teams}</span>
+            <div class="match-details" style="margin-top:2px;">
+              <span><i class="fa-solid fa-location-dot"></i> ${m.venue}</span>
+            </div>`;
+        } else {
+          let html = '<div class="triple-match-container">';
+          activeSlot.matches.forEach(m => {
+            html += `
+              <div class="sub-match-row">
+                <span class="sub-match-teams">${m.teams}</span>
+                <span class="sub-match-channel"><i class="fa-solid fa-location-dot"></i> ${m.venue}</span>
+              </div>`;
+          });
+          html += '</div>';
+          bodyEl.innerHTML = html;
+        }
+
+        if (isLive) {
+          timerEl.classList.add('is-live');
+          timerEl.innerHTML = `<i class="fa-solid fa-satellite-dish"></i> 🔴 LIVE NOW`;
+        } else {
+          timerEl.classList.remove('is-live');
+          const distance = activeSlot.start - now;
+          const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+          const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+          const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+          const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+          let display = "";
+          if (days > 0) display += `${days}d `;
+          if (hours > 0 || days > 0) display += `${hours}h `;
+          display += `${minutes}m ${seconds}s`;
+
+          timerEl.innerHTML = `<i class="fa-solid fa-hourglass-half"></i> Starts in ${display}`;
+        }
+      } else {
+        badgeEl.innerHTML = `<span class="live-dot"></span> UNIFI LIGA SUPER COMPLETED`;
+        bodyEl.innerHTML = `<span class="match-teams">ALL MATCHES COMPLETED / REHAT FIFA DAYS</span>`;
+        timeEl.innerHTML = `<i class="fa-regular fa-clock"></i> Liga Super kembali semula pada 16 Oktober!`;
+        timerEl.classList.remove('is-live');
+        timerEl.innerHTML = `<i class="fa-solid fa-flag-checkered"></i> COMPLETED`;
+      }
     }
 
     /* Premier League Schedule (120 Minit Auto-Reset) */
@@ -1009,98 +1156,13 @@
       }
     }
 
-    /* F1 Schedule System */
-    const f1Sessions = [
-      {
-        name: "Free Practice 1 (FP1)",
-        displayTime: "FRI, AUG 21 • 06:30 PM – 07:30 PM MYT • F1 Live Streaming Hub",
-        start: new Date("2026-08-21T18:30:00+08:00").getTime(),
-        end: new Date("2026-08-21T19:30:00+08:00").getTime()
-      },
-      {
-        name: "Sprint Shootout (Sprint Qualifying)",
-        displayTime: "FRI, AUG 21 • 10:30 PM – 11:14 PM MYT • F1 Live Streaming Hub",
-        start: new Date("2026-08-21T22:30:00+08:00").getTime(),
-        end: new Date("2026-08-21T23:14:00+08:00").getTime()
-      },
-      {
-        name: "Sprint Race",
-        displayTime: "SAT, AUG 22 • 06:00 PM – 07:00 PM MYT • F1 Live Streaming Hub",
-        start: new Date("2026-08-22T18:00:00+08:00").getTime(),
-        end: new Date("2026-08-22T19:00:00+08:00").getTime()
-      },
-      {
-        name: "Qualifying",
-        displayTime: "SAT, AUG 22 • 10:00 PM – 11:00 PM MYT • F1 Live Streaming Hub",
-        start: new Date("2026-08-22T22:00:00+08:00").getTime(),
-        end: new Date("2026-08-22T23:00:00+08:00").getTime()
-      },
-      {
-        name: "Grand Prix Race",
-        displayTime: "SUN, AUG 23 • 09:00 PM MYT • F1 Live Streaming Hub",
-        start: new Date("2026-08-23T21:00:00+08:00").getTime(),
-        end: new Date("2026-08-23T23:00:00+08:00").getTime()
-      }
-    ];
-
-    function updateF1Card(now) {
-      const titleEl = document.getElementById('f1-session-title');
-      const timeEl = document.getElementById('f1-session-time');
-      const timerEl = document.getElementById('f1-countdown');
-
-      if (!titleEl || !timeEl || !timerEl) return;
-
-      let currentSession = null;
-      let nextSession = null;
-
-      for (let i = 0; i < f1Sessions.length; i++) {
-        if (now >= f1Sessions[i].start && now < f1Sessions[i].end) {
-          currentSession = f1Sessions[i];
-          break;
-        }
-        if (now < f1Sessions[i].start) {
-          nextSession = f1Sessions[i];
-          break;
-        }
-      }
-
-      if (currentSession) {
-        titleEl.innerText = currentSession.name;
-        timeEl.innerHTML = `<i class="fa-regular fa-clock"></i> ${currentSession.displayTime}`;
-        timerEl.classList.add('is-live');
-        timerEl.innerHTML = `<i class="fa-solid fa-satellite-dish"></i> 🔴 LIVE NOW`;
-      } else if (nextSession) {
-        titleEl.innerText = nextSession.name;
-        timeEl.innerHTML = `<i class="fa-regular fa-clock"></i> ${nextSession.displayTime}`;
-        timerEl.classList.remove('is-live');
-
-        const distance = nextSession.start - now;
-        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-        let display = "";
-        if (days > 0) display += `${days}d `;
-        if (hours > 0 || days > 0) display += `${hours}h `;
-        display += `${minutes}m ${seconds}s`;
-
-        timerEl.innerHTML = `<i class="fa-solid fa-hourglass-half"></i> Starts in ${display}`;
-      } else {
-        titleEl.innerText = "Dutch Grand Prix 2026 - Event Ended";
-        timeEl.innerHTML = `<i class="fa-regular fa-clock"></i> All sessions completed`;
-        timerEl.classList.remove('is-live');
-        timerEl.innerHTML = `<i class="fa-solid fa-flag-checkered"></i> COMPLETED`;
-      }
-    }
-
     /* Hot Card Generic Timer (Auto LIVE & Reset Selepas 120 Minit) */
     function updateGenericCards(now) {
-      const timers = document.querySelectorAll('.countdown-timer:not(#f1-countdown):not(#laliga-countdown):not(#epl-countdown)');
+      const timers = document.querySelectorAll('.countdown-timer:not(#liga-super-countdown):not(#laliga-countdown):not(#epl-countdown)');
 
       timers.forEach(timer => {
         const startTime = new Date(timer.getAttribute('data-time')).getTime();
-        const endTime = startTime + (120 * 60 * 1000); // 120 Minit Auto-Reset
+        const endTime = startTime + (120 * 60 * 1000);
 
         if (now >= startTime && now < endTime) {
           timer.classList.add('is-live');
@@ -1133,7 +1195,7 @@
     function updateCountdowns() {
       const now = new Date().getTime();
 
-      updateF1Card(now);
+      updateLigaSuperCard(now);
       updateLaLigaCard(now);
       updateEPLCard(now);
       updateGenericCards(now);
