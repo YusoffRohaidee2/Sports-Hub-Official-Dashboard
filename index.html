@@ -307,13 +307,17 @@
       gap: 6px;
     }
 
-    .sprint-tag {
-      font-size: 0.72rem;
-      color: var(--accent-gold);
-      font-weight: 700;
-      display: inline-flex;
-      align-items: center;
-      gap: 5px;
+    .hot-badge-tag {
+      font-size: 0.68rem;
+      background: linear-gradient(45deg, #ff007f, #ff4757);
+      color: #ffffff;
+      font-weight: 900;
+      padding: 2px 6px;
+      border-radius: 6px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 2px;
+      width: fit-content;
     }
 
     .countdown-timer {
@@ -516,15 +520,22 @@
       <div class="section-sub-label">Ready for fast live events!</div>
     </div>
 
-        <!-- Now Sports Live Event 3 -->
-    <a class="link-card" href="https://now-sports-live-event-2.vercel.app/" target="_blank" rel="noopener noreferrer" data-track-id="hot-2">
+    <!-- Now Sports Live Event 2 (LaLiga Stream Moved Here) -->
+    <a class="link-card" href="https://now-sports-live-event-2.vercel.app/" target="_blank" rel="noopener noreferrer" data-track-id="la-liga">
       <div class="card-info">
-        <span class="site-name">Now Sports Live Event 2</span>
-        <span class="site-status-offline"><i class="fa-solid fa-circle-xmark" style="color: #ff4757;"></i> Website Offline</span>
-        <span class="click-counter"><i class="fa-solid fa-eye"></i> <span id="click-hot-2">0</span> clicks</span>
+        <span class="live-badge" id="laliga-badge"><span class="live-dot"></span> HOME OF LALIGA 2</span>
+        <span class="match-teams" id="laliga-teams">Loading Match...</span>
+        <div class="match-details">
+          <span id="laliga-time"><i class="fa-regular fa-clock"></i> Loading...</span>
+          <span id="laliga-stadium"><i class="fa-solid fa-location-dot"></i> Loading...</span>
+        </div>
+        <div class="countdown-timer" id="laliga-countdown">
+          <i class="fa-solid fa-hourglass-half"></i> <span class="time-text">Loading...</span>
+        </div>
+        <span class="click-counter"><i class="fa-solid fa-eye"></i> <span id="click-la-liga">0</span> clicks</span>
       </div>
       <div class="card-right-group">
-        <div class="card-action-icon"><i class="fa-solid fa-arrow-up-right-from-square"></i></div>
+        <div class="card-action-icon"><i class="fa-solid fa-play"></i></div>
       </div>
     </a>
 
@@ -579,25 +590,6 @@
       </div>
     </a>
 
-    <!-- Home of LaLiga -->
-    <a class="link-card" href="https://home-of-la-liga.vercel.app/" target="_blank" rel="noopener noreferrer" data-track-id="la-liga">
-      <div class="card-info">
-        <span class="live-badge" id="laliga-badge"><span class="live-dot"></span> LALIGA</span>
-        <span class="match-teams" id="laliga-teams">Loading Match...</span>
-        <div class="match-details">
-          <span id="laliga-time"><i class="fa-regular fa-clock"></i> Loading...</span>
-          <span id="laliga-stadium"><i class="fa-solid fa-location-dot"></i> Loading...</span>
-        </div>
-        <div class="countdown-timer" id="laliga-countdown">
-          <i class="fa-solid fa-hourglass-half"></i> <span class="time-text">Loading...</span>
-        </div>
-        <span class="click-counter"><i class="fa-solid fa-eye"></i> <span id="click-la-liga">0</span> clicks</span>
-      </div>
-      <div class="card-right-group">
-        <div class="card-action-icon"><i class="fa-solid fa-play"></i></div>
-      </div>
-    </a>
-
     <!-- FIFA+ Live Stream Hub -->
     <a class="link-card" href="https://fifa-plus-live-stream-hub.vercel.app/" target="_blank" rel="noopener noreferrer" data-track-id="fifa-plus">
       <div class="card-info">
@@ -628,7 +620,7 @@
       <div class="section-main-label"><i class="fa-solid fa-star" style="color: var(--accent-gold);"></i> Other Websites</div>
     </div>
 
-    <!-- F1 Live Streaming Hub (Generic Layout) -->
+    <!-- F1 Live Streaming Hub -->
     <a class="link-card" href="https://f1-live-streaming-hub.vercel.app/" target="_blank" rel="noopener noreferrer" data-track-id="f1-hub">
       <div class="card-info">
         <span class="site-name">F1 Live Streaming Hub</span>
@@ -675,7 +667,7 @@
       authDomain: "sports-hub-official-live-count.firebaseapp.com",
       databaseURL: "https://sports-hub-official-live-count-default-rtdb.asia-southeast1.firebasedatabase.app",
       projectId: "sports-hub-official-live-count",
-      storageBucket: "sports-hub-official-live-count.firebasestorage.app",
+      storageBucket: "sports-hub-official-live-count.firebastorage.app",
       messagingSenderId: "93008076192",
       appId: "1:93008076192:web:0501c4518affed0fb958c5",
       measurementId: "G-8K8G3ZFDCD"
@@ -774,7 +766,7 @@
       });
     }
 
-    /* Fungsi pembantu untuk tambah masa bermula (minit) */
+    /* Fungsi pembantu untuk tambah masa bermula */
     function createMatch(week, matches, displayTime, startTimeISO, durationMinutes = 120) {
       const startMs = new Date(startTimeISO).getTime();
       const endMs = startMs + (durationMinutes * 60 * 1000);
@@ -787,56 +779,48 @@
       };
     }
 
-/* Unifi Liga Super 2026 Schedule System (Now Sports Live Event 1) */
-const ligaSuperMatches = [
-  createMatch("UNIFI LIGA SUPER 2026", [
-    { teams: "DPMM FC VS JOHOR DARUL TA'ZIM", venue: "Stadium Negara Hassanal Bolkiah" }
-  ], "FRI, SEP 04 • 08:15 PM MYT • Now Sports Live Event", "2026-09-04T20:15:00+08:00"),
+    /* Unifi Liga Super 2026 Schedule System (Buang perlawanan lepas) */
+    const ligaSuperMatches = [
+      createMatch("UNIFI LIGA SUPER 2026", [
+        { teams: "NEGERI SEMBILAN FC VS STAR CITY FC", venue: "Stadium Tuanku Abdul Rahman" }
+      ], "SAT, SEP 05 • 04:45 PM MYT • Now Sports Live Event", "2026-09-05T16:45:00+08:00"),
 
-  createMatch("UNIFI LIGA SUPER 2026", [
-    { teams: "KELANTAN RED WARRIOR FC VS KUALA LUMPUR CITY FC", venue: "Stadium Sultan Muhammad IV" }
-  ], "FRI, SEP 04 • 09:00 PM MYT • Now Sports Live Event", "2026-09-04T21:00:00+08:00"),
+      createMatch("UNIFI LIGA SUPER 2026", [
+        { teams: "SABAH FC VS KUCHING CITY FC", venue: "Stadium Likas, Kota Kinabalu" }
+      ], "SAT, SEP 05 • 07:30 PM MYT • Now Sports Live Event", "2026-09-05T19:30:00+08:00"),
 
-  createMatch("UNIFI LIGA SUPER 2026", [
-    { teams: "NEGERI SEMBILAN FC VS STAR CITY FC", venue: "Stadium Tuanku Abdul Rahman" }
-  ], "SAT, SEP 05 • 04:45 PM MYT • Now Sports Live Event", "2026-09-05T16:45:00+08:00"),
+      createMatch("UNIFI LIGA SUPER 2026", [
+        { teams: "TERENGGANU FC VS PENANG FC", venue: "Stadium Sultan Mizan Zainal Abidin" }
+      ], "SAT, SEP 05 • 09:00 PM MYT • Now Sports Live Event", "2026-09-05T21:00:00+08:00"),
 
-  createMatch("UNIFI LIGA SUPER 2026", [
-    { teams: "SABAH FC VS KUCHING CITY FC", venue: "Stadium Likas, Kota Kinabalu" }
-  ], "SAT, SEP 05 • 07:30 PM MYT • Now Sports Live Event", "2026-09-05T19:30:00+08:00"),
+      createMatch("UNIFI LIGA SUPER 2026", [
+        { teams: "SELANGOR FC VS MELAKA FC", venue: "Stadium MBPJ, Kelana Jaya" }
+      ], "SUN, SEP 06 • 08:15 PM MYT • Now Sports Live Event", "2026-09-06T20:15:00+08:00"),
 
-  createMatch("UNIFI LIGA SUPER 2026", [
-    { teams: "TERENGGANU FC VS PENANG FC", venue: "Stadium Sultan Mizan Zainal Abidin" }
-  ], "SAT, SEP 05 • 09:00 PM MYT • Now Sports Live Event", "2026-09-05T21:00:00+08:00"),
+      createMatch("UNIFI LIGA SUPER 2026", [
+        { teams: "JOHOR DARUL TA'ZIM VS NEGERI SEMBILAN FC", venue: "Stadium Sultan Ibrahim" }
+      ], "FRI, SEP 11 • 09:00 PM MYT • Now Sports Live Event", "2026-09-11T21:00:00+08:00"),
 
-  createMatch("UNIFI LIGA SUPER 2026", [
-    { teams: "SELANGOR FC VS MELAKA FC", venue: "Stadium MBPJ, Kelana Jaya" }
-  ], "SUN, SEP 06 • 08:15 PM MYT • Now Sports Live Event", "2026-09-06T20:15:00+08:00"),
+      createMatch("UNIFI LIGA SUPER 2026", [
+        { teams: "PENANG FC VS KELANTAN RED WARRIOR FC", venue: "Stadium Bandaraya, Pulau Pinang" }
+      ], "SAT, SEP 12 • 04:45 PM MYT • Now Sports Live Event", "2026-09-12T16:45:00+08:00"),
 
-  createMatch("UNIFI LIGA SUPER 2026", [
-    { teams: "JOHOR DARUL TA'ZIM VS NEGERI SEMBILAN FC", venue: "Stadium Sultan Ibrahim" }
-  ], "FRI, SEP 11 • 09:00 PM MYT • Now Sports Live Event", "2026-09-11T21:00:00+08:00"),
+      createMatch("UNIFI LIGA SUPER 2026", [
+        { teams: "MELAKA FC VS KUCHING CITY FC", venue: "Stadium Hang Jebat" }
+      ], "SAT, SEP 12 • 08:15 PM MYT • Now Sports Live Event", "2026-09-12T20:15:00+08:00"),
 
-  createMatch("UNIFI LIGA SUPER 2026", [
-    { teams: "PENANG FC VS KELANTAN RED WARRIOR FC", venue: "Stadium Bandaraya, Pulau Pinang" }
-  ], "SAT, SEP 12 • 04:45 PM MYT • Now Sports Live Event", "2026-09-12T16:45:00+08:00"),
+      createMatch("UNIFI LIGA SUPER 2026", [
+        { teams: "STAR CITY FC VS TERENGGANU FC", venue: "Stadium Utama" }
+      ], "SAT, SEP 12 • 09:00 PM MYT • Now Sports Live Event", "2026-09-12T21:00:00+08:00"),
 
-  createMatch("UNIFI LIGA SUPER 2026", [
-    { teams: "MELAKA FC VS KUCHING CITY FC", venue: "Stadium Hang Jebat" }
-  ], "SAT, SEP 12 • 08:15 PM MYT • Now Sports Live Event", "2026-09-12T20:15:00+08:00"),
+      createMatch("UNIFI LIGA SUPER 2026", [
+        { teams: "KUALA LUMPUR CITY FC VS SELANGOR FC", venue: "Stadium KLFA, Cheras" }
+      ], "SUN, SEP 13 • 05:30 PM MYT • Now Sports Live Event", "2026-09-13T17:30:00+08:00"),
 
-  createMatch("UNIFI LIGA SUPER 2026", [
-    { teams: "STAR CITY FC VS TERENGGANU FC", venue: "Stadium Utama" }
-  ], "SAT, SEP 12 • 09:00 PM MYT • Now Sports Live Event", "2026-09-12T21:00:00+08:00"),
-
-  createMatch("UNIFI LIGA SUPER 2026", [
-    { teams: "KUALA LUMPUR CITY FC VS SELANGOR FC", venue: "Stadium KLFA, Cheras" }
-  ], "SUN, SEP 13 • 05:30 PM MYT • Now Sports Live Event", "2026-09-13T17:30:00+08:00"),
-
-  createMatch("UNIFI LIGA SUPER 2026", [
-    { teams: "SABAH FC VS DPMM FC", venue: "Stadium Likas, Kota Kinabalu" }
-  ], "SUN, SEP 13 • 07:30 PM MYT • Now Sports Live Event", "2026-09-13T19:30:00+08:00")
-];
+      createMatch("UNIFI LIGA SUPER 2026", [
+        { teams: "SABAH FC VS DPMM FC", venue: "Stadium Likas, Kota Kinabalu" }
+      ], "SUN, SEP 13 • 07:30 PM MYT • Now Sports Live Event", "2026-09-13T19:30:00+08:00")
+    ];
     
     function updateLigaSuperCard(now) {
       const badgeEl = document.getElementById('liga-super-badge');
@@ -916,20 +900,36 @@ const ligaSuperMatches = [
       }
     }
 
-    /* Premier League Schedule (120 Minit Auto-Reset) */
-  const eplMatches = [
-  createMatch("PREMIER LEAGUE", [
-    { teams: "ASTON VILLA VS ARSENAL", channel: "Astro Premier League, Astro Grandstand, Sky Sport 8 / Premier League NZ, USA Network", hot: true }
-  ], "TUE, SEP 01 • 03:00 AM MYT • Home of Premier League", "2026-09-01T03:00:00+08:00"),
+    /* Premier League Schedule UPDATED PL 2026/2027 */
+    const eplMatches = [
+      createMatch("PREMIER LEAGUE", [
+        { teams: "IPSWICH TOWN VS LIVERPOOL", channel: "Astro Premier League, USA Network", hot: true }
+      ], "SAT, SEP 05 • 03:00 AM MYT • Home of Premier League", "2026-09-05T03:00:00+08:00"),
 
-  createMatch("PREMIER LEAGUE", [
-    { teams: "IPSWICH TOWN VS LIVERPOOL", channel: "Astro Premier League, Sky Sport 8 / Premier League NZ, USA Network", hot: true }
-  ], "SAT, SEP 05 • 03:00 AM MYT • Home of Premier League", "2026-09-05T03:00:00+08:00"),
+      createMatch("PREMIER LEAGUE", [
+        { teams: "NEWCASTLE UNITED VS AFC BOURNEMOUTH", channel: "Astro Premier League 2, USA Network" }
+      ], "SAT, SEP 05 • 07:30 PM MYT • Home of Premier League", "2026-09-05T19:30:00+08:00"),
 
-  createMatch("PREMIER LEAGUE", [
-    { teams: "NEWCASTLE UNITED VS AFC BOURNEMOUTH", channel: "Sky Sport 8 / Premier League NZ, USA Network" }
-  ], "SAT, SEP 05 • 07:30 PM MYT • Home of Premier League", "2026-09-05T19:30:00+08:00")
-];
+      createMatch("PREMIER LEAGUE", [
+        { teams: "BRENTFORD VS SUNDERLAND", channel: "Astro Premier League 4" },
+        { teams: "BRIGHTON & HOVE ALBION VS LEEDS UNITED", channel: "Astro Premier League 3" },
+        { teams: "FULHAM VS CRYSTAL PALACE", channel: "Astro Premier League 5" },
+        { teams: "MANCHESTER CITY VS COVENTRY CITY", channel: "Astro Premier League 2, USA Network", hot: true },
+        { teams: "NOTTINGHAM FOREST VS TOTTENHAM HOTSPUR", channel: "Astro Premier League", hot: true }
+      ], "SAT, SEP 05 • 10:00 PM MYT • Home of Premier League", "2026-09-05T22:00:00+08:00"),
+
+      createMatch("PREMIER LEAGUE", [
+        { teams: "HULL CITY VS ASTON VILLA", channel: "Astro Premier League" }
+      ], "SUN, SEP 06 • 12:30 AM MYT • Home of Premier League", "2026-09-06T00:30:00+08:00"),
+
+      createMatch("PREMIER LEAGUE", [
+        { teams: "EVERTON VS MANCHESTER UNITED", channel: "Astro Premier League, USA Network", hot: true }
+      ], "SUN, SEP 06 • 09:00 PM MYT • Home of Premier League", "2026-09-06T21:00:00+08:00"),
+
+      createMatch("PREMIER LEAGUE", [
+        { teams: "ARSENAL VS CHELSEA", channel: "Astro Premier League, USA Network", hot: true }
+      ], "SUN, SEP 06 • 11:30 PM MYT • Home of Premier League", "2026-09-06T23:30:00+08:00")
+    ];
 
     function updateEPLCard(now) {
       const badgeEl = document.getElementById('epl-badge');
@@ -964,7 +964,9 @@ const ligaSuperMatches = [
 
         if (matchCount === 1) {
           const m = activeSlot.matches[0];
+          let hotTag = m.hot ? `<div class="hot-badge-tag"><i class="fa-solid fa-fire"></i> HOT MATCH</div>` : '';
           bodyEl.innerHTML = `
+            ${hotTag}
             <span class="match-teams">${m.teams}</span>
             <div class="match-details" style="margin-top:2px;">
               <span><i class="fa-solid fa-tv"></i> ${m.channel}</span>
@@ -972,9 +974,13 @@ const ligaSuperMatches = [
         } else {
           let html = '<div class="triple-match-container">';
           activeSlot.matches.forEach(m => {
+            let hotTag = m.hot ? `<span class="hot-badge-tag"><i class="fa-solid fa-fire"></i> HOT</span>` : '';
             html += `
               <div class="sub-match-row">
-                <span class="sub-match-teams">${m.teams}</span>
+                <div style="display:flex; justify-content:space-between; align-items:center;">
+                  <span class="sub-match-teams">${m.teams}</span>
+                  ${hotTag}
+                </div>
                 <span class="sub-match-channel"><i class="fa-solid fa-tv"></i> ${m.channel}</span>
               </div>`;
           });
@@ -1009,7 +1015,7 @@ const ligaSuperMatches = [
       }
     }
 
-    /* LaLiga Automated Schedule System (120 Minit Auto-Reset) */
+    /* LaLiga Automated Schedule System (Now Sports Live Event 2) */
     function createLaLigaMatch(week, teams, displayTime, stadium, startTimeISO, durationMinutes = 120) {
       const startMs = new Date(startTimeISO).getTime();
       return {
@@ -1022,18 +1028,18 @@ const ligaSuperMatches = [
       };
     }
 
-const laLigaMatches = [
-  createLaLigaMatch("LALIGA", "REAL BETIS VS REAL MADRID", "SAT, SEP 5 • 03:00 AM MYT • Home of LaLiga", "Estadio La Cartuja de Sevilla", "2026-09-05T03:00:00+08:00"),
-  createLaLigaMatch("LALIGA", "ATHLETIC CLUB VS ATLÉTICO MADRID", "SAT, SEP 5 • 10:15 PM MYT • Home of LaLiga", "San Mamés", "2026-09-05T22:15:00+08:00"),
-  createLaLigaMatch("LALIGA", "RAYO VALLECANO VS REAL RACING CLUB", "SUN, SEP 6 • 12:30 AM MYT • Home of LaLiga", "Vallecas", "2026-09-06T00:30:00+08:00"),
-  createLaLigaMatch("LALIGA", "VILLARREAL CF VS RC DEPORTIVO LA CORUÑA", "SUN, SEP 6 • 03:00 AM MYT • Home of LaLiga", "Estadio de la Cerámica", "2026-09-06T03:00:00+08:00"),
-  createLaLigaMatch("LALIGA", "VALENCIA CF VS FC BARCELONA", "SUN, SEP 6 • 10:15 PM MYT • Home of LaLiga", "Mestalla", "2026-09-06T22:15:00+08:00"),
-  createLaLigaMatch("LALIGA", "DEPORTIVO ALAVÉS VS CA OSASUNA", "MON, SEP 7 • 12:30 AM MYT • Home of LaLiga", "Mendizorrotza Stadium", "2026-09-07T00:30:00+08:00"),
-  createLaLigaMatch("LALIGA", "MÁLAGA CF VS LEVANTE UD", "MON, SEP 7 • 12:30 AM MYT • Home of LaLiga", "La Rosaleda", "2026-09-07T00:30:00+08:00"),
-  createLaLigaMatch("LALIGA", "GETAFE CF VS RC CELTA DE VIGO", "MON, SEP 7 • 01:00 AM MYT • Home of LaLiga", "Coliseum", "2026-09-07T01:00:00+08:00"),
-  createLaLigaMatch("LALIGA", "RCD ESPANYOL VS SEVILLA FC", "MON, SEP 7 • 03:00 AM MYT • Home of LaLiga", "RCDE Stadium", "2026-09-07T03:00:00+08:00"),
-  createLaLigaMatch("LALIGA", "ELCHE CF VS REAL SOCIEDAD", "MON, SEP 7 • 03:30 AM MYT • Home of LaLiga", "Manuel Martínez Valero", "2026-09-07T03:30:00+08:00")
-];
+    const laLigaMatches = [
+      createLaLigaMatch("HOME OF LALIGA 2", "REAL BETIS VS REAL MADRID", "SAT, SEP 5 • 03:00 AM MYT • Now Sports Live Event 2", "Estadio La Cartuja de Sevilla", "2026-09-05T03:00:00+08:00"),
+      createLaLigaMatch("HOME OF LALIGA 2", "ATHLETIC CLUB VS ATLÉTICO MADRID", "SAT, SEP 5 • 10:15 PM MYT • Now Sports Live Event 2", "San Mamés", "2026-09-05T22:15:00+08:00"),
+      createLaLigaMatch("HOME OF LALIGA 2", "RAYO VALLECANO VS REAL RACING CLUB", "SUN, SEP 6 • 12:30 AM MYT • Now Sports Live Event 2", "Vallecas", "2026-09-06T00:30:00+08:00"),
+      createLaLigaMatch("HOME OF LALIGA 2", "VILLARREAL CF VS RC DEPORTIVO LA CORUÑA", "SUN, SEP 6 • 03:00 AM MYT • Now Sports Live Event 2", "Estadio de la Cerámica", "2026-09-06T03:00:00+08:00"),
+      createLaLigaMatch("HOME OF LALIGA 2", "VALENCIA CF VS FC BARCELONA", "SUN, SEP 6 • 10:15 PM MYT • Now Sports Live Event 2", "Mestalla", "2026-09-06T22:15:00+08:00"),
+      createLaLigaMatch("HOME OF LALIGA 2", "DEPORTIVO ALAVÉS VS CA OSASUNA", "MON, SEP 7 • 12:30 AM MYT • Now Sports Live Event 2", "Mendizorrotza Stadium", "2026-09-07T00:30:00+08:00"),
+      createLaLigaMatch("HOME OF LALIGA 2", "MÁLAGA CF VS LEVANTE UD", "MON, SEP 7 • 12:30 AM MYT • Now Sports Live Event 2", "La Rosaleda", "2026-09-07T00:30:00+08:00"),
+      createLaLigaMatch("HOME OF LALIGA 2", "GETAFE CF VS RC CELTA DE VIGO", "MON, SEP 7 • 01:00 AM MYT • Now Sports Live Event 2", "Coliseum", "2026-09-07T01:00:00+08:00"),
+      createLaLigaMatch("HOME OF LALIGA 2", "RCD ESPANYOL VS SEVILLA FC", "MON, SEP 7 • 03:00 AM MYT • Now Sports Live Event 2", "RCDE Stadium", "2026-09-07T03:00:00+08:00"),
+      createLaLigaMatch("HOME OF LALIGA 2", "ELCHE CF VS REAL SOCIEDAD", "MON, SEP 7 • 03:30 AM MYT • Now Sports Live Event 2", "Manuel Martínez Valero", "2026-09-07T03:30:00+08:00")
+    ];
 
     function updateLaLigaCard(now) {
       const badgeEl = document.getElementById('laliga-badge');
@@ -1094,7 +1100,7 @@ const laLigaMatches = [
       }
     }
 
-    /* Hot Card Generic Timer (Auto LIVE & Reset Selepas 120 Minit) */
+    /* Hot Card Generic Timer */
     function updateGenericCards(now) {
       const timers = document.querySelectorAll('.countdown-timer:not(#liga-super-countdown):not(#laliga-countdown):not(#epl-countdown)');
 
