@@ -1,1149 +1,190 @@
 <!DOCTYPE html>
-<html lang="ms">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sports Hub Official Dashboard</title>
-  
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" href="https://ugc.production.linktr.ee/38b8918a-0037-4894-8bda-19d3a54f1b5e_images.png?io=true&size=avatar-v3_0">
-  <link rel="apple-touch-icon" href="https://ugc.production.linktr.ee/38b8918a-0037-4894-8bda-19d3a54f1b5e_images.png?io=true&size=avatar-v3_0">
-  
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <style>
-    :root {
-      --bg-gradient: radial-gradient(circle at 50% 0%, #0d1b2a 0%, #050811 70%, #020408 100%);
-      --card-bg: rgba(15, 23, 42, 0.65);
-      --card-border: rgba(255, 255, 255, 0.08);
-      --neon-green: #00ff87;
-      --neon-cyan: #60efff;
-      --neon-pink: #ff007f;
-      --accent-gold: #ffd700;
-      --text-main: #f8fafc;
-      --text-sub: #94a3b8;
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    }
-
-    body {
-      background: var(--bg-gradient);
-      background-attachment: fixed;
-      color: var(--text-main);
-      display: flex;
-      justify-content: center;
-      padding: 40px 16px;
-      min-height: 100vh;
-      overflow-x: hidden;
-    }
-
-    body::before {
-      content: '';
-      position: fixed;
-      top: -200px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 600px;
-      height: 600px;
-      background: radial-gradient(circle, rgba(0, 255, 135, 0.12) 0%, rgba(96, 239, 255, 0.05) 50%, transparent 70%);
-      pointer-events: none;
-      z-index: 0;
-    }
-
-    .container {
-      width: 100%;
-      max-width: 580px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      position: relative;
-      z-index: 1;
-    }
-
-    /* Header */
-    .profile-header {
-      text-align: center;
-      margin-bottom: 24px;
-    }
-
-    .logo-container {
-      position: relative;
-      display: inline-block;
-      margin-bottom: 16px;
-    }
-
-    .logo-glow {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 110px;
-      height: 110px;
-      border-radius: 50%;
-      background: linear-gradient(45deg, var(--neon-green), var(--neon-cyan));
-      filter: blur(20px);
-      opacity: 0.6;
-      animation: pulseGlow 3s infinite alternate;
-    }
-
-    @keyframes pulseGlow {
-      0% { opacity: 0.4; filter: blur(15px); }
-      100% { opacity: 0.8; filter: blur(25px); }
-    }
-
-    .profile-logo {
-      position: relative;
-      width: 105px;
-      height: 105px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 2px solid rgba(255, 255, 255, 0.2);
-      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
-      transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    }
-
-    .profile-logo:hover {
-      transform: scale(1.08) rotate(3deg);
-    }
-
-    .profile-title {
-      font-size: 1.6rem;
-      font-weight: 900;
-      letter-spacing: -0.02em;
-      background: linear-gradient(135deg, #ffffff 30%, var(--neon-green) 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      margin-bottom: 8px;
-      text-transform: uppercase;
-    }
-
-    .profile-desc {
-      font-size: 0.92rem;
-      color: var(--neon-cyan);
-      font-weight: 600;
-      letter-spacing: 0.05em;
-      background: rgba(96, 239, 255, 0.08);
-      padding: 6px 16px;
-      border-radius: 20px;
-      border: 1px solid rgba(96, 239, 255, 0.2);
-      display: inline-block;
-      backdrop-filter: blur(8px);
-    }
-
-    /* Visitor Stats Card */
-    .visitor-stats-card {
-      width: 100%;
-      background: rgba(15, 23, 42, 0.8);
-      backdrop-filter: blur(16px);
-      border: 1px solid rgba(0, 255, 135, 0.3);
-      border-radius: 18px;
-      padding: 16px;
-      margin-bottom: 24px;
-      display: flex;
-      justify-content: space-around;
-      align-items: center;
-      box-shadow: 0 0 20px rgba(0, 255, 135, 0.1);
-    }
-
-    .stat-item {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 4px;
-    }
-
-    .stat-title {
-      font-size: 0.75rem;
-      font-weight: 700;
-      color: var(--text-sub);
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-    }
-
-    .stat-number {
-      font-size: 1.4rem;
-      font-weight: 900;
-    }
-
-    .stat-divider {
-      width: 1px;
-      height: 35px;
-      background: rgba(255, 255, 255, 0.1);
-    }
-
-    .live-dot {
-      width: 8px;
-      height: 8px;
-      background-color: var(--neon-pink);
-      border-radius: 50%;
-      box-shadow: 0 0 8px var(--neon-pink);
-      animation: blink 1.2s infinite;
-    }
-
-    @keyframes blink {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.3; }
-    }
-
-    /* Section Header */
-    .section-title {
-      width: 100%;
-      margin: 28px 0 14px 0;
-      display: flex;
-      flex-direction: column;
-      gap: 2px;
-    }
-
-    .section-main-label {
-      font-size: 0.85rem;
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: 0.15em;
-      color: var(--text-main);
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .section-sub-label {
-      font-size: 0.72rem;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      color: var(--neon-cyan);
-      text-transform: uppercase;
-      margin-left: 26px;
-      opacity: 0.85;
-    }
-
-    /* Direct Link Cards */
-    .link-card {
-      width: 100%;
-      background: var(--card-bg);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      border: 1px solid var(--card-border);
-      border-radius: 18px;
-      padding: 18px 20px;
-      margin-bottom: 14px;
-      text-decoration: none;
-      color: var(--text-main);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-      position: relative;
-      overflow: hidden;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
-      cursor: pointer;
-      user-select: none;
-    }
-
-    .link-card::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.08), transparent);
-      transition: 0.5s;
-    }
-
-    .link-card:hover::after {
-      left: 100%;
-    }
-
-    .link-card:hover {
-      background: rgba(30, 41, 69, 0.85);
-      border-color: rgba(0, 255, 135, 0.4);
-      transform: translateY(-4px) scale(1.01);
-      box-shadow: 0 12px 30px rgba(0, 255, 135, 0.15);
-    }
-
-    .card-info {
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-      width: 100%;
-    }
-
-    .live-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 0.7rem;
-      font-weight: 800;
-      color: var(--neon-pink);
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-    }
-
-    .match-teams {
-      font-size: 1.05rem;
-      font-weight: 800;
-      color: #ffffff;
-      letter-spacing: -0.01em;
-    }
-
-    .match-details {
-      font-size: 0.8rem;
-      color: var(--text-sub);
-      display: flex;
-      flex-direction: column;
-      gap: 3px;
-      font-weight: 500;
-    }
-
-    .match-details span {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-    }
-
-    .sprint-tag {
-      font-size: 0.72rem;
-      color: var(--accent-gold);
-      font-weight: 700;
-      display: inline-flex;
-      align-items: center;
-      gap: 5px;
-    }
-
-    .countdown-timer {
-      font-size: 0.78rem;
-      font-weight: 800;
-      color: var(--neon-green);
-      background: rgba(0, 255, 135, 0.1);
-      border: 1px solid rgba(0, 255, 135, 0.25);
-      padding: 3px 10px;
-      border-radius: 12px;
-      display: inline-flex;
-      align-items: center;
-      gap: 5px;
-      width: fit-content;
-      margin-top: 2px;
-    }
-
-    .countdown-timer.is-live {
-      color: #ffffff;
-      background: var(--neon-pink);
-      border-color: var(--neon-pink);
-      box-shadow: 0 0 10px rgba(255, 0, 127, 0.5);
-    }
-
-    .site-name {
-      font-size: 1.02rem;
-      font-weight: 700;
-      letter-spacing: 0.01em;
-    }
-
-    .site-status-offline {
-      font-size: 0.75rem;
-      color: var(--text-sub);
-      font-weight: 600;
-      margin-top: 2px;
-    }
-
-    .click-counter {
-      font-size: 0.72rem;
-      color: var(--neon-cyan);
-      display: inline-flex;
-      align-items: center;
-      gap: 4px;
-      font-weight: 600;
-      margin-top: 2px;
-    }
-
-    .card-right-group {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      margin-left: 12px;
-    }
-
-    .card-action-icon {
-      width: 38px;
-      height: 38px;
-      border-radius: 12px;
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--text-sub);
-      font-size: 0.9rem;
-      transition: all 0.3s ease;
-      pointer-events: none;
-    }
-
-    .link-card:hover .card-action-icon {
-      background: var(--neon-green);
-      color: #000;
-      border-color: var(--neon-green);
-      box-shadow: 0 0 15px rgba(0, 255, 135, 0.5);
-      transform: rotate(-10deg);
-    }
-
-    .fav-btn {
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      border-radius: 12px;
-      width: 38px;
-      height: 38px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--text-sub);
-      font-size: 1rem;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      position: relative;
-      z-index: 2;
-    }
-
-    .fav-btn:hover {
-      background: rgba(255, 215, 0, 0.15);
-      color: var(--accent-gold);
-      border-color: rgba(255, 215, 0, 0.4);
-      transform: scale(1.1);
-    }
-
-    .fav-btn.active {
-      color: var(--accent-gold);
-      background: rgba(255, 215, 0, 0.25);
-      border-color: var(--accent-gold);
-      box-shadow: 0 0 15px rgba(255, 215, 0, 0.4);
-    }
-
-    /* Style Multi-Match Card */
-    .triple-match-container {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      margin-top: 6px;
-      margin-bottom: 6px;
-      width: 100%;
-    }
-
-    .sub-match-row {
-      background: rgba(255, 255, 255, 0.03);
-      border-left: 3px solid var(--neon-green);
-      padding: 8px 12px;
-      border-radius: 8px;
-      display: flex;
-      flex-direction: column;
-      gap: 2px;
-    }
-
-    .sub-match-teams {
-      font-size: 0.92rem;
-      font-weight: 800;
-      color: #ffffff;
-    }
-
-    .sub-match-channel {
-      font-size: 0.74rem;
-      color: var(--neon-cyan);
-      font-weight: 600;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-    }
-  </style>
-</head>
-<body>
-
-  <div class="container">
-    <!-- Header -->
-    <div class="profile-header">
-      <div class="logo-container">
-        <div class="logo-glow"></div>
-        <img class="profile-logo" src="https://ugc.production.linktr.ee/38b8918a-0037-4894-8bda-19d3a54f1b5e_images.png?io=true&size=avatar-v3_0" alt="Sports Hub Logo">
-      </div>
-      <h1 class="profile-title">Sports Hub Official</h1>
-      <div class="profile-desc"><i class="fa-solid fa-bolt" style="margin-right: 4px;"></i> Watch any sports event for absolutely free!</div>
-    </div>
-
-    <!-- Visitor Stats Card -->
-    <div class="visitor-stats-card">
-      <div class="stat-item">
-        <div class="stat-title"><span class="live-dot"></span> Active Live</div>
-        <div class="stat-number" id="live-count" style="color: var(--neon-pink);">...</div>
-      </div>
-      <div class="stat-divider"></div>
-      <div class="stat-item">
-        <div class="stat-title"><i class="fa-solid fa-users" style="color: var(--neon-green);"></i> Total Visitors</div>
-        <div class="stat-number" id="lifetime-count" style="color: var(--neon-green);">...</div>
-      </div>
-    </div>
-
-    <!-- Hot Websites -->
-    <div class="section-title">
-      <div class="section-main-label"><i class="fa-solid fa-fire" style="color: var(--neon-pink);"></i> Hot Websites</div>
-    </div>
-
-    <!-- HOT-1: UNIFI LIGA SUPER 2026 -->
-    <a class="link-card" href="https://now-sports-live-event-website.vercel.app/" target="_blank" rel="noopener noreferrer" data-track-id="hot-1">
-      <div class="card-info">
-        <span class="live-badge" id="liga-super-badge"><span class="live-dot"></span> UNIFI LIGA SUPER 2026</span>
-        
-        <div id="liga-super-matches-body"></div>
-
-        <div class="match-details" style="margin-top: 4px;">
-          <span id="liga-super-time"><i class="fa-regular fa-clock"></i> Loading...</span>
-        </div>
-
-        <div class="countdown-timer" id="liga-super-countdown">
-          <i class="fa-solid fa-hourglass-half"></i> <span class="time-text">Loading...</span>
-        </div>
-        <span class="click-counter"><i class="fa-solid fa-eye"></i> <span id="click-hot-1">0</span> clicks</span>
-      </div>
-      <div class="card-right-group">
-        <div class="card-action-icon"><i class="fa-solid fa-play"></i></div>
-      </div>
-    </a>
-
-    <!-- Now Sports Live Events Segment -->
-    <div class="section-title">
-      <div class="section-main-label"><i class="fa-solid fa-bolt" style="color: var(--neon-cyan);"></i> Now Sports Live Events!</div>
-      <div class="section-sub-label">Ready for fast live events!</div>
-    </div>
-
-        <!-- Now Sports Live Event 3 -->
-    <a class="link-card" href="https://now-sports-live-event-2.vercel.app/" target="_blank" rel="noopener noreferrer" data-track-id="hot-2">
-      <div class="card-info">
-        <span class="site-name">Now Sports Live Event 2</span>
-        <span class="site-status-offline"><i class="fa-solid fa-circle-xmark" style="color: #ff4757;"></i> Website Offline</span>
-        <span class="click-counter"><i class="fa-solid fa-eye"></i> <span id="click-hot-2">0</span> clicks</span>
-      </div>
-      <div class="card-right-group">
-        <div class="card-action-icon"><i class="fa-solid fa-arrow-up-right-from-square"></i></div>
-      </div>
-    </a>
-
-    <!-- Now Sports Live Event 3 -->
-    <a class="link-card" href="https://now-sports-live-event-3-website.vercel.app/" target="_blank" rel="noopener noreferrer" data-track-id="hot-2">
-      <div class="card-info">
-        <span class="site-name">Now Sports Live Event 3</span>
-        <span class="site-status-offline"><i class="fa-solid fa-circle-xmark" style="color: #ff4757;"></i> Website Offline</span>
-        <span class="click-counter"><i class="fa-solid fa-eye"></i> <span id="click-hot-2">0</span> clicks</span>
-      </div>
-      <div class="card-right-group">
-        <div class="card-action-icon"><i class="fa-solid fa-arrow-up-right-from-square"></i></div>
-      </div>
-    </a>
-
-    <!-- Now Sports Live Event 4 -->
-    <a class="link-card" href="https://now-sports-live-event-4-website.vercel.app/" target="_blank" rel="noopener noreferrer" data-track-id="hot-4">
-      <div class="card-info">
-        <span class="site-name">Now Sports Live Event 4</span>
-        <span class="site-status-offline"><i class="fa-solid fa-circle-xmark" style="color: #ff4757;"></i> Website Offline</span>
-        <span class="click-counter"><i class="fa-solid fa-eye"></i> <span id="click-hot-4">0</span> clicks</span>
-      </div>
-      <div class="card-right-group">
-        <div class="card-action-icon"><i class="fa-solid fa-arrow-up-right-from-square"></i></div>
-      </div>
-    </a>
-
-    <!-- Mini Website Project -->
-    <div class="section-title">
-      <div class="section-main-label"><i class="fa-solid fa-futbol" style="color: var(--neon-green);"></i> Mini Website Project</div>
-      <div class="section-sub-label">Football Media Center</div>
-    </div>
-
-    <!-- Home of Premier League -->
-    <a class="link-card" href="https://home-of-premier-league-website.vercel.app/" target="_blank" rel="noopener noreferrer" data-track-id="premier-league">
-      <div class="card-info">
-        <span class="live-badge" id="epl-badge"><span class="live-dot"></span> PREMIER LEAGUE</span>
-        
-        <div id="epl-matches-body"></div>
-
-        <div class="match-details" style="margin-top: 4px;">
-          <span id="epl-time"><i class="fa-regular fa-clock"></i> Loading...</span>
-        </div>
-
-        <div class="countdown-timer" id="epl-countdown">
-          <i class="fa-solid fa-hourglass-half"></i> <span class="time-text">Loading...</span>
-        </div>
-        <span class="click-counter"><i class="fa-solid fa-eye"></i> <span id="click-premier-league">0</span> clicks</span>
-      </div>
-      <div class="card-right-group">
-        <div class="card-action-icon"><i class="fa-solid fa-play"></i></div>
-      </div>
-    </a>
-
-    <!-- Home of LaLiga -->
-    <a class="link-card" href="https://home-of-la-liga.vercel.app/" target="_blank" rel="noopener noreferrer" data-track-id="la-liga">
-      <div class="card-info">
-        <span class="live-badge" id="laliga-badge"><span class="live-dot"></span> LALIGA</span>
-        <span class="match-teams" id="laliga-teams">Loading Match...</span>
-        <div class="match-details">
-          <span id="laliga-time"><i class="fa-regular fa-clock"></i> Loading...</span>
-          <span id="laliga-stadium"><i class="fa-solid fa-location-dot"></i> Loading...</span>
-        </div>
-        <div class="countdown-timer" id="laliga-countdown">
-          <i class="fa-solid fa-hourglass-half"></i> <span class="time-text">Loading...</span>
-        </div>
-        <span class="click-counter"><i class="fa-solid fa-eye"></i> <span id="click-la-liga">0</span> clicks</span>
-      </div>
-      <div class="card-right-group">
-        <div class="card-action-icon"><i class="fa-solid fa-play"></i></div>
-      </div>
-    </a>
-
-    <!-- FIFA+ Live Stream Hub -->
-    <a class="link-card" href="https://fifa-plus-live-stream-hub.vercel.app/" target="_blank" rel="noopener noreferrer" data-track-id="fifa-plus">
-      <div class="card-info">
-        <span class="site-name">FIFA+ Live Stream Hub</span>
-        <div class="match-details" style="margin-top: 2px;">
-          <span><i class="fa-solid fa-circle-info" style="color: var(--neon-cyan);"></i> Stream past world cup matches and other FIFA matches here!</span>
-        </div>
-        <span class="click-counter"><i class="fa-solid fa-eye"></i> <span id="click-fifa-plus">0</span> clicks</span>
-      </div>
-      <div class="card-right-group">
-        <div class="card-action-icon"><i class="fa-solid fa-arrow-up-right-from-square"></i></div>
-      </div>
-    </a>
-
-    <!-- Home of UEFA -->
-    <a class="link-card" href="https://home-of-uefa.vercel.app/" target="_blank" rel="noopener noreferrer" data-track-id="uefa">
-      <div class="card-info">
-        <span class="site-name">Home of UEFA</span>
-        <span class="click-counter"><i class="fa-solid fa-eye"></i> <span id="click-uefa">0</span> clicks</span>
-      </div>
-      <div class="card-right-group">
-        <div class="card-action-icon"><i class="fa-solid fa-arrow-up-right-from-square"></i></div>
-      </div>
-    </a>
-
-    <!-- Other Websites -->
-    <div class="section-title">
-      <div class="section-main-label"><i class="fa-solid fa-star" style="color: var(--accent-gold);"></i> Other Websites</div>
-    </div>
-
-    <!-- F1 Live Streaming Hub (Generic Layout) -->
-    <a class="link-card" href="https://f1-live-streaming-hub.vercel.app/" target="_blank" rel="noopener noreferrer" data-track-id="f1-hub">
-      <div class="card-info">
-        <span class="site-name">F1 Live Streaming Hub</span>
-        <span class="click-counter"><i class="fa-solid fa-eye"></i> <span id="click-f1-hub">0</span> clicks</span>
-      </div>
-      <div class="card-right-group">
-        <button class="fav-btn" data-id="f1-hub" title="Favourite" onclick="toggleFav(event, 'f1-hub')">
-          <i class="fa-solid fa-star"></i>
-        </button>
-      </div>
-    </a>
-
-    <!-- MotoGP Live Streaming Hub -->
-    <a class="link-card" href="https://moto-gp-live-streaming-hub.vercel.app/" target="_blank" rel="noopener noreferrer" data-track-id="motogp-hub">
-      <div class="card-info">
-        <span class="site-name">MotoGP Live Streaming Hub</span>
-        <span class="click-counter"><i class="fa-solid fa-eye"></i> <span id="click-motogp-hub">0</span> clicks</span>
-      </div>
-      <div class="card-right-group">
-        <button class="fav-btn" data-id="motogp-hub" title="Favourite" onclick="toggleFav(event, 'motogp-hub')">
-          <i class="fa-solid fa-star"></i>
-        </button>
-      </div>
-    </a>
-
-  </div>
-
-  <!-- Firebase JavaScript SDK Integration -->
-  <script type="module">
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
-    import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-analytics.js";
-    import { 
-      getDatabase, 
-      ref, 
-      onValue, 
-      push, 
-      onDisconnect, 
-      set, 
-      runTransaction 
-    } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-database.js";
-
-    const firebaseConfig = {
-      apiKey: "AIzaSyAnPp3fS8CbAEE0meJmCdq2OAQ1mmdJWfc",
-      authDomain: "sports-hub-official-live-count.firebaseapp.com",
-      databaseURL: "https://sports-hub-official-live-count-default-rtdb.asia-southeast1.firebasedatabase.app",
-      projectId: "sports-hub-official-live-count",
-      storageBucket: "sports-hub-official-live-count.firebasestorage.app",
-      messagingSenderId: "93008076192",
-      appId: "1:93008076192:web:0501c4518affed0fb958c5",
-      measurementId: "G-8K8G3ZFDCD"
-    };
-
-    const app = initializeApp(firebaseConfig);
-    const analytics = getAnalytics(app);
-    const db = getDatabase(app);
-
-    const livePresenceRef = ref(db, 'stats/live_sessions');
-    const lifetimeRef = ref(db, 'stats/lifetime_count');
-    const clicksRef = ref(db, 'stats/link_clicks');
-
-    // Live Visitor Counter
-    const connectedRef = ref(db, '.info/connected');
-    onValue(connectedRef, (snap) => {
-      if (snap.val() === true) {
-        const userSessionRef = push(livePresenceRef);
-        onDisconnect(userSessionRef).remove();
-        set(userSessionRef, true);
-      }
-    });
-
-    onValue(livePresenceRef, (snap) => {
-      const count = snap.exists() ? Object.keys(snap.val()).length : 0;
-      document.getElementById('live-count').innerText = count;
-    });
-
-    // Lifetime Visitor Counter
-    const hasVisited = localStorage.getItem('sh_visited');
-    if (!hasVisited) {
-      runTransaction(lifetimeRef, (current) => {
-        return (current || 0) + 1;
-      }).then(() => {
-        localStorage.setItem('sh_visited', 'true');
-      });
-    }
-
-    onValue(lifetimeRef, (snap) => {
-      const count = snap.exists() ? snap.val() : 0;
-      document.getElementById('lifetime-count').innerText = count.toLocaleString();
-    });
-
-    // Tracking Klik
-    document.querySelectorAll('.link-card').forEach(card => {
-      card.addEventListener('click', (e) => {
-        const linkId = card.getAttribute('data-track-id');
-        if (linkId) {
-          const linkStatRef = ref(db, `stats/link_clicks/${linkId}`);
-          runTransaction(linkStatRef, (current) => (current || 0) + 1)
-            .catch(err => console.error("Firebase update error:", err));
-        }
-      });
-    });
-
-    onValue(clicksRef, (snap) => {
-      if (snap.exists()) {
-        const data = snap.val();
-        Object.keys(data).forEach(linkId => {
-          const el = document.getElementById(`click-${linkId}`);
-          if (el) {
-            el.innerText = data[linkId].toLocaleString();
-          }
-        });
-      }
-    });
-  </script>
-
-  <!-- Script UI Dashboard & Automated Match Switcher -->
-  <script>
-    function toggleFav(event, id) {
-      event.preventDefault();
-      event.stopPropagation();
-      let favs = JSON.parse(localStorage.getItem('sportsHubFavs')) || [];
-      const index = favs.indexOf(id);
-
-      if (index === -1) {
-        favs.push(id);
-      } else {
-        favs.splice(index, 1);
-      }
-
-      localStorage.setItem('sportsHubFavs', JSON.stringify(favs));
-      updateFavUI();
-    }
-
-    function updateFavUI() {
-      const favs = JSON.parse(localStorage.getItem('sportsHubFavs')) || [];
-      document.querySelectorAll('.fav-btn').forEach(btn => {
-        const id = btn.getAttribute('data-id');
-        if (favs.includes(id)) {
-          btn.classList.add('active');
-        } else {
-          btn.classList.remove('active');
-        }
-      });
-    }
-
-    /* Fungsi pembantu untuk tambah masa bermula (minit) */
-    function createMatch(week, matches, displayTime, startTimeISO, durationMinutes = 120) {
-      const startMs = new Date(startTimeISO).getTime();
-      const endMs = startMs + (durationMinutes * 60 * 1000);
-      return {
-        week: week,
-        matches: matches,
-        displayTime: displayTime,
-        start: startMs,
-        end: endMs
-      };
-    }
-
-/* Unifi Liga Super 2026 Schedule System (Now Sports Live Event 1) */
-const ligaSuperMatches = [
-  createMatch("UNIFI LIGA SUPER 2026", [
-    { teams: "DPMM FC VS JOHOR DARUL TA'ZIM", venue: "Stadium Negara Hassanal Bolkiah" }
-  ], "FRI, SEP 04 • 08:15 PM MYT • Now Sports Live Event", "2026-09-04T20:15:00+08:00"),
-
-  createMatch("UNIFI LIGA SUPER 2026", [
-    { teams: "KELANTAN RED WARRIOR FC VS KUALA LUMPUR CITY FC", venue: "Stadium Sultan Muhammad IV" }
-  ], "FRI, SEP 04 • 09:00 PM MYT • Now Sports Live Event", "2026-09-04T21:00:00+08:00"),
-
-  createMatch("UNIFI LIGA SUPER 2026", [
-    { teams: "NEGERI SEMBILAN FC VS STAR CITY FC", venue: "Stadium Tuanku Abdul Rahman" }
-  ], "SAT, SEP 05 • 04:45 PM MYT • Now Sports Live Event", "2026-09-05T16:45:00+08:00"),
-
-  createMatch("UNIFI LIGA SUPER 2026", [
-    { teams: "SABAH FC VS KUCHING CITY FC", venue: "Stadium Likas, Kota Kinabalu" }
-  ], "SAT, SEP 05 • 07:30 PM MYT • Now Sports Live Event", "2026-09-05T19:30:00+08:00"),
-
-  createMatch("UNIFI LIGA SUPER 2026", [
-    { teams: "TERENGGANU FC VS PENANG FC", venue: "Stadium Sultan Mizan Zainal Abidin" }
-  ], "SAT, SEP 05 • 09:00 PM MYT • Now Sports Live Event", "2026-09-05T21:00:00+08:00"),
-
-  createMatch("UNIFI LIGA SUPER 2026", [
-    { teams: "SELANGOR FC VS MELAKA FC", venue: "Stadium MBPJ, Kelana Jaya" }
-  ], "SUN, SEP 06 • 08:15 PM MYT • Now Sports Live Event", "2026-09-06T20:15:00+08:00"),
-
-  createMatch("UNIFI LIGA SUPER 2026", [
-    { teams: "JOHOR DARUL TA'ZIM VS NEGERI SEMBILAN FC", venue: "Stadium Sultan Ibrahim" }
-  ], "FRI, SEP 11 • 09:00 PM MYT • Now Sports Live Event", "2026-09-11T21:00:00+08:00"),
-
-  createMatch("UNIFI LIGA SUPER 2026", [
-    { teams: "PENANG FC VS KELANTAN RED WARRIOR FC", venue: "Stadium Bandaraya, Pulau Pinang" }
-  ], "SAT, SEP 12 • 04:45 PM MYT • Now Sports Live Event", "2026-09-12T16:45:00+08:00"),
-
-  createMatch("UNIFI LIGA SUPER 2026", [
-    { teams: "MELAKA FC VS KUCHING CITY FC", venue: "Stadium Hang Jebat" }
-  ], "SAT, SEP 12 • 08:15 PM MYT • Now Sports Live Event", "2026-09-12T20:15:00+08:00"),
-
-  createMatch("UNIFI LIGA SUPER 2026", [
-    { teams: "STAR CITY FC VS TERENGGANU FC", venue: "Stadium Utama" }
-  ], "SAT, SEP 12 • 09:00 PM MYT • Now Sports Live Event", "2026-09-12T21:00:00+08:00"),
-
-  createMatch("UNIFI LIGA SUPER 2026", [
-    { teams: "KUALA LUMPUR CITY FC VS SELANGOR FC", venue: "Stadium KLFA, Cheras" }
-  ], "SUN, SEP 13 • 05:30 PM MYT • Now Sports Live Event", "2026-09-13T17:30:00+08:00"),
-
-  createMatch("UNIFI LIGA SUPER 2026", [
-    { teams: "SABAH FC VS DPMM FC", venue: "Stadium Likas, Kota Kinabalu" }
-  ], "SUN, SEP 13 • 07:30 PM MYT • Now Sports Live Event", "2026-09-13T19:30:00+08:00")
-];
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Now Sports Live Event 2 | Sports Hub Official</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='45' fill='%23ef4444'/></svg>" type="image/svg+xml">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-    function updateLigaSuperCard(now) {
-      const badgeEl = document.getElementById('liga-super-badge');
-      const bodyEl = document.getElementById('liga-super-matches-body');
-      const timeEl = document.getElementById('liga-super-time');
-      const timerEl = document.getElementById('liga-super-countdown');
-
-      if (!badgeEl || !bodyEl || !timeEl || !timerEl) return;
-
-      let currentSlot = null;
-      let nextSlot = null;
-
-      for (let i = 0; i < ligaSuperMatches.length; i++) {
-        if (now >= ligaSuperMatches[i].start && now < ligaSuperMatches[i].end) {
-          currentSlot = ligaSuperMatches[i];
-          break;
+    <!-- Video.js CSS -->
+    <link href="https://vjs.zencdn.net/8.10.0/video-js.css" rel="stylesheet" />
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0b0f19;
+            color: #ffffff;
         }
-        if (now < ligaSuperMatches[i].start) {
-          nextSlot = ligaSuperMatches[i];
-          break;
+        .glass-panel {
+            background: rgba(18, 24, 38, 0.85);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
         }
-      }
+        .glow-effect {
+            box-shadow: 0 0 25px rgba(239, 68, 68, 0.2);
+        }
+        .gold-glow {
+            color: #fbbf24;
+            text-shadow: 0 0 12px rgba(251, 191, 36, 0.6), 0 0 25px rgba(245, 158, 11, 0.4);
+        }
+        .video-js .vjs-big-play-button {
+            background-color: rgba(239, 68, 68, 0.9) !important;
+            border-color: #ef4444 !important;
+            border-radius: 50% !important;
+            width: 2.4em !important;
+            height: 2.4em !important;
+            line-height: 2.4em !important;
+            margin-left: -1.2em !important;
+            margin-top: -1.2em !important;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between">
 
-      const activeSlot = currentSlot || nextSlot;
+    <!-- Header Navigation -->
+    <header class="glass-panel sticky top-0 z-50 px-6 py-4 border-b border-gray-800">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+            <div class="flex items-center space-x-4">
+                <img src="https://i.ibb.co/CKstTbC0/download-2.png" alt="Now Sports Logo" class="h-10 object-contain">
+                <div class="hidden sm:block border-l border-gray-700 pl-4">
+                    <span class="text-xs text-blue-400 font-bold tracking-widest block uppercase">Now Sports Live Event 2</span>
+                    <span class="text-xs text-gray-400">by Sports Hub Official</span>
+                </div>
+            </div>
+            
+            <div class="flex items-center">
+                <span class="bg-red-500/10 text-red-500 border border-red-500/30 text-xs font-bold px-3 py-1 rounded-full flex items-center gap-2 animate-pulse">
+                    <span class="w-2 h-2 bg-red-500 rounded-full"></span> LIVE
+                </span>
+            </div>
+        </div>
+    </header>
 
-      if (activeSlot) {
-        const isLive = !!currentSlot;
-        const matchCount = activeSlot.matches.length;
-        
-        badgeEl.innerHTML = `<span class="live-dot"></span> ${activeSlot.week}${matchCount > 1 ? ` • ${matchCount} MATCHES CONCURRENT` : ''}`;
-        timeEl.innerHTML = `<i class="fa-regular fa-clock"></i> ${activeSlot.displayTime}`;
+    <!-- Main Content Container -->
+    <main class="max-w-7xl mx-auto px-4 py-8 w-full flex-grow flex flex-col items-center">
 
-        if (matchCount === 1) {
-          const m = activeSlot.matches[0];
-          bodyEl.innerHTML = `
-            <span class="match-teams">${m.teams}</span>
-            <div class="match-details" style="margin-top:2px;">
-              <span><i class="fa-solid fa-location-dot"></i> ${m.venue}</span>
-            </div>`;
-        } else {
-          let html = '<div class="triple-match-container">';
-          activeSlot.matches.forEach(m => {
-            html += `
-              <div class="sub-match-row">
-                <span class="sub-match-teams">${m.teams}</span>
-                <span class="sub-match-channel"><i class="fa-solid fa-location-dot"></i> ${m.venue}</span>
-              </div>`;
-          });
-          html += '</div>';
-          bodyEl.innerHTML = html;
+        <!-- Notice -->
+        <div class="w-full max-w-4xl mb-6">
+            <div class="bg-red-900/30 border border-red-500/50 rounded-xl p-4 text-center">
+                <h1 class="text-xl md:text-2xl font-black tracking-wider uppercase mb-2 gold-glow">
+                    HOME OF LA LIGA 2
+                </h1>
+                <i class="fas fa-exclamation-triangle text-red-500 text-2xl mb-2"></i>
+                <p class="text-sm text-gray-200">
+                    We apologize for the inconvenience. The Home of La Liga website is temporarily offline due to technical difficulties with the live stream. We are working to resolve this as soon as possible.
+                </p>
+            </div>
+        </div>
+
+        <!-- Video Player Section -->
+        <div class="w-full max-w-4xl mb-6">
+            <div class="glass-panel rounded-2xl p-4 border border-red-500/30 glow-effect">
+                <div class="relative aspect-video w-full rounded-xl overflow-hidden bg-black">
+                    <video id="laliga-player" class="video-js vjs-default-skin vjs-big-play-centered w-full h-full" controls preload="auto"></video>
+                </div>
+                
+                <!-- Channel Switcher Buttons -->
+                <div class="mt-4 flex flex-wrap gap-2 justify-center">
+                    <button onclick="playChannel(channels.ssport_s1)" class="bg-red-600 hover:bg-red-700 text-white text-xs font-bold px-4 py-2 rounded-lg transition flex items-center gap-2">
+                        <i class="fas fa-tv"></i> S Sport (Server 1)
+                    </button>
+                    <button onclick="playChannel(channels.ssport_s2)" class="bg-gray-800 hover:bg-gray-700 text-white text-xs font-bold px-4 py-2 rounded-lg transition flex items-center gap-2">
+                        <i class="fas fa-tv"></i> S Sport (Server 2)
+                    </button>
+                    <button onclick="playChannel(channels.ssportplus_s1)" class="bg-gray-800 hover:bg-gray-700 text-white text-xs font-bold px-4 py-2 rounded-lg transition flex items-center gap-2">
+                        <i class="fas fa-tv"></i> S Sport Plus (Server 1)
+                    </button>
+                    <button onclick="playChannel(channels.ssportplus_s2)" class="bg-gray-800 hover:bg-gray-700 text-white text-xs font-bold px-4 py-2 rounded-lg transition flex items-center gap-2">
+                        <i class="fas fa-tv"></i> S Sport Plus (Server 2)
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- La Liga Event Card -->
+        <div class="w-full max-w-4xl">
+            <h2 class="text-xl font-bold mb-4 text-gray-200 border-l-4 border-red-600 pl-3">La Liga Matchday</h2>
+            <div class="grid grid-cols-1 gap-4">
+                <div class="glass-panel p-6 rounded-xl border border-red-500/40 relative overflow-hidden">
+                    <span class="absolute top-0 right-0 bg-red-600 text-white text-[10px] font-bold px-3 py-1 rounded-bl">FEATURED MATCH</span>
+                    <p class="text-xs text-gray-400 font-semibold mb-2">La Liga EA Sports</p>
+                    <div class="flex justify-between items-center text-lg md:text-xl font-extrabold my-2">
+                        <span class="text-white">Real Betis</span>
+                        <span class="text-red-500 px-4">VS</span>
+                        <span class="text-white">Real Madrid</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="glass-panel border-t border-gray-800 py-6 text-center text-xs text-gray-500 mt-8">
+        <p>&copy; 2026 Sports Hub Official | Now Sports Live Event 2</p>
+    </footer>
+
+    <!-- Video.js & HLS.js CDN -->
+    <script src="https://vjs.zencdn.net/8.10.0/video.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+
+    <script>
+        const channels = {
+            ssport_s1: {
+                src: "https://andro.evrenesoglu99.click/checklist/androstreamlivess1.m3u8",
+                referrer: "https://mahsunsports.xyz/"
+            },
+            ssport_s2: {
+                src: "https://dga1op10s1u3leo.33a6243d11525c.click/live/ssport/playlist.m3u8",
+                referrer: "https://www.sporcafe6.xyz/"
+            },
+            ssportplus_s1: {
+                src: "https://andro.evrenesoglu99.click/checklist/androstreamlivessplus1.m3u8",
+                referrer: "https://mahsunsports.xyz/"
+            },
+            ssportplus_s2: {
+                src: "https://dga1op10s1u3leo.33a6243d11525c.click/live/ssplus1/playlist.m3u8",
+                referrer: "https://www.sporcafe6.xyz/"
+            }
+        };
+
+        const player = videojs('laliga-player');
+        let hlsInstance = null;
+
+        function playChannel(channel) {
+            const rawVideo = player.tech({ IWillNotUseThisInPlugins: true }).el_;
+
+            if (hlsInstance) {
+                hlsInstance.destroy();
+            }
+
+            if (Hls.isSupported()) {
+                hlsInstance = new Hls({
+                    xhrSetup: function(xhr, url) {
+                        xhr.setRequestHeader("Referer", channel.referrer);
+                    }
+                });
+
+                hlsInstance.loadSource(channel.src);
+                hlsInstance.attachMedia(rawVideo);
+                hlsInstance.on(Hls.Events.MANIFEST_PARSED, function() {
+                    player.play().catch(e => console.log("Autoplay blocked:", e));
+                });
+            } else if (rawVideo.canPlayType('application/vnd.apple.mpegurl')) {
+                player.src({
+                    src: channel.src,
+                    type: 'application/x-mpegURL'
+                });
+                player.play();
+            }
         }
 
-        if (isLive) {
-          timerEl.classList.add('is-live');
-          timerEl.innerHTML = `<i class="fa-solid fa-satellite-dish"></i> 🔴 LIVE NOW`;
-        } else {
-          timerEl.classList.remove('is-live');
-          const distance = activeSlot.start - now;
-          const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-          const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-          const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-          const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-          let display = "";
-          if (days > 0) display += `${days}d `;
-          if (hours > 0 || days > 0) display += `${hours}h `;
-          display += `${minutes}m ${seconds}s`;
-
-          timerEl.innerHTML = `<i class="fa-solid fa-hourglass-half"></i> Starts in ${display}`;
-        }
-      } else {
-        badgeEl.innerHTML = `<span class="live-dot"></span> UNIFI LIGA SUPER COMPLETED`;
-        bodyEl.innerHTML = `<span class="match-teams">ALL MATCHES COMPLETED / REHAT FIFA DAYS</span>`;
-        timeEl.innerHTML = `<i class="fa-regular fa-clock"></i> Liga Super kembali semula pada 16 Oktober!`;
-        timerEl.classList.remove('is-live');
-        timerEl.innerHTML = `<i class="fa-solid fa-flag-checkered"></i> COMPLETED`;
-      }
-    }
-
-    /* Premier League Schedule (120 Minit Auto-Reset) */
-  const eplMatches = [
-  createMatch("PREMIER LEAGUE", [
-    { teams: "ASTON VILLA VS ARSENAL", channel: "Astro Premier League, Astro Grandstand, Sky Sport 8 / Premier League NZ, USA Network", hot: true }
-  ], "TUE, SEP 01 • 03:00 AM MYT • Home of Premier League", "2026-09-01T03:00:00+08:00"),
-
-  createMatch("PREMIER LEAGUE", [
-    { teams: "IPSWICH TOWN VS LIVERPOOL", channel: "Astro Premier League, Sky Sport 8 / Premier League NZ, USA Network", hot: true }
-  ], "SAT, SEP 05 • 03:00 AM MYT • Home of Premier League", "2026-09-05T03:00:00+08:00"),
-
-  createMatch("PREMIER LEAGUE", [
-    { teams: "NEWCASTLE UNITED VS AFC BOURNEMOUTH", channel: "Sky Sport 8 / Premier League NZ, USA Network" }
-  ], "SAT, SEP 05 • 07:30 PM MYT • Home of Premier League", "2026-09-05T19:30:00+08:00")
-];
-
-    function updateEPLCard(now) {
-      const badgeEl = document.getElementById('epl-badge');
-      const bodyEl = document.getElementById('epl-matches-body');
-      const timeEl = document.getElementById('epl-time');
-      const timerEl = document.getElementById('epl-countdown');
-
-      if (!badgeEl || !bodyEl || !timeEl || !timerEl) return;
-
-      let currentSlot = null;
-      let nextSlot = null;
-
-      for (let i = 0; i < eplMatches.length; i++) {
-        if (now >= eplMatches[i].start && now < eplMatches[i].end) {
-          currentSlot = eplMatches[i];
-          break;
-        }
-        if (now < eplMatches[i].start) {
-          nextSlot = eplMatches[i];
-          break;
-        }
-      }
-
-      const activeSlot = currentSlot || nextSlot;
-
-      if (activeSlot) {
-        const isLive = !!currentSlot;
-        const matchCount = activeSlot.matches.length;
-        
-        badgeEl.innerHTML = `<span class="live-dot"></span> ${activeSlot.week}${matchCount > 1 ? ` • ${matchCount} MATCHES CONCURRENT` : ''}`;
-        timeEl.innerHTML = `<i class="fa-regular fa-clock"></i> ${activeSlot.displayTime}`;
-
-        if (matchCount === 1) {
-          const m = activeSlot.matches[0];
-          bodyEl.innerHTML = `
-            <span class="match-teams">${m.teams}</span>
-            <div class="match-details" style="margin-top:2px;">
-              <span><i class="fa-solid fa-tv"></i> ${m.channel}</span>
-            </div>`;
-        } else {
-          let html = '<div class="triple-match-container">';
-          activeSlot.matches.forEach(m => {
-            html += `
-              <div class="sub-match-row">
-                <span class="sub-match-teams">${m.teams}</span>
-                <span class="sub-match-channel"><i class="fa-solid fa-tv"></i> ${m.channel}</span>
-              </div>`;
-          });
-          html += '</div>';
-          bodyEl.innerHTML = html;
-        }
-
-        if (isLive) {
-          timerEl.classList.add('is-live');
-          timerEl.innerHTML = `<i class="fa-solid fa-satellite-dish"></i> 🔴 LIVE NOW`;
-        } else {
-          timerEl.classList.remove('is-live');
-          const distance = activeSlot.start - now;
-          const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-          const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-          const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-          const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-          let display = "";
-          if (days > 0) display += `${days}d `;
-          if (hours > 0 || days > 0) display += `${hours}h `;
-          display += `${minutes}m ${seconds}s`;
-
-          timerEl.innerHTML = `<i class="fa-solid fa-hourglass-half"></i> Starts in ${display}`;
-        }
-      } else {
-        badgeEl.innerHTML = `<span class="live-dot"></span> PREMIER LEAGUE COMPLETED`;
-        bodyEl.innerHTML = `<span class="match-teams">ALL MATCHES COMPLETED</span>`;
-        timeEl.innerHTML = `<i class="fa-regular fa-clock"></i> Check back later for upcoming fixtures!`;
-        timerEl.classList.remove('is-live');
-        timerEl.innerHTML = `<i class="fa-solid fa-flag-checkered"></i> COMPLETED`;
-      }
-    }
-
-    /* LaLiga Automated Schedule System (120 Minit Auto-Reset) */
-    function createLaLigaMatch(week, teams, displayTime, stadium, startTimeISO, durationMinutes = 120) {
-      const startMs = new Date(startTimeISO).getTime();
-      return {
-        week: week,
-        teams: teams,
-        displayTime: displayTime,
-        stadium: stadium,
-        start: startMs,
-        end: startMs + (durationMinutes * 60 * 1000)
-      };
-    }
-
-const laLigaMatches = [
-  createLaLigaMatch("LALIGA", "REAL BETIS VS REAL MADRID", "SAT, SEP 5 • 03:00 AM MYT • Home of LaLiga", "Estadio La Cartuja de Sevilla", "2026-09-05T03:00:00+08:00"),
-  createLaLigaMatch("LALIGA", "ATHLETIC CLUB VS ATLÉTICO MADRID", "SAT, SEP 5 • 10:15 PM MYT • Home of LaLiga", "San Mamés", "2026-09-05T22:15:00+08:00"),
-  createLaLigaMatch("LALIGA", "RAYO VALLECANO VS REAL RACING CLUB", "SUN, SEP 6 • 12:30 AM MYT • Home of LaLiga", "Vallecas", "2026-09-06T00:30:00+08:00"),
-  createLaLigaMatch("LALIGA", "VILLARREAL CF VS RC DEPORTIVO LA CORUÑA", "SUN, SEP 6 • 03:00 AM MYT • Home of LaLiga", "Estadio de la Cerámica", "2026-09-06T03:00:00+08:00"),
-  createLaLigaMatch("LALIGA", "VALENCIA CF VS FC BARCELONA", "SUN, SEP 6 • 10:15 PM MYT • Home of LaLiga", "Mestalla", "2026-09-06T22:15:00+08:00"),
-  createLaLigaMatch("LALIGA", "DEPORTIVO ALAVÉS VS CA OSASUNA", "MON, SEP 7 • 12:30 AM MYT • Home of LaLiga", "Mendizorrotza Stadium", "2026-09-07T00:30:00+08:00"),
-  createLaLigaMatch("LALIGA", "MÁLAGA CF VS LEVANTE UD", "MON, SEP 7 • 12:30 AM MYT • Home of LaLiga", "La Rosaleda", "2026-09-07T00:30:00+08:00"),
-  createLaLigaMatch("LALIGA", "GETAFE CF VS RC CELTA DE VIGO", "MON, SEP 7 • 01:00 AM MYT • Home of LaLiga", "Coliseum", "2026-09-07T01:00:00+08:00"),
-  createLaLigaMatch("LALIGA", "RCD ESPANYOL VS SEVILLA FC", "MON, SEP 7 • 03:00 AM MYT • Home of LaLiga", "RCDE Stadium", "2026-09-07T03:00:00+08:00"),
-  createLaLigaMatch("LALIGA", "ELCHE CF VS REAL SOCIEDAD", "MON, SEP 7 • 03:30 AM MYT • Home of LaLiga", "Manuel Martínez Valero", "2026-09-07T03:30:00+08:00")
-];
-
-    function updateLaLigaCard(now) {
-      const badgeEl = document.getElementById('laliga-badge');
-      const teamsEl = document.getElementById('laliga-teams');
-      const timeEl = document.getElementById('laliga-time');
-      const stadiumEl = document.getElementById('laliga-stadium');
-      const timerEl = document.getElementById('laliga-countdown');
-
-      if (!teamsEl || !timeEl || !timerEl) return;
-
-      let currentMatch = null;
-      let nextMatch = null;
-
-      for (let i = 0; i < laLigaMatches.length; i++) {
-        if (now >= laLigaMatches[i].start && now < laLigaMatches[i].end) {
-          currentMatch = laLigaMatches[i];
-          break;
-        }
-        if (now < laLigaMatches[i].start) {
-          nextMatch = laLigaMatches[i];
-          break;
-        }
-      }
-
-      if (currentMatch) {
-        badgeEl.innerHTML = `<span class="live-dot"></span> ${currentMatch.week}`;
-        teamsEl.innerText = currentMatch.teams;
-        timeEl.innerHTML = `<i class="fa-regular fa-clock"></i> ${currentMatch.displayTime}`;
-        stadiumEl.innerHTML = `<i class="fa-solid fa-location-dot"></i> ${currentMatch.stadium}`;
-        timerEl.classList.add('is-live');
-        timerEl.innerHTML = `<i class="fa-solid fa-satellite-dish"></i> 🔴 LIVE NOW`;
-      } else if (nextMatch) {
-        badgeEl.innerHTML = `<span class="live-dot"></span> ${nextMatch.week}`;
-        teamsEl.innerText = nextMatch.teams;
-        timeEl.innerHTML = `<i class="fa-regular fa-clock"></i> ${nextMatch.displayTime}`;
-        stadiumEl.innerHTML = `<i class="fa-solid fa-location-dot"></i> ${nextMatch.stadium}`;
-        timerEl.classList.remove('is-live');
-
-        const distance = nextMatch.start - now;
-        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-        let display = "";
-        if (days > 0) display += `${days}d `;
-        if (hours > 0 || days > 0) display += `${hours}h `;
-        display += `${minutes}m ${seconds}s`;
-
-        timerEl.innerHTML = `<i class="fa-solid fa-hourglass-half"></i> Starts in ${display}`;
-      } else {
-        badgeEl.innerHTML = `<span class="live-dot"></span> LALIGA COMPLETED`;
-        teamsEl.innerText = "ALL MATCHES COMPLETED";
-        timeEl.innerHTML = `<i class="fa-regular fa-clock"></i> Check back later for upcoming fixtures!`;
-        stadiumEl.innerHTML = ``;
-        timerEl.classList.remove('is-live');
-        timerEl.innerHTML = `<i class="fa-solid fa-flag-checkered"></i> COMPLETED`;
-      }
-    }
-
-    /* Hot Card Generic Timer (Auto LIVE & Reset Selepas 120 Minit) */
-    function updateGenericCards(now) {
-      const timers = document.querySelectorAll('.countdown-timer:not(#liga-super-countdown):not(#laliga-countdown):not(#epl-countdown)');
-
-      timers.forEach(timer => {
-        const startTime = new Date(timer.getAttribute('data-time')).getTime();
-        const endTime = startTime + (120 * 60 * 1000);
-
-        if (now >= startTime && now < endTime) {
-          timer.classList.add('is-live');
-          timer.innerHTML = `<i class="fa-solid fa-satellite-dish"></i> 🔴 LIVE NOW`;
-        } else if (now >= endTime) {
-          timer.classList.remove('is-live');
-          timer.innerHTML = `<i class="fa-solid fa-flag-checkered"></i> COMPLETED`;
-        } else {
-          const distance = startTime - now;
-          const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-          const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-          const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-          const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-          let display = "";
-          if (days > 0) display += `${days}d `;
-          if (hours > 0 || days > 0) display += `${hours}h `;
-          display += `${minutes}m ${seconds}s`;
-
-          const timeText = timer.querySelector('.time-text');
-          if (timeText) {
-            timeText.innerText = `Starts in ${display}`;
-          } else {
-            timer.innerHTML = `<i class="fa-solid fa-hourglass-half"></i> Starts in ${display}`;
-          }
-        }
-      });
-    }
-
-    function updateCountdowns() {
-      const now = new Date().getTime();
-
-      updateLigaSuperCard(now);
-      updateLaLigaCard(now);
-      updateEPLCard(now);
-      updateGenericCards(now);
-    }
-
-    document.addEventListener('DOMContentLoaded', () => {
-      updateFavUI();
-      updateCountdowns();
-      setInterval(updateCountdowns, 1000);
-    });
-  </script>
+        player.ready(() => {
+            playChannel(channels.ssport_s1);
+        });
+    </script>
 </body>
 </html>
