@@ -812,16 +812,6 @@
     /* Premier League Schedule (Upcoming Fixtures) */
     const eplMatches = [
       createMatch("PREMIER LEAGUE", [
-        { teams: "MANCHESTER CITY VS SUNDERLAND", channel: "Star Sports Select 1, Hub Premier 2, Hub Premier 2 4K, beIN Sports 3 TR, Sky Sport 6 NZ, Sky Sport Select NZ" },
-        { teams: "AFC BOURNEMOUTH VS LIVERPOOL", channel: "Hub Premier 1, Star Sports Select 2, beIN Sports 4 TR, Sky Sport Premier League NZ" },
-        { teams: "LEEDS UNITED VS CRYSTAL PALACE", channel: "beIN Sports 5 TR, Sky Sport 6 NZ, Sky Sport 7 NZ, Hub Premier 3" }
-      ], "SUN, SEP 20 • 09:00 PM MYT", "2026-09-20T21:00:00+08:00"),
-
-      createMatch("PREMIER LEAGUE", [
-        { teams: "FULHAM VS MANCHESTER UNITED", channel: "Star Sports Select 1, Hub Premier 1, beIN Sports 3 TR, Sky Sport Premier League NZ" }
-      ], "SUN, SEP 20 • 11:30 PM MYT", "2026-09-20T23:30:00+08:00"),
-
-      createMatch("PREMIER LEAGUE", [
         { teams: "ARSENAL VS LEEDS UNITED", channel: "TNT Sports 1, Star Sports Select 1" }
       ], "SAT, OCT 10 • 07:30 PM MYT", "2026-10-10T19:30:00+08:00"),
 
@@ -865,24 +855,23 @@
       renderGenericSection(now, uefaMatches, 'uefa-badge', 'uefa-matches-body', 'uefa-time', 'uefa-countdown', 'UEFA CHAMPIONS LEAGUE');
     }
 
-    /* La Liga Schedule (Upcoming Fixtures) */
+    /* La Liga Schedule (Updated Fixtures) */
     const laLigaMatches = [
       createMatch("LA LIGA", [
-        { teams: "GETAFE VS MÁLAGA", channel: "beIN Sports Malaysia" }
-      ], "SUN, SEP 20 • 08:00 PM MYT", "2026-09-20T20:00:00+08:00"),
+        { teams: "BARCELONA VS GETAFE", channel: "T Sports" }
+      ], "SUN, OCT 11 • 12:30 AM MYT", "2026-10-11T00:30:00+08:00"),
 
       createMatch("LA LIGA", [
-        { teams: "ATLÉTICO MADRID VS REAL MADRID", channel: "beIN Sports Malaysia, beIN Sports Arabia 1 HD" }
-      ], "SUN, SEP 20 • 10:15 PM MYT", "2026-09-20T22:15:00+08:00"),
+        { teams: "REAL MADRID VS VILLARREAL", channel: "T Sports" }
+      ], "SUN, OCT 11 • 03:00 AM MYT", "2026-10-11T03:00:00+08:00"),
 
       createMatch("LA LIGA", [
-        { teams: "DEPORTIVO LA CORUÑA VS REAL BETIS", channel: "beIN Sports Malaysia" },
-        { teams: "VILLARREAL VS LEVANTE", channel: "beIN Sports 2 Malaysia" }
-      ], "MON, SEP 21 • 12:30 AM MYT", "2026-09-21T00:30:00+08:00"),
+        { teams: "REAL BETIS VS BARCELONA", channel: "T Sports" }
+      ], "SUN, OCT 18 • 12:30 AM MYT", "2026-10-18T00:30:00+08:00"),
 
       createMatch("LA LIGA", [
-        { teams: "VALENCIA VS REAL SOCIEDAD", channel: "beIN Sports Malaysia" }
-      ], "MON, SEP 21 • 03:00 AM MYT", "2026-09-21T03:00:00+08:00")
+        { teams: "REAL MADRID VS SEVILLA", channel: "T Sports" }
+      ], "MON, OCT 19 • 03:00 AM MYT", "2026-10-19T03:00:00+08:00")
     ];
 
     function updateLaLigaCard(now) {
