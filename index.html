@@ -508,10 +508,31 @@
       <div class="section-main-label"><i class="fa-solid fa-fire" style="color: var(--neon-pink);"></i> Hot Websites</div>
     </div>
 
-    <!-- HOT-1: HOME OF PREMIER LEAGUE -->
+    <!-- HOT-1: NOW SPORTS LIVE EVENT 1 (FIFA ASEAN CUP 2026 AUTO SCHEDULE) -->
+    <a class="link-card" href="https://now-sports-live-event-website.vercel.app/" target="_blank" rel="noopener noreferrer" data-track-id="hot-1">
+      <div class="card-info">
+        <span class="live-badge" id="asean-badge"><span class="live-dot"></span> FIFA ASEAN CUP 2026</span>
+        
+        <div id="asean-matches-body"></div>
+
+        <div class="match-details" style="margin-top: 4px;">
+          <span id="asean-time"><i class="fa-regular fa-clock"></i> Loading...</span>
+        </div>
+
+        <div class="countdown-timer" id="asean-countdown">
+          <i class="fa-solid fa-hourglass-half"></i> <span class="time-text">Loading...</span>
+        </div>
+        <span class="click-counter"><i class="fa-solid fa-eye"></i> <span id="click-hot-1">0</span> clicks</span>
+      </div>
+      <div class="card-right-group">
+        <div class="card-action-icon"><i class="fa-solid fa-play"></i></div>
+      </div>
+    </a>
+
+    <!-- HOT-2: HOME OF PREMIER LEAGUE -->
     <a class="link-card" href="https://home-of-premier-league-website.vercel.app/" target="_blank" rel="noopener noreferrer" data-track-id="premier-league">
       <div class="card-info">
-        <span class="live-badge" id="epl-badge"><span class="live-dot"></span> PREMIER LEAGUE</span>
+        <span class="live-badge" id="epl-badge"><span class="live-dot"></span>HOME OF PREMIER LEAGUE</span>
         
         <div id="epl-matches-body"></div>
 
@@ -529,10 +550,10 @@
       </div>
     </a>
 
-    <!-- HOT-2: HOME OF LALIGA -->
+    <!-- HOT-3: HOME OF LALIGA -->
     <a class="link-card" href="https://home-of-la-liga.vercel.app/" target="_blank" rel="noopener noreferrer" data-track-id="la-liga">
       <div class="card-info">
-        <span class="live-badge" id="laliga-badge"><span class="live-dot"></span> LA LIGA</span>
+        <span class="live-badge" id="laliga-badge"><span class="live-dot"></span>HOME OF LA LIGA</span>
         
         <div id="laliga-matches-body"></div>
 
@@ -550,10 +571,10 @@
       </div>
     </a>
 
-    <!-- HOT-3: HOME OF UEFA -->
+    <!-- HOT-4: HOME OF UEFA -->
     <a class="link-card" href="https://home-of-uefa.vercel.app/" target="_blank" rel="noopener noreferrer" data-track-id="uefa">
       <div class="card-info">
-        <span class="live-badge" id="uefa-badge"><span class="live-dot"></span> UEFA CHAMPIONS LEAGUE</span>
+        <span class="live-badge" id="uefa-badge"><span class="live-dot"></span>HOME OF UEFA</span>
         
         <div id="uefa-matches-body"></div>
 
@@ -576,18 +597,6 @@
       <div class="section-main-label"><i class="fa-solid fa-bolt" style="color: var(--neon-cyan);"></i> Now Sports Live Events!</div>
       <div class="section-sub-label">Ready for fast live events!</div>
     </div>
-
-    <!-- Now Sports Live Event 1 (OFFLINE) -->
-    <a class="link-card" href="https://now-sports-live-event-website.vercel.app/" target="_blank" rel="noopener noreferrer" data-track-id="hot-1">
-      <div class="card-info">
-        <span class="site-name">Now Sports Live Event 1</span>
-        <span class="site-status-offline"><i class="fa-solid fa-circle-xmark" style="color: #ff4757;"></i> Website Offline</span>
-        <span class="click-counter"><i class="fa-solid fa-eye"></i> <span id="click-hot-1">0</span> clicks</span>
-      </div>
-      <div class="card-right-group">
-        <div class="card-action-icon"><i class="fa-solid fa-arrow-up-right-from-square"></i></div>
-      </div>
-    </a>
 
     <!-- Now Sports Live Event 2 -->
     <a class="link-card" href="https://now-sports-live-event-2.vercel.app/" target="_blank" rel="noopener noreferrer" data-track-id="now-sports-2">
@@ -809,6 +818,69 @@
       };
     }
 
+    /* FIFA ASEAN Cup 2026 Schedule (Auto Switcher for Now Sports Live Event 1) */
+    const aseanMatches = [
+      createMatch("GROUP STAGE", [
+        { teams: "Laos vs Brunei Darussalam (Division 2)" }
+      ], "THU, SEP 24 • 05:30 PM MYT", "2026-09-24T17:30:00+08:00"),
+
+      createMatch("GROUP STAGE", [
+        { teams: "Myanmar vs Timor-Leste (Division 2)" }
+      ], "THU, SEP 24 • 08:30 PM MYT", "2026-09-24T20:30:00+08:00"),
+
+      createMatch("GROUP STAGE", [
+        { teams: "Bangladesh vs Malaysia", hot: true }
+      ], "FRI, SEP 25 • 05:30 PM MYT", "2026-09-25T17:30:00+08:00"),
+
+      createMatch("GROUP STAGE", [
+        { teams: "Indonesia vs Singapore", hot: true }
+      ], "SAT, SEP 26 • 01:30 AM MYT", "2026-09-26T01:30:00+08:00"),
+
+      createMatch("GROUP STAGE", [
+        { teams: "Bangladesh vs Malaysia", hot: true }
+      ], "SAT, SEP 26 • 05:30 PM MYT", "2026-09-26T17:30:00+08:00"),
+
+      createMatch("GROUP STAGE", [
+        { teams: "Vietnam vs Philippines" }
+      ], "SAT, SEP 26 • 09:00 PM MYT", "2026-09-26T21:00:00+08:00"),
+
+      createMatch("GROUP STAGE", [
+        { teams: "Laos vs Brunei Darussalam (Division 2)" }
+      ], "SUN, SEP 27 • 03:30 PM MYT", "2026-09-27T15:30:00+08:00"),
+
+      createMatch("GROUP STAGE", [
+        { teams: "Myanmar vs Timor-Leste (Division 2)" }
+      ], "SUN, SEP 27 • 06:30 PM MYT", "2026-09-27T18:30:00+08:00"),
+
+      createMatch("GROUP STAGE", [
+        { teams: "Singapore vs Bangladesh" }
+      ], "MON, SEP 28 • 05:30 PM MYT", "2026-09-28T17:30:00+08:00"),
+
+      createMatch("GROUP STAGE", [
+        { teams: "Malaysia vs Indonesia", hot: true }
+      ], "TUE, SEP 29 • 01:00 AM MYT", "2026-09-29T01:00:00+08:00"),
+
+      createMatch("GROUP STAGE", [
+        { teams: "Philippines vs Pakistan" }
+      ], "TUE, SEP 29 • 05:30 PM MYT", "2026-09-29T17:30:00+08:00"),
+
+      createMatch("GROUP STAGE", [
+        { teams: "Vietnam vs Philippines" }
+      ], "TUE, SEP 29 • 09:00 PM MYT", "2026-09-29T21:00:00+08:00"),
+
+      createMatch("GROUP STAGE", [
+        { teams: "Timor-Leste vs Cambodia (Division 2)" }
+      ], "WED, SEP 30 • 05:30 PM MYT", "2026-09-30T17:30:00+08:00"),
+
+      createMatch("GROUP STAGE", [
+        { teams: "Brunei Darussalam vs Hong Kong (Division 2)" }
+      ], "WED, SEP 30 • 08:30 PM MYT", "2026-09-30T20:30:00+08:00")
+    ];
+
+    function updateAseanCard(now) {
+      renderGenericSection(now, aseanMatches, 'asean-badge', 'asean-matches-body', 'asean-time', 'asean-countdown', 'FIFA ASEAN CUP 2026');
+    }
+
     /* Premier League Schedule (Upcoming Fixtures) */
     const eplMatches = [
       createMatch("PREMIER LEAGUE", [
@@ -913,25 +985,23 @@
         if (matchCount === 1) {
           const m = activeSlot.matches[0];
           let hotTag = m.hot ? `<div class="hot-badge-tag"><i class="fa-solid fa-fire"></i> HOT MATCH</div>` : '';
-          let subDetail = m.channel ? `<i class="fa-solid fa-tv"></i> ${m.channel}` : `<i class="fa-solid fa-location-dot"></i> ${m.venue}`;
+          let subDetail = m.channel ? `<i class="fa-solid fa-tv"></i> ${m.channel}` : (m.venue ? `<i class="fa-solid fa-location-dot"></i> ${m.venue}` : '');
           bodyEl.innerHTML = `
             ${hotTag}
             <span class="match-teams">${m.teams}</span>
-            <div class="match-details" style="margin-top:2px;">
-              <span>${subDetail}</span>
-            </div>`;
+            ${subDetail ? `<div class="match-details" style="margin-top:2px;"><span>${subDetail}</span></div>` : ''}`;
         } else {
           let html = '<div class="triple-match-container">';
           activeSlot.matches.forEach(m => {
             let hotTag = m.hot ? `<span class="hot-badge-tag"><i class="fa-solid fa-fire"></i> HOT</span>` : '';
-            let subDetail = m.channel ? `<i class="fa-solid fa-tv"></i> ${m.channel}` : `<i class="fa-solid fa-location-dot"></i> ${m.venue}`;
+            let subDetail = m.channel ? `<i class="fa-solid fa-tv"></i> ${m.channel}` : (m.venue ? `<i class="fa-solid fa-location-dot"></i> ${m.venue}` : '');
             html += `
               <div class="sub-match-row">
                 <div style="display:flex; justify-content:space-between; align-items:center;">
                   <span class="sub-match-teams">${m.teams}</span>
                   ${hotTag}
                 </div>
-                <span class="sub-match-channel">${subDetail}</span>
+                ${subDetail ? `<span class="sub-match-channel">${subDetail}</span>` : ''}
               </div>`;
           });
           html += '</div>';
@@ -968,6 +1038,7 @@
     function updateCountdowns() {
       const now = new Date().getTime();
 
+      updateAseanCard(now);
       updateEPLCard(now);
       updateUEFACard(now);
       updateLaLigaCard(now);
