@@ -821,113 +821,146 @@
     /* FIFA ASEAN Cup 2026 Schedule (Auto Switcher for Now Sports Live Event 1) */
     const aseanMatches = [
       createMatch("GROUP STAGE", [
-        { teams: "LAOS VS BRUNEI DARUSSALAM (DIVISION 2)" }
-      ], "THU, SEP 24 • 05:30 PM MYT", "2026-09-24T17:30:00+08:00"),
-
-      createMatch("GROUP STAGE", [
-        { teams: "MYANMAR VS TIMOR-LESTE (DIVISION 2)" }
-      ], "THU, SEP 24 • 08:30 PM MYT", "2026-09-24T20:30:00+08:00"),
-
-      createMatch("GROUP STAGE", [
-        { teams: "BANGLADESH VS MALAYSIA" }
+        { teams: "BANGLADESH VS MALAYSIA", channel: "T Sports, Moji HD, Watch Live on Sukan+, Astro Channel 806, RTM Klik" }
       ], "FRI, SEP 25 • 05:30 PM MYT", "2026-09-25T17:30:00+08:00"),
 
       createMatch("GROUP STAGE", [
-        { teams: "INDONESIA VS SINGAPORE" }
+        { teams: "INDONESIA VS SINGAPORE", channel: "T Sports, Moji HD" }
       ], "SAT, SEP 26 • 01:30 AM MYT", "2026-09-26T01:30:00+08:00"),
 
       createMatch("GROUP STAGE", [
-        { teams: "BANGLADESH VS MALAYSIA" }
+        { teams: "BANGLADESH VS MALAYSIA", channel: "T Sports, Moji HD, Watch Live on Sukan+, Astro Channel 806, RTM Klik" }
       ], "SAT, SEP 26 • 05:30 PM MYT", "2026-09-26T17:30:00+08:00"),
 
       createMatch("GROUP STAGE", [
-        { teams: "VIETNAM VS PHILIPPINES" }
+        { teams: "VIETNAM VS PHILIPPINES", channel: "T Sports, Moji HD" }
       ], "SAT, SEP 26 • 09:00 PM MYT", "2026-09-26T21:00:00+08:00"),
 
       createMatch("GROUP STAGE", [
-        { teams: "LAOS VS BRUNEI DARUSSALAM (DIVISION 2)" }
-      ], "SUN, SEP 27 • 03:30 PM MYT", "2026-09-27T15:30:00+08:00"),
-
-      createMatch("GROUP STAGE", [
-        { teams: "MYANMAR VS TIMOR-LESTE (DIVISION 2)" }
-      ], "SUN, SEP 27 • 06:30 PM MYT", "2026-09-27T18:30:00+08:00"),
-
-      createMatch("GROUP STAGE", [
-        { teams: "SINGAPORE VS BANGLADESH" }
+        { teams: "SINGAPORE VS BANGLADESH", channel: "T Sports, Moji HD" }
       ], "MON, SEP 28 • 05:30 PM MYT", "2026-09-28T17:30:00+08:00"),
 
       createMatch("GROUP STAGE", [
-        { teams: "MALAYSIA VS INDONESIA" }
+        { teams: "MALAYSIA VS INDONESIA", channel: "T Sports, Moji HD, Watch Live on Sukan+, Astro Channel 806, RTM Klik" }
       ], "TUE, SEP 29 • 01:00 AM MYT", "2026-09-29T01:00:00+08:00"),
 
       createMatch("GROUP STAGE", [
-        { teams: "PHILIPPINES VS PAKISTAN" }
+        { teams: "PHILIPPINES VS PAKISTAN", channel: "T Sports, Moji HD" }
       ], "TUE, SEP 29 • 05:30 PM MYT", "2026-09-29T17:30:00+08:00"),
 
       createMatch("GROUP STAGE", [
-        { teams: "VIETNAM VS PHILIPPINES" }
-      ], "TUE, SEP 29 • 09:00 PM MYT", "2026-09-29T21:00:00+08:00"),
-
-      createMatch("GROUP STAGE", [
-        { teams: "TIMOR-LESTE VS CAMBODIA (DIVISION 2)" }
-      ], "WED, SEP 30 • 05:30 PM MYT", "2026-09-30T17:30:00+08:00"),
-
-      createMatch("GROUP STAGE", [
-        { teams: "BRUNEI DARUSSALAM VS HONG KONG (DIVISION 2)" }
-      ], "WED, SEP 30 • 08:30 PM MYT", "2026-09-30T20:30:00+08:00")
+        { teams: "VIETNAM VS PHILIPPINES", channel: "T Sports, Moji HD" }
+      ], "TUE, SEP 29 • 09:00 PM MYT", "2026-09-29T21:00:00+08:00")
     ];
 
     function updateAseanCard(now) {
       renderGenericSection(now, aseanMatches, 'asean-badge', 'asean-matches-body', 'asean-time', 'asean-countdown', 'FIFA ASEAN CUP 2026');
     }
 
-    /* Premier League Schedule (Upcoming Fixtures) */
+    /* Premier League Schedule */
     const eplMatches = [
       createMatch("PREMIER LEAGUE", [
         { teams: "ARSENAL VS LEEDS UNITED", channel: "TNT Sports 1, Star Sports Select 1" }
       ], "SAT, OCT 10 • 07:30 PM MYT", "2026-10-10T19:30:00+08:00"),
 
       createMatch("PREMIER LEAGUE", [
-        { teams: "MANCHESTER UNITED VS TOTTENHAM HOTSPUR", channel: "Star Sports Select 1" }
+        { teams: "MANCHESTER UNITED VS TOTTENHAM HOTSPUR", channel: "Star Sports Select 1, Sky Sports Premier League" }
       ], "SUN, OCT 11 • 12:30 AM MYT", "2026-10-11T00:30:00+08:00"),
 
       createMatch("PREMIER LEAGUE", [
-        { teams: "LIVERPOOL VS MANCHESTER CITY", channel: "Star Sports Select 1" }
+        { teams: "LIVERPOOL VS MANCHESTER CITY", channel: "Star Sports Select 1, Sky Sports Premier League" }
       ], "SUN, OCT 11 • 11:30 PM MYT", "2026-10-11T23:30:00+08:00"),
 
       createMatch("PREMIER LEAGUE", [
-        { teams: "COVENTRY CITY VS NEWCASTLE UNITED (POSTPONED)", channel: "Star Sports Select 1" }
+        { teams: "COVENTRY CITY VS NEWCASTLE UNITED (POSTPONED)", channel: "Star Sports Select 1, Sky Sports Premier League" }
       ], "TUE, OCT 13 • POSTPONED", "2026-10-13T00:00:00+08:00"),
 
       createMatch("PREMIER LEAGUE", [
         { teams: "EVERTON VS CHELSEA", channel: "TNT Sports 1" }
-      ], "SAT, OCT 17 • 07:30 PM MYT", "2026-10-17T19:30:00+08:00")
+      ], "SAT, OCT 17 • 07:30 PM MYT", "2026-10-17T19:30:00+08:00"),
+
+      createMatch("PREMIER LEAGUE", [
+        { teams: "NEWCASTLE UNITED VS ASTON VILLA", channel: "Sky Sports Premier League" }
+      ], "SUN, OCT 18 • 12:30 AM MYT", "2026-10-18T00:30:00+08:00"),
+
+      createMatch("PREMIER LEAGUE", [
+        { teams: "NOTTINGHAM FOREST VS ARSENAL", channel: "Sky Sports Premier League" }
+      ], "SUN, OCT 18 • 11:30 PM MYT", "2026-10-18T23:30:00+08:00"),
+
+      createMatch("PREMIER LEAGUE", [
+        { teams: "TOTTENHAM HOTSPUR VS COVENTRY CITY", channel: "Sky Sports Premier League" }
+      ], "TUE, OCT 20 • 03:00 AM MYT", "2026-10-20T03:00:00+08:00")
     ];
 
     function updateEPLCard(now) {
       renderGenericSection(now, eplMatches, 'epl-badge', 'epl-matches-body', 'epl-time', 'epl-countdown', 'PREMIER LEAGUE');
     }
 
-    /* UEFA Champions League Schedule (Matchday 1) */
+    /* UEFA Nations League Schedule */
     const uefaMatches = [
-      createMatch("MATCHDAY 1", [
-        { teams: "FENERBAHÇE VS ROMA", channel: "CBC Sport Azerbaijan, Tabii Spor 1, TRT 1" },
-        { teams: "PSV VS SHAKHTAR DONETSK", channel: "Tabii Spor 1" }
-      ], "FRI, SEP 11 • 12:45 AM MYT", "2026-09-11T00:45:00+08:00"),
+      createMatch("NATIONS LEAGUE", [
+        { teams: "ANDORRA VS MALTA", channel: "CBC Sport Azerbaijan, GTV" }
+      ], "FRI, SEP 25 • 12:00 AM MYT", "2026-09-25T00:00:00+08:00"),
 
-      createMatch("MATCHDAY 1", [
-        { teams: "BAYERN MÜNCHEN VS BODØ/GLIMT", channel: "Tabii Spor 1" },
-        { teams: "COMO VS RB LEIPZIG", channel: "Tabii Spor 1" },
-        { teams: "MANCHESTER UNITED VS SABAH", channel: "Tabii Spor 1" },
-        { teams: "SLAVIA PRAHA VS LENS", channel: "Tabii Spor 1" }
-      ], "FRI, SEP 11 • 03:00 AM MYT", "2026-09-11T03:00:00+08:00")
+      createMatch("NATIONS LEAGUE", [
+        { teams: "NETHERLANDS VS GERMANY", channel: "CBC Sport Azerbaijan, RCTI" },
+        { teams: "PORTUGAL VS WALES", channel: "iNews" }
+      ], "FRI, SEP 25 • 02:45 AM MYT", "2026-09-25T02:45:00+08:00"),
+
+      createMatch("NATIONS LEAGUE", [
+        { teams: "GEORGIA VS NORTHERN IRELAND", channel: "CBC Sport Azerbaijan" }
+      ], "SAT, SEP 26 • 12:00 AM MYT", "2026-09-26T00:00:00+08:00"),
+
+      createMatch("NATIONS LEAGUE", [
+        { teams: "TURKEY VS FRANCE", channel: "CBC Sport Azerbaijan, RCTI" },
+        { teams: "ITALY VS BELGIUM", channel: "iNews" }
+      ], "SAT, SEP 26 • 02:45 AM MYT", "2026-09-26T02:45:00+08:00"),
+
+      createMatch("NATIONS LEAGUE", [
+        { teams: "SLOVENIA VS SCOTLAND", channel: "beIN Sports Arabia 1 HD, CBC Sport Azerbaijan" }
+      ], "SAT, SEP 26 • 09:00 PM MYT", "2026-09-26T21:00:00+08:00"),
+
+      createMatch("NATIONS LEAGUE", [
+        { teams: "ICELAND VS ESTONIA", channel: "beIN Sports Arabia 1 HD" },
+        { teams: "BULGARIA VS LUXEMBOURG", channel: "CBC Sport Azerbaijan" }
+      ], "SUN, SEP 27 • 12:00 AM MYT", "2026-09-27T00:00:00+08:00"),
+
+      createMatch("NATIONS LEAGUE", [
+        { teams: "ENGLAND VS SPAIN", channel: "beIN Sports Arabia 1 HD, CBC Sport Azerbaijan, RCTI" },
+        { teams: "CZECH REPUBLIC VS CROATIA", channel: "iNews" }
+      ], "SUN, SEP 27 • 02:45 AM MYT", "2026-09-27T02:45:00+08:00"),
+
+      createMatch("NATIONS LEAGUE", [
+        { teams: "LITHUANIA VS AZERBAIJAN", channel: "CBC Sport Azerbaijan, GTV" }
+      ], "SUN, SEP 27 • 09:00 PM MYT", "2026-09-27T21:00:00+08:00"),
+
+      createMatch("NATIONS LEAGUE", [
+        { teams: "SERBIA VS NETHERLANDS", channel: "beIN Sports Arabia 1 HD, CBC Sport Azerbaijan" }
+      ], "MON, SEP 28 • 12:00 AM MYT", "2026-09-28T00:00:00+08:00"),
+
+      createMatch("NATIONS LEAGUE", [
+        { teams: "NORWAY VS PORTUGAL", channel: "beIN Sports Arabia 1 HD, CBC Sport Azerbaijan, RCTI" },
+        { teams: "GERMANY VS GREECE", channel: "iNews" }
+      ], "MON, SEP 28 • 02:45 AM MYT", "2026-09-28T02:45:00+08:00"),
+
+      createMatch("NATIONS LEAGUE", [
+        { teams: "BELGIUM VS FRANCE", channel: "RCTI" }
+      ], "TUE, SEP 29 • 02:45 AM MYT", "2026-09-29T02:45:00+08:00"),
+
+      createMatch("NATIONS LEAGUE", [
+        { teams: "AZERBAIJAN VS LIECHTENSTEIN", channel: "CBC Sport Azerbaijan" }
+      ], "FRI, OCT 02 • 12:00 AM MYT", "2026-10-02T00:00:00+08:00"),
+
+      createMatch("NATIONS LEAGUE", [
+        { teams: "AZERBAIJAN VS LITHUANIA", channel: "CBC Sport Azerbaijan" }
+      ], "SUN, OCT 04 • 09:00 PM MYT", "2026-10-04T21:00:00+08:00")
     ];
 
     function updateUEFACard(now) {
-      renderGenericSection(now, uefaMatches, 'uefa-badge', 'uefa-matches-body', 'uefa-time', 'uefa-countdown', 'UEFA CHAMPIONS LEAGUE');
+      renderGenericSection(now, uefaMatches, 'uefa-badge', 'uefa-matches-body', 'uefa-time', 'uefa-countdown', 'UEFA NATIONS LEAGUE');
     }
 
-    /* La Liga Schedule (Updated Fixtures) */
+    /* La Liga Schedule */
     const laLigaMatches = [
       createMatch("LA LIGA", [
         { teams: "BARCELONA VS GETAFE", channel: "T Sports" }
