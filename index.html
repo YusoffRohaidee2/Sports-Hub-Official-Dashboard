@@ -529,49 +529,7 @@
       </div>
     </a>
 
-    <!-- HOT-2: HOME OF PREMIER LEAGUE -->
-    <a class="link-card" href="https://home-of-premier-league-website.vercel.app/" target="_blank" rel="noopener noreferrer" data-track-id="premier-league">
-      <div class="card-info">
-        <span class="live-badge" id="epl-badge"><span class="live-dot"></span>HOME OF PREMIER LEAGUE</span>
-        
-        <div id="epl-matches-body"></div>
-
-        <div class="match-details" style="margin-top: 4px;">
-          <span id="epl-time"><i class="fa-regular fa-clock"></i> Loading...</span>
-        </div>
-
-        <div class="countdown-timer" id="epl-countdown">
-          <i class="fa-solid fa-hourglass-half"></i> <span class="time-text">Loading...</span>
-        </div>
-        <span class="click-counter"><i class="fa-solid fa-eye"></i> <span id="click-premier-league">0</span> clicks</span>
-      </div>
-      <div class="card-right-group">
-        <div class="card-action-icon"><i class="fa-solid fa-play"></i></div>
-      </div>
-    </a>
-
-    <!-- HOT-3: HOME OF LALIGA -->
-    <a class="link-card" href="https://home-of-la-liga.vercel.app/" target="_blank" rel="noopener noreferrer" data-track-id="la-liga">
-      <div class="card-info">
-        <span class="live-badge" id="laliga-badge"><span class="live-dot"></span>HOME OF LA LIGA</span>
-        
-        <div id="laliga-matches-body"></div>
-
-        <div class="match-details" style="margin-top: 4px;">
-          <span id="laliga-time"><i class="fa-regular fa-clock"></i> Loading...</span>
-        </div>
-
-        <div class="countdown-timer" id="laliga-countdown">
-          <i class="fa-solid fa-hourglass-half"></i> <span class="time-text">Loading...</span>
-        </div>
-        <span class="click-counter"><i class="fa-solid fa-eye"></i> <span id="click-la-liga">0</span> clicks</span>
-      </div>
-      <div class="card-right-group">
-        <div class="card-action-icon"><i class="fa-solid fa-play"></i></div>
-      </div>
-    </a>
-
-    <!-- HOT-4: HOME OF UEFA -->
+    <!-- HOME OF UEFA -->
     <a class="link-card" href="https://home-of-uefa.vercel.app/" target="_blank" rel="noopener noreferrer" data-track-id="uefa">
       <div class="card-info">
         <span class="live-badge" id="uefa-badge"><span class="live-dot"></span>HOME OF UEFA</span>
@@ -592,7 +550,7 @@
       </div>
     </a>
 
-    <!-- Now Sports Live Events Segment (Offline All) -->
+    <!-- Now Sports Live Events Segment -->
     <div class="section-title">
       <div class="section-main-label"><i class="fa-solid fa-bolt" style="color: var(--neon-cyan);"></i> Now Sports Live Events!</div>
       <div class="section-sub-label">Ready for fast live events!</div>
@@ -634,26 +592,6 @@
       </div>
     </a>
 
-    <!-- Mini Website Project -->
-    <div class="section-title">
-      <div class="section-main-label"><i class="fa-solid fa-futbol" style="color: var(--neon-green);"></i> Mini Website Project</div>
-      <div class="section-sub-label">Football Media Center</div>
-    </div>
-
-    <!-- FIFA+ Live Stream Hub -->
-    <a class="link-card" href="https://fifa-plus-live-stream-hub.vercel.app/" target="_blank" rel="noopener noreferrer" data-track-id="fifa-plus">
-      <div class="card-info">
-        <span class="site-name">FIFA+ Live Stream Hub</span>
-        <div class="match-details" style="margin-top: 2px;">
-          <span><i class="fa-solid fa-circle-info" style="color: var(--neon-cyan);"></i> Stream past world cup matches and other FIFA matches here!</span>
-        </div>
-        <span class="click-counter"><i class="fa-solid fa-eye"></i> <span id="click-fifa-plus">0</span> clicks</span>
-      </div>
-      <div class="card-right-group">
-        <div class="card-action-icon"><i class="fa-solid fa-arrow-up-right-from-square"></i></div>
-      </div>
-    </a>
-
     <!-- Other Websites -->
     <div class="section-title">
       <div class="section-main-label"><i class="fa-solid fa-star" style="color: var(--accent-gold);"></i> Other Websites</div>
@@ -667,19 +605,6 @@
       </div>
       <div class="card-right-group">
         <button class="fav-btn" data-id="f1-hub" title="Favourite" onclick="toggleFav(event, 'f1-hub')">
-          <i class="fa-solid fa-star"></i>
-        </button>
-      </div>
-    </a>
-
-    <!-- MotoGP Live Streaming Hub -->
-    <a class="link-card" href="https://moto-gp-live-streaming-hub.vercel.app/" target="_blank" rel="noopener noreferrer" data-track-id="motogp-hub">
-      <div class="card-info">
-        <span class="site-name">MotoGP Live Streaming Hub</span>
-        <span class="click-counter"><i class="fa-solid fa-eye"></i> <span id="click-motogp-hub">0</span> clicks</span>
-      </div>
-      <div class="card-right-group">
-        <button class="fav-btn" data-id="motogp-hub" title="Favourite" onclick="toggleFav(event, 'motogp-hub')">
           <i class="fa-solid fa-star"></i>
         </button>
       </div>
@@ -857,45 +782,6 @@
       renderGenericSection(now, aseanMatches, 'asean-badge', 'asean-matches-body', 'asean-time', 'asean-countdown', 'FIFA ASEAN CUP 2026');
     }
 
-    /* Premier League Schedule */
-    const eplMatches = [
-      createMatch("PREMIER LEAGUE", [
-        { teams: "ARSENAL VS LEEDS UNITED", channel: "TNT Sports 1, Star Sports Select 1" }
-      ], "SAT, OCT 10 • 07:30 PM MYT", "2026-10-10T19:30:00+08:00"),
-
-      createMatch("PREMIER LEAGUE", [
-        { teams: "MANCHESTER UNITED VS TOTTENHAM HOTSPUR", channel: "Star Sports Select 1, Sky Sports Premier League" }
-      ], "SUN, OCT 11 • 12:30 AM MYT", "2026-10-11T00:30:00+08:00"),
-
-      createMatch("PREMIER LEAGUE", [
-        { teams: "LIVERPOOL VS MANCHESTER CITY", channel: "Star Sports Select 1, Sky Sports Premier League" }
-      ], "SUN, OCT 11 • 11:30 PM MYT", "2026-10-11T23:30:00+08:00"),
-
-      createMatch("PREMIER LEAGUE", [
-        { teams: "COVENTRY CITY VS NEWCASTLE UNITED (POSTPONED)", channel: "Star Sports Select 1, Sky Sports Premier League" }
-      ], "TUE, OCT 13 • POSTPONED", "2026-10-13T00:00:00+08:00"),
-
-      createMatch("PREMIER LEAGUE", [
-        { teams: "EVERTON VS CHELSEA", channel: "TNT Sports 1" }
-      ], "SAT, OCT 17 • 07:30 PM MYT", "2026-10-17T19:30:00+08:00"),
-
-      createMatch("PREMIER LEAGUE", [
-        { teams: "NEWCASTLE UNITED VS ASTON VILLA", channel: "Sky Sports Premier League" }
-      ], "SUN, OCT 18 • 12:30 AM MYT", "2026-10-18T00:30:00+08:00"),
-
-      createMatch("PREMIER LEAGUE", [
-        { teams: "NOTTINGHAM FOREST VS ARSENAL", channel: "Sky Sports Premier League" }
-      ], "SUN, OCT 18 • 11:30 PM MYT", "2026-10-18T23:30:00+08:00"),
-
-      createMatch("PREMIER LEAGUE", [
-        { teams: "TOTTENHAM HOTSPUR VS COVENTRY CITY", channel: "Sky Sports Premier League" }
-      ], "TUE, OCT 20 • 03:00 AM MYT", "2026-10-20T03:00:00+08:00")
-    ];
-
-    function updateEPLCard(now) {
-      renderGenericSection(now, eplMatches, 'epl-badge', 'epl-matches-body', 'epl-time', 'epl-countdown', 'HOME OF PREMIER LEAGUE');
-    }
-
     /* UEFA Nations League Schedule */
     const uefaMatches = [
 
@@ -962,29 +848,6 @@
 
     function updateUEFACard(now) {
       renderGenericSection(now, uefaMatches, 'uefa-badge', 'uefa-matches-body', 'uefa-time', 'uefa-countdown', 'HOME OF UEFA');
-    }
-
-    /* La Liga Schedule */
-    const laLigaMatches = [
-      createMatch("LA LIGA", [
-        { teams: "BARCELONA VS GETAFE", channel: "T Sports" }
-      ], "SUN, OCT 11 • 12:30 AM MYT", "2026-10-11T00:30:00+08:00"),
-
-      createMatch("LA LIGA", [
-        { teams: "REAL MADRID VS VILLARREAL", channel: "T Sports" }
-      ], "SUN, OCT 11 • 03:00 AM MYT", "2026-10-11T03:00:00+08:00"),
-
-      createMatch("LA LIGA", [
-        { teams: "REAL BETIS VS BARCELONA", channel: "T Sports" }
-      ], "SUN, OCT 18 • 12:30 AM MYT", "2026-10-18T00:30:00+08:00"),
-
-      createMatch("LA LIGA", [
-        { teams: "REAL MADRID VS SEVILLA", channel: "T Sports" }
-      ], "MON, OCT 19 • 03:00 AM MYT", "2026-10-19T03:00:00+08:00")
-    ];
-
-    function updateLaLigaCard(now) {
-      renderGenericSection(now, laLigaMatches, 'laliga-badge', 'laliga-matches-body', 'laliga-time', 'laliga-countdown', 'HOME OF LA LIGA');
     }
 
     /* Dynamic Multi-Match Renderer Engine */
@@ -1076,9 +939,7 @@
       const now = new Date().getTime();
 
       updateAseanCard(now);
-      updateEPLCard(now);
       updateUEFACard(now);
-      updateLaLigaCard(now);
     }
 
     document.addEventListener('DOMContentLoaded', () => {
