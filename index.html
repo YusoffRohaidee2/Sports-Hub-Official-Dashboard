@@ -508,7 +508,28 @@
       <div class="section-main-label"><i class="fa-solid fa-fire" style="color: var(--neon-pink);"></i> Hot Websites</div>
     </div>
 
-    <!-- HOT-1: FORMULA 1 SINGAPORE GP 2026 -->
+    <!-- HOT-1: FOOTBALL XTRA -->
+    <a class="link-card" href="https://football-xtra.vercel.app/" target="_blank" rel="noopener noreferrer" data-track-id="football-xtra">
+      <div class="card-info">
+        <span class="live-badge" id="football-xtra-badge"><span class="live-dot"></span> FOOTBALL XTRA</span>
+        
+        <div id="football-xtra-matches-body"></div>
+
+        <div class="match-details" style="margin-top: 4px;">
+          <span id="football-xtra-time"><i class="fa-regular fa-clock"></i> Loading...</span>
+        </div>
+
+        <div class="countdown-timer" id="football-xtra-countdown">
+          <i class="fa-solid fa-hourglass-half"></i> <span class="time-text">Loading...</span>
+        </div>
+        <span class="click-counter"><i class="fa-solid fa-eye"></i> <span id="click-football-xtra">0</span> clicks</span>
+      </div>
+      <div class="card-right-group">
+        <div class="card-action-icon"><i class="fa-solid fa-play"></i></div>
+      </div>
+    </a>
+
+    <!-- HOT-2: FORMULA 1 SINGAPORE GP 2026 -->
     <a class="link-card" href="https://f1-live-streaming-hub.vercel.app/" target="_blank" rel="noopener noreferrer" data-track-id="f1-hub">
       <div class="card-info">
         <span class="live-badge" id="f1-badge"><span class="live-dot"></span> FORMULA 1 SINGAPORE GP 2026</span>
@@ -529,7 +550,7 @@
       </div>
     </a>
 
-    <!-- HOT-2: HOME OF PREMIER LEAGUE -->
+    <!-- HOT-3: HOME OF PREMIER LEAGUE -->
     <a class="link-card" href="https://home-of-premier-league-website.vercel.app/" target="_blank" rel="noopener noreferrer" data-track-id="premier-league">
       <div class="card-info">
         <span class="live-badge" id="epl-badge"><span class="live-dot"></span> HOME OF PREMIER LEAGUE</span>
@@ -550,7 +571,7 @@
       </div>
     </a>
 
-    <!-- HOT-3: HOME OF LALIGA -->
+    <!-- HOT-4: HOME OF LALIGA -->
     <a class="link-card" href="https://home-of-la-liga.vercel.app/" target="_blank" rel="noopener noreferrer" data-track-id="la-liga">
       <div class="card-info">
         <span class="live-badge" id="laliga-badge"><span class="live-dot"></span> HOME OF LA LIGA</span>
@@ -571,7 +592,7 @@
       </div>
     </a>
 
-    <!-- HOT-4: HOME OF UEFA -->
+    <!-- HOT-5: HOME OF UEFA -->
     <a class="link-card" href="https://home-of-uefa.vercel.app/" target="_blank" rel="noopener noreferrer" data-track-id="uefa">
       <div class="card-info">
         <span class="live-badge" id="uefa-badge"><span class="live-dot"></span> HOME OF UEFA</span>
@@ -731,7 +752,8 @@
 
     onValue(livePresenceRef, (snap) => {
       const count = snap.exists() ? Object.keys(snap.val()).length : 0;
-      document.getElementById('live-count').innerText = count;
+      const el = document.getElementById('live-count');
+      if (el) el.innerText = count;
     });
 
     // Lifetime Visitor Counter
@@ -746,7 +768,8 @@
 
     onValue(lifetimeRef, (snap) => {
       const count = snap.exists() ? snap.val() : 0;
-      document.getElementById('lifetime-count').innerText = count.toLocaleString();
+      const el = document.getElementById('lifetime-count');
+      if (el) el.innerText = count.toLocaleString();
     });
 
     // Tracking Klik
@@ -817,6 +840,79 @@
       };
     }
 
+    /* Football XTRA Schedule */
+    const footballXtraMatches = [
+      createMatch("PRO LEAGUE LIVE", [
+        { teams: "AL HILAL VS AL ITTIHAD", channel: "SPOTV Asia", hot: false }
+      ], "SUN, OCT 11 • 02:00 AM MYT", "2026-10-11T02:00:00+08:00"),
+
+      createMatch("ACL ELITE LIVE", [
+        { teams: "PAKHTAKOR VS AL QUADISIYA", channel: "GTV, iNews, beIN Sports Arabia 2", hot: false }
+      ], "MON, OCT 12 • 09:45 PM MYT", "2026-10-12T21:45:00+08:00"),
+
+      createMatch("ACL ELITE LIVE", [
+        { teams: "AL WASL VS AL-AHLI", channel: "GTV, beIN Sports Arabia 1", hot: false },
+        { teams: "TRACTOR SAZI VS AL SHAMAL", channel: "beIN Sports Arabia 2", hot: false }
+      ], "TUE, OCT 13 • 12:00 AM MYT", "2026-10-13T00:00:00+08:00"),
+
+      createMatch("ACL ELITE LIVE", [
+        { teams: "AL GHARAFA VS ESTEGHLAL", channel: "beIN Sports Arabia 1", hot: false },
+        { teams: "AL NASSR VS NEFTCHI", channel: "beIN Sports Arabia 3", hot: false }
+      ], "TUE, OCT 13 • 02:15 AM MYT", "2026-10-13T02:15:00+08:00"),
+
+      createMatch("ACL ELITE LIVE", [
+        { teams: "NEWCASTLE JETS VS GAMBA OSAKA", channel: "beIN Sports Arabia 2", hot: false }
+      ], "TUE, OCT 13 • 03:45 PM MYT", "2026-10-13T15:45:00+08:00"),
+
+      createMatch("ACL ELITE LIVE", [
+        { teams: "POHANG STEELERS VS JOHOR DARUL TA’ZIM", channel: "beIN Sports Arabia 3", hot: false }
+      ], "TUE, OCT 13 • 06:00 PM MYT", "2026-10-13T18:00:00+08:00"),
+
+      createMatch("ACL ELITE LIVE", [
+        { teams: "BURIRAM UNITED VS BEIJING GUOAN", channel: "beIN Sports Arabia 2", hot: false }
+      ], "TUE, OCT 13 • 08:15 PM MYT", "2026-10-13T20:15:00+08:00"),
+
+      createMatch("ACL TWO LIVE", [
+        { teams: "EAST BENGAL II VS AL SHORTA", channel: "beIN Sports Arabia 1", hot: false }
+      ], "TUE, OCT 13 • 09:45 PM MYT", "2026-10-13T21:45:00+08:00"),
+
+      createMatch("ACL ELITE LIVE", [
+        { teams: "AL SADD VS AL HILAL", channel: "beIN Sports Arabia 2", hot: false }
+      ], "WED, OCT 14 • 12:00 AM MYT", "2026-10-14T00:00:00+08:00"),
+
+      createMatch("ACL ELITE LIVE", [
+        { teams: "AL ITTIHAD VS SHABAB AL AHLI", channel: "beIN Sports Arabia 2", hot: false }
+      ], "WED, OCT 14 • 02:15 AM MYT", "2026-10-14T02:15:00+08:00"),
+
+      createMatch("ACL TWO LIVE", [
+        { teams: "MELBOURNE VICTORY VS SEOUL", channel: "beIN Sports Arabia 1", hot: false }
+      ], "WED, OCT 14 • 03:45 PM MYT", "2026-10-14T15:45:00+08:00"),
+
+      createMatch("ACL ELITE LIVE", [
+        { teams: "VISSEL KOBE VS JEONBUK MOTORS", channel: "beIN Sports Arabia 2", hot: false }
+      ], "WED, OCT 14 • 06:00 PM MYT", "2026-10-14T18:00:00+08:00"),
+
+      createMatch("ACL TWO LIVE", [
+        { teams: "PERSIB VS VIETTEL", channel: "GTV, RCTI, iNews, beIN Sports Arabia 3", hot: false }
+      ], "WED, OCT 14 • 08:15 PM MYT", "2026-10-14T20:15:00+08:00"),
+
+      createMatch("ACL TWO LIVE", [
+        { teams: "AL TAAWON VS AL RAYYAN", channel: "beIN Sports Arabia 3", hot: false }
+      ], "THU, OCT 15 • 12:00 AM MYT", "2026-10-15T00:00:00+08:00"),
+
+      createMatch("ACL TWO LIVE", [
+        { teams: "PERSIB VS MELBOURNE VICTORY", channel: "GTV, RCTI, iNews", hot: false }
+      ], "WED, OCT 28 • 08:15 PM MYT", "2026-10-28T20:15:00+08:00"),
+
+      createMatch("ACL TWO LIVE", [
+        { teams: "MELBOURNE VICTORY VS PERSIB", channel: "GTV, RCTI, iNews", hot: false }
+      ], "WED, NOV 04 • 03:45 PM MYT", "2026-11-04T15:45:00+08:00")
+    ];
+
+    function updateFootballXtraCard(now) {
+      renderGenericSection(now, footballXtraMatches, 'football-xtra-badge', 'football-xtra-matches-body', 'football-xtra-time', 'football-xtra-countdown', 'FOOTBALL XTRA');
+    }
+
     /* Formula 1 Singapore Airlines Singapore Grand Prix 2026 Schedule */
     const f1Matches = [
       createMatch("SPRINT", [
@@ -843,8 +939,8 @@
       ], "SAT, OCT 10 • 07:30 PM MYT", "2026-10-10T19:30:00+08:00"),
 
       createMatch("PREMIER LEAGUE LIVE", [
-        { teams: "CHELSEA VS AFC BOURNEMOUTH", channel: "Star Sports Select 1, beIN Sports Arabia 1" },
-        { teams: "ASTON VILLA VS BRENTFORD", channel: "Star Sports Select 2, beIN Sports Arabia 2" }
+        { teams: "CHELSEA VS AFC BOURNEMOUTH", channel: "Star Sports Select 1, beIN Sports Arabia 1", hot: true },
+        { teams: "ASTON VILLA VS BRENTFORD", channel: "Star Sports Select 2, beIN Sports Arabia 2", hot: false }
       ], "SAT, OCT 10 • 10:00 PM MYT", "2026-10-10T22:00:00+08:00"),
 
       createMatch("PREMIER LEAGUE LIVE", [
@@ -852,28 +948,28 @@
       ], "SUN, OCT 11 • 12:30 AM MYT", "2026-10-11T00:30:00+08:00"),
 
       createMatch("PREMIER LEAGUE REPLAY", [
-        { teams: "ASTON VILLA VS BRENTFORD (REPEAT)", channel: "beIN Sports Arabia 2" }
+        { teams: "ASTON VILLA VS BRENTFORD (REPEAT)", channel: "beIN Sports Arabia 2", hot: false }
       ], "SUN, OCT 11 • 07:30 AM MYT", "2026-10-11T07:30:00+08:00"),
 
       createMatch("PREMIER LEAGUE REPLAY", [
-        { teams: "ARSENAL VS LEEDS UNITED (REPEAT)", channel: "beIN Sports Arabia 1" }
+        { teams: "ARSENAL VS LEEDS UNITED (REPEAT)", channel: "beIN Sports Arabia 1", hot: false }
       ], "SUN, OCT 11 • 01:00 PM MYT", "2026-10-11T13:00:00+08:00"),
 
       createMatch("PREMIER LEAGUE REPLAY", [
-        { teams: "CHELSEA VS AFC BOURNEMOUTH (REPEAT)", channel: "beIN Sports Arabia 1" }
+        { teams: "CHELSEA VS AFC BOURNEMOUTH (REPEAT)", channel: "beIN Sports Arabia 1", hot: false }
       ], "SUN, OCT 11 • 03:45 PM MYT", "2026-10-11T15:45:00+08:00"),
 
       createMatch("PREMIER LEAGUE REPLAY", [
-        { teams: "ASTON VILLA VS BRENTFORD (REPEAT)", channel: "beIN Sports Arabia 2" }
+        { teams: "ASTON VILLA VS BRENTFORD (REPEAT)", channel: "beIN Sports Arabia 2", hot: false }
       ], "SUN, OCT 11 • 05:00 PM MYT", "2026-10-11T17:00:00+08:00"),
 
       createMatch("PREMIER LEAGUE REPLAY", [
-        { teams: "MANCHESTER UNITED VS TOTTENHAM HOTSPUR (REPEAT)", channel: "beIN Sports Arabia 1" }
+        { teams: "MANCHESTER UNITED VS TOTTENHAM HOTSPUR (REPEAT)", channel: "beIN Sports Arabia 1", hot: false }
       ], "SUN, OCT 11 • 06:15 PM MYT", "2026-10-11T18:15:00+08:00"),
 
       createMatch("PREMIER LEAGUE LIVE", [
-        { teams: "CRYSTAL PALACE VS NOTTINGHAM FOREST", channel: "Star Sports Select 2, beIN Sports Arabia 1" },
-        { teams: "HULL CITY VS EVERTON", channel: "Star Sports Select 1, beIN Sports Arabia 2" }
+        { teams: "CRYSTAL PALACE VS NOTTINGHAM FOREST", channel: "Star Sports Select 2, beIN Sports Arabia 1", hot: false },
+        { teams: "HULL CITY VS EVERTON", channel: "Star Sports Select 1, beIN Sports Arabia 2", hot: false }
       ], "SUN, OCT 11 • 09:00 PM MYT", "2026-10-11T21:00:00+08:00"),
 
       createMatch("PREMIER LEAGUE LIVE", [
@@ -881,27 +977,27 @@
       ], "SUN, OCT 11 • 11:30 PM MYT", "2026-10-11T23:30:00+08:00"),
 
       createMatch("PREMIER LEAGUE REPLAY", [
-        { teams: "HULL CITY VS EVERTON (REPEAT)", channel: "beIN Sports Arabia 2" }
+        { teams: "HULL CITY VS EVERTON (REPEAT)", channel: "beIN Sports Arabia 2", hot: false }
       ], "MON, OCT 12 • 07:00 AM MYT", "2026-10-12T07:00:00+08:00"),
 
       createMatch("PREMIER LEAGUE REPLAY", [
-        { teams: "HULL CITY VS EVERTON (REPEAT)", channel: "beIN Sports Arabia 2" }
+        { teams: "HULL CITY VS EVERTON (REPEAT)", channel: "beIN Sports Arabia 2", hot: false }
       ], "MON, OCT 12 • 03:00 PM MYT", "2026-10-12T15:00:00+08:00"),
 
       createMatch("PREMIER LEAGUE REPLAY", [
-        { teams: "CRYSTAL PALACE VS NOTTINGHAM FOREST (REPEAT)", channel: "beIN Sports Arabia 1" }
+        { teams: "CRYSTAL PALACE VS NOTTINGHAM FOREST (REPEAT)", channel: "beIN Sports Arabia 1", hot: false }
       ], "MON, OCT 12 • 04:00 PM MYT", "2026-10-12T16:00:00+08:00"),
 
       createMatch("PREMIER LEAGUE REPLAY", [
-        { teams: "LIVERPOOL VS MANCHESTER CITY (REPEAT)", channel: "beIN Sports Arabia 1" }
+        { teams: "LIVERPOOL VS MANCHESTER CITY (REPEAT)", channel: "beIN Sports Arabia 1", hot: false }
       ], "MON, OCT 12 • 06:45 PM MYT", "2026-10-12T18:45:00+08:00"),
 
       createMatch("PREMIER LEAGUE LIVE", [
-        { teams: "COVENTRY CITY VS NEWCASTLE UNITED", channel: "Star Sports Select 1, beIN Sports Arabia 2" }
+        { teams: "COVENTRY CITY VS NEWCASTLE UNITED", channel: "Star Sports Select 1, beIN Sports Arabia 2", hot: false }
       ], "TUE, OCT 13 • 03:00 AM MYT", "2026-10-13T03:00:00+08:00"),
 
       createMatch("PREMIER LEAGUE REPLAY", [
-        { teams: "COVENTRY CITY VS NEWCASTLE UNITED (REPEAT)", channel: "beIN Sports Arabia 2" }
+        { teams: "COVENTRY CITY VS NEWCASTLE UNITED (REPEAT)", channel: "beIN Sports Arabia 2", hot: false }
       ], "TUE, OCT 13 • 09:30 AM MYT", "2026-10-13T09:30:00+08:00")
     ];
 
@@ -912,7 +1008,7 @@
     /* La Liga Schedule */
     const laLigaMatches = [
       createMatch("LA LIGA LIVE", [
-        { teams: "MÁLAGA VS ESPANYOL", channel: "beIN Sports Arabia 2" }
+        { teams: "MÁLAGA VS ESPANYOL", channel: "beIN Sports Arabia 2", hot: false }
       ], "SAT, OCT 10 • 03:00 AM MYT", "2026-10-10T03:00:00+08:00"),
 
       createMatch("LA LIGA LIVE", [
@@ -924,55 +1020,55 @@
       ], "SUN, OCT 11 • 03:00 AM MYT", "2026-10-11T03:00:00+08:00"),
 
       createMatch("LA LIGA REPLAY", [
-        { teams: "BARCELONA VS GETAFE (REPEAT)", channel: "beIN Sports Arabia 2" }
+        { teams: "BARCELONA VS GETAFE (REPEAT)", channel: "beIN Sports Arabia 2", hot: false }
       ], "SUN, OCT 11 • 09:30 AM MYT", "2026-10-11T09:30:00+08:00"),
 
       createMatch("LA LIGA REPLAY", [
-        { teams: "REAL MADRID VS VILLARREAL (REPEAT)", channel: "beIN Sports Arabia 2" }
+        { teams: "REAL MADRID VS VILLARREAL (REPEAT)", channel: "beIN Sports Arabia 2", hot: false }
       ], "SUN, OCT 11 • 12:15 PM MYT", "2026-10-11T12:15:00+08:00"),
 
       createMatch("LA LIGA REPLAY", [
-        { teams: "BARCELONA VS GETAFE (REPEAT)", channel: "beIN Sports Arabia 2" }
+        { teams: "BARCELONA VS GETAFE (REPEAT)", channel: "beIN Sports Arabia 2", hot: false }
       ], "SUN, OCT 11 • 07:00 PM MYT", "2026-10-11T19:00:00+08:00"),
 
       createMatch("LA LIGA LIVE", [
-        { teams: "ELCHE VS CELTA DE VIGO", channel: "beIN Sports Arabia 3" }
+        { teams: "ELCHE VS CELTA DE VIGO", channel: "beIN Sports Arabia 3", hot: false }
       ], "SUN, OCT 11 • 08:00 PM MYT", "2026-10-11T20:00:00+08:00"),
 
       createMatch("LA LIGA LIVE", [
-        { teams: "REAL SOCIEDAD VS DEPORTIVO LA CORUÑA", channel: "beIN Sports Arabia 3" }
+        { teams: "REAL SOCIEDAD VS DEPORTIVO LA CORUÑA", channel: "beIN Sports Arabia 3", hot: false }
       ], "SUN, OCT 11 • 10:15 PM MYT", "2026-10-11T22:15:00+08:00"),
 
       createMatch("LA LIGA LIVE", [
-        { teams: "REAL BETIS VS OSASUNA", channel: "beIN Sports Arabia 2" }
+        { teams: "REAL BETIS VS OSASUNA", channel: "beIN Sports Arabia 2", hot: false }
       ], "MON, OCT 12 • 12:30 AM MYT", "2026-10-12T00:30:00+08:00"),
 
       createMatch("LA LIGA LIVE", [
-        { teams: "RACING SANTANDER VS VALENCIA", channel: "beIN Sports Arabia 2" }
+        { teams: "RACING SANTANDER VS VALENCIA", channel: "beIN Sports Arabia 2", hot: false }
       ], "MON, OCT 12 • 03:00 AM MYT", "2026-10-12T03:00:00+08:00"),
 
       createMatch("LA LIGA REPLAY", [
-        { teams: "REAL MADRID VS VILLARREAL (REPEAT)", channel: "beIN Sports Arabia 2" }
+        { teams: "REAL MADRID VS VILLARREAL (REPEAT)", channel: "beIN Sports Arabia 2", hot: false }
       ], "MON, OCT 12 • 05:00 AM MYT", "2026-10-12T05:00:00+08:00"),
 
       createMatch("LA LIGA REPLAY", [
-        { teams: "REAL BETIS VS OSASUNA (REPEAT)", channel: "beIN Sports Arabia 2" }
+        { teams: "REAL BETIS VS OSASUNA (REPEAT)", channel: "beIN Sports Arabia 2", hot: false }
       ], "MON, OCT 12 • 09:00 AM MYT", "2026-10-12T09:00:00+08:00"),
 
       createMatch("LA LIGA REPLAY", [
-        { teams: "RACING SANTANDER VS VALENCIA (REPEAT)", channel: "beIN Sports Arabia 2" }
+        { teams: "RACING SANTANDER VS VALENCIA (REPEAT)", channel: "beIN Sports Arabia 2", hot: false }
       ], "MON, OCT 12 • 11:00 AM MYT", "2026-10-12T11:00:00+08:00"),
 
       createMatch("LA LIGA REPLAY", [
-        { teams: "BARCELONA VS GETAFE (REPEAT)", channel: "beIN Sports Arabia 2" }
+        { teams: "BARCELONA VS GETAFE (REPEAT)", channel: "beIN Sports Arabia 2", hot: false }
       ], "MON, OCT 12 • 01:00 PM MYT", "2026-10-12T13:00:00+08:00"),
 
       createMatch("LA LIGA REPLAY", [
-        { teams: "REAL BETIS VS OSASUNA (REPEAT)", channel: "beIN Sports Arabia 2" }
+        { teams: "REAL BETIS VS OSASUNA (REPEAT)", channel: "beIN Sports Arabia 2", hot: false }
       ], "MON, OCT 12 • 05:00 PM MYT", "2026-10-12T17:00:00+08:00"),
 
       createMatch("LA LIGA REPLAY", [
-        { teams: "RACING SANTANDER VS VALENCIA (REPEAT)", channel: "beIN Sports Arabia 2" }
+        { teams: "RACING SANTANDER VS VALENCIA (REPEAT)", channel: "beIN Sports Arabia 2", hot: false }
       ], "MON, OCT 12 • 07:00 PM MYT", "2026-10-12T19:00:00+08:00")
     ];
 
@@ -983,27 +1079,25 @@
     /* UEFA Champions League & Europa League Schedule */
     const uefaMatches = [
       createMatch("UEFA CHAMPIONS LEAGUE LIVE", [
-        { teams: "LENS VS SPORTING CP", channel: "beIN Sports Arabia 3" }
-      ], "WED, OCT 14 • 12:45 AM MYT", "2026-10-14T00:45:00+08:00"),
-
-      createMatch("UEFA CHAMPIONS LEAGUE LIVE", [
+        { teams: "ARSENAL VS LILLE", channel: "beIN Sports Arabia 2", hot: true },
+        { teams: "ATLÉTICO MADRID VS MANCHESTER UNITED", channel: "beIN Sports Arabia 3", hot: true },
         { teams: "GALATASARAY VS BARCELONA", channel: "beIN Sports Arabia 1", hot: true }
       ], "WED, OCT 14 • 03:00 AM MYT", "2026-10-14T03:00:00+08:00"),
 
       createMatch("UEFA CHAMPIONS LEAGUE REPLAY", [
-        { teams: "GALATASARAY VS BARCELONA (REPEAT)", channel: "beIN Sports Arabia 1" }
+        { teams: "GALATASARAY VS BARCELONA (REPEAT)", channel: "beIN Sports Arabia 1", hot: false }
       ], "WED, OCT 14 • 07:30 AM MYT", "2026-10-14T07:30:00+08:00"),
 
       createMatch("UEFA CHAMPIONS LEAGUE REPLAY", [
-        { teams: "GALATASARAY VS BARCELONA (REPEAT)", channel: "beIN Sports Arabia 1" }
+        { teams: "GALATASARAY VS BARCELONA (REPEAT)", channel: "beIN Sports Arabia 1", hot: false }
       ], "WED, OCT 14 • 05:45 PM MYT", "2026-10-14T17:45:00+08:00"),
 
       createMatch("UEFA CHAMPIONS LEAGUE REPLAY", [
-        { teams: "MANCHESTER CITY VS PSG (REPEAT)", channel: "beIN Sports Arabia 2" }
+        { teams: "MANCHESTER CITY VS PSG (REPEAT)", channel: "beIN Sports Arabia 2", hot: false }
       ], "WED, OCT 14 • 09:50 PM MYT", "2026-10-14T21:50:00+08:00"),
 
       createMatch("UEFA YOUTH LEAGUE LIVE", [
-        { teams: "MANCHESTER CITY U19 VS PSG U19", channel: "beIN Sports Arabia 2" }
+        { teams: "MANCHESTER CITY U19 VS PSG U19", channel: "beIN Sports Arabia 2", hot: false }
       ], "WED, OCT 14 • 10:00 PM MYT", "2026-10-14T22:00:00+08:00"),
 
       createMatch("UEFA CHAMPIONS LEAGUE LIVE", [
@@ -1016,49 +1110,49 @@
       ], "THU, OCT 15 • 03:00 AM MYT", "2026-10-15T03:00:00+08:00"),
 
       createMatch("UEFA CHAMPIONS LEAGUE REPLAY", [
-        { teams: "MANCHESTER CITY VS PSG (REPEAT)", channel: "beIN Sports Arabia 1" }
+        { teams: "MANCHESTER CITY VS PSG (REPEAT)", channel: "beIN Sports Arabia 1", hot: false }
       ], "THU, OCT 15 • 07:00 AM MYT", "2026-10-15T07:00:00+08:00"),
 
       createMatch("UEFA CHAMPIONS LEAGUE REPLAY", [
-        { teams: "LASK LINZ VS LIVERPOOL (REPEAT)", channel: "beIN Sports Arabia 2" }
+        { teams: "LASK LINZ VS LIVERPOOL (REPEAT)", channel: "beIN Sports Arabia 2", hot: false }
       ], "THU, OCT 15 • 09:00 AM MYT", "2026-10-15T09:00:00+08:00"),
 
       createMatch("UEFA CHAMPIONS LEAGUE REPLAY", [
-        { teams: "MANCHESTER CITY VS PSG (REPEAT)", channel: "beIN Sports Arabia 1" }
+        { teams: "MANCHESTER CITY VS PSG (REPEAT)", channel: "beIN Sports Arabia 1", hot: false }
       ], "THU, OCT 15 • 01:00 PM MYT", "2026-10-15T13:00:00+08:00"),
 
       createMatch("UEFA YOUTH LEAGUE REPLAY", [
-        { teams: "MANCHESTER CITY U19 VS PSG U19 (REPEAT)", channel: "beIN Sports Arabia 2" }
+        { teams: "MANCHESTER CITY U19 VS PSG U19 (REPEAT)", channel: "beIN Sports Arabia 2", hot: false }
       ], "THU, OCT 15 • 02:00 PM MYT", "2026-10-15T14:00:00+08:00"),
 
       createMatch("UEFA CHAMPIONS LEAGUE REPLAY", [
-        { teams: "LASK LINZ VS LIVERPOOL (REPEAT)", channel: "beIN Sports Arabia 2" }
+        { teams: "LASK LINZ VS LIVERPOOL (REPEAT)", channel: "beIN Sports Arabia 2", hot: false }
       ], "THU, OCT 15 • 03:45 PM MYT", "2026-10-15T15:45:00+08:00"),
 
       createMatch("UEFA EUROPA LEAGUE LIVE", [
-        { teams: "SALZBURG VS MILAN", channel: "beIN Sports Arabia 1" },
-        { teams: "OLYMPIQUE LYONNAIS VS CRYSTAL PALACE", channel: "beIN Sports Arabia 2" }
+        { teams: "SALZBURG VS MILAN", channel: "beIN Sports Arabia 1", hot: false },
+        { teams: "OLYMPIQUE LYONNAIS VS CRYSTAL PALACE", channel: "beIN Sports Arabia 2", hot: false }
       ], "FRI, OCT 16 • 12:45 AM MYT", "2026-10-16T00:45:00+08:00"),
 
       createMatch("UEFA EUROPA LEAGUE LIVE", [
-        { teams: "CELTA DE VIGO VS JUVENTUS", channel: "beIN Sports Arabia 1" },
-        { teams: "OLYMPIQUE MARSEILLE VS OLYMPIAKOS PIRAEUS", channel: "beIN Sports Arabia 2" }
+        { teams: "CELTA DE VIGO VS JUVENTUS", channel: "beIN Sports Arabia 1", hot: false },
+        { teams: "OLYMPIQUE MARSEILLE VS OLYMPIAKOS PIRAEUS", channel: "beIN Sports Arabia 2", hot: false }
       ], "FRI, OCT 16 • 03:00 AM MYT", "2026-10-16T03:00:00+08:00"),
 
       createMatch("UEFA EUROPA LEAGUE REPLAY", [
-        { teams: "OLYMPIQUE LYONNAIS VS CRYSTAL PALACE (REPEAT)", channel: "beIN Sports Arabia 2" }
+        { teams: "OLYMPIQUE LYONNAIS VS CRYSTAL PALACE (REPEAT)", channel: "beIN Sports Arabia 2", hot: false }
       ], "FRI, OCT 16 • 09:00 AM MYT", "2026-10-16T09:00:00+08:00"),
 
       createMatch("UEFA EUROPA LEAGUE REPLAY", [
-        { teams: "OLYMPIQUE MARSEILLE VS OLYMPIAKOS PIRAEUS (REPEAT)", channel: "beIN Sports Arabia 2" }
+        { teams: "OLYMPIQUE MARSEILLE VS OLYMPIAKOS PIRAEUS (REPEAT)", channel: "beIN Sports Arabia 2", hot: false }
       ], "FRI, OCT 16 • 11:00 AM MYT", "2026-10-16T11:00:00+08:00"),
 
       createMatch("UEFA EUROPA LEAGUE REPLAY", [
-        { teams: "OLYMPIQUE LYONNAIS VS CRYSTAL PALACE (REPEAT)", channel: "beIN Sports Arabia 2" }
+        { teams: "OLYMPIQUE LYONNAIS VS CRYSTAL PALACE (REPEAT)", channel: "beIN Sports Arabia 2", hot: false }
       ], "FRI, OCT 16 • 05:00 PM MYT", "2026-10-16T17:00:00+08:00"),
 
       createMatch("UEFA EUROPA LEAGUE REPLAY", [
-        { teams: "OLYMPIQUE MARSEILLE VS OLYMPIAKOS PIRAEUS (REPEAT)", channel: "beIN Sports Arabia 2" }
+        { teams: "OLYMPIQUE MARSEILLE VS OLYMPIAKOS PIRAEUS (REPEAT)", channel: "beIN Sports Arabia 2", hot: false }
       ], "FRI, OCT 16 • 07:00 PM MYT", "2026-10-16T19:00:00+08:00")
     ];
 
@@ -1154,6 +1248,7 @@
     function updateCountdowns() {
       const now = new Date().getTime();
 
+      updateFootballXtraCard(now);
       updateF1Card(now);
       updateEPLCard(now);
       updateLaLigaCard(now);
