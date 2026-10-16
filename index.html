@@ -511,18 +511,37 @@
     <!-- HOT-1: FOOTBALL XTRA -->
     <a class="link-card" href="https://football-xtra.vercel.app/" target="_blank" rel="noopener noreferrer" data-track-id="football-xtra">
       <div class="card-info">
-        <span class="live-badge" id="football-xtra-badge"><span class="live-dot"></span> FOOTBALL XTRA</span>
+        <span class="live-badge"><span class="live-dot"></span> FOOTBALL XTRA</span>
         
-        <div id="football-xtra-matches-body"></div>
+        <div style="margin-top: 6px; margin-bottom: 6px;">
+          <span class="match-teams" style="color: var(--neon-green); font-size: 0.95rem;">
+            <i class="fa-solid fa-circle-play" style="margin-right: 6px;"></i>Click here to see what is broadcasting here
+          </span>
+        </div>
 
         <div class="match-details" style="margin-top: 4px;">
-          <span id="football-xtra-time"><i class="fa-regular fa-clock"></i> Loading...</span>
+          <span><i class="fa-solid fa-globe"></i> <strong>To review the schedule, please go into our website.</strong></span>
+          <span style="margin-top: 6px; color: var(--neon-cyan); font-weight: 700;">Leagues in Football XTRA:</span>
+          <div style="font-size: 0.78rem; color: var(--text-sub); display: grid; grid-template-columns: 1fr 1fr; gap: 4px; margin-top: 4px;">
+            <div>1. EFL Championship</div>
+            <div>2. Bundesliga</div>
+            <div>3. Bundesliga 2</div>
+            <div>4. Serie A</div>
+            <div>5. Scottish Premiership</div>
+            <div>6. Super League (Indonesia)</div>
+            <div>7. International Friendly</div>
+            <div>8. AFC Champions League Two</div>
+            <div>9. ASEAN Club Championship</div>
+            <div>10. Liga MX</div>
+            <div>11. A-League</div>
+            <div>12. Indian Super League</div>
+            <div>13. Major League Soccer (MLS)</div>
+            <div>14. FIFA U-17 Women’s World Cup</div>
+            <div>15. CONCACAF Nations League</div>
+          </div>
         </div>
 
-        <div class="countdown-timer" id="football-xtra-countdown">
-          <i class="fa-solid fa-hourglass-half"></i> <span class="time-text">Loading...</span>
-        </div>
-        <span class="click-counter"><i class="fa-solid fa-eye"></i> <span id="click-football-xtra">0</span> clicks</span>
+        <span class="click-counter" style="margin-top: 10px;"><i class="fa-solid fa-eye"></i> <span id="click-football-xtra">0</span> clicks</span>
       </div>
       <div class="card-right-group">
         <div class="card-action-icon"><i class="fa-solid fa-play"></i></div>
@@ -840,33 +859,6 @@
       };
     }
 
-    /* Football XTRA Schedule (Bundesliga & Lain-lain dikemaskini) */
-    const footballXtraMatches = [
-      createMatch("BUNDESLIGA", [
-        { teams: "EINTRACHT FRANKFURT VS KÖLN", channel: "NBC Universo", hot: false }
-      ], "SAT, OCT 17 • 02:30 AM MYT", "2026-10-17T02:30:00+08:00"),
-
-      createMatch("BUNDESLIGA", [
-        { teams: "UNION BERLIN VS BORUSSIA DORTMUND", channel: "NBC Universo", hot: false }
-      ], "SAT, OCT 17 • 09:30 PM MYT", "2026-10-17T21:30:00+08:00"),
-
-      createMatch("BUNDESLIGA", [
-        { teams: "BAYERN MÜNCHEN VS RB LEIPZIG", channel: "beIN Sports 1 Australia, USA Network", hot: false }
-      ], "SUN, OCT 18 • 12:30 AM MYT", "2026-10-18T00:30:00+08:00"),
-
-      createMatch("BUNDESLIGA", [
-        { teams: "BORUSSIA M’GLADBACH VS HOFFENHEIM", channel: "NBC Universo", hot: false }
-      ], "SUN, OCT 18 • 11:30 PM MYT", "2026-10-18T23:30:00+08:00"),
-
-      createMatch("BUNDESLIGA", [
-        { teams: "BORUSSIA DORTMUND VS EINTRACHT FRANKFURT", channel: "USA Network", hot: false }
-      ], "SUN, OCT 25 • 12:30 AM MYT", "2026-10-25T00:30:00+08:00")
-    ];
-
-    function updateFootballXtraCard(now) {
-      renderGenericSection(now, footballXtraMatches, 'football-xtra-badge', 'football-xtra-matches-body', 'football-xtra-time', 'football-xtra-countdown', 'FOOTBALL XTRA');
-    }
-
     /* Formula 1 Live Streaming Hub */
     const f1Matches = [
       createMatch("F1 HUB", [
@@ -914,7 +906,7 @@
         { teams: "BRENTFORD VS NOTTINGHAM FOREST", channel: "USA Network", hot: false }
       ], "SAT, OCT 31 • 08:30 PM MYT", "2026-10-31T20:30:00+08:00")
     ];
-
+    
     function updateEPLCard(now) {
       renderGenericSection(now, eplMatches, 'epl-badge', 'epl-matches-body', 'epl-time', 'epl-countdown', 'HOME OF PREMIER LEAGUE');
     }
@@ -1047,7 +1039,6 @@
     function updateCountdowns() {
       const now = new Date().getTime();
 
-      updateFootballXtraCard(now);
       updateF1Card(now);
       updateEPLCard(now);
       updateLaLigaCard(now);
