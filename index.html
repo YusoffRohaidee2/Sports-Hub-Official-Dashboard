@@ -840,38 +840,32 @@
       };
     }
 
-    /* Football XTRA Schedule (Jadual Baharu Dimasukkan) */
+    /* Football XTRA Schedule (Bundesliga & Lain-lain dikemaskini) */
     const footballXtraMatches = [
-      createMatch("SUPER LEAGUE (INDONESIA)", [
-        { teams: "PSIM YOGYAKARTA VS PSM", channel: "Indosiar", hot: false }
-      ], "FRI, OCT 16 • 04:30 PM MYT", "2026-10-16T16:30:00+08:00"),
-
-      createMatch("INDIAN SUPER LEAGUE", [
-        { teams: "SC DELHI VS MOHUN BAGAN", channel: "Sony Sports Ten 2", hot: false }
-      ], "FRI, OCT 16 • 10:00 PM MYT", "2026-10-16T22:00:00+08:00"),
-
-      createMatch("EFL CHAMPIONSHIP / BUNDESLIGA / SERIE A", [
-        { teams: "BURNLEY VS WOLVERHAMPTON WANDERERS", channel: "beIN Sports Arabia 1", hot: false },
-        { teams: "EINTRACHT FRANKFURT VS KÖLN", channel: "NBC Universo", hot: false },
-        { teams: "FROSINONE VS SASSUOLO", channel: "beIN Sports 1 Australia", hot: false }
-      ], "SAT, OCT 17 • 02:45 AM MYT", "2026-10-17T02:45:00+08:00"),
+      createMatch("BUNDESLIGA", [
+        { teams: "EINTRACHT FRANKFURT VS KÖLN", channel: "NBC Universo", hot: false }
+      ], "SAT, OCT 17 • 02:30 AM MYT", "2026-10-17T02:30:00+08:00"),
 
       createMatch("PREMIER LEAGUE", [
         { teams: "EVERTON VS CHELSEA", channel: "Star Sports Select 1, beIN Sports Arabia 1, NBC Universo", hot: true },
-        { teams: "MANCHESTER CITY VS IPSWICH TOWN", channel: "Star Sports Select 1, beIN Sports Arabia 1", hot: false }
+        { teams: "MANCHESTER CITY VS IPSWICH TOWN", channel: "Star Sports Select 1, beIN Sports Arabia 1, USA Network", hot: false }
       ], "SAT, OCT 17 • 07:30 PM MYT", "2026-10-17T19:30:00+08:00"),
 
-      createMatch("SUPER LEAGUE (INDONESIA)", [
-        { teams: "PERSEBAYA SURABAYA VS PSS SLEMAN", channel: "Indosiar", hot: false }
-      ], "SUN, OCT 18 • 04:30 PM MYT", "2026-10-18T16:30:00+08:00"),
+      createMatch("BUNDESLIGA", [
+        { teams: "UNION BERLIN VS BORUSSIA DORTMUND", channel: "NBC Universo", hot: false }
+      ], "SAT, OCT 17 • 09:30 PM MYT", "2026-10-17T21:30:00+08:00"),
 
-      createMatch("INDIAN SUPER LEAGUE", [
-        { teams: "CHURCHILL BROTHERS VS EAST BENGAL II", channel: "Sony Sports Ten 2", hot: false }
-      ], "SUN, OCT 18 • 07:30 PM MYT", "2026-10-18T19:30:00+08:00"),
+      createMatch("BUNDESLIGA", [
+        { teams: "BAYERN MÜNCHEN VS RB LEIPZIG", channel: "beIN Sports 1 Australia, USA Network", hot: false }
+      ], "SUN, OCT 18 • 12:30 AM MYT", "2026-10-18T00:30:00+08:00"),
 
-      createMatch("LIGA MX", [
-        { teams: "GUADALAJARA VS TIGRES UANL", channel: "NBC Universo", hot: false }
-      ], "SUN, OCT 18 • 07:07 AM MYT", "2026-10-18T07:07:00+08:00")
+      createMatch("BUNDESLIGA", [
+        { teams: "BORUSSIA M’GLADBACH VS HOFFENHEIM", channel: "NBC Universo", hot: false }
+      ], "SUN, OCT 18 • 11:30 PM MYT", "2026-10-18T23:30:00+08:00"),
+
+      createMatch("BUNDESLIGA", [
+        { teams: "BORUSSIA DORTMUND VS EINTRACHT FRANKFURT", channel: "USA Network", hot: false }
+      ], "SUN, OCT 25 • 12:30 AM MYT", "2026-10-25T00:30:00+08:00")
     ];
 
     function updateFootballXtraCard(now) {
@@ -889,29 +883,48 @@
       renderGenericSection(now, f1Matches, 'f1-badge', 'f1-matches-body', 'f1-time', 'f1-countdown', 'FORMULA 1 HUB');
     }
 
-    /* Premier League Schedule (Jadual Baharu Dimasukkan) */
+    /* Premier League Schedule (Baharu Dikemaskini) */
     const eplMatches = [
       createMatch("PREMIER LEAGUE", [
-        { teams: "EVERTON VS CHELSEA", channel: "Star Sports Select 1, beIN Sports Arabia 1, NBC Universo", hot: true },
-        { teams: "MANCHESTER CITY VS IPSWICH TOWN", channel: "Star Sports Select 1, beIN Sports Arabia 1", hot: false }
+        { teams: "EVERTON VS CHELSEA", channel: "Star Sports Select 1, beIN Sports Arabia 1, NBC Universo, USA Network", hot: true },
+        { teams: "MANCHESTER CITY VS IPSWICH TOWN", channel: "Star Sports Select 1, beIN Sports Arabia 1, USA Network", hot: false }
       ], "SAT, OCT 17 • 07:30 PM MYT", "2026-10-17T19:30:00+08:00"),
 
       createMatch("PREMIER LEAGUE", [
         { teams: "NEWCASTLE UNITED VS ASTON VILLA", channel: "Star Sports Select 1, NBC Universo", hot: false },
-        { teams: "LEEDS UNITED VS MANCHESTER UNITED", channel: "beIN Sports Arabia 1", hot: false },
+        { teams: "LEEDS UNITED VS MANCHESTER UNITED", channel: "beIN Sports Arabia 1, USA Network", hot: false },
         { teams: "NOTTINGHAM FOREST VS ARSENAL", channel: "Star Sports Select 1, beIN Sports Arabia 1", hot: false }
       ], "SUN, OCT 18 • 12:30 AM MYT", "2026-10-18T00:30:00+08:00"),
 
       createMatch("PREMIER LEAGUE", [
-        { teams: "TOTTENHAM HOTSPUR VS COVENTRY CITY", channel: "Star Sports Select 1, beIN Sports Arabia 1, NBC Universo", hot: false }
-      ], "TUE, OCT 20 • 03:00 AM MYT", "2026-10-20T03:00:00+08:00")
+        { teams: "TOTTENHAM HOTSPUR VS COVENTRY CITY", channel: "Star Sports Select 1, beIN Sports Arabia 1, NBC Universo, USA Network", hot: false }
+      ], "TUE, OCT 20 • 03:00 AM MYT", "2026-10-20T03:00:00+08:00"),
+
+      createMatch("PREMIER LEAGUE", [
+        { teams: "IPSWICH TOWN VS NOTTINGHAM FOREST", channel: "USA Network", hot: false },
+        { teams: "ASTON VILLA VS MANCHESTER CITY", channel: "USA Network", hot: false },
+        { teams: "ARSENAL VS EVERTON", channel: "USA Network", hot: false }
+      ], "SAT, OCT 24 • 03:00 AM / 19:30 / 22:00 MYT", "2026-10-24T03:00:00+08:00"),
+
+      createMatch("PREMIER LEAGUE", [
+        { teams: "CRYSTAL PALACE VS NEWCASTLE UNITED", channel: "USA Network", hot: false }
+      ], "SUN, OCT 25 • 10:00 PM MYT", "2026-10-25T22:00:00+08:00"),
+
+      createMatch("PREMIER LEAGUE", [
+        { teams: "SUNDERLAND VS LEEDS UNITED", channel: "USA Network", hot: false }
+      ], "MON, OCT 26 • 12:30 AM MYT", "2026-10-26T00:30:00+08:00"),
+
+      createMatch("PREMIER LEAGUE", [
+        { teams: "CHELSEA VS MANCHESTER UNITED", channel: "USA Network", hot: true },
+        { teams: "BRENTFORD VS NOTTINGHAM FOREST", channel: "USA Network", hot: false }
+      ], "SAT, OCT 31 • 08:30 PM MYT", "2026-10-31T20:30:00+08:00")
     ];
 
     function updateEPLCard(now) {
       renderGenericSection(now, eplMatches, 'epl-badge', 'epl-matches-body', 'epl-time', 'epl-countdown', 'HOME OF PREMIER LEAGUE');
     }
 
-    /* La Liga Schedule (Jadual Baharu Dimasukkan) */
+    /* La Liga Schedule */
     const laLigaMatches = [
       createMatch("LA LIGA", [
         { teams: "REAL BETIS VS BARCELONA", channel: "T Sports, beIN Sports Arabia 1", hot: true }
@@ -930,7 +943,7 @@
       renderGenericSection(now, laLigaMatches, 'laliga-badge', 'laliga-matches-body', 'laliga-time', 'laliga-countdown', 'HOME OF LA LIGA');
     }
 
-    /* UEFA Schedule (Jadual Baharu Dimasukkan) */
+    /* UEFA Schedule */
     const uefaMatches = [
       createMatch("UEFA EUROPA LEAGUE", [
         { teams: "SALZBURG VS MILAN", channel: "CBC Sport Azerbaijan, beIN Sports Arabia 1, Sony Sports Ten 2, SCTV", hot: false },
