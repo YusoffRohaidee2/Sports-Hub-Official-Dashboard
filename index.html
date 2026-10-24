@@ -523,21 +523,17 @@
           <span><i class="fa-solid fa-globe"></i> <strong>To review the schedule, please go into our website.</strong></span>
           <span style="margin-top: 6px; color: var(--neon-cyan); font-weight: 700;">Leagues in Football XTRA:</span>
           <div style="font-size: 0.78rem; color: var(--text-sub); display: grid; grid-template-columns: 1fr 1fr; gap: 4px; margin-top: 4px;">
-            <div>1. EFL Championship</div>
-            <div>2. Bundesliga</div>
-            <div>3. Bundesliga 2</div>
-            <div>4. Serie A</div>
-            <div>5. Scottish Premiership</div>
-            <div>6. Super League (Indonesia)</div>
-            <div>7. International Friendly</div>
-            <div>8. AFC Champions League Two</div>
-            <div>9. ASEAN Club Championship</div>
-            <div>10. Liga MX</div>
-            <div>11. A-League</div>
-            <div>12. Indian Super League</div>
-            <div>13. Major League Soccer (MLS)</div>
-            <div>14. FIFA U-17 Women’s World Cup</div>
-            <div>15. CONCACAF Nations League</div>
+            <div>1. Bundesliga</div>
+            <div>2. Serie A</div>
+            <div>3. EFL Championship</div>
+            <div>4. Primeira Liga</div>
+            <div>5. Saudi Pro League</div>
+            <div>6. A-League</div>
+            <div>7. Premier Liqa (Azerbaijan)</div>
+            <div>8. FIFA U-17 Women’s World Cup</div>
+            <div>9. Major League Soccer (MLS)</div>
+            <div>10. International Friendly</div>
+            <div>11. CONCACAF Nations League</div>
           </div>
         </div>
 
@@ -632,23 +628,32 @@
       </div>
     </a>
 
+    <!-- HOT-6: NOW SPORTS LIVE EVENT 1 (Moved here) -->
+    <a class="link-card" href="https://now-sports-live-event-website.vercel.app/" target="_blank" rel="noopener noreferrer" data-track-id="hot-1">
+      <div class="card-info">
+        <span class="live-badge" id="nowsports1-badge"><span class="live-dot"></span> NOW SPORTS LIVE EVENT 1</span>
+        
+        <div id="nowsports1-matches-body"></div>
+
+        <div class="match-details" style="margin-top: 4px;">
+          <span id="nowsports1-time"><i class="fa-regular fa-clock"></i> Loading...</span>
+        </div>
+
+        <div class="countdown-timer" id="nowsports1-countdown">
+          <i class="fa-solid fa-hourglass-half"></i> <span class="time-text">Loading...</span>
+        </div>
+        <span class="click-counter"><i class="fa-solid fa-eye"></i> <span id="click-hot-1">0</span> clicks</span>
+      </div>
+      <div class="card-right-group">
+        <div class="card-action-icon"><i class="fa-solid fa-play"></i></div>
+      </div>
+    </a>
+
     <!-- Now Sports Live Events Segment -->
     <div class="section-title">
       <div class="section-main-label"><i class="fa-solid fa-bolt" style="color: var(--neon-cyan);"></i> Now Sports Live Events!</div>
       <div class="section-sub-label">Ready for fast live events!</div>
     </div>
-
-    <!-- Now Sports Live Event 1 -->
-    <a class="link-card" href="https://now-sports-live-event-website.vercel.app/" target="_blank" rel="noopener noreferrer" data-track-id="hot-1">
-      <div class="card-info">
-        <span class="site-name">Now Sports Live Event 1</span>
-        <span class="site-status-offline"><i class="fa-solid fa-circle-xmark" style="color: #ff4757;"></i> Website Offline</span>
-        <span class="click-counter"><i class="fa-solid fa-eye"></i> <span id="click-hot-1">0</span> clicks</span>
-      </div>
-      <div class="card-right-group">
-        <div class="card-action-icon"><i class="fa-solid fa-arrow-up-right-from-square"></i></div>
-      </div>
-    </a>
 
     <!-- Now Sports Live Event 2 -->
     <a class="link-card" href="https://now-sports-live-event-2.vercel.app/" target="_blank" rel="noopener noreferrer" data-track-id="now-sports-2">
@@ -861,68 +866,78 @@
 
     /* Formula 1 Live Streaming Hub */
     const f1Matches = [
-      createMatch("F1 HUB", [
-        { teams: "FORMULA 1 LIVE STREAMING HUB", channel: "F1 Live Feed", hot: true }
-      ], "SUN, OCT 18 • 08:00 PM MYT", "2026-10-18T20:00:00+08:00", 120)
+      createMatch("F1 LIVE STREAMING HUB", [
+        { teams: "UNITED STATES GP - FREE PRACTICE 3", channel: "F1 Live Feed", hot: false }
+      ], "SUN, OCT 25 • 01:30 AM MYT", "2026-10-25T01:30:00+08:00", 60),
+
+      createMatch("F1 LIVE STREAMING HUB", [
+        { teams: "UNITED STATES GP - QUALIFYING", channel: "F1 Live Feed", hot: false }
+      ], "SUN, OCT 25 • 05:00 AM MYT", "2026-10-25T05:00:00+08:00", 60),
+
+      createMatch("F1 LIVE STREAMING HUB", [
+        { teams: "UNITED STATES GP - RACE (56 LAPS)", channel: "F1 Live Feed", hot: true }
+      ], "MON, OCT 26 • 04:00 AM MYT", "2026-10-26T04:00:00+08:00", 120)
     ];
 
     function updateF1Card(now) {
       renderGenericSection(now, f1Matches, 'f1-badge', 'f1-matches-body', 'f1-time', 'f1-countdown', 'FORMULA 1 HUB');
     }
 
-    /* Premier League Schedule (Baharu Dikemaskini) */
+    /* Now Sports Live Event 1 Schedule (Ballon d'Or) */
+    const nowSports1Matches = [
+      createMatch("BALLON D'OR", [
+        { teams: "2026 BALLON D'OR", channel: "L'Equipe FR", hot: true }
+      ], "TUE, OCT 27 • 03:00 AM MYT", "2026-10-27T03:00:00+08:00", 120)
+    ];
+
+    function updateNowSports1Card(now) {
+      renderGenericSection(now, nowSports1Matches, 'nowsports1-badge', 'nowsports1-matches-body', 'nowsports1-time', 'nowsports1-countdown', 'NOW SPORTS LIVE EVENT 1');
+    }
+
+    /* Premier League Schedule (Updated) */
     const eplMatches = [
       createMatch("PREMIER LEAGUE", [
-        { teams: "EVERTON VS CHELSEA", channel: "Star Sports Select 1, beIN Sports Arabia 1, NBC Universo, USA Network", hot: true },
-        { teams: "MANCHESTER CITY VS IPSWICH TOWN", channel: "Star Sports Select 1, beIN Sports Arabia 1, USA Network", hot: false }
-      ], "SAT, OCT 17 • 07:30 PM MYT", "2026-10-17T19:30:00+08:00"),
+        { teams: "IPSWICH TOWN VS NOTTINGHAM FOREST", channel: "beIN Sports Arabia 1, Star Sports Select 1, USA Network", hot: false }
+      ], "SAT, OCT 24 • 03:00 AM MYT", "2026-10-24T03:00:00+08:00"),
 
       createMatch("PREMIER LEAGUE", [
-        { teams: "NEWCASTLE UNITED VS ASTON VILLA", channel: "Star Sports Select 1, NBC Universo", hot: false },
-        { teams: "LEEDS UNITED VS MANCHESTER UNITED", channel: "beIN Sports Arabia 1, USA Network", hot: false },
-        { teams: "NOTTINGHAM FOREST VS ARSENAL", channel: "Star Sports Select 1, beIN Sports Arabia 1", hot: false }
-      ], "SUN, OCT 18 • 12:30 AM MYT", "2026-10-18T00:30:00+08:00"),
+        { teams: "ASTON VILLA VS MANCHESTER CITY", channel: "beIN Sports Arabia 1, NBC Universo, USA Network", hot: false }
+      ], "SAT, OCT 24 • 07:30 PM MYT", "2026-10-24T19:30:00+08:00"),
 
       createMatch("PREMIER LEAGUE", [
-        { teams: "TOTTENHAM HOTSPUR VS COVENTRY CITY", channel: "Star Sports Select 1, beIN Sports Arabia 1, NBC Universo, USA Network", hot: false }
-      ], "TUE, OCT 20 • 03:00 AM MYT", "2026-10-20T03:00:00+08:00"),
+        { teams: "ARSENAL VS EVERTON", channel: "beIN Sports Arabia 1, NBC Universo, USA Network", hot: false }
+      ], "SAT, OCT 24 • 10:00 PM MYT", "2026-10-24T22:00:00+08:00"),
 
       createMatch("PREMIER LEAGUE", [
-        { teams: "IPSWICH TOWN VS NOTTINGHAM FOREST", channel: "USA Network", hot: false },
-        { teams: "ASTON VILLA VS MANCHESTER CITY", channel: "USA Network", hot: false },
-        { teams: "ARSENAL VS EVERTON", channel: "USA Network", hot: false }
-      ], "SAT, OCT 24 • 03:00 AM / 19:30 / 22:00 MYT", "2026-10-24T03:00:00+08:00"),
+        { teams: "CHELSEA VS TOTTENHAM HOTSPUR", channel: "beIN Sports Arabia 1", hot: false }
+      ], "SUN, OCT 25 • 12:30 AM MYT", "2026-10-25T00:30:00+08:00"),
 
       createMatch("PREMIER LEAGUE", [
+        { teams: "LIVERPOOL VS BRIGHTON & HOVE ALBION", channel: "beIN Sports Arabia 1", hot: false },
         { teams: "CRYSTAL PALACE VS NEWCASTLE UNITED", channel: "USA Network", hot: false }
       ], "SUN, OCT 25 • 10:00 PM MYT", "2026-10-25T22:00:00+08:00"),
 
       createMatch("PREMIER LEAGUE", [
-        { teams: "SUNDERLAND VS LEEDS UNITED", channel: "USA Network", hot: false }
+        { teams: "SUNDERLAND VS LEEDS UNITED", channel: "beIN Sports Arabia 1, USA Network", hot: false }
       ], "MON, OCT 26 • 12:30 AM MYT", "2026-10-26T00:30:00+08:00"),
 
       createMatch("PREMIER LEAGUE", [
-        { teams: "CHELSEA VS MANCHESTER UNITED", channel: "USA Network", hot: true },
+        { teams: "CHELSEA VS MANCHESTER UNITED", channel: "USA Network", hot: true }
+      ], "SAT, OCT 31 • 08:30 PM MYT", "2026-10-31T20:30:00+08:00"),
+
+      createMatch("PREMIER LEAGUE", [
         { teams: "BRENTFORD VS NOTTINGHAM FOREST", channel: "USA Network", hot: false }
-      ], "SAT, OCT 31 • 08:30 PM MYT", "2026-10-31T20:30:00+08:00")
+      ], "SAT, OCT 31 • 11:00 PM MYT", "2026-10-31T23:00:00+08:00")
     ];
     
     function updateEPLCard(now) {
       renderGenericSection(now, eplMatches, 'epl-badge', 'epl-matches-body', 'epl-time', 'epl-countdown', 'HOME OF PREMIER LEAGUE');
     }
 
-    /* La Liga Schedule */
+    /* La Liga Schedule (Updated) */
     const laLigaMatches = [
       createMatch("LA LIGA", [
-        { teams: "REAL BETIS VS BARCELONA", channel: "T Sports, beIN Sports Arabia 1", hot: true }
-      ], "SUN, OCT 18 • 00:30 AM MYT", "2026-10-18T00:30:00+08:00"),
-
-      createMatch("LA LIGA", [
-        { teams: "REAL MADRID VS SEVILLA", channel: "T Sports, beIN Sports Arabia 1", hot: false }
-      ], "MON, OCT 19 • 03:00 AM MYT", "2026-10-19T03:00:00+08:00"),
-
-      createMatch("LA LIGA", [
-        { teams: "BARCELONA VS REAL MADRID", channel: "T Sports", hot: true }
+        { teams: "BARCELONA VS REAL MADRID", channel: "beIN Sports Arabia 1, T Sports", hot: true }
       ], "MON, OCT 26 • 04:00 AM MYT", "2026-10-26T04:00:00+08:00")
     ];
 
@@ -930,21 +945,58 @@
       renderGenericSection(now, laLigaMatches, 'laliga-badge', 'laliga-matches-body', 'laliga-time', 'laliga-countdown', 'HOME OF LA LIGA');
     }
 
-    /* UEFA Schedule */
+    /* UEFA Schedule (Updated) */
     const uefaMatches = [
+      createMatch("UEFA YOUTH LEAGUE", [
+        { teams: "LILLE U19 VS GALATASARAY U19", channel: "Sony Sports Ten 2", hot: false }
+      ], "WED, OCT 21 • 08:00 PM MYT", "2026-10-21T20:00:00+08:00"),
+
+      createMatch("UEFA YOUTH LEAGUE", [
+        { teams: "INTER U19 VS SHAKHTAR DONETSK U19", channel: "Sony Sports Ten 2", hot: false }
+      ], "WED, OCT 21 • 10:00 PM MYT", "2026-10-21T22:00:00+08:00"),
+
+      createMatch("UEFA CHAMPIONS LEAGUE", [
+        { teams: "LILLE VS GALATASARAY", channel: "CBC Sport Azerbaijan, Sony Sports Ten 1, MagentaSport 3, DAZN2 Portugal", hot: false },
+        { teams: "COMO VS MANCHESTER UNITED", channel: "Sony Sports Ten 2, MagentaSport 2, DAZN1 Portugal", hot: false }
+      ], "THU, OCT 22 • 12:45 AM MYT", "2026-10-22T00:45:00+08:00"),
+
+      createMatch("UEFA CHAMPIONS LEAGUE", [
+        { teams: "REAL MADRID VS RB LEIPZIG", channel: "CBC Sport Azerbaijan, Sony Sports Ten 1, MagentaSport 3, DAZN2 Portugal", hot: false },
+        { teams: "BAYERN MÜNCHEN VS ARSENAL", channel: "beIN Sports Arabia 1, Sony Sports Ten 2, MagentaSport 2, DAZN1 Portugal", hot: true },
+        { teams: "INTERNAZIONALE VS SHAKHTAR DONETSK", channel: "MagentaSport 5, DAZN4 Portugal", hot: false },
+        { teams: "REAL BETIS VS FEYENOORD", channel: "DAZN3 Portugal", hot: false }
+      ], "THU, OCT 22 • 03:00 AM MYT", "2026-10-22T03:00:00+08:00"),
+
+      createMatch("UEFA CONFERENCE LEAGUE", [
+        { teams: "KAIRAT VS PANATHINAIKOS", channel: "MagentaSport 3, DAZN2 Portugal", hot: false }
+      ], "THU, OCT 22 • 10:30 PM MYT", "2026-10-22T22:30:00+08:00"),
+
       createMatch("UEFA EUROPA LEAGUE", [
-        { teams: "SALZBURG VS MILAN", channel: "CBC Sport Azerbaijan, beIN Sports Arabia 1, Sony Sports Ten 2, SCTV", hot: false },
-        { teams: "OLYMPIQUE LYONNAIS VS CRYSTAL PALACE", channel: "Sony Sports Ten 1", hot: false },
-        { teams: "CELTA DE VIGO VS JUVENTUS", channel: "beIN Sports Arabia 1, Sony Sports Ten 2, SCTV", hot: true }
-      ], "FRI, OCT 16 • 12:45 AM MYT", "2026-10-16T00:45:00+08:00"),
+        { teams: "JUVENTUS VS RENNES", channel: "CBC Sport Azerbaijan, beIN Sports Arabia 1, Sony Sports Ten 2, MagentaSport 5, DAZN2 Portugal", hot: false },
+        { teams: "OFI VS BAYER LEVERKUSEN", channel: "Sony Sports Ten 1, MagentaSport 4", hot: false },
+        { teams: "FERENCVÁROS VS TORREENSE", channel: "DAZN1 Portugal", hot: false },
+        { teams: "LECH POZNAŃ VS SUNDERLAND", channel: "DAZN3 Portugal", hot: false }
+      ], "FRI, OCT 23 • 12:45 AM MYT", "2026-10-23T00:45:00+08:00"),
 
-      createMatch("UEFA CHAMPIONS LEAGUE", [
-        { teams: "PSG VS BARCELONA", channel: "beIN Sports Arabia 1", hot: false }
-      ], "WED, OCT 21 • 03:00 AM MYT", "2026-10-21T03:00:00+08:00"),
+      createMatch("UEFA CONFERENCE LEAGUE", [
+        { teams: "JABLONEC VS BRIGHTON & HOVE ALBION", channel: "Sony Sports Ten 5", hot: false }
+      ], "FRI, OCT 23 • 12:45 AM MYT", "2026-10-23T00:45:00+08:00"),
 
-      createMatch("UEFA CHAMPIONS LEAGUE", [
-        { teams: "BAYERN MÜNCHEN VS ARSENAL", channel: "beIN Sports Arabia 1", hot: false }
-      ], "THU, OCT 22 • 03:00 AM MYT", "2026-10-22T03:00:00+08:00")
+      createMatch("UEFA EUROPA LEAGUE", [
+        { teams: "AFC BOURNEMOUTH VS MILAN", channel: "beIN Sports Arabia 1, MagentaSport 5, DAZN2 Portugal", hot: true },
+        { teams: "BEŞIKTAŞ VS CRYSTAL PALACE", channel: "CBC Sport Azerbaijan", hot: false },
+        { teams: "OLYMPIAKOS PIRAEUS VS SPARTA PRAHA", channel: "MagentaSport 3", hot: false },
+        { teams: "OMONIA NICOSIA VS BENFICA", channel: "MagentaSport 4", hot: false },
+        { teams: "CELTIC VS CELTA DE VIGO", channel: "DAZN3 Portugal", hot: false }
+      ], "FRI, OCT 23 • 03:00 AM MYT", "2026-10-23T03:00:00+08:00"),
+
+      createMatch("UEFA CONFERENCE LEAGUE", [
+        { teams: "SPORTING BRAGA VS GENT", channel: "DAZN1 Portugal", hot: false }
+      ], "FRI, OCT 23 • 03:00 AM MYT", "2026-10-23T03:00:00+08:00"),
+
+      createMatch("UEFA NATIONS LEAGUE", [
+        { teams: "LIECHTENSTEIN VS AZERBAIJAN", channel: "CBC Sport Azerbaijan", hot: false }
+      ], "SAT, NOV 14 • 03:45 AM MYT", "2026-11-14T03:45:00+08:00")
     ];
 
     function updateUEFACard(now) {
@@ -1040,6 +1092,7 @@
       const now = new Date().getTime();
 
       updateF1Card(now);
+      updateNowSports1Card(now);
       updateEPLCard(now);
       updateLaLigaCard(now);
       updateUEFACard(now);
