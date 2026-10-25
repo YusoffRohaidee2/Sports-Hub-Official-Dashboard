@@ -894,63 +894,54 @@
       renderGenericSection(now, nowSports1Matches, 'nowsports1-badge', 'nowsports1-matches-body', 'nowsports1-time', 'nowsports1-countdown', 'NOW SPORTS LIVE EVENT 1');
     }
 
-    /* Premier League Schedule (Updated) */
+/* Premier League Schedule (Updated) */
     const eplMatches = [
       createMatch("PREMIER LEAGUE", [
-        { teams: "ASTON VILLA VS MANCHESTER CITY", channel: "Star Sports Select 1, USA Network, DAZN1 Portugal, beIN Sports Arabia 1", hot: false }
-      ], "SAT, OCT 24 • 07:30 PM MYT", "2026-10-24T19:30:00+08:00"),
-
-      createMatch("PREMIER LEAGUE", [
-        { teams: "ARSENAL VS EVERTON", channel: "Star Sports Select 1, USA Network, DAZN1 Portugal, beIN Sports Arabia 1", hot: true },
-        { teams: "COVENTRY CITY VS FULHAM", channel: "Star Sports Select 2, DAZN2 Portugal, beIN Sports Arabia 2", hot: false }
-      ], "SAT, OCT 24 • 10:00 PM MYT", "2026-10-24T22:00:00+08:00"),
-
-      createMatch("PREMIER LEAGUE", [
-        { teams: "CHELSEA VS TOTTENHAM HOTSPUR", channel: "Star Sports Select 1, DAZN1 Portugal, beIN Sports Arabia 1", hot: true }
-      ], "SUN, OCT 25 • 12:30 AM MYT", "2026-10-25T00:30:00+08:00"),
-
-      createMatch("PREMIER LEAGUE", [
-        { teams: "CRYSTAL PALACE VS NEWCASTLE UNITED", channel: "USA Network, beIN Sports Arabia 3", hot: false },
+        { teams: "MANCHESTER UNITED VS AFC BOURNEMOUTH", channel: "Star Sports Select 1, DAZN1 Portugal, beIN Sports Arabia 1", hot: true },
         { teams: "LIVERPOOL VS BRIGHTON & HOVE ALBION", channel: "Star Sports Select 2, DAZN2 Portugal, beIN Sports Arabia 2", hot: true },
-        { teams: "MANCHESTER UNITED VS AFC BOURNEMOUTH", channel: "DAZN1 Portugal, beIN Sports Arabia 1", hot: true },
+        { teams: "CRYSTAL PALACE VS NEWCASTLE UNITED", channel: "USA Network, beIN Sports Arabia 3", hot: false },
         { teams: "HULL CITY VS BRENTFORD", channel: "beIN Sports Arabia 4", hot: false }
       ], "SUN, OCT 25 • 10:00 PM MYT", "2026-10-25T22:00:00+08:00"),
 
       createMatch("PREMIER LEAGUE", [
-        { teams: "SUNDERLAND VS LEEDS UNITED", channel: "USA Network, DAZN2 Portugal, beIN Sports Arabia 1", hot: false }
+        { teams: "SUNDERLAND VS LEEDS UNITED", channel: "Star Sports Select 1, USA Network, DAZN2 Portugal, beIN Sports Arabia 1", hot: false }
       ], "MON, OCT 26 • 12:30 AM MYT", "2026-10-26T00:30:00+08:00"),
 
       createMatch("PREMIER LEAGUE", [
-        { teams: "CHELSEA VS MANCHESTER UNITED", channel: "USA Network", hot: true }
+        { teams: "CHELSEA VS MANCHESTER UNITED", channel: "Star Sports Select 1, USA Network", hot: true }
       ], "SAT, OCT 31 • 08:30 PM MYT", "2026-10-31T20:30:00+08:00"),
 
       createMatch("PREMIER LEAGUE", [
         { teams: "BRENTFORD VS NOTTINGHAM FOREST", channel: "USA Network", hot: false }
-      ], "SAT, OCT 31 • 11:00 PM MYT", "2026-10-31T23:00:00+08:00")
+      ], "SAT, OCT 31 • 11:00 PM MYT", "2026-10-31T23:00:00+08:00"),
+
+      createMatch("PREMIER LEAGUE", [
+        { teams: "TOTTENHAM HOTSPUR VS CRYSTAL PALACE", channel: "Star Sports Select 1", hot: false }
+      ], "SUN, NOV 1 • 01:30 AM MYT", "2026-11-01T01:30:00+08:00"),
+
+      createMatch("PREMIER LEAGUE", [
+        { teams: "ASTON VILLA VS FULHAM", channel: "Star Sports Select 1", hot: false }
+      ], "SUN, NOV 1 • 04:00 AM MYT", "2026-11-01T04:00:00+08:00"),
+
+      createMatch("PREMIER LEAGUE", [
+        { teams: "LIVERPOOL VS ARSENAL", channel: "Star Sports Select 1", hot: true }
+      ], "MON, NOV 2 • 12:30 AM MYT", "2026-11-02T00:30:00+08:00"),
+
+      createMatch("PREMIER LEAGUE", [
+        { teams: "NEWCASTLE UNITED VS EVERTON", channel: "Star Sports Select 1", hot: false }
+      ], "TUE, NOV 3 • 04:00 AM MYT", "2026-11-03T04:00:00+08:00"),
+
+      createMatch("PREMIER LEAGUE", [
+        { teams: "EVERTON VS COVENTRY CITY", channel: "Star Sports Select 1", hot: false }
+      ], "SAT, NOV 7 • 04:00 AM MYT", "2026-11-07T04:00:00+08:00")
     ];
     
     function updateEPLCard(now) {
       renderGenericSection(now, eplMatches, 'epl-badge', 'epl-matches-body', 'epl-time', 'epl-countdown', 'HOME OF PREMIER LEAGUE');
     }
 
-    /* La Liga Schedule (Updated) */
+/* La Liga Schedule (Updated) */
     const laLigaMatches = [
-      createMatch("LA LIGA", [
-        { teams: "RAYO VALLECANO VS ELCHE", channel: "DAZN3 Portugal, beIN Sports Arabia 4", hot: false }
-      ], "SAT, OCT 24 • 08:00 PM MYT", "2026-10-24T20:00:00+08:00"),
-
-      createMatch("LA LIGA", [
-        { teams: "RACING SANTANDER VS ESPANYOL", channel: "DAZN3 Portugal, beIN Sports Arabia 4", hot: false }
-      ], "SAT, OCT 24 • 10:15 PM MYT", "2026-10-24T22:15:00+08:00"),
-
-      createMatch("LA LIGA", [
-        { teams: "VALENCIA VS VILLARREAL", channel: "DAZN2 Portugal, beIN Sports Arabia 2", hot: false }
-      ], "SUN, OCT 25 • 12:30 AM MYT", "2026-10-25T00:30:00+08:00"),
-
-      createMatch("LA LIGA", [
-        { teams: "ATLÉTICO MADRID VS DEPORTIVO LA CORUÑA", channel: "DAZN1 Portugal, beIN Sports Arabia 2", hot: false }
-      ], "SUN, OCT 25 • 03:00 AM MYT", "2026-10-25T03:00:00+08:00"),
-
       createMatch("LA LIGA", [
         { teams: "ATHLETIC CLUB VS GETAFE", channel: "DAZN3 Portugal, beIN Sports Arabia 6", hot: false }
       ], "SUN, OCT 25 • 09:00 PM MYT", "2026-10-25T21:00:00+08:00"),
@@ -976,11 +967,15 @@
       renderGenericSection(now, laLigaMatches, 'laliga-badge', 'laliga-matches-body', 'laliga-time', 'laliga-countdown', 'HOME OF LA LIGA');
     }
 
-    /* UEFA Schedule (Updated) */
+/* UEFA Schedule (Updated) */
     const uefaMatches = [
       createMatch("UEFA WOMEN'S CHAMPIONS LEAGUE", [
         { teams: "AUSTRIA WIEN VS JUVENTUS", channel: "beIN Sports Arabia 2", hot: false }
       ], "FRI, OCT 30 • 01:45 AM MYT", "2026-10-30T01:45:00+08:00"),
+
+      createMatch("UEFA WOMEN'S CHAMPIONS LEAGUE", [
+        { teams: "MANCHESTER CITY VS PSG", channel: "beIN Sports Arabia 2", hot: true }
+      ], "FRI, OCT 30 • 04:00 AM MYT", "2026-10-30T04:00:00+08:00"),
 
       createMatch("UEFA NATIONS LEAGUE", [
         { teams: "TURKEY VS BELGIUM", channel: "Fox Sports 1 USA", hot: false }
