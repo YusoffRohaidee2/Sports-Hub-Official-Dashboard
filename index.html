@@ -867,16 +867,16 @@
     /* Formula 1 Live Streaming Hub */
     const f1Matches = [
       createMatch("F1 LIVE STREAMING HUB", [
-        { teams: "UNITED STATES GP - FREE PRACTICE 3", channel: "F1 Live Feed", hot: false }
-      ], "SUN, OCT 25 • 01:30 AM MYT", "2026-10-25T01:30:00+08:00", 60),
+        { teams: "MEXICO CITY GP - FREE PRACTICE 3", channel: "F1 Live Feed", hot: false }
+      ], "SUN, NOV 1 • 01:30 AM MYT", "2026-11-01T01:30:00+08:00", 60),
 
       createMatch("F1 LIVE STREAMING HUB", [
-        { teams: "UNITED STATES GP - QUALIFYING", channel: "F1 Live Feed", hot: false }
-      ], "SUN, OCT 25 • 05:00 AM MYT", "2026-10-25T05:00:00+08:00", 60),
+        { teams: "MEXICO CITY GP - QUALIFYING", channel: "F1 Live Feed", hot: false }
+      ], "SUN, NOV 1 • 05:00 AM MYT", "2026-11-01T05:00:00+08:00", 60),
 
       createMatch("F1 LIVE STREAMING HUB", [
-        { teams: "UNITED STATES GP - RACE (56 LAPS)", channel: "F1 Live Feed", hot: true }
-      ], "MON, OCT 26 • 04:00 AM MYT", "2026-10-26T04:00:00+08:00", 120)
+        { teams: "MEXICO CITY GP - RACE (71 LAPS)", channel: "F1 Live Feed", hot: true }
+      ], "MON, NOV 2 • 04:00 AM MYT", "2026-11-02T04:00:00+08:00", 120)
     ];
 
     function updateF1Card(now) {
@@ -897,43 +897,52 @@
 /* Premier League Schedule (Updated) */
     const eplMatches = [
       createMatch("PREMIER LEAGUE", [
-        { teams: "MANCHESTER UNITED VS AFC BOURNEMOUTH", channel: "Star Sports Select 1, DAZN1 Portugal, beIN Sports Arabia 1", hot: true },
-        { teams: "LIVERPOOL VS BRIGHTON & HOVE ALBION", channel: "Star Sports Select 2, DAZN2 Portugal, beIN Sports Arabia 2", hot: true },
-        { teams: "CRYSTAL PALACE VS NEWCASTLE UNITED", channel: "USA Network, beIN Sports Arabia 3", hot: false },
-        { teams: "HULL CITY VS BRENTFORD", channel: "beIN Sports Arabia 4", hot: false }
-      ], "SUN, OCT 25 • 10:00 PM MYT", "2026-10-25T22:00:00+08:00"),
-
-      createMatch("PREMIER LEAGUE", [
-        { teams: "SUNDERLAND VS LEEDS UNITED", channel: "Star Sports Select 1, USA Network, DAZN2 Portugal, beIN Sports Arabia 1", hot: false }
-      ], "MON, OCT 26 • 12:30 AM MYT", "2026-10-26T00:30:00+08:00"),
-
-      createMatch("PREMIER LEAGUE", [
-        { teams: "CHELSEA VS MANCHESTER UNITED", channel: "Star Sports Select 1, USA Network", hot: true }
+        { teams: "CHELSEA VS MANCHESTER UNITED", channel: "Star Sports Select 1, USA Network, DAZN1 Portugal, beIN Sports Arabia 1", hot: true }
       ], "SAT, OCT 31 • 08:30 PM MYT", "2026-10-31T20:30:00+08:00"),
 
       createMatch("PREMIER LEAGUE", [
-        { teams: "BRENTFORD VS NOTTINGHAM FOREST", channel: "USA Network", hot: false }
+        { teams: "BRENTFORD VS NOTTINGHAM FOREST", channel: "USA Network, beIN Sports Arabia 2", hot: false },
+        { teams: "MANCHESTER CITY VS BRIGHTON & HOVE ALBION", channel: "DAZN1 Portugal, beIN Sports Arabia 1", hot: true },
+        { teams: "COVENTRY CITY VS SUNDERLAND", channel: "Star Sports Select 2, beIN Sports Arabia 5", hot: false },
+        { teams: "HULL CITY VS IPSWICH TOWN", channel: "beIN Sports Arabia 3", hot: false },
+        { teams: "AFC BOURNEMOUTH VS LEEDS UNITED", channel: "beIN Sports Arabia 4", hot: false }
       ], "SAT, OCT 31 • 11:00 PM MYT", "2026-10-31T23:00:00+08:00"),
 
       createMatch("PREMIER LEAGUE", [
-        { teams: "TOTTENHAM HOTSPUR VS CRYSTAL PALACE", channel: "Star Sports Select 1", hot: false }
+        { teams: "TOTTENHAM HOTSPUR VS CRYSTAL PALACE", channel: "Star Sports Select 1, DAZN2 Portugal, beIN Sports Arabia 1", hot: false }
       ], "SUN, NOV 1 • 01:30 AM MYT", "2026-11-01T01:30:00+08:00"),
 
       createMatch("PREMIER LEAGUE", [
-        { teams: "ASTON VILLA VS FULHAM", channel: "Star Sports Select 1", hot: false }
+        { teams: "ASTON VILLA VS FULHAM", channel: "Star Sports Select 1, DAZN2 Portugal, beIN Sports Arabia 1, beIN Sports Arabia 2", hot: false }
       ], "SUN, NOV 1 • 04:00 AM MYT", "2026-11-01T04:00:00+08:00"),
 
       createMatch("PREMIER LEAGUE", [
-        { teams: "LIVERPOOL VS ARSENAL", channel: "Star Sports Select 1", hot: true }
+        { teams: "LIVERPOOL VS ARSENAL", channel: "Star Sports Select 1, DAZN1 Portugal, beIN Sports Arabia 1", hot: true }
       ], "MON, NOV 2 • 12:30 AM MYT", "2026-11-02T00:30:00+08:00"),
 
       createMatch("PREMIER LEAGUE", [
-        { teams: "NEWCASTLE UNITED VS EVERTON", channel: "Star Sports Select 1", hot: false }
+        { teams: "NEWCASTLE UNITED VS EVERTON", channel: "Star Sports Select 1, USA Network, DAZN1 Portugal, beIN Sports Arabia 1, beIN Sports Arabia 2", hot: false }
       ], "TUE, NOV 3 • 04:00 AM MYT", "2026-11-03T04:00:00+08:00"),
 
       createMatch("PREMIER LEAGUE", [
-        { teams: "EVERTON VS COVENTRY CITY", channel: "Star Sports Select 1", hot: false }
-      ], "SAT, NOV 7 • 04:00 AM MYT", "2026-11-07T04:00:00+08:00")
+        { teams: "EVERTON VS COVENTRY CITY", channel: "Star Sports Select 1, USA Network", hot: false }
+      ], "SAT, NOV 7 • 04:00 AM MYT", "2026-11-07T04:00:00+08:00"),
+
+      createMatch("PREMIER LEAGUE", [
+        { teams: "LEEDS UNITED VS TOTTENHAM HOTSPUR", channel: "USA Network", hot: false }
+      ], "SAT, NOV 7 • 08:30 PM MYT", "2026-11-07T20:30:00+08:00"),
+
+      createMatch("PREMIER LEAGUE", [
+        { teams: "FULHAM VS NEWCASTLE UNITED", channel: "USA Network", hot: false }
+      ], "SAT, NOV 7 • 11:00 PM MYT", "2026-11-07T23:00:00+08:00"),
+
+      createMatch("PREMIER LEAGUE", [
+        { teams: "SUNDERLAND VS CHELSEA", channel: "USA Network", hot: false }
+      ], "SUN, NOV 8 • 10:00 PM MYT", "2026-11-08T22:00:00+08:00"),
+
+      createMatch("PREMIER LEAGUE", [
+        { teams: "MANCHESTER UNITED VS ASTON VILLA", channel: "USA Network", hot: true }
+      ], "MON, NOV 9 • 12:30 AM MYT", "2026-11-09T00:30:00+08:00")
     ];
     
     function updateEPLCard(now) {
@@ -943,24 +952,40 @@
 /* La Liga Schedule (Updated) */
     const laLigaMatches = [
       createMatch("LA LIGA", [
-        { teams: "ATHLETIC CLUB VS GETAFE", channel: "DAZN3 Portugal, beIN Sports Arabia 6", hot: false }
-      ], "SUN, OCT 25 • 09:00 PM MYT", "2026-10-25T21:00:00+08:00"),
+        { teams: "LEVANTE VS ATLÉTICO MADRID", channel: "DAZN2 Portugal", hot: false }
+      ], "SAT, OCT 31 • 09:00 PM MYT", "2026-10-31T21:00:00+08:00"),
 
       createMatch("LA LIGA", [
-        { teams: "CELTA DE VIGO VS REAL BETIS", channel: "beIN Sports Arabia 6", hot: false }
-      ], "SUN, OCT 25 • 11:15 PM MYT", "2026-10-25T23:15:00+08:00"),
+        { teams: "RAYO VALLECANO VS CELTA DE VIGO", channel: "DAZN2 Portugal", hot: false }
+      ], "SAT, OCT 31 • 11:15 PM MYT", "2026-10-31T23:15:00+08:00"),
 
       createMatch("LA LIGA", [
-        { teams: "REAL SOCIEDAD VS LEVANTE", channel: "DAZN3 Portugal, beIN Sports Arabia 3", hot: false }
-      ], "MON, OCT 26 • 01:30 AM MYT", "2026-10-26T01:30:00+08:00"),
+        { teams: "REAL BETIS VS MÁLAGA", channel: "beIN Sports Arabia 2", hot: false }
+      ], "SUN, NOV 1 • 01:30 AM MYT", "2026-11-01T01:30:00+08:00"),
 
       createMatch("LA LIGA", [
-        { teams: "BARCELONA VS REAL MADRID", channel: "T Sports, DAZN1 Portugal, beIN Sports Arabia 1", hot: true }
-      ], "MON, OCT 26 • 04:00 AM MYT", "2026-10-26T04:00:00+08:00"),
+        { teams: "BARCELONA VS DEPORTIVO ALAVÉS", channel: "DAZN1 Portugal, beIN Sports Arabia 1, beIN Sports Arabia 2", hot: true }
+      ], "SUN, NOV 1 • 04:00 AM MYT", "2026-11-01T04:00:00+08:00"),
 
       createMatch("LA LIGA", [
-        { teams: "SEVILLA VS OSASUNA", channel: "DAZN1 Portugal, beIN Sports Arabia 5", hot: false }
-      ], "TUE, OCT 27 • 04:00 AM MYT", "2026-10-27T04:00:00+08:00")
+        { teams: "GETAFE VS SEVILLA", channel: "DAZN2 Portugal, beIN Sports Arabia 1, beIN Sports Arabia 3", hot: false }
+      ], "SUN, NOV 1 • 09:00 PM MYT", "2026-11-01T21:00:00+08:00"),
+
+      createMatch("LA LIGA", [
+        { teams: "RACING SANTANDER VS REAL MADRID", channel: "DAZN2 Portugal, beIN Sports Arabia 2", hot: true }
+      ], "SUN, NOV 1 • 11:15 PM MYT", "2026-11-01T23:15:00+08:00"),
+
+      createMatch("LA LIGA", [
+        { teams: "ELCHE VS VALENCIA", channel: "DAZN2 Portugal, beIN Sports Arabia 3", hot: false }
+      ], "MON, NOV 2 • 01:30 AM MYT", "2026-11-02T01:30:00+08:00"),
+
+      createMatch("LA LIGA", [
+        { teams: "ATHLETIC CLUB VS REAL SOCIEDAD", channel: "DAZN1 Portugal, beIN Sports Arabia 1, beIN Sports Arabia 2", hot: false }
+      ], "MON, NOV 2 • 04:00 AM MYT", "2026-11-02T04:00:00+08:00"),
+
+      createMatch("LA LIGA", [
+        { teams: "DEPORTIVO LA CORUÑA VS OSASUNA", channel: "DAZN2 Portugal, beIN Sports Arabia 4", hot: false }
+      ], "TUE, NOV 3 • 04:00 AM MYT", "2026-11-03T04:00:00+08:00")
     ];
 
     function updateLaLigaCard(now) {
@@ -969,13 +994,65 @@
 
 /* UEFA Schedule (Updated) */
     const uefaMatches = [
-      createMatch("UEFA WOMEN'S CHAMPIONS LEAGUE", [
-        { teams: "AUSTRIA WIEN VS JUVENTUS", channel: "beIN Sports Arabia 2", hot: false }
-      ], "FRI, OCT 30 • 01:45 AM MYT", "2026-10-30T01:45:00+08:00"),
+      createMatch("UEFA YOUTH LEAGUE", [
+        { teams: "SHAKHTAR DONETSK U19 VS SPORTING CP U19", channel: "DAZN1 Portugal", hot: false },
+        { teams: "VILLARREAL U19 VS PSG U19", channel: "beIN Sports Arabia 5", hot: false }
+      ], "TUE, NOV 3 • 08:00 PM MYT", "2026-11-03T20:00:00+08:00"),
 
-      createMatch("UEFA WOMEN'S CHAMPIONS LEAGUE", [
-        { teams: "MANCHESTER CITY VS PSG", channel: "beIN Sports Arabia 2", hot: true }
-      ], "FRI, OCT 30 • 04:00 AM MYT", "2026-10-30T04:00:00+08:00"),
+      createMatch("UEFA YOUTH LEAGUE", [
+        { teams: "MANCHESTER UNITED VS AS ROMA", channel: "beIN Sports Arabia 4", hot: false }
+      ], "TUE, NOV 3 • 08:50 PM MYT", "2026-11-03T20:50:00+08:00"),
+
+      createMatch("UEFA YOUTH LEAGUE", [
+        { teams: "ATLÉTICO MADRID U19 VS BAYERN U19", channel: "DAZN1 Portugal", hot: false }
+      ], "TUE, NOV 3 • 11:00 PM MYT", "2026-11-03T23:00:00+08:00"),
+
+      createMatch("UEFA CHAMPIONS LEAGUE", [
+        { teams: "GALATASARAY VS STUTTGART", channel: "DAZN1 Portugal", hot: false },
+        { teams: "SHAKHTAR DONETSK VS SPORTING CP", channel: "beIN Sports Arabia 4", hot: false }
+      ], "WED, NOV 4 • 01:45 AM MYT", "2026-11-04T01:45:00+08:00"),
+
+      createMatch("UEFA CHAMPIONS LEAGUE", [
+        { teams: "MANCHESTER UNITED VS ROMA", channel: "DAZN1 Portugal, beIN Sports Arabia 4", hot: true },
+        { teams: "BARCELONA VS ASTON VILLA", channel: "DAZN2 Portugal, beIN Sports Arabia 1", hot: true },
+        { teams: "ATLÉTICO MADRID VS BAYERN MÜNCHEN", channel: "DAZN3 Portugal, beIN Sports Arabia 5", hot: true },
+        { teams: "VILLARREAL VS PSG", channel: "DAZN4 Portugal", hot: false }
+      ], "WED, NOV 4 • 04:00 AM MYT", "2026-11-04T04:00:00+08:00"),
+
+      createMatch("UEFA YOUTH LEAGUE", [
+        { teams: "PORTO U19 VS NAPOLI U19", channel: "DAZN1 Portugal", hot: false }
+      ], "WED, NOV 4 • 08:00 PM MYT", "2026-11-04T20:00:00+08:00"),
+
+      createMatch("UEFA YOUTH LEAGUE", [
+        { teams: "BORUSSIA DORTMUND U19 VS REAL BETIS U19", channel: "DAZN1 Portugal", hot: false }
+      ], "WED, NOV 4 • 11:00 PM MYT", "2026-11-04T23:00:00+08:00"),
+
+      createMatch("UEFA EUROPA LEAGUE", [
+        { teams: "RENNES VS OLYMPIAKOS PIRAEUS", channel: "beIN Sports Arabia 1", hot: false }
+      ], "WED, NOV 4 • 11:30 PM MYT", "2026-11-04T23:30:00+08:00"),
+
+      createMatch("UEFA CHAMPIONS LEAGUE", [
+        { teams: "AEK ATHENS VS REAL MADRID", channel: "DAZN1 Portugal, beIN Sports Arabia 2", hot: true },
+        { teams: "FENERBAHÇE VS LIVERPOOL", channel: "DAZN2 Portugal, beIN Sports Arabia 4", hot: true }
+      ], "THU, NOV 5 • 01:45 AM MYT", "2026-11-05T01:45:00+08:00"),
+
+      createMatch("UEFA CHAMPIONS LEAGUE", [
+        { teams: "RB LEIPZIG VS MANCHESTER CITY", channel: "DAZN1 Portugal, beIN Sports Arabia 3", hot: true },
+        { teams: "SLAVIA PRAHA VS ARSENAL", channel: "DAZN2 Portugal, beIN Sports Arabia 1", hot: true },
+        { teams: "BORUSSIA DORTMUND VS REAL BETIS", channel: "DAZN3 Portugal, beIN Sports Arabia 5", hot: false },
+        { teams: "PSV VS CLUB BRUGGE", channel: "DAZN4 Portugal", hot: false },
+        { teams: "PORTO VS NAPOLI", channel: "beIN Sports Arabia 4", hot: false }
+      ], "THU, NOV 5 • 04:00 AM MYT", "2026-11-05T04:00:00+08:00"),
+
+      createMatch("UEFA EUROPA LEAGUE", [
+        { teams: "MILAN VS FERENCVÁROS", channel: "beIN Sports Arabia 1", hot: false },
+        { teams: "CRYSTAL PALACE VS HOFFENHEIM", channel: "beIN Sports Arabia 4", hot: false },
+        { teams: "SPARTA PRAHA VS AFC BOURNEMOUTH", channel: "beIN Sports Arabia 5", hot: false }
+      ], "FRI, NOV 6 • 01:45 AM MYT", "2026-11-06T01:45:00+08:00"),
+
+      createMatch("UEFA CONFERENCE LEAGUE", [
+        { teams: "TRABZONSPOR VS FREIBURG", channel: "beIN Sports Arabia 2", hot: false }
+      ], "FRI, NOV 6 • 01:45 AM MYT", "2026-11-06T01:45:00+08:00"),
 
       createMatch("UEFA NATIONS LEAGUE", [
         { teams: "TURKEY VS BELGIUM", channel: "Fox Sports 1 USA", hot: false }
