@@ -439,41 +439,6 @@
       border-color: var(--accent-gold);
       box-shadow: 0 0 15px rgba(255, 215, 0, 0.4);
     }
-
-    /* Style Multi-Match Card */
-    .triple-match-container {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      margin-top: 6px;
-      margin-bottom: 6px;
-      width: 100%;
-    }
-
-    .sub-match-row {
-      background: rgba(255, 255, 255, 0.03);
-      border-left: 3px solid var(--neon-green);
-      padding: 8px 12px;
-      border-radius: 8px;
-      display: flex;
-      flex-direction: column;
-      gap: 2px;
-    }
-
-    .sub-match-teams {
-      font-size: 0.92rem;
-      font-weight: 800;
-      color: #ffffff;
-    }
-
-    .sub-match-channel {
-      font-size: 0.74rem;
-      color: var(--neon-cyan);
-      font-weight: 600;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-    }
   </style>
 </head>
 <body>
@@ -606,28 +571,38 @@
       </div>
     </a>
 
-    <!-- HOT-5: HOME OF UEFA -->
+    <!-- HOT-5: HOME OF UEFA (Sama seperti gaya Football XTRA) -->
     <a class="link-card" href="https://home-of-uefa.vercel.app/" target="_blank" rel="noopener noreferrer" data-track-id="uefa">
       <div class="card-info">
-        <span class="live-badge" id="uefa-badge"><span class="live-dot"></span> HOME OF UEFA</span>
+        <span class="live-badge"><span class="live-dot"></span> HOME OF UEFA</span>
         
-        <div id="uefa-matches-body"></div>
+        <div style="margin-top: 6px; margin-bottom: 6px;">
+          <span class="match-teams" style="color: var(--neon-green); font-size: 0.95rem;">
+            <i class="fa-solid fa-circle-play" style="margin-right: 6px;"></i>Click here to see what is broadcasting here
+          </span>
+        </div>
 
         <div class="match-details" style="margin-top: 4px;">
-          <span id="uefa-time"><i class="fa-regular fa-clock"></i> Loading...</span>
+          <span><i class="fa-solid fa-globe"></i> <strong>To review the schedule, please go into our website.</strong></span>
+          <span style="margin-top: 6px; color: var(--neon-cyan); font-weight: 700;">Leagues in Home of UEFA:</span>
+          <div style="font-size: 0.78rem; color: var(--text-sub); display: grid; grid-template-columns: 1fr 1fr; gap: 4px; margin-top: 4px;">
+            <div>1. UEFA Champions League</div>
+            <div>2. UEFA Europa League</div>
+            <div>3. UEFA Youth League</div>
+            <div>4. UEFA Women's Champions League</div>
+            <div>5. UEFA Nations League & Qualifiers</div>
+            <div>6. UEFA Official Draws & Events</div>
+          </div>
         </div>
 
-        <div class="countdown-timer" id="uefa-countdown">
-          <i class="fa-solid fa-hourglass-half"></i> <span class="time-text">Loading...</span>
-        </div>
-        <span class="click-counter"><i class="fa-solid fa-eye"></i> <span id="click-uefa">0</span> clicks</span>
+        <span class="click-counter" style="margin-top: 10px;"><i class="fa-solid fa-eye"></i> <span id="click-uefa">0</span> clicks</span>
       </div>
       <div class="card-right-group">
         <div class="card-action-icon"><i class="fa-solid fa-play"></i></div>
       </div>
     </a>
 
-    <!-- HOT-6: NOW SPORTS LIVE EVENT 1 (Moved here) -->
+    <!-- HOT-6: NOW SPORTS LIVE EVENT 1 -->
     <a class="link-card" href="https://now-sports-live-event-website.vercel.app/" target="_blank" rel="noopener noreferrer" data-track-id="hot-1">
       <div class="card-info">
         <span class="live-badge" id="nowsports1-badge"><span class="live-dot"></span> NOW SPORTS LIVE EVENT 1</span>
@@ -890,7 +865,7 @@
       renderGenericSection(now, f1Matches, 'f1-badge', 'f1-matches-body', 'f1-time', 'f1-countdown', 'FORMULA 1 HUB');
     }
 
-    /* Now Sports Live Event 1 Schedule (Ballon d'Or) */
+    /* Now Sports Live Event 1 Schedule */
     const nowSports1Matches = [
       createMatch("BALLON D'OR", [
         { teams: "2026 BALLON D'OR", channel: "L'Equipe FR", hot: true }
@@ -901,7 +876,7 @@
       renderGenericSection(now, nowSports1Matches, 'nowsports1-badge', 'nowsports1-matches-body', 'nowsports1-time', 'nowsports1-countdown', 'NOW SPORTS LIVE EVENT 1');
     }
 
-    /* Premier League Schedule (Updated) */
+    /* Premier League Schedule */
     const eplMatches = [
       createMatch("PREMIER LEAGUE", [
         { teams: "EVERTON VS COVENTRY CITY", channel: "Star Sports Select 1, USA Network, beIN Sports Arabia 1", hot: false }
@@ -927,38 +902,14 @@
 
       createMatch("PREMIER LEAGUE", [
         { teams: "MANCHESTER UNITED VS ASTON VILLA", channel: "Star Sports Select 1, USA Network, beIN Sports Arabia 1", hot: true }
-      ], "MON, NOV 9 • 12:30 AM MYT", "2026-11-09T00:30:00+08:00"),
-
-      createMatch("PREMIER LEAGUE", [
-        { teams: "MANCHESTER CITY VS FULHAM", channel: "Star Sports Select 1, TNT Sports 1", hot: false }
-      ], "SAT, NOV 21 • 08:30 PM MYT", "2026-11-21T20:30:00+08:00"),
-
-      createMatch("PREMIER LEAGUE", [
-        { teams: "NEWCASTLE UNITED VS ARSENAL", channel: "Star Sports Select 1", hot: true }
-      ], "SUN, NOV 22 • 01:30 AM MYT", "2026-11-22T01:30:00+08:00"),
-
-      createMatch("PREMIER LEAGUE", [
-        { teams: "HULL CITY VS BRIGHTON & HOVE ALBION", channel: "Star Sports Select 1", hot: false }
-      ], "SUN, NOV 22 • 10:00 PM MYT", "2026-11-22T22:00:00+08:00"),
-
-      createMatch("PREMIER LEAGUE", [
-        { teams: "LIVERPOOL VS MANCHESTER UNITED", channel: "Star Sports Select 1", hot: true }
-      ], "MON, NOV 23 • 12:30 AM MYT", "2026-11-23T00:30:00+08:00"),
-
-      createMatch("PREMIER LEAGUE", [
-        { teams: "BRENTFORD VS EVERTON", channel: "Star Sports Select 1", hot: false }
-      ], "TUE, NOV 24 • 04:00 AM MYT", "2026-11-24T04:00:00+08:00"),
-
-      createMatch("PREMIER LEAGUE", [
-        { teams: "EVERTON VS LIVERPOOL", channel: "TNT Sports 1", hot: true }
-      ], "SUN, NOV 29 • 08:00 PM MYT", "2026-11-29T20:00:00+08:00")
+      ], "MON, NOV 9 • 12:30 AM MYT", "2026-11-09T00:30:00+08:00")
     ];
     
     function updateEPLCard(now) {
       renderGenericSection(now, eplMatches, 'epl-badge', 'epl-matches-body', 'epl-time', 'epl-countdown', 'HOME OF PREMIER LEAGUE');
     }
 
-    /* La Liga Schedule (Updated) */
+    /* La Liga Schedule */
     const laLigaMatches = [
       createMatch("LA LIGA", [
         { teams: "VALENCIA VS REAL MADRID", channel: "beIN Sports Arabia 1", hot: true }
@@ -973,85 +924,6 @@
       renderGenericSection(now, laLigaMatches, 'laliga-badge', 'laliga-matches-body', 'laliga-time', 'laliga-countdown', 'HOME OF LA LIGA');
     }
 
-    /* UEFA Schedule (Updated) */
-    const uefaMatches = [
-      createMatch("UEFA EUROPA LEAGUE", [
-        { teams: "RENNES VS OLYMPIAKOS PIRAEUS", channel: "beIN Sports Arabia 1", hot: false }
-      ], "WED, NOV 4 • 11:30 PM MYT", "2026-11-04T23:30:00+08:00"),
-
-      createMatch("UEFA YOUTH LEAGUE", [
-        { teams: "LENS U19 VS COMO U19", channel: "beIN Sports Arabia 1", hot: false }
-      ], "WED, NOV 4 • 09:00 PM MYT", "2026-11-04T21:00:00+08:00"),
-
-      createMatch("UEFA CHAMPIONS LEAGUE", [
-        { teams: "AEK ATHENS VS REAL MADRID", channel: "IRIB Varzesh", hot: true },
-        { teams: "FENERBAHÇE VS LIVERPOOL", channel: "TNT Sports 1", hot: true }
-      ], "THU, NOV 5 • 01:45 AM MYT", "2026-11-05T01:45:00+08:00"),
-
-      createMatch("UEFA CHAMPIONS LEAGUE", [
-        { teams: "SLAVIA PRAHA VS ARSENAL", channel: "beIN Sports Arabia 1, IRIB Varzesh, TNT Sports 1", hot: true },
-        { teams: "RB LEIPZIG VS MANCHESTER CITY", channel: "Shabake 3", hot: true }
-      ], "THU, NOV 5 • 04:00 AM MYT", "2026-11-05T04:00:00+08:00"),
-
-      createMatch("UEFA EUROPA LEAGUE", [
-        { teams: "MILAN VS FERENCVÁROS", channel: "beIN Sports Arabia 1", hot: false },
-        { teams: "CRYSTAL PALACE VS HOFFENHEIM", channel: "TNT Sports 1", hot: false }
-      ], "FRI, NOV 6 • 01:45 AM MYT", "2026-11-06T01:45:00+08:00"),
-
-      createMatch("UEFA EUROPA LEAGUE", [
-        { teams: "AZ VS JUVENTUS", channel: "beIN Sports Arabia 1", hot: false },
-        { teams: "SUNDERLAND VS DINAMO ZAGREB", channel: "TNT Sports 1", hot: false }
-      ], "FRI, NOV 6 • 04:00 AM MYT", "2026-11-06T04:00:00+08:00"),
-
-      createMatch("UEFA WOMEN'S CHAMPIONS LEAGUE", [
-        { teams: "PSG VS BAYERN", channel: "L’Equipe FR", hot: true }
-      ], "WED, NOV 11 • 04:00 AM MYT", "2026-11-11T04:00:00+08:00"),
-
-      createMatch("UEFA NATIONS LEAGUE", [
-        { teams: "TURKEY VS BELGIUM", channel: "Fox Sports 1 USA", hot: false }
-      ], "FRI, NOV 13 • 01:00 AM MYT", "2026-11-13T01:00:00+08:00"),
-
-      createMatch("UEFA NATIONS LEAGUE", [
-        { teams: "ITALY VS FRANCE", channel: "Fox Sports 1 USA", hot: false }
-      ], "FRI, NOV 13 • 03:45 AM MYT", "2026-11-13T03:45:00+08:00"),
-
-      createMatch("UEFA NATIONS LEAGUE", [
-        { teams: "NETHERLANDS VS GREECE", channel: "Fox Sports 1 USA", hot: false }
-      ], "SAT, NOV 14 • 03:45 AM MYT", "2026-11-14T03:45:00+08:00"),
-
-      createMatch("UEFA NATIONS LEAGUE", [
-        { teams: "GERMANY VS NETHERLANDS", channel: "Fox Sports 1 USA", hot: false }
-      ], "TUE, NOV 17 • 03:45 AM MYT", "2026-11-17T03:45:00+08:00"),
-
-      createMatch("UEFA NATIONS LEAGUE", [
-        { teams: "DENMARK VS NORWAY", channel: "Fox Sports 1 USA", hot: false }
-      ], "WED, NOV 18 • 03:45 AM MYT", "2026-11-18T03:45:00+08:00"),
-
-      createMatch("UEFA NATIONS LEAGUE", [
-        { teams: "UEFA NATIONS LEAGUE PLAY-OFF DRAW", channel: "Fox Sports 1 USA", hot: false }
-      ], "FRI, NOV 20 • 07:00 PM MYT", "2026-11-20T19:00:00+08:00", 60),
-
-      createMatch("UEFA CHAMPIONS LEAGUE", [
-        { teams: "MANCHESTER CITY VS NAPOLI", channel: "TNT Sports 1", hot: true }
-      ], "WED, NOV 25 • 04:00 AM MYT", "2026-11-25T04:00:00+08:00"),
-
-      createMatch("UEFA CHAMPIONS LEAGUE", [
-        { teams: "SPORTING CP VS MANCHESTER UNITED", channel: "TNT Sports 1", hot: true }
-      ], "THU, NOV 26 • 04:00 AM MYT", "2026-11-26T04:00:00+08:00"),
-
-      createMatch("UEFA EUROPA LEAGUE", [
-        { teams: "CELTA DE VIGO VS AFC BOURNEMOUTH", channel: "TNT Sports 1", hot: false }
-      ], "FRI, NOV 27 • 01:45 AM MYT", "2026-11-27T01:45:00+08:00"),
-
-      createMatch("UEFA EUROPA LEAGUE", [
-        { teams: "CRYSTAL PALACE VS REAL SOCIEDAD", channel: "TNT Sports 1", hot: false }
-      ], "FRI, NOV 27 • 04:00 AM MYT", "2026-11-27T04:00:00+08:00")
-    ];
-
-    function updateUEFACard(now) {
-      renderGenericSection(now, uefaMatches, 'uefa-badge', 'uefa-matches-body', 'uefa-time', 'uefa-countdown', 'HOME OF UEFA');
-    }
-    
     /* Dynamic Multi-Match Renderer Engine */
     function renderGenericSection(now, schedule, badgeId, bodyId, timeId, timerId, defaultCategoryName) {
       const badgeEl = document.getElementById(badgeId);
@@ -1144,7 +1016,6 @@
       updateNowSports1Card(now);
       updateEPLCard(now);
       updateLaLigaCard(now);
-      updateUEFACard(now);
     }
 
     document.addEventListener('DOMContentLoaded', () => {
