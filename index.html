@@ -519,24 +519,18 @@
           </span>
         </div>
 
-           <div class="match-details" style="margin-top: 4px;">
+        <div class="match-details" style="margin-top: 4px;">
           <span><i class="fa-solid fa-globe"></i> <strong>To review the schedule, please go into our website.</strong></span>
           <span style="margin-top: 6px; color: var(--neon-cyan); font-weight: 700;">Leagues in Football XTRA:</span>
           <div style="font-size: 0.78rem; color: var(--text-sub); display: grid; grid-template-columns: 1fr 1fr; gap: 4px; margin-top: 4px;">
             <div>1. Bundesliga</div>
-            <div>2. Bundesliga 2</div>
-            <div>3. Eredivisie</div>
-            <div>4. Ligue 1</div>
-            <div>5. Ligue 2</div>
-            <div>6. Super Lig</div>
-            <div>7. Segunda Division</div>
-            <div>8. EFL Championship</div>
-            <div>9. Major League Soccer (MLS)</div>
-            <div>10. AFC Champions League Elite</div>
-            <div>11. AFC Champions League Two</div>
-            <div>12. AFC Women’s Champions League</div>
-            <div>13. International Friendly</div>
-            <div>14. CONCACAF Nations League</div>
+            <div>2. Persian Gulf Pro League</div>
+            <div>3. AFC Champions League Elite</div>
+            <div>4. Jordan League</div>
+            <div>5. International Friendly</div>
+            <div>6. CONCACAF Nations League</div>
+            <div>7. FIFA U-17 Women’s World Cup</div>
+            <div>8. FIFA U-17 World Cup</div>
           </div>
         </div>
 
@@ -870,6 +864,14 @@
     /* Formula 1 Live Streaming Hub */
     const f1Matches = [
       createMatch("F1 LIVE STREAMING HUB", [
+        { teams: "SÃO PAULO GP - FREE PRACTICE 1", channel: "Sky Sports Main Event, Sky Sports F1, TSN 5 Canada", hot: false }
+      ], "FRI, NOV 6 • 11:30 PM MYT", "2026-11-06T23:30:00+08:00", 60),
+
+      createMatch("F1 LIVE STREAMING HUB", [
+        { teams: "SÃO PAULO GP - FREE PRACTICE 2", channel: "Sky Sports Main Event, Sky Sports F1, TSN 5 Canada", hot: false }
+      ], "SAT, NOV 7 • 03:00 AM MYT", "2026-11-07T03:00:00+08:00", 60),
+
+      createMatch("F1 LIVE STREAMING HUB", [
         { teams: "SÃO PAULO GP - FREE PRACTICE 3", channel: "Sky Sports Main Event, Sky Sports F1, TSN 5 Canada", hot: false }
       ], "SAT, NOV 7 • 10:30 PM MYT", "2026-11-07T22:30:00+08:00", 60),
 
@@ -976,7 +978,12 @@
       ], "WED, NOV 4 • 11:30 PM MYT", "2026-11-04T23:30:00+08:00"),
 
       createMatch("UEFA CHAMPIONS LEAGUE", [
-        { teams: "SLAVIA PRAHA VS ARSENAL", channel: "beIN Sports Arabia 1", hot: true }
+        { teams: "AEK ATHENS VS REAL MADRID", channel: "IRIB Varzesh", hot: true }
+      ], "THU, NOV 5 • 01:45 AM MYT", "2026-11-05T01:45:00+08:00"),
+
+      createMatch("UEFA CHAMPIONS LEAGUE", [
+        { teams: "SLAVIA PRAHA VS ARSENAL", channel: "beIN Sports Arabia 1, IRIB Varzesh", hot: true },
+        { teams: "RB LEIPZIG VS MANCHESTER CITY", channel: "Shabake 3", hot: true }
       ], "THU, NOV 5 • 04:00 AM MYT", "2026-11-05T04:00:00+08:00"),
 
       createMatch("UEFA EUROPA LEAGUE", [
@@ -1035,13 +1042,17 @@
       createMatch("UEFA NATIONS LEAGUE", [
         { teams: "DENMARK VS NORWAY", channel: "Fox Sports 1 USA", hot: false },
         { teams: "HUNGARY VS NORTHERN IRELAND", channel: "Fox Sports 2 USA", hot: false }
-      ], "WED, NOV 18 • 03:45 AM MYT", "2026-11-18T03:45:00+08:00")
+      ], "WED, NOV 18 • 03:45 AM MYT", "2026-11-18T03:45:00+08:00"),
+
+      createMatch("UEFA NATIONS LEAGUE", [
+        { teams: "UEFA NATIONS LEAGUE PLAY-OFF DRAW", channel: "Fox Sports 1 USA", hot: false }
+      ], "FRI, NOV 20 • 07:00 PM MYT", "2026-11-20T19:00:00+08:00", 60)
     ];
 
     function updateUEFACard(now) {
       renderGenericSection(now, uefaMatches, 'uefa-badge', 'uefa-matches-body', 'uefa-time', 'uefa-countdown', 'HOME OF UEFA');
     }
-
+    
     /* Dynamic Multi-Match Renderer Engine */
     function renderGenericSection(now, schedule, badgeId, bodyId, timeId, timerId, defaultCategoryName) {
       const badgeEl = document.getElementById(badgeId);
