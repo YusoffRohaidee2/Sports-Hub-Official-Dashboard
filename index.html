@@ -876,44 +876,119 @@
       renderGenericSection(now, nowSports1Matches, 'nowsports1-badge', 'nowsports1-matches-body', 'nowsports1-time', 'nowsports1-countdown', 'NOW SPORTS LIVE EVENT 1');
     }
 
-    /* Premier League Schedule */
+/* Premier League Schedule */
     const eplMatches = [
+      // SATURDAY, 7 NOV 2026
       createMatch("PREMIER LEAGUE", [
-        { teams: "EVERTON VS COVENTRY CITY", channel: "Star Sports Select 1, USA Network, beIN Sports Arabia 1", hot: false }
+        { teams: "EVERTON VS COVENTRY CITY", channel: "Star Sports Select 1, Sky Sports Premier League, USA Network, beIN Sports Arabia 1", hot: false }
       ], "SAT, NOV 7 • 04:00 AM MYT", "2026-11-07T04:00:00+08:00"),
 
       createMatch("PREMIER LEAGUE", [
-        { teams: "LEEDS UNITED VS TOTTENHAM HOTSPUR", channel: "Star Sports Select 1, USA Network, beIN Sports Arabia 1, TNT Sports 1", hot: false }
+        { teams: "LEEDS UNITED VS TOTTENHAM HOTSPUR", channel: "Star Sports Select 1, USA Network, beIN Sports Arabia 1", hot: false }
       ], "SAT, NOV 7 • 08:30 PM MYT", "2026-11-07T20:30:00+08:00"),
 
       createMatch("PREMIER LEAGUE", [
-        { teams: "FULHAM VS NEWCASTLE UNITED", channel: "USA Network", hot: false },
-        { teams: "ARSENAL VS HULL CITY", channel: "beIN Sports Arabia 1", hot: true }
+        { teams: "FULHAM VS NEWCASTLE UNITED", channel: "Star Sports Select 2, USA Network, beIN Sports Arabia 2", hot: false },
+        { teams: "ARSENAL VS HULL CITY", channel: "Star Sports Select 1, beIN Sports Arabia 1", hot: true }
       ], "SAT, NOV 7 • 11:00 PM MYT", "2026-11-07T23:00:00+08:00"),
 
+      // SUNDAY, 8 NOV 2026
       createMatch("PREMIER LEAGUE", [
-        { teams: "NOTTINGHAM FOREST VS MANCHESTER CITY", channel: "Star Sports Select 1, beIN Sports Arabia 1", hot: true }
+        { teams: "NOTTINGHAM FOREST VS MANCHESTER CITY", channel: "Star Sports Select 1, Sky Sports Premier League, beIN Sports Arabia 1", hot: true }
       ], "SUN, NOV 8 • 01:30 AM MYT", "2026-11-08T01:30:00+08:00"),
 
       createMatch("PREMIER LEAGUE", [
-        { teams: "SUNDERLAND VS CHELSEA", channel: "USA Network", hot: false },
-        { teams: "CRYSTAL PALACE VS LIVERPOOL", channel: "beIN Sports Arabia 1", hot: true }
+        { teams: "SUNDERLAND VS CHELSEA", channel: "Star Sports Select 2, Sky Sports Premier League, USA Network, beIN Sports Arabia 3", hot: false },
+        { teams: "CRYSTAL PALACE VS LIVERPOOL", channel: "Star Sports Select 1, beIN Sports Arabia 1", hot: true },
+        { teams: "BRIGHTON & HOVE ALBION VS BRENTFORD", channel: "beIN Sports Arabia 4", hot: false }
       ], "SUN, NOV 8 • 10:00 PM MYT", "2026-11-08T22:00:00+08:00"),
 
+      // MONDAY, 9 NOV 2026
       createMatch("PREMIER LEAGUE", [
-        { teams: "MANCHESTER UNITED VS ASTON VILLA", channel: "Star Sports Select 1, USA Network, beIN Sports Arabia 1", hot: true }
-      ], "MON, NOV 9 • 12:30 AM MYT", "2026-11-09T00:30:00+08:00")
+        { teams: "MANCHESTER UNITED VS ASTON VILLA", channel: "Star Sports Select 1, Sky Sports Premier League, USA Network, beIN Sports Arabia 1", hot: true }
+      ], "MON, NOV 9 • 12:30 AM MYT", "2026-11-09T00:30:00+08:00"),
+
+      // SATURDAY, 21 NOV 2026
+      createMatch("PREMIER LEAGUE", [
+        { teams: "MANCHESTER CITY VS FULHAM", channel: "Star Sports Select 1", hot: true }
+      ], "SAT, NOV 21 • 08:30 PM MYT", "2026-11-21T20:30:00+08:00"),
+
+      // SUNDAY, 22 NOV 2026
+      createMatch("PREMIER LEAGUE", [
+        { teams: "NEWCASTLE UNITED VS ARSENAL", channel: "Star Sports Select 1, Sky Sports Premier League", hot: true }
+      ], "SUN, NOV 22 • 01:30 AM MYT", "2026-11-22T01:30:00+08:00"),
+
+      createMatch("PREMIER LEAGUE", [
+        { teams: "HULL CITY VS BRIGHTON & HOVE ALBION", channel: "Star Sports Select 1, Sky Sports Premier League", hot: false }
+      ], "SUN, NOV 22 • 10:00 PM MYT", "2026-11-22T22:00:00+08:00"),
+
+      // MONDAY, 23 NOV 2026
+      createMatch("PREMIER LEAGUE", [
+        { teams: "LIVERPOOL VS MANCHESTER UNITED", channel: "Star Sports Select 1, Sky Sports Premier League", hot: true }
+      ], "MON, NOV 23 • 12:30 AM MYT", "2026-11-23T00:30:00+08:00"),
+
+      // TUESDAY, 24 NOV 2026
+      createMatch("PREMIER LEAGUE", [
+        { teams: "BRENTFORD VS EVERTON", channel: "Star Sports Select 1, Sky Sports Premier League", hot: false }
+      ], "TUE, NOV 24 • 04:00 AM MYT", "2026-11-24T04:00:00+08:00"),
+
+      // SATURDAY, 28 NOV 2026
+      createMatch("PREMIER LEAGUE", [
+        { teams: "NOTTINGHAM FOREST VS CHELSEA", channel: "Sky Sports Premier League", hot: true }
+      ], "SAT, NOV 28 • 04:00 AM MYT", "2026-11-28T04:00:00+08:00"),
+
+      // SUNDAY, 29 NOV 2026
+      createMatch("PREMIER LEAGUE", [
+        { teams: "IPSWICH TOWN VS ASTON VILLA", channel: "Sky Sports Premier League", hot: false }
+      ], "SUN, NOV 29 • 01:30 AM MYT", "2026-11-29T01:30:00+08:00"),
+
+      createMatch("PREMIER LEAGUE", [
+        { teams: "BRIGHTON & HOVE ALBION VS NEWCASTLE UNITED", channel: "Sky Sports Premier League", hot: false }
+      ], "SUN, NOV 29 • 10:05 PM MYT", "2026-11-29T22:05:00+08:00"),
+
+      // MONDAY, 30 NOV 2026
+      createMatch("PREMIER LEAGUE", [
+        { teams: "ARSENAL VS MANCHESTER CITY", channel: "Sky Sports Premier League", hot: true }
+      ], "MON, NOV 30 • 12:30 AM MYT", "2026-11-30T00:30:00+08:00"),
+
+      // THURSDAY, 31 DEC 2026
+      createMatch("PREMIER LEAGUE", [
+        { teams: "ASTON VILLA VS LIVERPOOL", channel: "Sky Sports Football", hot: true }
+      ], "THU, DEC 31 • 04:15 AM MYT", "2026-12-31T04:15:00+08:00")
     ];
-    
+
     function updateEPLCard(now) {
       renderGenericSection(now, eplMatches, 'epl-badge', 'epl-matches-body', 'epl-time', 'epl-countdown', 'HOME OF PREMIER LEAGUE');
     }
 
     /* La Liga Schedule */
     const laLigaMatches = [
+      // SATURDAY, 7 NOV 2026
+      createMatch("LA LIGA", [
+        { teams: "SEVILLA VS DEPORTIVO ALAVÉS", channel: "beIN Sports Arabia 3", hot: false }
+      ], "SAT, NOV 7 • 04:00 AM MYT", "2026-11-07T04:00:00+08:00"),
+
+      createMatch("LA LIGA", [
+        { teams: "MÁLAGA VS RACING SANTANDER", channel: "beIN Sports Arabia 3", hot: false }
+      ], "SAT, NOV 7 • 09:00 PM MYT", "2026-11-07T21:00:00+08:00"),
+
+      createMatch("LA LIGA", [
+        { teams: "ESPANYOL VS DEPORTIVO LA CORUÑA", channel: "beIN Sports Arabia 3", hot: false }
+      ], "SAT, NOV 7 • 11:15 PM MYT", "2026-11-07T23:15:00+08:00"),
+
+      // SUNDAY, 8 NOV 2026
+      createMatch("LA LIGA", [
+        { teams: "OSASUNA VS ATHLETIC CLUB", channel: "beIN Sports Arabia 3", hot: false }
+      ], "SUN, NOV 8 • 01:30 AM MYT", "2026-11-08T01:30:00+08:00"),
+
       createMatch("LA LIGA", [
         { teams: "VALENCIA VS REAL MADRID", channel: "beIN Sports Arabia 1", hot: true }
       ], "SUN, NOV 8 • 04:00 AM MYT", "2026-11-08T04:00:00+08:00"),
+
+      // MONDAY, 9 NOV 2026
+      createMatch("LA LIGA", [
+        { teams: "CELTA DE VIGO VS LEVANTE", channel: "beIN Sports Arabia 3", hot: false }
+      ], "MON, NOV 9 • 01:30 AM MYT", "2026-11-09T01:30:00+08:00"),
 
       createMatch("LA LIGA", [
         { teams: "ATLÉTICO MADRID VS BARCELONA", channel: "beIN Sports Arabia 1", hot: true }
