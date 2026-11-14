@@ -281,6 +281,65 @@
       box-shadow: 0 12px 30px rgba(0, 255, 135, 0.15);
     }
 
+    /* Compact Card Group (Card + Schedule Button with matching 18px radius) */
+    .card-bundle {
+      width: 100%;
+      margin-bottom: 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .card-bundle .link-card {
+      margin-bottom: 0;
+      padding: 15px 18px;
+    }
+
+    .league-pills-wrap {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+      margin-top: 4px;
+    }
+
+    .league-pill {
+      font-size: 0.7rem;
+      font-weight: 600;
+      color: var(--text-sub);
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.09);
+      padding: 3px 8px;
+      border-radius: 8px;
+    }
+
+    .schedule-trigger-btn {
+      width: 100%;
+      background: linear-gradient(135deg, rgba(0, 255, 135, 0.14) 0%, rgba(96, 239, 255, 0.12) 100%);
+      backdrop-filter: blur(16px);
+      border: 1px solid rgba(0, 255, 135, 0.35);
+      border-radius: 18px;
+      padding: 12px 18px;
+      color: var(--neon-green);
+      font-size: 0.84rem;
+      font-weight: 800;
+      letter-spacing: 0.02em;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      box-shadow: 0 4px 16px rgba(0, 255, 135, 0.08);
+    }
+
+    .schedule-trigger-btn:hover {
+      background: linear-gradient(135deg, rgba(0, 255, 135, 0.25) 0%, rgba(96, 239, 255, 0.22) 100%);
+      border-color: var(--neon-green);
+      color: #ffffff;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(0, 255, 135, 0.2);
+    }
+
     .card-info {
       display: flex;
       flex-direction: column;
@@ -362,13 +421,6 @@
       letter-spacing: 0.01em;
     }
 
-    .site-status-offline {
-      font-size: 0.75rem;
-      color: var(--text-sub);
-      font-weight: 600;
-      margin-top: 2px;
-    }
-
     .click-counter {
       font-size: 0.72rem;
       color: var(--neon-cyan);
@@ -439,270 +491,528 @@
       border-color: var(--accent-gold);
       box-shadow: 0 0 15px rgba(255, 215, 0, 0.4);
     }
+
+    /* Dedicated Schedule View Section (In-Page View, Not Popup) */
+    #schedule-page-view {
+      display: none;
+      width: 100%;
+      flex-direction: column;
+      gap: 16px;
+      animation: fadeInView 0.3s ease;
+    }
+
+    @keyframes fadeInView {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .back-btn {
+      width: 100%;
+      background: rgba(15, 23, 42, 0.85);
+      border: 1px solid rgba(96, 239, 255, 0.35);
+      border-radius: 18px;
+      padding: 14px 20px;
+      color: var(--neon-cyan);
+      font-size: 0.9rem;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      cursor: pointer;
+      transition: all 0.25s ease;
+    }
+
+    .back-btn:hover {
+      background: rgba(96, 239, 255, 0.15);
+      color: #ffffff;
+      border-color: var(--neon-cyan);
+      transform: translateY(-2px);
+    }
+
+    .schedule-page-header {
+      background: var(--card-bg);
+      backdrop-filter: blur(16px);
+      border: 1px solid rgba(0, 255, 135, 0.3);
+      border-radius: 18px;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .schedule-page-title {
+      font-size: 1.35rem;
+      font-weight: 900;
+      color: #ffffff;
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .schedule-visit-site {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      background: var(--neon-green);
+      color: #020408;
+      font-weight: 800;
+      font-size: 0.85rem;
+      padding: 10px 16px;
+      border-radius: 12px;
+      text-decoration: none;
+      margin-top: 4px;
+      transition: all 0.25s ease;
+    }
+
+    .schedule-visit-site:hover {
+      background: #ffffff;
+      box-shadow: 0 0 18px rgba(0, 255, 135, 0.5);
+    }
+
+    .league-filter-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      background: rgba(15, 23, 42, 0.65);
+      border: 1px solid var(--card-border);
+      border-radius: 18px;
+      padding: 12px;
+    }
+
+    .filter-chip {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: var(--text-sub);
+      font-size: 0.74rem;
+      font-weight: 700;
+      padding: 6px 12px;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .filter-chip:hover, .filter-chip.active {
+      background: rgba(0, 255, 135, 0.2);
+      border-color: var(--neon-green);
+      color: var(--neon-green);
+    }
+
+    .league-schedule-block {
+      background: var(--card-bg);
+      backdrop-filter: blur(16px);
+      border: 1px solid var(--card-border);
+      border-radius: 18px;
+      padding: 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .league-block-title {
+      font-size: 1rem;
+      font-weight: 900;
+      color: var(--neon-green);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      padding-bottom: 8px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .date-group {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .date-header {
+      font-size: 0.78rem;
+      font-weight: 800;
+      color: var(--neon-cyan);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      background: rgba(96, 239, 255, 0.08);
+      padding: 5px 10px;
+      border-radius: 8px;
+      width: fit-content;
+    }
+
+    .fixture-row {
+      background: rgba(2, 6, 23, 0.5);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 12px;
+      padding: 10px 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .fixture-top {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .fixture-time {
+      font-size: 0.76rem;
+      font-weight: 800;
+      color: #020408;
+      background: var(--neon-green);
+      padding: 2px 8px;
+      border-radius: 6px;
+      min-width: 52px;
+      text-align: center;
+    }
+
+    .fixture-time.is-postp {
+      background: var(--neon-pink);
+      color: #ffffff;
+    }
+
+    .fixture-match {
+      font-size: 0.9rem;
+      font-weight: 800;
+      color: #ffffff;
+    }
+
+    .fixture-channel {
+      font-size: 0.76rem;
+      color: var(--text-sub);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-left: 2px;
+    }
   </style>
 </head>
 <body>
 
   <div class="container">
-    <!-- Header -->
-    <div class="profile-header">
-      <div class="logo-container">
-        <div class="logo-glow"></div>
-        <img class="profile-logo" src="https://ugc.production.linktr.ee/38b8918a-0037-4894-8bda-19d3a54f1b5e_images.png?io=true&size=avatar-v3_0" alt="Sports Hub Logo">
-      </div>
-      <h1 class="profile-title">Sports Hub Official</h1>
-      <div class="profile-desc"><i class="fa-solid fa-bolt" style="margin-right: 4px;"></i> Watch any sports event for absolutely free!</div>
-      <a href="https://sports-hub-official-news.vercel.app/" target="_blank" rel="noopener noreferrer" class="news-link">Click here for the latest sports news by us!</a>
-    </div>
-
-    <!-- Visitor Stats Card -->
-    <div class="visitor-stats-card">
-      <div class="stat-item">
-        <div class="stat-title"><span class="live-dot"></span> Active Live</div>
-        <div class="stat-number" id="live-count" style="color: var(--neon-pink);">...</div>
-      </div>
-      <div class="stat-divider"></div>
-      <div class="stat-item">
-        <div class="stat-title"><i class="fa-solid fa-users" style="color: var(--neon-green);"></i> Total Visitors</div>
-        <div class="stat-number" id="lifetime-count" style="color: var(--neon-green);">...</div>
-      </div>
-    </div>
-
-    <!-- Hot Websites -->
-    <div class="section-title">
-      <div class="section-main-label"><i class="fa-solid fa-fire" style="color: var(--neon-pink);"></i> Hot Websites</div>
-    </div>
-
-    <!-- HOT-6: NOW SPORTS LIVE EVENT 1 -->
-    <a class="link-card" href="https://now-sports-live-event-website.vercel.app/" target="_blank" rel="noopener noreferrer" data-track-id="hot-1">
-      <div class="card-info">
-        <span class="live-badge" id="nowsports1-badge"><span class="live-dot"></span> NOW SPORTS LIVE EVENT 1</span>
-        
-        <div id="nowsports1-matches-body"></div>
-
-        <div class="match-details" style="margin-top: 4px;">
-          <span id="nowsports1-time"><i class="fa-regular fa-clock"></i> Loading...</span>
+    <!-- ==================== MAIN DASHBOARD VIEW ==================== -->
+    <div id="dashboard-main-view" style="width: 100%; display: flex; flex-direction: column; align-items: center;">
+      <!-- Header -->
+      <div class="profile-header">
+        <div class="logo-container">
+          <div class="logo-glow"></div>
+          <img class="profile-logo" src="https://ugc.production.linktr.ee/38b8918a-0037-4894-8bda-19d3a54f1b5e_images.png?io=true&size=avatar-v3_0" alt="Sports Hub Logo">
         </div>
-
-        <div class="countdown-timer" id="nowsports1-countdown">
-          <i class="fa-solid fa-hourglass-half"></i> <span class="time-text">Loading...</span>
-        </div>
-        <span class="click-counter"><i class="fa-solid fa-eye"></i> <span id="click-hot-1">0</span> clicks</span>
+        <h1 class="profile-title">Sports Hub Official</h1>
+        <div class="profile-desc"><i class="fa-solid fa-bolt" style="margin-right: 4px;"></i> Watch any sports event for absolutely free!</div>
+        <a href="https://sports-hub-official-news.vercel.app/" target="_blank" rel="noopener noreferrer" class="news-link">Click here for the latest sports news by us!</a>
       </div>
-      <div class="card-right-group">
-        <div class="card-action-icon"><i class="fa-solid fa-play"></i></div>
-      </div>
-    </a>
 
-    <!-- HOT-3: HOME OF PREMIER LEAGUE -->
-    <a class="link-card" href="https://home-of-premier-league-website.vercel.app/" target="_blank" rel="noopener noreferrer" data-track-id="premier-league">
-      <div class="card-info">
-        <span class="live-badge" id="epl-badge"><span class="live-dot"></span> HOME OF PREMIER LEAGUE</span>
-        
-        <div id="epl-matches-body"></div>
-
-        <div class="match-details" style="margin-top: 4px;">
-          <span id="epl-time"><i class="fa-regular fa-clock"></i> Loading...</span>
+      <!-- Visitor Stats Card -->
+      <div class="visitor-stats-card">
+        <div class="stat-item">
+          <div class="stat-title"><span class="live-dot"></span> Active Live</div>
+          <div class="stat-number" id="live-count" style="color: var(--neon-pink);">...</div>
         </div>
-
-        <div class="countdown-timer" id="epl-countdown">
-          <i class="fa-solid fa-hourglass-half"></i> <span class="time-text">Loading...</span>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <div class="stat-title"><i class="fa-solid fa-users" style="color: var(--neon-green);"></i> Total Visitors</div>
+          <div class="stat-number" id="lifetime-count" style="color: var(--neon-green);">...</div>
         </div>
-        <span class="click-counter"><i class="fa-solid fa-eye"></i> <span id="click-premier-league">0</span> clicks</span>
       </div>
-      <div class="card-right-group">
-        <div class="card-action-icon"><i class="fa-solid fa-play"></i></div>
+
+      <!-- Hot Websites -->
+      <div class="section-title">
+        <div class="section-main-label"><i class="fa-solid fa-fire" style="color: var(--neon-pink);"></i> Hot Websites</div>
       </div>
-    </a>
 
-    <!-- HOT-4: HOME OF LALIGA -->
-    <a class="link-card" href="https://home-of-la-liga.vercel.app/" target="_blank" rel="noopener noreferrer" data-track-id="la-liga">
-      <div class="card-info">
-        <span class="live-badge" id="laliga-badge"><span class="live-dot"></span> HOME OF LA LIGA</span>
-        
-        <div id="laliga-matches-body"></div>
+      <!-- HOT-6: NOW SPORTS LIVE EVENT 1 -->
+      <a class="link-card" href="https://now-sports-live-event-website.vercel.app/" target="_blank" rel="noopener noreferrer" data-track-id="hot-1">
+        <div class="card-info">
+          <span class="live-badge" id="nowsports1-badge"><span class="live-dot"></span> NOW SPORTS LIVE EVENT 1</span>
+          
+          <div id="nowsports1-matches-body"></div>
 
-        <div class="match-details" style="margin-top: 4px;">
-          <span id="laliga-time"><i class="fa-regular fa-clock"></i> Loading...</span>
-        </div>
-
-        <div class="countdown-timer" id="laliga-countdown">
-          <i class="fa-solid fa-hourglass-half"></i> <span class="time-text">Loading...</span>
-        </div>
-        <span class="click-counter"><i class="fa-solid fa-eye"></i> <span id="click-la-liga">0</span> clicks</span>
-      </div>
-      <div class="card-right-group">
-        <div class="card-action-icon"><i class="fa-solid fa-play"></i></div>
-      </div>
-    </a>
-
-    <!-- HOT-5: HOME OF UEFA (Sama seperti gaya Football XTRA) -->
-    <a class="link-card" href="https://home-of-uefa.vercel.app/" target="_blank" rel="noopener noreferrer" data-track-id="uefa">
-      <div class="card-info">
-        <span class="live-badge"><span class="live-dot"></span> HOME OF UEFA</span>
-        
-        <div style="margin-top: 6px; margin-bottom: 6px;">
-          <span class="match-teams" style="color: var(--neon-green); font-size: 0.95rem;">
-            <i class="fa-solid fa-circle-play" style="margin-right: 6px;"></i>Click here to see what is broadcasting here
-          </span>
-        </div>
-
-        <div class="match-details" style="margin-top: 4px;">
-          <span><i class="fa-solid fa-globe"></i> <strong>To review the schedule, please go into our website.</strong></span>
-          <span style="margin-top: 6px; color: var(--neon-cyan); font-weight: 700;">Leagues in Home of UEFA:</span>
-          <div style="font-size: 0.78rem; color: var(--text-sub); display: grid; grid-template-columns: 1fr 1fr; gap: 4px; margin-top: 4px;">
-            <div>1. UEFA Champions League</div>
-            <div>2. UEFA Europa League</div>
-            <div>3. UEFA Youth League</div>
-            <div>4. UEFA Women's Champions League</div>
-            <div>5. UEFA Nations League & Qualifiers</div>
-            <div>6. UEFA Official Draws & Events</div>
+          <div class="match-details" style="margin-top: 4px;">
+            <span id="nowsports1-time"><i class="fa-regular fa-clock"></i> Loading...</span>
           </div>
-        </div>
 
-        <span class="click-counter" style="margin-top: 10px;"><i class="fa-solid fa-eye"></i> <span id="click-uefa">0</span> clicks</span>
-      </div>
-      <div class="card-right-group">
-        <div class="card-action-icon"><i class="fa-solid fa-play"></i></div>
-      </div>
-    </a>
-
-        <!-- HOT-1: FOOTBALL XTRA -->
-    <a class="link-card" href="https://football-xtra.vercel.app/" target="_blank" rel="noopener noreferrer" data-track-id="football-xtra">
-      <div class="card-info">
-        <span class="live-badge"><span class="live-dot"></span> FOOTBALL XTRA</span>
-        
-        <div style="margin-top: 6px; margin-bottom: 6px;">
-          <span class="match-teams" style="color: var(--neon-green); font-size: 0.95rem;">
-            <i class="fa-solid fa-circle-play" style="margin-right: 6px;"></i>Click here to see what is broadcasting here
-          </span>
-        </div>
-
-        <div class="match-details" style="margin-top: 4px;">
-          <span><i class="fa-solid fa-globe"></i> <strong>To review the schedule, please go into our website.</strong></span>
-          <span style="margin-top: 6px; color: var(--neon-cyan); font-weight: 700;">Leagues in Football XTRA:</span>
-          <div style="font-size: 0.78rem; color: var(--text-sub); display: grid; grid-template-columns: 1fr 1fr; gap: 4px; margin-top: 4px;">
-            <div>1. Bundesliga</div>
-            <div>2. Serie A</div>
-            <div>3. FA Cup</div>
-            <div>4. A-League</div>
-            <div>5. A-League Women</div>
-            <div>6. Persian Gulf Pro League</div>
-            <div>7. AFC Champions League Elite</div>
-            <div>8. Jordan League</div>
-            <div>9. International Friendly</div>
-            <div>10. CONCACAF Nations League</div>
+          <div class="countdown-timer" id="nowsports1-countdown">
+            <i class="fa-solid fa-hourglass-half"></i> <span class="time-text">Loading...</span>
           </div>
+          <span class="click-counter"><i class="fa-solid fa-eye"></i> <span id="click-hot-1">0</span> clicks</span>
         </div>
-
-        <span class="click-counter" style="margin-top: 10px;"><i class="fa-solid fa-eye"></i> <span id="click-football-xtra">0</span> clicks</span>
-      </div>
-      <div class="card-right-group">
-        <div class="card-action-icon"><i class="fa-solid fa-play"></i></div>
-      </div>
-    </a>
-
-
-    <!-- Now Sports Live Events Segment -->
-    <div class="section-title">
-      <div class="section-main-label"><i class="fa-solid fa-bolt" style="color: var(--neon-cyan);"></i> Now Sports Live Events!</div>
-      <div class="section-sub-label">Ready for fast live events!</div>
-    </div>
-
-    <!-- Now Sports Live Event 2 -->
-    <a class="link-card" href="https://now-sports-live-event-2.vercel.app/" target="_blank" rel="noopener noreferrer" data-track-id="now-sports-2">
-      <div class="card-info">
-        <span class="site-name">Now Sports Live Event 2</span>
-        <span class="site-status-offline"><i class="fa-solid fa-circle-xmark" style="color: #ff4757;"></i> Website Offline</span>
-        <span class="click-counter"><i class="fa-solid fa-eye"></i> <span id="click-now-sports-2">0</span> clicks</span>
-      </div>
-      <div class="card-right-group">
-        <div class="card-action-icon"><i class="fa-solid fa-arrow-up-right-from-square"></i></div>
-      </div>
-    </a>
-
-    <!-- Now Sports Live Event 3 -->
-    <a class="link-card" href="https://now-sports-live-event-3-website.vercel.app/" target="_blank" rel="noopener noreferrer" data-track-id="hot-2">
-      <div class="card-info">
-        <span class="site-name">Now Sports Live Event 3</span>
-        <span class="site-status-offline"><i class="fa-solid fa-circle-xmark" style="color: #ff4757;"></i> Website Offline</span>
-        <span class="click-counter"><i class="fa-solid fa-eye"></i> <span id="click-hot-2">0</span> clicks</span>
-      </div>
-      <div class="card-right-group">
-        <div class="card-action-icon"><i class="fa-solid fa-arrow-up-right-from-square"></i></div>
-      </div>
-    </a>
-
-    <!-- Now Sports Live Event 4 -->
-    <a class="link-card" href="https://now-sports-live-event-4-website.vercel.app/" target="_blank" rel="noopener noreferrer" data-track-id="hot-4">
-      <div class="card-info">
-        <span class="site-name">Now Sports Live Event 4</span>
-        <span class="site-status-offline"><i class="fa-solid fa-circle-xmark" style="color: #ff4757;"></i> Website Offline</span>
-        <span class="click-counter"><i class="fa-solid fa-eye"></i> <span id="click-hot-4">0</span> clicks</span>
-      </div>
-      <div class="card-right-group">
-        <div class="card-action-icon"><i class="fa-solid fa-arrow-up-right-from-square"></i></div>
-      </div>
-    </a>
-
-    <!-- Mini Website Project -->
-    <div class="section-title">
-      <div class="section-main-label"><i class="fa-solid fa-futbol" style="color: var(--neon-green);"></i> Mini Website Project</div>
-      <div class="section-sub-label">Football Media Center</div>
-    </div>
-
-    <!-- FIFA+ Live Stream Hub -->
-    <a class="link-card" href="https://fifa-plus-live-stream-hub.vercel.app/" target="_blank" rel="noopener noreferrer" data-track-id="fifa-plus">
-      <div class="card-info">
-        <span class="site-name">FIFA+ Live Stream Hub</span>
-        <div class="match-details" style="margin-top: 2px;">
-          <span><i class="fa-solid fa-circle-info" style="color: var(--neon-cyan);"></i> Stream past world cup matches and other FIFA matches here!</span>
+        <div class="card-right-group">
+          <div class="card-action-icon"><i class="fa-solid fa-play"></i></div>
         </div>
-        <span class="click-counter"><i class="fa-solid fa-eye"></i> <span id="click-fifa-plus">0</span> clicks</span>
-      </div>
-      <div class="card-right-group">
-        <div class="card-action-icon"><i class="fa-solid fa-arrow-up-right-from-square"></i></div>
-      </div>
-    </a>
+      </a>
 
-    <!-- Other Websites -->
-    <div class="section-title">
-      <div class="section-main-label"><i class="fa-solid fa-star" style="color: var(--accent-gold);"></i> Other Websites</div>
-    </div>
+      <!-- HOT-3: HOME OF PREMIER LEAGUE -->
+      <a class="link-card" href="https://home-of-premier-league-website.vercel.app/" target="_blank" rel="noopener noreferrer" data-track-id="premier-league">
+        <div class="card-info">
+          <span class="live-badge" id="epl-badge"><span class="live-dot"></span> HOME OF PREMIER LEAGUE</span>
+          
+          <div id="epl-matches-body"></div>
 
-        <!-- HOT-2: FORMULA 1 LIVE STREAMING HUB -->
-    <a class="link-card" href="https://f1-live-streaming-hub.vercel.app/" target="_blank" rel="noopener noreferrer" data-track-id="f1-hub">
-      <div class="card-info">
-        <span class="live-badge" id="f1-badge"><span class="live-dot"></span> FORMULA 1 LIVE STREAMING HUB</span>
-        
-        <div id="f1-matches-body"></div>
+          <div class="match-details" style="margin-top: 4px;">
+            <span id="epl-time"><i class="fa-regular fa-clock"></i> Loading...</span>
+          </div>
 
-        <div class="match-details" style="margin-top: 4px;">
-          <span id="f1-time"><i class="fa-regular fa-clock"></i> Loading...</span>
+          <div class="countdown-timer" id="epl-countdown">
+            <i class="fa-solid fa-hourglass-half"></i> <span class="time-text">Loading...</span>
+          </div>
+          <span class="click-counter"><i class="fa-solid fa-eye"></i> <span id="click-premier-league">0</span> clicks</span>
         </div>
-
-        <div class="countdown-timer" id="f1-countdown">
-          <i class="fa-solid fa-hourglass-half"></i> <span class="time-text">Loading...</span>
+        <div class="card-right-group">
+          <div class="card-action-icon"><i class="fa-solid fa-play"></i></div>
         </div>
-        <span class="click-counter"><i class="fa-solid fa-eye"></i> <span id="click-f1-hub">0</span> clicks</span>
-      </div>
-      <div class="card-right-group">
-        <div class="card-action-icon"><i class="fa-solid fa-play"></i></div>
-      </div>
-    </a>
+      </a>
 
-    <!-- MotoGP Live Streaming Hub -->
-    <a class="link-card" href="https://moto-gp-live-streaming-hub.vercel.app/" target="_blank" rel="noopener noreferrer" data-track-id="moto-gp">
-      <div class="card-info">
-        <span class="site-name">MotoGP Live Streaming Hub</span>
-        <span class="click-counter"><i class="fa-solid fa-eye"></i> <span id="click-moto-gp">0</span> clicks</span>
-      </div>
-      <div class="card-right-group">
-        <button class="fav-btn" data-id="moto-gp" title="Favourite" onclick="toggleFav(event, 'moto-gp')">
-          <i class="fa-solid fa-star"></i>
+      <!-- HOT-4: HOME OF LALIGA -->
+      <a class="link-card" href="https://home-of-la-liga.vercel.app/" target="_blank" rel="noopener noreferrer" data-track-id="la-liga">
+        <div class="card-info">
+          <span class="live-badge" id="laliga-badge"><span class="live-dot"></span> HOME OF LA LIGA</span>
+          
+          <div id="laliga-matches-body"></div>
+
+          <div class="match-details" style="margin-top: 4px;">
+            <span id="laliga-time"><i class="fa-regular fa-clock"></i> Loading...</span>
+          </div>
+
+          <div class="countdown-timer" id="laliga-countdown">
+            <i class="fa-solid fa-hourglass-half"></i> <span class="time-text">Loading...</span>
+          </div>
+          <span class="click-counter"><i class="fa-solid fa-eye"></i> <span id="click-la-liga">0</span> clicks</span>
+        </div>
+        <div class="card-right-group">
+          <div class="card-action-icon"><i class="fa-solid fa-play"></i></div>
+        </div>
+      </a>
+
+<!-- HOT-5: HOME OF UEFA (Compact Box + Description + League Pills + Schedule Trigger Button) -->
+      <div class="card-bundle">
+        <a class="link-card" href="https://home-of-uefa.vercel.app/" target="_blank" rel="noopener noreferrer" data-track-id="uefa">
+          <div class="card-info">
+            <span class="live-badge"><span class="live-dot"></span> HOME OF UEFA</span>
+            <div class="match-details" style="margin-top: 2px;">
+              <span><i class="fa-solid fa-circle-info" style="color: var(--neon-cyan);"></i> Watch all UEFA competitions and live matches here!</span>
+            </div>
+            <div class="league-pills-wrap">
+              <span class="league-pill">UEFA Women’s Champions League</span>
+              <span class="league-pill">UEFA Nations League</span>
+            </div>
+            <span class="click-counter"><i class="fa-solid fa-eye"></i> <span id="click-uefa">0</span> clicks</span>
+          </div>
+          <div class="card-right-group">
+            <div class="card-action-icon"><i class="fa-solid fa-play"></i></div>
+          </div>
+        </a>
+        <button type="button" class="schedule-trigger-btn" onclick="openSchedulePage('uefa')">
+          <i class="fa-solid fa-calendar-days"></i> To review the schedule, please click here!
         </button>
       </div>
-    </a>
+
+      <!-- HOT-1: FOOTBALL XTRA (Compact Box + Description + League Pills + Schedule Trigger Button) -->
+      <div class="card-bundle">
+        <a class="link-card" href="https://football-xtra.vercel.app/" target="_blank" rel="noopener noreferrer" data-track-id="football-xtra">
+          <div class="card-info">
+            <span class="live-badge"><span class="live-dot"></span> FOOTBALL XTRA</span>
+            <div class="match-details" style="margin-top: 2px;">
+              <span><i class="fa-solid fa-circle-info" style="color: var(--neon-cyan);"></i> Watch all extra football leagues and international matches here!</span>
+            </div>
+            <div class="league-pills-wrap">
+              <span class="league-pill">Segunda Division</span>
+              <span class="league-pill">Ekstraklasa</span>
+              <span class="league-pill">Taça de Portugal</span>
+              <span class="league-pill">Ligue 2</span>
+              <span class="league-pill">Women’s Super League</span>
+              <span class="league-pill">EFL League One</span>
+              <span class="league-pill">EFL League Two</span>
+              <span class="league-pill">AFCON Qualification</span>
+              <span class="league-pill">Indian Super League</span>
+              <span class="league-pill">AFC Champions League Elite</span>
+              <span class="league-pill">AFC Champions League Two</span>
+              <span class="league-pill">Jordan League</span>
+              <span class="league-pill">Asian Cup Qualification</span>
+              <span class="league-pill">CONCACAF Nations League</span>
+              <span class="league-pill">FIFA U-17 World Cup</span>
+            </div>
+            <span class="click-counter"><i class="fa-solid fa-eye"></i> <span id="click-football-xtra">0</span> clicks</span>
+          </div>
+          <div class="card-right-group">
+            <div class="card-action-icon"><i class="fa-solid fa-play"></i></div>
+          </div>
+        </a>
+        <button type="button" class="schedule-trigger-btn" onclick="openSchedulePage('xtra')">
+          <i class="fa-solid fa-calendar-days"></i> To review the schedule, please click here!
+        </button>
+      </div>
+
+      <!-- Now Sports Live Events Segment -->
+      <div class="section-title">
+        <div class="section-main-label"><i class="fa-solid fa-bolt" style="color: var(--neon-cyan);"></i> Now Sports Live Events!</div>
+        <div class="section-sub-label">Ready for fast live events!</div>
+      </div>
+
+      <!-- Now Sports Live Event 2 -->
+      <a class="link-card" href="https://now-sports-live-event-2.vercel.app/" target="_blank" rel="noopener noreferrer" data-track-id="now-sports-2">
+        <div class="card-info">
+          <span class="live-badge" id="nowsports2-badge"><span class="live-dot"></span> NOW SPORTS LIVE EVENT 2</span>
+          
+          <div id="nowsports2-matches-body"></div>
+
+          <div class="match-details" style="margin-top: 4px;">
+            <span id="nowsports2-time"><i class="fa-regular fa-clock"></i> Loading...</span>
+          </div>
+
+          <div class="countdown-timer" id="nowsports2-countdown">
+            <i class="fa-solid fa-hourglass-half"></i> <span class="time-text">Loading...</span>
+          </div>
+          <span class="click-counter"><i class="fa-solid fa-eye"></i> <span id="click-now-sports-2">0</span> clicks</span>
+        </div>
+        <div class="card-right-group">
+          <div class="card-action-icon"><i class="fa-solid fa-play"></i></div>
+        </div>
+      </a>
+
+      <!-- Now Sports Live Event 3 -->
+      <a class="link-card" href="https://now-sports-live-event-3-website.vercel.app/" target="_blank" rel="noopener noreferrer" data-track-id="hot-2">
+        <div class="card-info">
+          <span class="live-badge" id="nowsports3-badge"><span class="live-dot"></span> NOW SPORTS LIVE EVENT 3</span>
+          
+          <div id="nowsports3-matches-body"></div>
+
+          <div class="match-details" style="margin-top: 4px;">
+            <span id="nowsports3-time"><i class="fa-regular fa-clock"></i> Loading...</span>
+          </div>
+
+          <div class="countdown-timer" id="nowsports3-countdown">
+            <i class="fa-solid fa-hourglass-half"></i> <span class="time-text">Loading...</span>
+          </div>
+          <span class="click-counter"><i class="fa-solid fa-eye"></i> <span id="click-hot-2">0</span> clicks</span>
+        </div>
+        <div class="card-right-group">
+          <div class="card-action-icon"><i class="fa-solid fa-play"></i></div>
+        </div>
+      </a>
+
+      <!-- Now Sports Live Event 4 -->
+      <a class="link-card" href="https://now-sports-live-event-4-website.vercel.app/" target="_blank" rel="noopener noreferrer" data-track-id="hot-4">
+        <div class="card-info">
+          <span class="live-badge" id="nowsports4-badge"><span class="live-dot"></span> NOW SPORTS LIVE EVENT 4</span>
+          
+          <div id="nowsports4-matches-body"></div>
+
+          <div class="match-details" style="margin-top: 4px;">
+            <span id="nowsports4-time"><i class="fa-regular fa-clock"></i> Loading...</span>
+          </div>
+
+          <div class="countdown-timer" id="nowsports4-countdown">
+            <i class="fa-solid fa-hourglass-half"></i> <span class="time-text">Loading...</span>
+          </div>
+          <span class="click-counter"><i class="fa-solid fa-eye"></i> <span id="click-hot-4">0</span> clicks</span>
+        </div>
+        <div class="card-right-group">
+          <div class="card-action-icon"><i class="fa-solid fa-play"></i></div>
+        </div>
+      </a>
+
+      <!-- Mini Website Project -->
+      <div class="section-title">
+        <div class="section-main-label"><i class="fa-solid fa-futbol" style="color: var(--neon-green);"></i> Mini Website Project</div>
+        <div class="section-sub-label">Football Media Center</div>
+      </div>
+
+      <!-- FIFA+ Live Stream Hub -->
+      <a class="link-card" href="https://fifa-plus-live-stream-hub.vercel.app/" target="_blank" rel="noopener noreferrer" data-track-id="fifa-plus">
+        <div class="card-info">
+          <span class="site-name">FIFA+ Live Stream Hub</span>
+          <div class="match-details" style="margin-top: 2px;">
+            <span><i class="fa-solid fa-circle-info" style="color: var(--neon-cyan);"></i> Stream past world cup matches and other FIFA matches here!</span>
+          </div>
+          <span class="click-counter"><i class="fa-solid fa-eye"></i> <span id="click-fifa-plus">0</span> clicks</span>
+        </div>
+        <div class="card-right-group">
+          <div class="card-action-icon"><i class="fa-solid fa-arrow-up-right-from-square"></i></div>
+        </div>
+      </a>
+
+      <!-- Other Websites -->
+      <div class="section-title">
+        <div class="section-main-label"><i class="fa-solid fa-star" style="color: var(--accent-gold);"></i> Other Websites</div>
+      </div>
+
+      <!-- HOT-2: FORMULA 1 LIVE STREAMING HUB -->
+      <a class="link-card" href="https://f1-live-streaming-hub.vercel.app/" target="_blank" rel="noopener noreferrer" data-track-id="f1-hub">
+        <div class="card-info">
+          <span class="live-badge" id="f1-badge"><span class="live-dot"></span> FORMULA 1 LIVE STREAMING HUB</span>
+          
+          <div id="f1-matches-body"></div>
+
+          <div class="match-details" style="margin-top: 4px;">
+            <span id="f1-time"><i class="fa-regular fa-clock"></i> Loading...</span>
+          </div>
+
+          <div class="countdown-timer" id="f1-countdown">
+            <i class="fa-solid fa-hourglass-half"></i> <span class="time-text">Loading...</span>
+          </div>
+          <span class="click-counter"><i class="fa-solid fa-eye"></i> <span id="click-f1-hub">0</span> clicks</span>
+        </div>
+        <div class="card-right-group">
+          <div class="card-action-icon"><i class="fa-solid fa-play"></i></div>
+        </div>
+      </a>
+
+      <!-- MotoGP Live Streaming Hub -->
+      <a class="link-card" href="https://moto-gp-live-streaming-hub.vercel.app/" target="_blank" rel="noopener noreferrer" data-track-id="moto-gp">
+        <div class="card-info">
+          <span class="live-badge" id="motogp-badge"><span class="live-dot"></span> MOTOGP LIVE STREAMING HUB</span>
+          
+          <div id="motogp-matches-body"></div>
+
+          <div class="match-details" style="margin-top: 4px;">
+            <span id="motogp-time"><i class="fa-regular fa-clock"></i> Loading...</span>
+          </div>
+
+          <div class="countdown-timer" id="motogp-countdown">
+            <i class="fa-solid fa-hourglass-half"></i> <span class="time-text">Loading...</span>
+          </div>
+          <span class="click-counter"><i class="fa-solid fa-eye"></i> <span id="click-moto-gp">0</span> clicks</span>
+        </div>
+        <div class="card-right-group">
+          <button class="fav-btn" data-id="moto-gp" title="Favourite" onclick="toggleFav(event, 'moto-gp')">
+            <i class="fa-solid fa-star"></i>
+          </button>
+          <div class="card-action-icon"><i class="fa-solid fa-play"></i></div>
+        </div>
+      </a>
+    </div>
+
+    <!-- ==================== IN-PAGE DEDICATED SCHEDULE VIEW ==================== -->
+    <div id="schedule-page-view">
+      <button type="button" class="back-btn" onclick="closeSchedulePage()">
+        <i class="fa-solid fa-arrow-left"></i> Back to Dashboard
+      </button>
+
+      <div class="schedule-page-header">
+        <div class="schedule-page-title" id="schedule-view-title">
+          <i class="fa-solid fa-calendar-check" style="color: var(--neon-green);"></i> SCHEDULE
+        </div>
+        <p style="font-size: 0.82rem; color: var(--text-sub);" id="schedule-view-subtitle">
+          Complete broadcasting schedule & TV channels.
+        </p>
+        <a href="#" target="_blank" rel="noopener noreferrer" class="schedule-visit-site" id="schedule-view-link">
+          <i class="fa-solid fa-play"></i> Open Streaming Website
+        </a>
+      </div>
+
+      <div class="league-filter-bar" id="schedule-filter-bar"></div>
+
+      <div id="schedule-content-container" style="display: flex; flex-direction: column; gap: 14px;"></div>
+
+      <button type="button" class="back-btn" onclick="closeSchedulePage()" style="margin-top: 6px;">
+        <i class="fa-solid fa-arrow-left"></i> Back to Dashboard
+      </button>
+    </div>
 
   </div>
 
@@ -796,7 +1106,7 @@
     });
   </script>
 
-  <!-- Script UI Dashboard & Automated Match Switcher -->
+  <!-- Script UI Dashboard, Full Schedules & Automated Match Switcher -->
   <script>
     function toggleFav(event, id) {
       event.preventDefault();
@@ -826,7 +1136,762 @@
       });
     }
 
-    /* Helper Function */
+    /* ==================== FULL SCHEDULES DATA (HOME OF UEFA & FOOTBALL XTRA) ==================== */
+    const platformSchedules = {
+      uefa: {
+        title: "HOME OF UEFA — FULL SCHEDULE",
+        subtitle: "Complete match listings & channels for UEFA competitions.",
+        url: "https://home-of-uefa.vercel.app/",
+        leagues: [
+          {
+            name: "UEFA Women’s Champions League",
+            dates: [
+              {
+                date: "Thursday, 19 November 2026",
+                matches: [
+                  { time: "01:45", teams: "Real Madrid vs Inter Milano", channel: "beIN Sports Malaysia, beIN Sports Arabia 1" },
+                  { time: "01:45", teams: "Häcken vs Manchester City", channel: "beIN Sports 3 Malaysia" },
+                  { time: "04:00", teams: "Chelsea FC vs PSG", channel: "beIN Sports Malaysia, beIN Sports Arabia 1" },
+                  { time: "04:00", teams: "Juventus vs OH Leuven", channel: "beIN Sports 3 Malaysia" }
+                ]
+              },
+              {
+                date: "Friday, 20 November 2026",
+                matches: [
+                  { time: "01:40", teams: "Paris vs Hb Koge", channel: "beIN Sports 3 Malaysia" },
+                  { time: "01:45", teams: "Austria Wien vs Bayern", channel: "beIN Sports Malaysia" },
+                  { time: "04:00", teams: "SL Benfica vs Roma", channel: "beIN Sports 2 Malaysia" },
+                  { time: "04:00", teams: "Arsenal vs OL Lyonnes", channel: "beIN Sports Malaysia, beIN Sports Arabia 2, L’Equipe FR" }
+                ]
+              }
+            ]
+          },
+          {
+            name: "UEFA Nations League",
+            dates: [
+              {
+                date: "Saturday, 14 November 2026",
+                matches: [
+                  { time: "22:00", teams: "Kosovo vs Israel", channel: "Sony Sports Ten 2" }
+                ]
+              },
+              {
+                date: "Sunday, 15 November 2026",
+                matches: [
+                  { time: "01:00", teams: "Georgia vs Hungary", channel: "Sony Sports Ten 1" },
+                  { time: "01:00", teams: "Norway vs Wales", channel: "Sony Sports Ten 2, L’Equipe FR, Fox Sports 2 USA" },
+                  { time: "03:45", teams: "Romania vs Poland", channel: "Sony Sports Ten 1" },
+                  { time: "03:45", teams: "Portugal vs Denmark", channel: "Sony Sports Ten 2, Fox Sports 2 USA" },
+                  { time: "03:45", teams: "Northern Ireland vs Ukraine", channel: "Sony Sports Ten 5" },
+                  { time: "22:00", teams: "Latvia vs Armenia", channel: "Sony Sports Ten 2" },
+                  { time: "22:00", teams: "Cyprus vs Montenegro", channel: "Fox Sports 2 USA" }
+                ]
+              },
+              {
+                date: "Monday, 16 November 2026",
+                matches: [
+                  { time: "01:00", teams: "Belarus vs Albania", channel: "Sony Sports Ten 2" },
+                  { time: "03:45", teams: "Spain vs England", channel: "Sony Sports Ten 2" },
+                  { time: "03:45", teams: "Belgium vs Italy", channel: "Sony Sports Ten 5, L’Equipe FR" },
+                  { time: "03:45", teams: "France vs Turkey", channel: "Fox Sports 2 USA" },
+                  { time: "23:00", teams: "Kazakhstan vs Slovakia", channel: "Fox Sports 2 USA" }
+                ]
+              },
+              {
+                date: "Tuesday, 17 November 2026",
+                matches: [
+                  { time: "01:00", teams: "Estonia vs Bulgaria", channel: "Fox Sports 2 USA" },
+                  { time: "03:45", teams: "Germany vs Netherlands", channel: "L’Equipe FR, Fox Sports 1 USA" },
+                  { time: "03:45", teams: "Greece vs Serbia", channel: "Fox Sports 2 USA" }
+                ]
+              },
+              {
+                date: "Wednesday, 18 November 2026",
+                matches: [
+                  { time: "03:45", teams: "Denmark vs Norway", channel: "Fox Sports 1 USA" },
+                  { time: "03:45", teams: "Hungary vs Northern Ireland", channel: "Fox Sports 2 USA" }
+                ]
+              },
+              {
+                date: "Friday, 20 November 2026",
+                matches: [
+                  { time: "19:00", teams: "UEFA Nations League Play-Off Draw", channel: "Fox Sports 1 USA" }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      xtra: {
+        title: "FOOTBALL XTRA — FULL SCHEDULE",
+        subtitle: "Complete match listings & channels across all 15 leagues in Football XTRA.",
+        url: "https://football-xtra.vercel.app/",
+        leagues: [
+          {
+            name: "Segunda Division",
+            dates: [
+              {
+                date: "Saturday, 14 November 2026",
+                matches: [
+                  { time: "21:00", teams: "Real Valladolid vs CD Castellón", channel: "beIN Sports Malaysia" }
+                ]
+              },
+              {
+                date: "Sunday, 15 November 2026",
+                matches: [
+                  { time: "04:00", teams: "Real Oviedo vs Girona", channel: "beIN Sports 3 Malaysia" }
+                ]
+              }
+            ]
+          },
+          {
+            name: "Ekstraklasa",
+            dates: [
+              {
+                date: "Saturday, 21 November 2026",
+                matches: [
+                  { time: "01:00", teams: "Piast Gliwice vs Korona Kielce", channel: "beIN SPORTS USA" }
+                ]
+              }
+            ]
+          },
+          {
+            name: "Taça de Portugal",
+            dates: [
+              {
+                date: "Saturday, 21 November 2026",
+                matches: [
+                  { time: "04:45", teams: "Porto vs Paredes", channel: "beIN SPORTS USA" }
+                ]
+              }
+            ]
+          },
+          {
+            name: "Ligue 2",
+            dates: [
+              {
+                date: "Saturday, 21 November 2026",
+                matches: [
+                  { time: "03:00", teams: "Red Star vs Pau", channel: "beIN Sports Arabia 5" }
+                ]
+              }
+            ]
+          },
+          {
+            name: "Women’s Super League",
+            dates: [
+              {
+                date: "Saturday, 14 November 2026",
+                matches: [
+                  { time: "20:45", teams: "Manchester United vs Crystal Palace", channel: "Sky Sports Premier League, beIN Sports 3 Malaysia" },
+                  { time: "23:00", teams: "Tottenham Hotspur vs Everton", channel: "Sky Sports Premier League, beIN Sports 3 Malaysia" }
+                ]
+              },
+              {
+                date: "Sunday, 15 November 2026",
+                matches: [
+                  { time: "01:15", teams: "Brighton & Hove Albion vs Liverpool", channel: "Sky Sports Premier League, beIN Sports 3 Malaysia" },
+                  { time: "22:00", teams: "Aston Villa vs Birmingham City", channel: "Sky Sports Premier League, beIN Sports 3 Malaysia" }
+                ]
+              },
+              {
+                date: "Monday, 16 November 2026",
+                matches: [
+                  { time: "00:30", teams: "Arsenal vs London City Lionesses", channel: "Sky Sports Premier League, beIN Sports 3 Malaysia" }
+                ]
+              },
+              {
+                date: "Saturday, 21 November 2026",
+                matches: [
+                  { time: "20:45", teams: "Liverpool vs Chelsea FC", channel: "Sky Sports Premier League" }
+                ]
+              }
+            ]
+          },
+          {
+            name: "EFL League One",
+            dates: [
+              {
+                date: "Saturday, 21 November 2026",
+                matches: [
+                  { time: "04:00", teams: "Barnsley vs Sheffield Wednesday", channel: "beIN Sports Arabia 2" }
+                ]
+              }
+            ]
+          },
+          {
+            name: "EFL League Two",
+            dates: [
+              {
+                date: "Saturday, 14 November 2026",
+                matches: [
+                  { time: "20:30", teams: "Exeter City vs Cheltenham Town", channel: "beIN Sports Arabia 2" }
+                ]
+              },
+              {
+                date: "Sunday, 15 November 2026",
+                matches: [
+                  { time: "01:30", teams: "Fleetwood Town vs Tranmere Rovers", channel: "beIN Sports Arabia 5, beIN Sports Arabia 7" }
+                ]
+              }
+            ]
+          },
+          {
+            name: "Africa Cup of Nations Qualification",
+            dates: [
+              {
+                date: "Sunday, 15 November 2026",
+                matches: [
+                  { time: "00:00", teams: "Uganda vs Botswana", channel: "beIN Sports Malaysia, beIN SPORTS USA" },
+                  { time: "03:00", teams: "Algeria vs Togo", channel: "beIN Sports Malaysia" },
+                  { time: "03:00", teams: "Angola vs South Sudan", channel: "beIN Sports 2 Malaysia, beIN SPORTS USA" }
+                ]
+              },
+              {
+                date: "Monday, 16 November 2026",
+                matches: [
+                  { time: "21:00", teams: "Zimbabwe vs Equatorial Guinea", channel: "beIN Sports Malaysia, beIN SPORTS XTRA, beIN SPORTS XTRA en Español" },
+                  { time: "21:00", teams: "Namibia vs Cameroon", channel: "beIN Sports 2 Malaysia" },
+                  { time: "21:00", teams: "Sudan vs Senegal", channel: "beIN Sports 3 Malaysia, beIN SPORTS USA" },
+                  { time: "23:00", teams: "Somalia vs Ghana", channel: "beIN Sports 3 Malaysia, beIN SPORTS USA" }
+                ]
+              },
+              {
+                date: "Tuesday, 17 November 2026",
+                matches: [
+                  { time: "00:00", teams: "Eritrea vs Guinea", channel: "beIN Sports Malaysia" },
+                  { time: "00:00", teams: "Central African Republic vs Benin", channel: "beIN Sports 2 Malaysia, beIN SPORTS XTRA, beIN SPORTS XTRA en Español" },
+                  { time: "21:00", teams: "Tanzania vs Nigeria", channel: "beIN Sports Malaysia, beIN SPORTS USA" },
+                  { time: "21:00", teams: "South Sudan vs Angola", channel: "beIN Sports 2 Malaysia, beIN SPORTS XTRA en Español" },
+                  { time: "21:00", teams: "Malawi vs Egypt", channel: "beIN Sports 3 Malaysia" },
+                  { time: "21:00", teams: "Ethiopia vs Mozambique", channel: "beIN SPORTS XTRA" }
+                ]
+              },
+              {
+                date: "Wednesday, 18 November 2026",
+                matches: [
+                  { time: "00:00", teams: "Gambia vs Côte d’Ivoire", channel: "beIN Sports Malaysia, beIN SPORTS USA" },
+                  { time: "00:00", teams: "Sierra Leone vs Congo DR", channel: "beIN Sports 2 Malaysia" },
+                  { time: "00:00", teams: "Libya vs Tunisia", channel: "beIN Sports 3 Malaysia, beIN SPORTS XTRA en Español" },
+                  { time: "00:00", teams: "Togo vs Algeria", channel: "beIN SPORTS XTRA" },
+                  { time: "03:00", teams: "Congo vs Comoros", channel: "beIN Sports 2 Malaysia" },
+                  { time: "03:00", teams: "Liberia vs Cape Verde Islands", channel: "beIN Sports 3 Malaysia" },
+                  { time: "03:00", teams: "Mauritania vs Burkina Faso", channel: "beIN SPORTS XTRA, beIN SPORTS XTRA en Español" },
+                  { time: "04:00", teams: "Niger vs Morocco", channel: "beIN Sports Malaysia, beIN SPORTS USA" }
+                ]
+              }
+            ]
+          },
+          {
+            name: "Indian Super League",
+            dates: [
+              {
+                date: "Friday, 20 November 2026",
+                matches: [
+                  { time: "19:30", teams: "East Bengal II vs SC Delhi", channel: "Sony Sports Ten 2" },
+                  { time: "22:00", teams: "Bengaluru vs Mumbai City", channel: "Sony Sports Ten 2" }
+                ]
+              },
+              {
+                date: "Saturday, 21 November 2026",
+                matches: [
+                  { time: "19:30", teams: "Chennaiyin vs RoundGlass Punjab", channel: "Sony Sports Ten 2" },
+                  { time: "22:00", teams: "NorthEast United vs Goa", channel: "Sony Sports Ten 2" }
+                ]
+              },
+              {
+                date: "Sunday, 22 November 2026",
+                matches: [
+                  { time: "22:00", teams: "Churchill Brothers vs Mohun Bagan", channel: "Sony Sports Ten 2" }
+                ]
+              },
+              {
+                date: "Tuesday, 24 November 2026",
+                matches: [
+                  { time: "22:00", teams: "NorthEast United vs SC Delhi", channel: "Sony Sports Ten 2" }
+                ]
+              },
+              {
+                date: "Friday, 27 November 2026",
+                matches: [
+                  { time: "22:00", teams: "Inter Kashi vs Churchill Brothers", channel: "Sony Sports Ten 2" }
+                ]
+              },
+              {
+                date: "Sunday, 29 November 2026",
+                matches: [
+                  { time: "19:30", teams: "Goa vs Kerala Blasters", channel: "Sony Sports Ten 2" },
+                  { time: "22:00", teams: "East Bengal II vs Mohun Bagan", channel: "Sony Sports Ten 2" }
+                ]
+              },
+              {
+                date: "Monday, 30 November 2026",
+                matches: [
+                  { time: "19:30", teams: "Mumbai City vs Chennaiyin", channel: "Sony Sports Ten 2" },
+                  { time: "22:00", teams: "NorthEast United vs RoundGlass Punjab", channel: "Sony Sports Ten 2" }
+                ]
+              },
+              {
+                date: "Friday, 4 December 2026",
+                matches: [
+                  { time: "19:30", teams: "Delhi Dynamos vs Bengaluru", channel: "Sony Sports Ten 2" },
+                  { time: "22:00", teams: "East Bengal II vs RoundGlass Punjab", channel: "Sony Sports Ten 2" }
+                ]
+              },
+              {
+                date: "Saturday, 5 December 2026",
+                matches: [
+                  { time: "19:30", teams: "Goa vs Mumbai City", channel: "Sony Sports Ten 2" },
+                  { time: "22:00", teams: "Inter Kashi vs Mohun Bagan", channel: "Sony Sports Ten 2" }
+                ]
+              },
+              {
+                date: "Sunday, 6 December 2026",
+                matches: [
+                  { time: "19:30", teams: "Kerala Blasters vs Churchill Brothers", channel: "Sony Sports Ten 2" },
+                  { time: "22:00", teams: "NorthEast United vs Chennaiyin", channel: "Sony Sports Ten 2" }
+                ]
+              },
+              {
+                date: "Wednesday, 9 December 2026",
+                matches: [
+                  { time: "19:30", teams: "Delhi Dynamos vs Goa", channel: "Sony Sports Ten 2" },
+                  { time: "22:00", teams: "Mohun Bagan vs Bengaluru", channel: "Sony Sports Ten 2" }
+                ]
+              },
+              {
+                date: "Thursday, 10 December 2026",
+                matches: [
+                  { time: "19:30", teams: "Kerala Blasters vs SC Delhi", channel: "Sony Sports Ten 2" },
+                  { time: "22:00", teams: "Chennaiyin vs Churchill Brothers", channel: "Sony Sports Ten 2" }
+                ]
+              },
+              {
+                date: "Saturday, 12 December 2026",
+                matches: [
+                  { time: "22:00", teams: "Inter Kashi vs NorthEast United", channel: "Sony Sports Ten 2" }
+                ]
+              },
+              {
+                date: "Sunday, 13 December 2026",
+                matches: [
+                  { time: "19:30", teams: "Mumbai City vs East Bengal II", channel: "Sony Sports Ten 2" },
+                  { time: "22:00", teams: "Churchill Brothers vs Goa", channel: "Sony Sports Ten 2" }
+                ]
+              },
+              {
+                date: "Monday, 14 December 2026",
+                matches: [
+                  { time: "22:00", teams: "Kerala Blasters vs RoundGlass Punjab", channel: "Sony Sports Ten 2" }
+                ]
+              },
+              {
+                date: "Wednesday, 16 December 2026",
+                matches: [
+                  { time: "19:30", teams: "Chennaiyin vs Inter Kashi", channel: "Sony Sports Ten 2" },
+                  { time: "22:00", teams: "Delhi Dynamos vs SC Delhi", channel: "Sony Sports Ten 2" }
+                ]
+              },
+              {
+                date: "Thursday, 17 December 2026",
+                matches: [
+                  { time: "19:30", teams: "Mumbai City vs Mohun Bagan", channel: "Sony Sports Ten 2" }
+                ]
+              },
+              {
+                date: "Sunday, 20 December 2026",
+                matches: [
+                  { time: "19:30", teams: "SC Delhi vs Churchill Brothers", channel: "Sony Sports Ten 2" },
+                  { time: "22:00", teams: "Delhi Dynamos vs Kerala Blasters", channel: "Sony Sports Ten 2" }
+                ]
+              },
+              {
+                date: "Monday, 21 December 2026",
+                matches: [
+                  { time: "19:30", teams: "Mumbai City vs Inter Kashi", channel: "Sony Sports Ten 2" },
+                  { time: "22:00", teams: "East Bengal II vs NorthEast United", channel: "Sony Sports Ten 2" }
+                ]
+              },
+              {
+                date: "Tuesday, 22 December 2026",
+                matches: [
+                  { time: "19:30", teams: "Bengaluru vs RoundGlass Punjab", channel: "Sony Sports Ten 2" },
+                  { time: "22:00", teams: "Goa vs Mohun Bagan", channel: "Sony Sports Ten 2" }
+                ]
+              },
+              {
+                date: "Sunday, 3 January 2027",
+                matches: [
+                  { time: "19:30", teams: "East Bengal II vs Delhi Dynamos", channel: "Sony Sports Ten 2" },
+                  { time: "22:00", teams: "Bengaluru vs Kerala Blasters", channel: "Sony Sports Ten 2" }
+                ]
+              },
+              {
+                date: "Thursday, 7 January 2027",
+                matches: [
+                  { time: "22:00", teams: "RoundGlass Punjab vs Inter Kashi", channel: "Sony Sports Ten 2" }
+                ]
+              },
+              {
+                date: "Friday, 8 January 2027",
+                matches: [
+                  { time: "22:00", teams: "Chennaiyin vs Delhi Dynamos", channel: "Sony Sports Ten 2" }
+                ]
+              },
+              {
+                date: "Saturday, 9 January 2027",
+                matches: [
+                  { time: "19:30", teams: "East Bengal II vs Goa", channel: "Sony Sports Ten 2" },
+                  { time: "22:00", teams: "Churchill Brothers vs Bengaluru", channel: "Sony Sports Ten 2" }
+                ]
+              },
+              {
+                date: "Sunday, 10 January 2027",
+                matches: [
+                  { time: "19:30", teams: "Mohun Bagan vs Kerala Blasters", channel: "Sony Sports Ten 2" },
+                  { time: "22:00", teams: "SC Delhi vs RoundGlass Punjab", channel: "Sony Sports Ten 2" }
+                ]
+              },
+              {
+                date: "Tuesday, 12 January 2027",
+                matches: [
+                  { time: "22:00", teams: "Mumbai City vs Delhi Dynamos", channel: "Sony Sports Ten 2" }
+                ]
+              },
+              {
+                date: "Friday, 15 January 2027",
+                matches: [
+                  { time: "19:30", teams: "RoundGlass Punjab vs Goa", channel: "Sony Sports Ten 2" },
+                  { time: "22:00", teams: "Delhi Dynamos vs Churchill Brothers", channel: "Sony Sports Ten 2" }
+                ]
+              },
+              {
+                date: "Saturday, 16 January 2027",
+                matches: [
+                  { time: "19:30", teams: "Bengaluru vs Inter Kashi", channel: "Sony Sports Ten 2" },
+                  { time: "22:00", teams: "Kerala Blasters vs East Bengal II", channel: "Sony Sports Ten 2" }
+                ]
+              },
+              {
+                date: "Sunday, 17 January 2027",
+                matches: [
+                  { time: "19:30", teams: "SC Delhi vs Chennaiyin", channel: "Sony Sports Ten 2" },
+                  { time: "22:00", teams: "Mumbai City vs NorthEast United", channel: "Sony Sports Ten 2" }
+                ]
+              }
+            ]
+          },
+          {
+            name: "AFC Champions League Elite",
+            dates: [
+              {
+                date: "Tuesday, 24 November 2026",
+                matches: [
+                  { time: "00:00", teams: "Al Ain vs Esteghlal", channel: "Shabake 3" },
+                  { time: "00:00", teams: "Tractor Sazi vs Al Wasl", channel: "IRIB Varzesh" }
+                ]
+              }
+            ]
+          },
+          {
+            name: "AFC Champions League Two",
+            dates: [
+              {
+                date: "Thursday, 26 November 2026",
+                matches: [
+                  { time: "00:00", teams: "Al Jazira vs Gol Gohar", channel: "IRIB Varzesh" }
+                ]
+              },
+              {
+                date: "Wednesday, 9 December 2026",
+                matches: [
+                  { time: "21:45", teams: "Gol Gohar vs Muharraq", channel: "IRIB Varzesh" }
+                ]
+              }
+            ]
+          },
+          {
+            name: "Jordan League",
+            dates: [
+              {
+                date: "Thursday, 26 November 2026",
+                matches: [
+                  { time: "23:00", teams: "Al Buqa’a vs Al Jazeera", channel: "Jordan TV Sport" }
+                ]
+              },
+              {
+                date: "Friday, 27 November 2026",
+                matches: [
+                  { time: "22:00", teams: "Shabab Al Ordon vs Al Salt", channel: "Jordan TV Sport" }
+                ]
+              },
+              {
+                date: "Saturday, 28 November 2026",
+                matches: [
+                  { time: "00:30", teams: "Al Wihdat vs Doqarah", channel: "Jordan TV Sport" },
+                  { time: "22:00", teams: "Al Arabi vs Al Faisaly", channel: "Jordan TV Sport" }
+                ]
+              },
+              {
+                date: "Sunday, 29 November 2026",
+                matches: [
+                  { time: "00:30", teams: "Al Ramtha vs Al Hussein", channel: "Jordan TV Sport" }
+                ]
+              },
+              {
+                date: "Wednesday, 2 December 2026",
+                matches: [
+                  { time: "23:00", teams: "Doqarah vs Al Buqa’a", channel: "Jordan TV Sport" }
+                ]
+              },
+              {
+                date: "Thursday, 3 December 2026",
+                matches: [
+                  { time: "21:00", teams: "Al Salt vs Al Arabi", channel: "Jordan TV Sport" }
+                ]
+              },
+              {
+                date: "Friday, 4 December 2026",
+                matches: [
+                  { time: "00:00", teams: "Al Jazeera vs Al Hussein", channel: "Jordan TV Sport" },
+                  { time: "21:00", teams: "Al Ramtha vs Shabab Al Ordon", channel: "Jordan TV Sport" }
+                ]
+              },
+              {
+                date: "Saturday, 5 December 2026",
+                matches: [
+                  { time: "00:00", teams: "Al Faisaly vs Al Wihdat", channel: "Jordan TV Sport" }
+                ]
+              },
+              {
+                date: "Friday, 11 December 2026",
+                matches: [
+                  { time: "21:00", teams: "Al Buqa’a vs Al Hussein", channel: "Jordan TV Sport" }
+                ]
+              },
+              {
+                date: "Saturday, 12 December 2026",
+                matches: [
+                  { time: "00:00", teams: "Al Wihdat vs Al Salt", channel: "Jordan TV Sport" },
+                  { time: "21:00", teams: "Al Arabi vs Al Ramtha", channel: "Jordan TV Sport" }
+                ]
+              },
+              {
+                date: "Sunday, 13 December 2026",
+                matches: [
+                  { time: "00:00", teams: "Shabab Al Ordon vs Al Jazeera", channel: "Jordan TV Sport" },
+                  { time: "23:00", teams: "Doqarah vs Al Faisaly", channel: "Jordan TV Sport" }
+                ]
+              }
+            ]
+          },
+          {
+            name: "Asian Cup Qualification",
+            dates: [
+              {
+                date: "Wednesday, 13 January 2027",
+                matches: [
+                  { time: "22:00", teams: "Jordan vs Bahrain", channel: "Bahrain Riyadiya 1" }
+                ]
+              },
+              {
+                date: "Monday, 18 January 2027",
+                matches: [
+                  { time: "22:00", teams: "Uzbekistan vs Bahrain", channel: "Bahrain Riyadiya 1" }
+                ]
+              }
+            ]
+          },
+          {
+            name: "CONCACAF Nations League",
+            dates: [
+              {
+                date: "Sunday, 15 November 2026",
+                matches: [
+                  { time: "05:30", teams: "Haiti vs USA", channel: "Telemundo" }
+                ]
+              },
+              {
+                date: "Monday, 16 November 2026",
+                matches: [
+                  { time: "07:00", teams: "Panama vs Curaçao", channel: "Fox Sports 2 USA" }
+                ]
+              },
+              {
+                date: "Tuesday, 17 November 2026",
+                matches: [
+                  { time: "08:00", teams: "Trinidad and Tobago vs Antigua and Barbuda", channel: "Fox Sports 2 USA" },
+                  { time: "09:00", teams: "Canada vs Guatemala", channel: "Fox Sports 1 USA" }
+                ]
+              },
+              {
+                date: "Wednesday, 18 November 2026",
+                matches: [
+                  { time: "08:00", teams: "French Guiana vs Saint Vincent and the Grenadines", channel: "Fox Sports 2 USA" },
+                  { time: "09:00", teams: "El Salvador vs Saint Martin", channel: "Fox Sports 1 USA" },
+                  { time: "11:00", teams: "Nicaragua vs Montserrat", channel: "Fox Sports 1 USA" }
+                ]
+              }
+            ]
+          },
+          {
+            name: "FIFA U-17 World Cup",
+            dates: [
+              {
+                date: "Thursday, 19 November 2026",
+                matches: [
+                  { time: "21:00", teams: "France U17 vs Haiti U17", channel: "Fox Sports 2 USA" },
+                  { time: "23:00", teams: "Mozambique U17 vs Denmark U17", channel: "Fox Sports 2 USA" }
+                ]
+              },
+              {
+                date: "Friday, 20 November 2026",
+                matches: [
+                  { time: "21:00", teams: "Belgium U17 vs Vietnam U17", channel: "Fox Sports 2 USA" },
+                  { time: "23:00", teams: "Italy U17 vs Jamaica U17", channel: "Fox Sports 2 USA" }
+                ]
+              },
+              {
+                date: "Saturday, 21 November 2026",
+                matches: [
+                  { time: "20:30", teams: "Japan U17 vs Colombia U17", channel: "Fox Sports 2 USA" }
+                ]
+              },
+              {
+                date: "Sunday, 22 November 2026",
+                matches: [
+                  { time: "20:30", teams: "Denmark U17 vs Australia U17", channel: "Fox Sports 2 USA" },
+                  { time: "22:30", teams: "Korea Republic U17 vs New Caledonia U17", channel: "Fox Sports 2 USA" }
+                ]
+              },
+              {
+                date: "Monday, 23 November 2026",
+                matches: [
+                  { time: "20:30", teams: "Spain U17 vs Fiji U17", channel: "Fox Sports 2 USA" },
+                  { time: "22:30", teams: "Italy U17 vs Côte d’Ivoire U17", channel: "Fox Sports 2 USA" }
+                ]
+              },
+              {
+                date: "Tuesday, 24 November 2026",
+                matches: [
+                  { time: "Postp.", teams: "United States U17 vs Chile U17", channel: "Fox Sports 2 USA" },
+                  { time: "20:30", teams: "Costa Rica U17 vs Republic of Ireland U17", channel: "Fox Sports 2 USA" }
+                ]
+              },
+              {
+                date: "Wednesday, 25 November 2026",
+                matches: [
+                  { time: "21:30", teams: "Uruguay U17 vs France U17", channel: "Fox Sports 2 USA" },
+                  { time: "23:30", teams: "Denmark U17 vs Argentina U17", channel: "Fox Sports 2 USA" }
+                ]
+              },
+              {
+                date: "Thursday, 26 November 2026",
+                matches: [
+                  { time: "21:00", teams: "New Zealand U17 vs Belgium U17", channel: "Fox Sports 2 USA" },
+                  { time: "23:00", teams: "Morocco U17 vs Spain U17", channel: "Fox Sports 2 USA" }
+                ]
+              },
+              {
+                date: "Friday, 27 November 2026",
+                matches: [
+                  { time: "Postp.", teams: "Algeria U17 vs United States U17", channel: "Fox Sports 2 USA" },
+                  { time: "21:00", teams: "Honduras U17 vs Japan U17", channel: "Fox Sports 2 USA" }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    };
+
+    let activePlatformKey = null;
+
+    function openSchedulePage(platformKey) {
+      const data = platformSchedules[platformKey];
+      if (!data) return;
+      activePlatformKey = platformKey;
+
+      document.getElementById('schedule-view-title').innerHTML = `<i class="fa-solid fa-calendar-check" style="color: var(--neon-green);"></i> ${data.title}`;
+      document.getElementById('schedule-view-subtitle').innerText = data.subtitle;
+      document.getElementById('schedule-view-link').href = data.url;
+
+      // Render League Filter Chips
+      const filterBar = document.getElementById('schedule-filter-bar');
+      let chipsHtml = `<button type="button" class="filter-chip active" onclick="filterScheduleLeagues('ALL', this)">All Leagues (${data.leagues.length})</button>`;
+      data.leagues.forEach((lg, idx) => {
+        chipsHtml += `<button type="button" class="filter-chip" onclick="filterScheduleLeagues(${idx}, this)">${lg.name}</button>`;
+      });
+      filterBar.innerHTML = chipsHtml;
+
+      renderScheduleContent(data, 'ALL');
+
+      // Switch View (In-Page View, Not Popup)
+      document.getElementById('dashboard-main-view').style.display = 'none';
+      document.getElementById('schedule-page-view').style.display = 'flex';
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function filterScheduleLeagues(selectedIdx, btnEl) {
+      document.querySelectorAll('#schedule-filter-bar .filter-chip').forEach(c => c.classList.remove('active'));
+      if (btnEl) btnEl.classList.add('active');
+      const data = platformSchedules[activePlatformKey];
+      if (data) {
+        renderScheduleContent(data, selectedIdx);
+      }
+    }
+
+    function renderScheduleContent(data, filterIdx) {
+      const container = document.getElementById('schedule-content-container');
+      let html = '';
+
+      data.leagues.forEach((league, idx) => {
+        if (filterIdx !== 'ALL' && filterIdx !== idx) return;
+
+        html += `
+          <div class="league-schedule-block">
+            <div class="league-block-title">
+              <i class="fa-solid fa-trophy"></i> ${league.name}
+            </div>
+        `;
+
+        league.dates.forEach(d => {
+          html += `
+            <div class="date-group">
+              <div class="date-header"><i class="fa-regular fa-calendar" style="margin-right: 5px;"></i>${d.date}</div>
+          `;
+
+          d.matches.forEach(m => {
+            const isPostp = m.time.toLowerCase().includes('postp');
+            html += `
+              <div class="fixture-row">
+                <div class="fixture-top">
+                  <span class="fixture-time ${isPostp ? 'is-postp' : ''}">${m.time}</span>
+                  <span class="fixture-match">${m.teams}</span>
+                </div>
+                <div class="fixture-channel">
+                  <i class="fa-solid fa-tv" style="color: var(--neon-cyan);"></i> ${m.channel}
+                </div>
+              </div>
+            `;
+          });
+
+          html += `</div>`;
+        });
+
+        html += `</div>`;
+      });
+
+      container.innerHTML = html;
+    }
+
+    function closeSchedulePage() {
+      document.getElementById('schedule-page-view').style.display = 'none';
+      document.getElementById('dashboard-main-view').style.display = 'flex';
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    /* ==================== AUTOMATED MATCH SWITCHER ==================== */
     function createMatch(week, matches, displayTime, startTimeISO, durationMinutes = 120) {
       const startMs = new Date(startTimeISO).getTime();
       const endMs = startMs + (durationMinutes * 60 * 1000);
@@ -866,7 +1931,16 @@
       renderGenericSection(now, f1Matches, 'f1-badge', 'f1-matches-body', 'f1-time', 'f1-countdown', 'FORMULA 1 HUB');
     }
 
-/* Now Sports Live Event 1 Schedule */
+    /* MotoGP Live Streaming Hub */
+    const motoGpMatches = [
+      // Masukkan jadual MotoGP di sini menggunakan createMatch(...)
+    ];
+
+    function updateMotoGpCard(now) {
+      renderGenericSection(now, motoGpMatches, 'motogp-badge', 'motogp-matches-body', 'motogp-time', 'motogp-countdown', 'MOTOGP LIVE STREAMING HUB');
+    }
+
+    /* Now Sports Live Event 1 Schedule */
     const nowSports1Matches = [
       createMatch("INTERNATIONAL FRIENDLY", [
         { teams: "THAILAND U23 vs SINGAPORE U23", channel: "True Premier Football HD 4", hot: false }
@@ -893,7 +1967,34 @@
       renderGenericSection(now, nowSports1Matches, 'nowsports1-badge', 'nowsports1-matches-body', 'nowsports1-time', 'nowsports1-countdown', 'NOW SPORTS LIVE EVENT 1');
     }
 
-/* Premier League Schedule (Updated) */
+    /* Now Sports Live Event 2 Schedule */
+    const nowSports2Matches = [
+      // Masukkan jadual Now Sports 2 di sini menggunakan createMatch(...)
+    ];
+
+    function updateNowSports2Card(now) {
+      renderGenericSection(now, nowSports2Matches, 'nowsports2-badge', 'nowsports2-matches-body', 'nowsports2-time', 'nowsports2-countdown', 'NOW SPORTS LIVE EVENT 2');
+    }
+
+    /* Now Sports Live Event 3 Schedule */
+    const nowSports3Matches = [
+      // Masukkan jadual Now Sports 3 di sini menggunakan createMatch(...)
+    ];
+
+    function updateNowSports3Card(now) {
+      renderGenericSection(now, nowSports3Matches, 'nowsports3-badge', 'nowsports3-matches-body', 'nowsports3-time', 'nowsports3-countdown', 'NOW SPORTS LIVE EVENT 3');
+    }
+
+    /* Now Sports Live Event 4 Schedule */
+    const nowSports4Matches = [
+      // Masukkan jadual Now Sports 4 di sini menggunakan createMatch(...)
+    ];
+
+    function updateNowSports4Card(now) {
+      renderGenericSection(now, nowSports4Matches, 'nowsports4-badge', 'nowsports4-matches-body', 'nowsports4-time', 'nowsports4-countdown', 'NOW SPORTS LIVE EVENT 4');
+    }
+
+    /* Premier League Schedule */
     const eplMatches = [
       createMatch("PREMIER LEAGUE", [
         { teams: "MANCHESTER CITY VS FULHAM", channel: "Star Sports Select 1", hot: false }
@@ -935,9 +2036,9 @@
     function updateEPLCard(now) {
       renderGenericSection(now, eplMatches, 'epl-badge', 'epl-matches-body', 'epl-time', 'epl-countdown', 'HOME OF PREMIER LEAGUE');
     }
+
     /* La Liga Schedule */
     const laLigaMatches = [
-      // SATURDAY, 7 NOV 2026
       createMatch("LA LIGA", [
         { teams: "SEVILLA VS DEPORTIVO ALAVÉS", channel: "beIN Sports Arabia 3", hot: false }
       ], "SAT, NOV 7 • 04:00 AM MYT", "2026-11-07T04:00:00+08:00"),
@@ -950,7 +2051,6 @@
         { teams: "ESPANYOL VS DEPORTIVO LA CORUÑA", channel: "beIN Sports Arabia 3", hot: false }
       ], "SAT, NOV 7 • 11:15 PM MYT", "2026-11-07T23:15:00+08:00"),
 
-      // SUNDAY, 8 NOV 2026
       createMatch("LA LIGA", [
         { teams: "OSASUNA VS ATHLETIC CLUB", channel: "beIN Sports Arabia 3", hot: false }
       ], "SUN, NOV 8 • 01:30 AM MYT", "2026-11-08T01:30:00+08:00"),
@@ -959,7 +2059,6 @@
         { teams: "VALENCIA VS REAL MADRID", channel: "beIN Sports Arabia 1", hot: true }
       ], "SUN, NOV 8 • 04:00 AM MYT", "2026-11-08T04:00:00+08:00"),
 
-      // MONDAY, 9 NOV 2026
       createMatch("LA LIGA", [
         { teams: "CELTA DE VIGO VS LEVANTE", channel: "beIN Sports Arabia 3", hot: false }
       ], "MON, NOV 9 • 01:30 AM MYT", "2026-11-09T01:30:00+08:00"),
@@ -1062,7 +2161,11 @@
       const now = new Date().getTime();
 
       updateF1Card(now);
+      updateMotoGpCard(now);
       updateNowSports1Card(now);
+      updateNowSports2Card(now);
+      updateNowSports3Card(now);
+      updateNowSports4Card(now);
       updateEPLCard(now);
       updateLaLigaCard(now);
     }
