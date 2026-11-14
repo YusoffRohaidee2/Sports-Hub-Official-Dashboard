@@ -865,11 +865,27 @@
       renderGenericSection(now, f1Matches, 'f1-badge', 'f1-matches-body', 'f1-time', 'f1-countdown', 'FORMULA 1 HUB');
     }
 
-    /* Now Sports Live Event 1 Schedule */
+/* Now Sports Live Event 1 Schedule */
     const nowSports1Matches = [
-      createMatch("BALLON D'OR", [
-        { teams: "2026 BALLON D'OR", channel: "L'Equipe FR", hot: true }
-      ], "TUE, OCT 27 • 03:00 AM MYT", "2026-10-27T03:00:00+08:00", 120)
+      createMatch("INTERNATIONAL FRIENDLY", [
+        { teams: "THAILAND U23 vs SINGAPORE U23", channel: "True Premier Football HD 4", hot: false }
+      ], "SAT, NOV 14 • 04:00 PM MYT", "2026-11-14T16:00:00+08:00", 120),
+      
+      createMatch("INTERNATIONAL FRIENDLY", [
+        { teams: "CHINA vs MALAYSIA", channel: "Sukan+", hot: true }
+      ], "SAT, NOV 14 • 08:00 PM MYT", "2026-11-14T20:00:00+08:00", 120),
+      
+      createMatch("INTERNATIONAL FRIENDLY", [
+        { teams: "ANDORRA vs AZERBAIJAN", channel: "beIN Sports Arabia 9 HD", hot: false }
+      ], "TUE, NOV 17 • 02:00 AM MYT", "2026-11-17T02:00:00+08:00", 120),
+      
+      createMatch("INTERNATIONAL FRIENDLY", [
+        { teams: "YEMEN vs MALAYSIA", channel: "Sukan+", hot: true }
+      ], "TUE, NOV 17 • 02:00 PM MYT", "2026-11-17T14:00:00+08:00", 120),
+      
+      createMatch("INTERNATIONAL FRIENDLY", [
+        { teams: "JORDAN vs AUSTRALIA", channel: "Jordan TV Sport", hot: false }
+      ], "WED, NOV 18 • 12:00 AM MYT", "2026-11-18T00:00:00+08:00", 120)
     ];
 
     function updateNowSports1Card(now) {
