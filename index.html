@@ -2102,30 +2102,56 @@
       renderGenericSection(now, motoGpMatches, 'motogp-badge', 'motogp-matches-body', 'motogp-time', 'motogp-countdown', 'MOTOGP LIVE STREAMING HUB');
     }
 
-    /* Now Sports Live Event 1 Schedule */
-    const nowSports1Matches = [
-      createMatch("INTERNATIONAL FRIENDLY", [
-        { teams: "THAILAND U23 vs SINGAPORE U23", channel: "True Premier Football HD 4", hot: false }
-      ], "SAT, NOV 14 • 04:00 PM MYT", "2026-11-14T16:00:00+08:00", 120),
-      
-      createMatch("INTERNATIONAL FRIENDLY", [
-        { teams: "CHINA vs MALAYSIA", channel: "Sukan+", hot: true }
-      ], "SAT, NOV 14 • 08:00 PM MYT", "2026-11-14T20:00:00+08:00", 120),
-      
-      createMatch("INTERNATIONAL FRIENDLY", [
-        { teams: "ANDORRA vs AZERBAIJAN", channel: "beIN Sports Arabia 9 HD", hot: false }
-      ], "TUE, NOV 17 • 02:00 AM MYT", "2026-11-17T02:00:00+08:00", 120),
-      
-      createMatch("INTERNATIONAL FRIENDLY", [
-        { teams: "YEMEN vs MALAYSIA", channel: "Sukan+", hot: true }
-      ], "TUE, NOV 17 • 02:00 PM MYT", "2026-11-17T14:00:00+08:00", 120),
-      
-      createMatch("INTERNATIONAL FRIENDLY", [
-        { teams: "JORDAN vs AUSTRALIA", channel: "Jordan TV Sport", hot: false }
-      ], "WED, NOV 18 • 12:00 AM MYT", "2026-11-18T00:00:00+08:00", 120)
-    ];
+/* Now Sports Live Event 1 Schedule */
+const nowSports1Matches = [
+  createMatch("CLUB FRIENDLY", [
+    { teams: "ZENIT vs TRABZONSPOR", channel: "Match Premier", hot: false }
+  ], "SUN, NOV 15 • 10:00 PM MYT", "2026-11-15T22:00:00+08:00", 120),
 
-    function updateNowSports1Card(now) {
+  createMatch("INTERNATIONAL FRIENDLY", [
+    { teams: "RUSSIA U21 vs KYRGYZ REPUBLIC U23", channel: "Match Premier", hot: false }
+  ], "MON, NOV 16 • 09:00 PM MYT", "2026-11-16T21:00:00+08:00", 120),
+
+  createMatch("INTERNATIONAL FRIENDLY", [
+    { teams: "ANDORRA vs AZERBAIJAN", channel: "beIN Sports Arabia 9 HD", hot: false }
+  ], "TUE, NOV 17 • 02:00 AM MYT", "2026-11-17T02:00:00+08:00", 120),
+
+  createMatch("INTERNATIONAL FRIENDLY", [
+    { teams: "YEMEN vs MALAYSIA", channel: "Sukan+", hot: true }
+  ], "TUE, NOV 17 • 02:00 PM MYT", "2026-11-17T14:00:00+08:00", 120),
+
+  createMatch("INTERNATIONAL FRIENDLY", [
+    { teams: "QATAR vs KOREA REPUBLIC", channel: "KBS2 Korea", hot: false },
+    { teams: "CHINA vs BAHRAIN", channel: "CCTV-5 Sports", hot: false }
+  ], "TUE, NOV 17 • 08:00 PM MYT", "2026-11-17T20:00:00+08:00", 120),
+
+  createMatch("INTERNATIONAL FRIENDLY", [
+    { teams: "KUWAIT vs HONDURAS", channel: "KTV Sport", hot: false }
+  ], "TUE, NOV 17 • 09:00 PM MYT", "2026-11-17T21:00:00+08:00", 120),
+
+  createMatch("INTERNATIONAL FRIENDLY", [
+    { teams: "JAPAN vs PARAGUAY", channel: "Nippon TV", hot: false }
+  ], "TUE, NOV 17 • 09:10 PM MYT", "2026-11-17T21:10:00+08:00", 120),
+
+  createMatch("INTERNATIONAL FRIENDLY", [
+    { teams: "UNITED ARAB EMIRATES vs SYRIA", channel: "Sharjah Sports", hot: false }
+  ], "TUE, NOV 17 • 10:10 PM MYT", "2026-11-17T22:10:00+08:00", 120),
+
+  createMatch("INTERNATIONAL FRIENDLY", [
+    { teams: "SAUDI ARABIA vs UZBEKISTAN", channel: "Futbol TV", hot: false }
+  ], "TUE, NOV 17 • 11:30 PM MYT", "2026-11-17T23:30:00+08:00", 120),
+
+  createMatch("INTERNATIONAL FRIENDLY", [
+    { teams: "JORDAN vs AUSTRALIA", channel: "Jordan TV Sport", hot: false },
+    { teams: "RUSSIA vs VENEZUELA", channel: "Channel One Russia", hot: false }
+  ], "WED, NOV 18 • 12:00 AM MYT", "2026-11-18T00:00:00+08:00", 120),
+
+  createMatch("INTERNATIONAL FRIENDLY", [
+    { teams: "ARGENTINA vs COSTA RICA", channel: "IRIB Varzesh", hot: false }
+  ], "WED, NOV 18 • 07:00 AM MYT", "2026-11-18T07:00:00+08:00", 120)
+];
+
+        function updateNowSports1Card(now) {
       renderGenericSection(now, nowSports1Matches, 'nowsports1-badge', 'nowsports1-matches-body', 'nowsports1-time', 'nowsports1-countdown', 'NOW SPORTS LIVE EVENT 1');
     }
 
