@@ -936,6 +936,48 @@
         </div>
       </a>
 
+      <!-- International Friendlies Hub -->
+      <a class="link-card" href="https://example.com" target="_blank" rel="noopener noreferrer" data-track-id="intl-friendlies">
+        <div class="card-info">
+          <span class="site-name">International Friendlies Hub</span>
+          <div class="match-details" style="margin-top: 2px;">
+            <span><i class="fa-solid fa-circle-info" style="color: var(--neon-cyan);"></i> Stream international friendly matches and warm-up fixtures here!</span>
+          </div>
+          <span class="click-counter"><i class="fa-solid fa-eye"></i> <span id="click-intl-friendlies">0</span> clicks</span>
+        </div>
+        <div class="card-right-group">
+          <div class="card-action-icon"><i class="fa-solid fa-arrow-up-right-from-square"></i></div>
+        </div>
+      </a>
+
+      <!-- ASEAN Football Hub -->
+      <a class="link-card" href="https://example.com" target="_blank" rel="noopener noreferrer" data-track-id="asean-football">
+        <div class="card-info">
+          <span class="site-name">ASEAN Football Hub</span>
+          <div class="match-details" style="margin-top: 2px;">
+            <span><i class="fa-solid fa-circle-info" style="color: var(--neon-cyan);"></i> Stream Southeast Asian football competitions and regional matches here!</span>
+          </div>
+          <span class="click-counter"><i class="fa-solid fa-eye"></i> <span id="click-asean-football">0</span> clicks</span>
+        </div>
+        <div class="card-right-group">
+          <div class="card-action-icon"><i class="fa-solid fa-arrow-up-right-from-square"></i></div>
+        </div>
+      </a>
+
+      <!-- Football+ -->
+      <a class="link-card" href="https://example.com" target="_blank" rel="noopener noreferrer" data-track-id="football-plus">
+        <div class="card-info">
+          <span class="site-name">Football+</span>
+          <div class="match-details" style="margin-top: 2px;">
+            <span><i class="fa-solid fa-circle-info" style="color: var(--neon-cyan);"></i> Watch extra football highlights, replays, and special broadcasts here!</span>
+          </div>
+          <span class="click-counter"><i class="fa-solid fa-eye"></i> <span id="click-football-plus">0</span> clicks</span>
+        </div>
+        <div class="card-right-group">
+          <div class="card-action-icon"><i class="fa-solid fa-arrow-up-right-from-square"></i></div>
+        </div>
+      </a>
+
       <!-- Other Websites -->
       <div class="section-title">
         <div class="section-main-label"><i class="fa-solid fa-star" style="color: var(--accent-gold);"></i> Other Websites</div>
@@ -983,6 +1025,34 @@
             <i class="fa-solid fa-star"></i>
           </button>
           <div class="card-action-icon"><i class="fa-solid fa-play"></i></div>
+        </div>
+      </a>
+
+      <!-- Home of Motorsports Action+ -->
+      <a class="link-card" href="https://example.com" target="_blank" rel="noopener noreferrer" data-track-id="motorsports-plus">
+        <div class="card-info">
+          <span class="site-name">Home of Motorsports Action+</span>
+          <div class="match-details" style="margin-top: 2px;">
+            <span><i class="fa-solid fa-circle-info" style="color: var(--neon-cyan);"></i> Stream extra motorsport series, rallies, and racing action here!</span>
+          </div>
+          <span class="click-counter"><i class="fa-solid fa-eye"></i> <span id="click-motorsports-plus">0</span> clicks</span>
+        </div>
+        <div class="card-right-group">
+          <div class="card-action-icon"><i class="fa-solid fa-arrow-up-right-from-square"></i></div>
+        </div>
+      </a>
+
+      <!-- Sports+ -->
+      <a class="link-card" href="https://example.com" target="_blank" rel="noopener noreferrer" data-track-id="sports-plus">
+        <div class="card-info">
+          <span class="site-name">Sports+</span>
+          <div class="match-details" style="margin-top: 2px;">
+            <span><i class="fa-solid fa-circle-info" style="color: var(--neon-cyan);"></i> Watch multi-sport live events, combat sports, and special channels here!</span>
+          </div>
+          <span class="click-counter"><i class="fa-solid fa-eye"></i> <span id="click-sports-plus">0</span> clicks</span>
+        </div>
+        <div class="card-right-group">
+          <div class="card-action-icon"><i class="fa-solid fa-arrow-up-right-from-square"></i></div>
         </div>
       </a>
     </div>
@@ -1137,10 +1207,13 @@
     }
 
 /* ==================== FULL SCHEDULES DATA (HOME OF UEFA & FOOTBALL XTRA) ==================== */
+    // Template: Tambah atau ubah match di bawah.
+    // `kickoffISO`: Masa kickoff penuh dengan zon masa (+08:00 MYT), contoh "2026-11-25T04:00:00+08:00".
+    // `durationMinutes`: Tempoh sebelum match hilang automatik (display: none), default 120 minit.
     const platformSchedules = {
       uefa: {
         title: "HOME OF UEFA — FULL SCHEDULE",
-        subtitle: "Complete match listings & channels for UEFA competitions.",
+        subtitle: "Complete match listings, live countdowns & exciting matches.",
         url: "https://home-of-uefa.vercel.app/",
         leagues: [
           {
@@ -1149,28 +1222,137 @@
               {
                 date: "Wednesday, 25 November 2026",
                 matches: [
-                  { time: "01:45", teams: "Bodø / Glimt vs LASK Linz", channel: "beIN Sports Arabia 4, Canal+ Sport France" },
-                  { time: "01:45", teams: "Galatasaray vs Aston Villa", channel: "IRIB Varzesh, Canal+ Foot France, 5Sport" },
-                  { time: "04:00", teams: "Arsenal vs Borussia Dortmund", channel: "beIN Sports Arabia 4, Shabake 3" },
-                  { time: "04:00", teams: "Como vs AEK Athens", channel: "beIN Sports Arabia 5" },
-                  { time: "04:00", teams: "Feyenoord vs Porto", channel: "beIN Sports Arabia 6" },
-                  { time: "04:00", teams: "RB Leipzig vs Lens", channel: "beIN Sports Arabia 8, Canal+ Foot France" },
-                  { time: "04:00", teams: "Real Madrid vs PSV", channel: "beIN Sports Arabia 1, IRIB Varzesh, Canal+ Sport France, 5Sport" },
-                  { time: "04:00", teams: "Slovan Bratislava vs Real Betis", channel: "beIN Sports Arabia 9" }
+                  {
+                    time: "01:45",
+                    teams: "Bodø / Glimt vs LASK Linz",
+                    channel: "ESPN2 Norte, Canal+ Sport France, Prima Sport 2, beIN Sports Arabia 4",
+                    kickoffISO: "2026-11-25T01:45:00+08:00",
+                    durationMinutes: 120
+                  },
+                  {
+                    time: "01:45",
+                    teams: "Galatasaray vs Aston Villa",
+                    channel: "ESPN Norte, Canal+ Foot France, Zoʻr TV, Sport TV Belarus, Prima Sport 1, beIN Sports Arabia 3, 5Sport, IRIB Varzesh",
+                    kickoffISO: "2026-11-25T01:45:00+08:00",
+                    durationMinutes: 120
+                  },
+                  {
+                    time: "04:00",
+                    teams: "Arsenal vs Borussia Dortmund",
+                    channel: "ESPN 5 Norte, Prima Sport 2, beIN Sports Arabia 4, 5Stars, Shabake 3",
+                    kickoffISO: "2026-11-25T04:00:00+08:00",
+                    durationMinutes: 120
+                  },
+                  {
+                    time: "04:00",
+                    teams: "Como vs AEK Athens",
+                    channel: "Prima Sport 4, beIN Sports Arabia 5",
+                    kickoffISO: "2026-11-25T04:00:00+08:00",
+                    durationMinutes: 120
+                  },
+                  {
+                    time: "04:00",
+                    teams: "Feyenoord vs Porto",
+                    channel: "Prima Sport 5, beIN Sports Arabia 6",
+                    kickoffISO: "2026-11-25T04:00:00+08:00",
+                    durationMinutes: 120
+                  },
+                  {
+                    time: "04:00",
+                    teams: "Manchester City vs Napoli",
+                    channel: "ESPN2 Norte, Zoʻr TV, Prima Sport 3, beIN Sports Arabia 3, 5Max",
+                    kickoffISO: "2026-11-25T04:00:00+08:00",
+                    durationMinutes: 120
+                  },
+                  {
+                    time: "04:00",
+                    teams: "RB Leipzig vs Lens",
+                    channel: "ESPN6 Norte, Canal+ Foot France, beIN Sports Arabia 8",
+                    kickoffISO: "2026-11-25T04:00:00+08:00",
+                    durationMinutes: 120
+                  },
+                  {
+                    time: "04:00",
+                    teams: "Real Madrid vs PSV",
+                    channel: "ESPN Norte, Canal+ Sport France, Prima Sport 1, beIN Sports Arabia 1, 5Sport, IRIB Varzesh",
+                    kickoffISO: "2026-11-25T04:00:00+08:00",
+                    durationMinutes: 120
+                  },
+                  {
+                    time: "04:00",
+                    teams: "Slovan Bratislava vs Real Betis",
+                    channel: "beIN Sports Arabia 9",
+                    kickoffISO: "2026-11-25T04:00:00+08:00",
+                    durationMinutes: 120
+                  }
                 ]
               },
               {
                 date: "Thursday, 26 November 2026",
                 matches: [
-                  { time: "01:45", teams: "Sabah vs Barcelona", channel: "beIN Sports Arabia 2, IRIB Varzesh, Canal+ Foot France, 5Sport" },
-                  { time: "01:45", teams: "Slavia Praha vs Villarreal", channel: "beIN Sports Arabia 4, Canal+ Sport France" },
-                  { time: "04:00", teams: "Atlético Madrid vs Viking", channel: "beIN Sports Arabia 6" },
-                  { time: "04:00", teams: "Club Brugge vs Liverpool", channel: "Canal+ Sport France" },
-                  { time: "04:00", teams: "Internazionale vs Stuttgart", channel: "beIN Sports Arabia 4" },
-                  { time: "04:00", teams: "Lille vs Bayern München", channel: "beIN Sports Arabia 5, Canal+ Foot France" },
-                  { time: "04:00", teams: "PSG vs Roma", channel: "beIN Sports Arabia 1, Shabake 3, 5Sport" },
-                  { time: "04:00", teams: "Shakhtar Donetsk vs Fenerbahçe", channel: "beIN Sports Arabia 8" },
-                  { time: "04:00", teams: "Sporting CP vs Manchester United", channel: "beIN Sports Arabia 2, IRIB Varzesh" }
+                  {
+                    time: "01:45",
+                    teams: "Sabah vs Barcelona",
+                    channel: "ESPN Norte, Canal+ Foot France, Sport TV Belarus, Prima Sport 1, beIN Sports Arabia 2, 5Sport, IRIB Varzesh",
+                    kickoffISO: "2026-11-26T01:45:00+08:00",
+                    durationMinutes: 120
+                  },
+                  {
+                    time: "01:45",
+                    teams: "Slavia Praha vs Villarreal",
+                    channel: "ESPN2 Norte, Canal+ Sport France, Prima Sport 2, beIN Sports Arabia 4",
+                    kickoffISO: "2026-11-26T01:45:00+08:00",
+                    durationMinutes: 120
+                  },
+                  {
+                    time: "04:00",
+                    teams: "Atlético Madrid vs Viking",
+                    channel: "ESPN 5 Norte, beIN Sports Arabia 6",
+                    kickoffISO: "2026-11-26T04:00:00+08:00",
+                    durationMinutes: 120
+                  },
+                  {
+                    time: "04:00",
+                    teams: "Club Brugge vs Liverpool",
+                    channel: "Canal+ Sport France, Prima Sport 3, beIN Sports Arabia 3, 5Max",
+                    kickoffISO: "2026-11-26T04:00:00+08:00",
+                    durationMinutes: 120
+                  },
+                  {
+                    time: "04:00",
+                    teams: "Internazionale vs Stuttgart",
+                    channel: "Prima Sport 1, beIN Sports Arabia 4",
+                    kickoffISO: "2026-11-26T04:00:00+08:00",
+                    durationMinutes: 120
+                  },
+                  {
+                    time: "04:00",
+                    teams: "Lille vs Bayern München",
+                    channel: "Canal+ Foot France, Prima Sport 5, beIN Sports Arabia 5",
+                    kickoffISO: "2026-11-26T04:00:00+08:00",
+                    durationMinutes: 120
+                  },
+                  {
+                    time: "04:00",
+                    teams: "PSG vs Roma",
+                    channel: "ESPN Norte, Prima Sport 2, beIN Sports Arabia 1, 5Sport, Shabake 3",
+                    kickoffISO: "2026-11-26T04:00:00+08:00",
+                    durationMinutes: 120
+                  },
+                  {
+                    time: "04:00",
+                    teams: "Shakhtar Donetsk vs Fenerbahçe",
+                    channel: "ESPN6 Norte, beIN Sports Arabia 8",
+                    kickoffISO: "2026-11-26T04:00:00+08:00",
+                    durationMinutes: 120
+                  },
+                  {
+                    time: "04:00",
+                    teams: "Sporting CP vs Manchester United",
+                    channel: "ESPN2 Norte, Prima Sport 4, beIN Sports Arabia 2, 5Stars, IRIB Varzesh",
+                    kickoffISO: "2026-11-26T04:00:00+08:00",
+                    durationMinutes: 120
+                  }
                 ]
               }
             ]
@@ -1181,16 +1363,104 @@
               {
                 date: "Friday, 27 November 2026",
                 matches: [
-                  { time: "01:45", teams: "Dinamo Zagreb vs Bayer Leverkusen", channel: "beIN Sports Arabia 6" },
-                  { time: "01:45", teams: "Olympiakos Piraeus vs Milan", channel: "beIN Sports Arabia 1" },
-                  { time: "01:45", teams: "Olympique Marseille vs Levski Sofia", channel: "beIN Sports Arabia 4, Canal+ Foot France" },
-                  { time: "01:45", teams: "Viktoria Plzeň vs Benfica", channel: "beIN Sports Arabia 8" },
-                  { time: "04:00", teams: "Ferencváros vs Celje", channel: "M4 Sports" },
-                  { time: "04:00", teams: "Juventus vs Omonia Nicosia", channel: "beIN Sports Arabia 2, IRIB Varzesh" },
-                  { time: "04:00", teams: "NEC vs Rennes", channel: "beIN Sports Arabia 6, Canal+ Foot France" },
-                  { time: "04:00", teams: "Olympique Lyonnais vs Lillestrøm", channel: "beIN Sports Arabia 5" },
-                  { time: "04:00", teams: "Sunderland vs Jagiellonia Białystok", channel: "beIN Sports Arabia 4" },
-                  { time: "04:00", teams: "Torreense vs Celtic", channel: "beIN Sports Arabia 9" }
+                  {
+                    time: "01:45",
+                    teams: "Celta de Vigo vs AFC Bournemouth",
+                    channel: "Prima Sport 2, beIN Sports Arabia 3",
+                    kickoffISO: "2026-11-27T01:45:00+08:00",
+                    durationMinutes: 120
+                  },
+                  {
+                    time: "01:45",
+                    teams: "Dinamo Zagreb vs Bayer Leverkusen",
+                    channel: "beIN Sports Arabia 6",
+                    kickoffISO: "2026-11-27T01:45:00+08:00",
+                    durationMinutes: 120
+                  },
+                  {
+                    time: "01:45",
+                    teams: "Olympiakos Piraeus vs Milan",
+                    channel: "Sport TV Belarus, Prima Sport 3, beIN Sports Arabia 1",
+                    kickoffISO: "2026-11-27T01:45:00+08:00",
+                    durationMinutes: 120
+                  },
+                  {
+                    time: "01:45",
+                    teams: "Olympique Marseille vs Levski Sofia",
+                    channel: "Canal+ Foot France, Prima Sport 5, beIN Sports Arabia 4",
+                    kickoffISO: "2026-11-27T01:45:00+08:00",
+                    durationMinutes: 120
+                  },
+                  {
+                    time: "01:45",
+                    teams: "Union Saint-Gilloise vs Lech Poznań",
+                    channel: "Prima Sport 4",
+                    kickoffISO: "2026-11-27T01:45:00+08:00",
+                    durationMinutes: 120
+                  },
+                  {
+                    time: "01:45",
+                    teams: "Viktoria Plzeň vs Benfica",
+                    channel: "beIN Sports Arabia 8",
+                    kickoffISO: "2026-11-27T01:45:00+08:00",
+                    durationMinutes: 120
+                  },
+                  {
+                    time: "04:00",
+                    teams: "Crystal Palace vs Real Sociedad",
+                    channel: "Prima Sport 4, beIN Sports Arabia 3",
+                    kickoffISO: "2026-11-27T04:00:00+08:00",
+                    durationMinutes: 120
+                  },
+                  {
+                    time: "04:00",
+                    teams: "Ferencváros vs Celje",
+                    channel: "Prima Sport 3",
+                    kickoffISO: "2026-11-27T04:00:00+08:00",
+                    durationMinutes: 120
+                  },
+                  {
+                    time: "04:00",
+                    teams: "Juventus vs Omonia Nicosia",
+                    channel: "Prima Sport 2, beIN Sports Arabia 2, IRIB Varzesh",
+                    kickoffISO: "2026-11-27T04:00:00+08:00",
+                    durationMinutes: 120
+                  },
+                  {
+                    time: "04:00",
+                    teams: "NEC vs Rennes",
+                    channel: "Canal+ Foot France, beIN Sports Arabia 6",
+                    kickoffISO: "2026-11-27T04:00:00+08:00",
+                    durationMinutes: 120
+                  },
+                  {
+                    time: "04:00",
+                    teams: "Olympique Lyonnais vs Lillestrøm",
+                    channel: "beIN Sports Arabia 5",
+                    kickoffISO: "2026-11-27T04:00:00+08:00",
+                    durationMinutes: 120
+                  },
+                  {
+                    time: "04:00",
+                    teams: "Sunderland vs Jagiellonia Białystok",
+                    channel: "beIN Sports Arabia 4",
+                    kickoffISO: "2026-11-27T04:00:00+08:00",
+                    durationMinutes: 120
+                  },
+                  {
+                    time: "04:00",
+                    teams: "Torreense vs Celtic",
+                    channel: "beIN Sports Arabia 9",
+                    kickoffISO: "2026-11-27T04:00:00+08:00",
+                    durationMinutes: 120
+                  },
+                  {
+                    time: "21:00",
+                    teams: "Hajduk Split vs Sint",
+                    channel: "beIN Sports Arabia 4",
+                    kickoffISO: "2026-11-27T21:00:00+08:00",
+                    durationMinutes: 120
+                  }
                 ]
               }
             ]
@@ -1201,16 +1471,60 @@
               {
                 date: "Thursday, 26 November 2026",
                 matches: [
-                  { time: "23:30", teams: "Kairat vs Mjällby", channel: "beIN Sports Arabia 2" }
+                  {
+                    time: "23:30",
+                    teams: "Kairat vs Mjällby",
+                    channel: "Sport TV Belarus, Prima Sport 2, beIN Sports Arabia 2",
+                    kickoffISO: "2026-11-26T23:30:00+08:00",
+                    durationMinutes: 120
+                  }
                 ]
               },
               {
                 date: "Friday, 27 November 2026",
                 matches: [
-                  { time: "01:45", teams: "Ajax vs Thun", channel: "beIN Sports Arabia 9" },
-                  { time: "01:45", teams: "Brighton & Hove Albion vs CSU Craiova", channel: "beIN Sports Arabia 2" },
-                  { time: "01:45", teams: "Hearts vs Monaco", channel: "beIN Sports Arabia 5, Canal+ Sport France" },
-                  { time: "04:00", teams: "CSKA Sofia vs Trabzonspor", channel: "beIN Sports Arabia 1" }
+                  {
+                    time: "01:45",
+                    teams: "Ajax vs Thun",
+                    channel: "beIN Sports Arabia 9",
+                    kickoffISO: "2026-11-27T01:45:00+08:00",
+                    durationMinutes: 120
+                  },
+                  {
+                    time: "01:45",
+                    teams: "Brighton & Hove Albion vs CSU Craiova",
+                    channel: "Prima Sport 1, beIN Sports Arabia 2",
+                    kickoffISO: "2026-11-27T01:45:00+08:00",
+                    durationMinutes: 120
+                  },
+                  {
+                    time: "01:45",
+                    teams: "Hearts vs Monaco",
+                    channel: "Canal+ Sport France, beIN Sports Arabia 5",
+                    kickoffISO: "2026-11-27T01:45:00+08:00",
+                    durationMinutes: 120
+                  },
+                  {
+                    time: "01:45",
+                    teams: "Jablonec vs Lugano",
+                    channel: "Sport 1 Ukraine, Sport 1 Baltic",
+                    kickoffISO: "2026-11-27T01:45:00+08:00",
+                    durationMinutes: 120
+                  },
+                  {
+                    time: "04:00",
+                    teams: "Borac Banja Luka vs Atalanta",
+                    channel: "beIN Sports Arabia 8",
+                    kickoffISO: "2026-11-27T04:00:00+08:00",
+                    durationMinutes: 120
+                  },
+                  {
+                    time: "04:00",
+                    teams: "CSKA Sofia vs Trabzonspor",
+                    channel: "Sport TV Belarus, beIN Sports Arabia 1",
+                    kickoffISO: "2026-11-27T04:00:00+08:00",
+                    durationMinutes: 120
+                  }
                 ]
               }
             ]
@@ -1221,7 +1535,82 @@
               {
                 date: "Tuesday, 24 November 2026",
                 matches: [
-                  { time: "20:50", teams: "Arsenal FC vs Borussia Dortmund", channel: "beIN Sports Arabia 5" }
+                  {
+                    time: "20:50",
+                    teams: "Arsenal U19 vs Borussia Dortmund U19",
+                    channel: "beIN Sports Arabia 5",
+                    kickoffISO: "2026-11-24T20:50:00+08:00",
+                    durationMinutes: 120
+                  },
+                  {
+                    time: "21:00",
+                    teams: "Arsenal U19 vs Borussia Dortmund U19",
+                    channel: "UEFA.tv 24/7",
+                    kickoffISO: "2026-11-24T21:00:00+08:00",
+                    durationMinutes: 120
+                  },
+                  {
+                    time: "23:00",
+                    teams: "Feyenoord U19 vs Porto U19",
+                    channel: "UEFA.tv 24/7",
+                    kickoffISO: "2026-11-24T23:00:00+08:00",
+                    durationMinutes: 120
+                  },
+                  {
+                    time: "23:00",
+                    teams: "Real Madrid U19 vs PSV U19",
+                    channel: "Real Madrid TV, 5Stars",
+                    kickoffISO: "2026-11-24T23:00:00+08:00",
+                    durationMinutes: 120
+                  }
+                ]
+              },
+              {
+                date: "Wednesday, 25 November 2026",
+                matches: [
+                  {
+                    time: "21:00",
+                    teams: "Sporting CP U19 vs Manchester United U19",
+                    channel: "UEFA.tv 24/7",
+                    kickoffISO: "2026-11-25T21:00:00+08:00",
+                    durationMinutes: 120
+                  },
+                  {
+                    time: "23:00",
+                    teams: "PSG U19 vs AS Roma U19",
+                    channel: "UEFA.tv 24/7, Prima Sport 2",
+                    kickoffISO: "2026-11-25T23:00:00+08:00",
+                    durationMinutes: 120
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            name: "UEFA Nations League",
+            dates: [
+              {
+                date: "Friday, 26 March 2027",
+                matches: [
+                  {
+                    time: "03:45",
+                    teams: "Spain vs France",
+                    channel: "TVE La 1",
+                    kickoffISO: "2027-03-26T03:45:00+08:00",
+                    durationMinutes: 120
+                  }
+                ]
+              },
+              {
+                date: "Monday, 29 March 2027",
+                matches: [
+                  {
+                    time: "02:45",
+                    teams: "France vs Spain",
+                    channel: "TVE La 1",
+                    kickoffISO: "2027-03-29T02:45:00+08:00",
+                    durationMinutes: 120
+                  }
                 ]
               }
             ]
@@ -1230,28 +1619,67 @@
       },
       xtra: {
         title: "FOOTBALL XTRA — FULL SCHEDULE",
-        subtitle: "Complete match listings & channels across all 33 leagues in Football XTRA.",
+        subtitle: "Complete match listings, live countdowns & exciting matches.",
         url: "https://football-xtra.vercel.app/",
         leagues: [
           {
             name: "Bundesliga",
             dates: [
               {
-                date: "Sunday, 22 November 2026",
-                matches: [
-                  { time: "22:30", teams: "Augsburg vs Mainz 05", channel: "beIN Sports MAX 4 France" }
-                ]
-              },
-              {
-                date: "Monday, 23 November 2026",
-                matches: [
-                  { time: "00:30", teams: "Werder Bremen vs Hamburger SV", channel: "Setanta Sports 2 Ukraine" }
-                ]
-              },
-              {
                 date: "Saturday, 28 November 2026",
                 matches: [
-                  { time: "03:30", teams: "Werder Bremen vs Borussia M’gladbach", channel: "beIN Sports MAX 4 France" }
+                  {
+                    time: "03:30",
+                    teams: "Werder Bremen vs Borussia M'gladbach",
+                    channel: "beIN Sports MAX 4 France, Sport TV Belarus",
+                    kickoffISO: "2026-11-28T03:30:00+08:00",
+                    durationMinutes: 120
+                  },
+                  {
+                    time: "22:30",
+                    teams: "Hamburger SV vs Bayern München",
+                    channel: "Telemundo, beIN Sports MAX 4 France, Sport TV Belarus",
+                    kickoffISO: "2026-11-28T22:30:00+08:00",
+                    durationMinutes: 120
+                  },
+                  {
+                    time: "22:30",
+                    teams: "Mainz 05 vs Union Berlin",
+                    channel: "beIN Sports MAX 5 France",
+                    kickoffISO: "2026-11-28T22:30:00+08:00",
+                    durationMinutes: 120
+                  }
+                ]
+              },
+              {
+                date: "Sunday, 29 November 2026",
+                matches: [
+                  {
+                    time: "22:30",
+                    teams: "Freiburg vs RB Leipzig",
+                    channel: "Telemundo, Sport TV Belarus",
+                    kickoffISO: "2026-11-29T22:30:00+08:00",
+                    durationMinutes: 120
+                  }
+                ]
+              },
+              {
+                date: "Monday, 30 November 2026",
+                matches: [
+                  {
+                    time: "00:30",
+                    teams: "Hoffenheim vs Augsburg",
+                    channel: "beIN Sports MAX 5 France",
+                    kickoffISO: "2026-11-30T00:30:00+08:00",
+                    durationMinutes: 120
+                  },
+                  {
+                    time: "02:30",
+                    teams: "Borussia Dortmund vs Bayer Leverkusen",
+                    channel: "beIN Sports 2 France, Sport TV Belarus",
+                    kickoffISO: "2026-11-30T02:30:00+08:00",
+                    durationMinutes: 120
+                  }
                 ]
               }
             ]
@@ -1260,16 +1688,34 @@
             name: "Bundesliga 2",
             dates: [
               {
-                date: "Sunday, 22 November 2026",
+                date: "Saturday, 28 November 2026",
                 matches: [
-                  { time: "20:30", teams: "Energie Cottbus vs Hertha BSC", channel: "beIN Sports MAX 5 France" }
+                  {
+                    time: "01:30",
+                    teams: "Heidenheim vs Nürnberg",
+                    channel: "beIN Sports MAX 5 France",
+                    kickoffISO: "2026-11-28T01:30:00+08:00",
+                    durationMinutes: 120
+                  },
+                  {
+                    time: "20:00",
+                    teams: "Hertha BSC vs Karlsruher SC",
+                    channel: "beIN Sports MAX 4 France",
+                    kickoffISO: "2026-11-28T20:00:00+08:00",
+                    durationMinutes: 120
+                  }
                 ]
               },
               {
-                date: "Saturday, 28 November 2026",
+                date: "Sunday, 29 November 2026",
                 matches: [
-                  { time: "01:30", teams: "Heidenheim vs Nürnberg", channel: "beIN Sports MAX 5 France" },
-                  { time: "20:00", teams: "Hertha BSC vs Karlsruher SC", channel: "beIN Sports MAX 4 France" }
+                  {
+                    time: "20:30",
+                    teams: "Eintracht Braunschweig vs Wolfsburg",
+                    channel: "beIN Sports MAX 5 France",
+                    kickoffISO: "2026-11-29T20:30:00+08:00",
+                    durationMinutes: 120
+                  }
                 ]
               }
             ]
@@ -1278,35 +1724,48 @@
             name: "Serie A",
             dates: [
               {
-                date: "Sunday, 22 November 2026",
+                date: "Sunday, 29 November 2026",
                 matches: [
-                  { time: "19:30", teams: "Juventus vs Venezia", channel: "SPOTV Prime 2 Korea" },
-                  { time: "22:00", teams: "Bologna vs Udinese", channel: "SPOTV Prime Korea" },
-                  { time: "22:00", teams: "Sassuolo vs Genoa", channel: "SPOTV Prime 2 Korea" }
+                  {
+                    time: "01:00",
+                    teams: "Torino vs Lazio",
+                    channel: "Sport TV Belarus",
+                    kickoffISO: "2026-11-29T01:00:00+08:00",
+                    durationMinutes: 120
+                  },
+                  {
+                    time: "03:45",
+                    teams: "Internazionale vs Genoa",
+                    channel: "Telemundo, Sport TV Belarus",
+                    kickoffISO: "2026-11-29T03:45:00+08:00",
+                    durationMinutes: 120
+                  },
+                  {
+                    time: "19:30",
+                    teams: "Udinese vs Fiorentina",
+                    channel: "Sport TV Belarus",
+                    kickoffISO: "2026-11-29T19:30:00+08:00",
+                    durationMinutes: 120
+                  }
                 ]
               },
               {
-                date: "Monday, 23 November 2026",
+                date: "Monday, 30 November 2026",
                 matches: [
-                  { time: "01:00", teams: "Milan vs Frosinone", channel: "SPOTV Prime Korea" },
-                  { time: "03:45", teams: "Atalanta vs Internazionale", channel: "Telemundo, Shabake 3, SPOTV Prime Korea, ESPN Brazil" }
-                ]
-              },
-              {
-                date: "Tuesday, 24 November 2026",
-                matches: [
-                  { time: "03:45", teams: "Monza vs Fiorentina", channel: "SPOTV Prime Korea" }
-                ]
-              }
-            ]
-          },
-          {
-            name: "Serie A (Women)",
-            dates: [
-              {
-                date: "Sunday, 22 November 2026",
-                matches: [
-                  { time: "22:00", teams: "Fiorentina vs Como 1907", channel: "RAI 2" }
+                  {
+                    time: "01:00",
+                    teams: "Roma vs Monza",
+                    channel: "Sport TV Belarus",
+                    kickoffISO: "2026-11-30T01:00:00+08:00",
+                    durationMinutes: 120
+                  },
+                  {
+                    time: "03:45",
+                    teams: "Como vs Juventus",
+                    channel: "Telemundo, Sport TV Belarus",
+                    kickoffISO: "2026-11-30T03:45:00+08:00",
+                    durationMinutes: 120
+                  }
                 ]
               }
             ]
@@ -1315,33 +1774,93 @@
             name: "Ligue 1",
             dates: [
               {
-                date: "Sunday, 22 November 2026",
-                matches: [
-                  { time: "22:00", teams: "Paris vs Angers SCO", channel: "beIN Sports Arabia 4" }
-                ]
-              },
-              {
-                date: "Monday, 23 November 2026",
-                matches: [
-                  { time: "00:15", teams: "Lorient vs Rennes", channel: "beIN Sports Arabia 4" },
-                  { time: "03:45", teams: "Olympique Marseille vs Le Mans", channel: "beIN Sports Arabia 2" }
-                ]
-              },
-              {
                 date: "Saturday, 28 November 2026",
                 matches: [
-                  { time: "03:45", teams: "Brest vs Paris", channel: "beIN Sports Arabia 2" }
+                  {
+                    time: "03:45",
+                    teams: "Brest vs Paris",
+                    channel: "beIN SPORTS USA, beIN Sports Arabia 2, 5Plus",
+                    kickoffISO: "2026-11-28T03:45:00+08:00",
+                    durationMinutes: 120
+                  }
                 ]
-              }
-            ]
-          },
-          {
-            name: "Ligue 2",
-            dates: [
+              },
               {
-                date: "Tuesday, 24 November 2026",
+                date: "Sunday, 29 November 2026",
                 matches: [
-                  { time: "03:45", teams: "Sochaux vs Dunkerque", channel: "beIN Sports 2 France" }
+                  {
+                    time: "00:15",
+                    teams: "Angers SCO vs Lens",
+                    channel: "beIN SPORTS USA, 5Max",
+                    kickoffISO: "2026-11-29T00:15:00+08:00",
+                    durationMinutes: 120
+                  },
+                  {
+                    time: "03:45",
+                    teams: "Le Havre vs Strasbourg",
+                    channel: "beIN Sports Arabia 9",
+                    kickoffISO: "2026-11-29T03:45:00+08:00",
+                    durationMinutes: 120
+                  },
+                  {
+                    time: "03:45",
+                    teams: "Le Mans vs Lille",
+                    channel: "beIN SPORTS XTRA en Español, beIN Sports Arabia 5",
+                    kickoffISO: "2026-11-29T03:45:00+08:00",
+                    durationMinutes: 120
+                  },
+                  {
+                    time: "03:45",
+                    teams: "Nice vs Troyes",
+                    channel: "beIN SPORTS XTRA, beIN Sports Arabia 7",
+                    kickoffISO: "2026-11-29T03:45:00+08:00",
+                    durationMinutes: 120
+                  },
+                  {
+                    time: "03:45",
+                    teams: "PSG vs Lorient",
+                    channel: "5Plus",
+                    kickoffISO: "2026-11-29T03:45:00+08:00",
+                    durationMinutes: 120
+                  },
+                  {
+                    time: "22:00",
+                    teams: "Auxerre vs Olympique Marseille",
+                    channel: "beIN SPORTS USA, CCTV-5 Sports, beIN Sports Arabia 9",
+                    kickoffISO: "2026-11-29T22:00:00+08:00",
+                    durationMinutes: 120
+                  }
+                ]
+              },
+              {
+                date: "Monday, 30 November 2026",
+                matches: [
+                  {
+                    time: "00:15",
+                    teams: "Toulouse vs Rennes",
+                    channel: "beIN SPORTS USA, beIN Sports Arabia 4",
+                    kickoffISO: "2026-11-30T00:15:00+08:00",
+                    durationMinutes: 120
+                  },
+                  {
+                    time: "03:45",
+                    teams: "Olympique Lyonnais vs Monaco",
+                    channel: "beIN SPORTS USA",
+                    kickoffISO: "2026-11-30T03:45:00+08:00",
+                    durationMinutes: 120
+                  }
+                ]
+              },
+              {
+                date: "Saturday, 5 December 2026",
+                matches: [
+                  {
+                    time: "03:45",
+                    teams: "Toulouse vs PSG",
+                    channel: "beIN SPORTS USA",
+                    kickoffISO: "2026-12-05T03:45:00+08:00",
+                    durationMinutes: 120
+                  }
                 ]
               }
             ]
@@ -1350,38 +1869,91 @@
             name: "Super Lig",
             dates: [
               {
-                date: "Sunday, 22 November 2026",
-                matches: [
-                  { time: "21:00", teams: "Konyaspor vs Beşiktaş", channel: "beIN Sports Arabia 2, beIN Sports 2 France" }
-                ]
-              },
-              {
-                date: "Monday, 23 November 2026",
-                matches: [
-                  { time: "00:00", teams: "Trabzonspor vs Eyüpspor", channel: "beIN Sports Arabia 3, beIN Sports MAX 5 France, ESPN4 Brazil" }
-                ]
-              },
-              {
                 date: "Saturday, 28 November 2026",
                 matches: [
-                  { time: "01:00", teams: "Alanyaspor vs Konyaspor", channel: "beIN Sports MAX 4 France" }
-                ]
-              }
-            ]
-          },
-          {
-            name: "Segunda Division",
-            dates: [
-              {
-                date: "Monday, 23 November 2026",
-                matches: [
-                  { time: "01:30", teams: "Celta de Vigo II vs Real Valladolid", channel: "beIN Sports Arabia 5" }
+                  {
+                    time: "01:00",
+                    teams: "Alanyaspor vs Konyaspor",
+                    channel: "beIN Sports MAX 4 France, beIN Sports Arabia 2",
+                    kickoffISO: "2026-11-28T01:00:00+08:00",
+                    durationMinutes: 120
+                  },
+                  {
+                    time: "21:00",
+                    teams: "Samsunspor vs Gençlerbirliği",
+                    channel: "beIN Sports 1 Turkey",
+                    kickoffISO: "2026-11-28T21:00:00+08:00",
+                    durationMinutes: 120
+                  }
                 ]
               },
               {
-                date: "Tuesday, 24 November 2026",
+                date: "Sunday, 29 November 2026",
                 matches: [
-                  { time: "03:30", teams: "Ceuta vs Almería", channel: "beIN Sports Arabia 5" }
+                  {
+                    time: "00:00",
+                    teams: "Gaziantep FK vs Amed SK",
+                    channel: "beIN Sports 1 Turkey",
+                    kickoffISO: "2026-11-29T00:00:00+08:00",
+                    durationMinutes: 120
+                  },
+                  {
+                    time: "18:30",
+                    teams: "Çorum Belediyespor vs Kocaelispor",
+                    channel: "beIN Sports 1 Turkey",
+                    kickoffISO: "2026-11-29T18:30:00+08:00",
+                    durationMinutes: 120
+                  },
+                  {
+                    time: "21:00",
+                    teams: "Eyüpspor vs İstanbul Başakşehir",
+                    channel: "beIN Sports 1 Turkey",
+                    kickoffISO: "2026-11-29T21:00:00+08:00",
+                    durationMinutes: 120
+                  }
+                ]
+              },
+              {
+                date: "Monday, 30 November 2026",
+                matches: [
+                  {
+                    time: "00:00",
+                    teams: "Fenerbahçe vs BB Erzurumspor",
+                    channel: "beIN Sports 1 Turkey",
+                    kickoffISO: "2026-11-30T00:00:00+08:00",
+                    durationMinutes: 120
+                  }
+                ]
+              },
+              {
+                date: "Tuesday, 1 December 2026",
+                matches: [
+                  {
+                    time: "00:00",
+                    teams: "Göztepe vs Trabzonspor",
+                    channel: "beIN SPORTS USA, beIN Sports MAX 4 France",
+                    kickoffISO: "2026-12-01T00:00:00+08:00",
+                    durationMinutes: 120
+                  },
+                  {
+                    time: "02:00",
+                    teams: "Beşiktaş vs Galatasaray",
+                    channel: "beIN SPORTS USA, beIN Sports 2 France, beIN Sports 1 Turkey",
+                    kickoffISO: "2026-12-01T02:00:00+08:00",
+                    durationMinutes: 120
+                  }
+                ]
+              },
+              {
+                date: "Saturday, 5 December 2026",
+                matches: [
+                  {
+                    time: "01:00",
+                    teams: "Galatasaray vs Rizespor",
+                    channel: "beIN SPORTS USA",
+                    kickoffISO: "2026-12-05T01:00:00+08:00",
+                    durationMinutes: 120
+                  }
                 ]
               }
             ]
@@ -1390,323 +1962,252 @@
             name: "Ekstraklasa",
             dates: [
               {
-                date: "Sunday, 22 November 2026",
-                matches: [
-                  { time: "21:45", teams: "Katowice vs Lech Poznań", channel: "beIN SPORTS XTRA" }
-                ]
-              },
-              {
-                date: "Monday, 23 November 2026",
-                matches: [
-                  { time: "00:30", teams: "Wisła Płock vs Legia Warszawa", channel: "beIN SPORTS XTRA, beIN SPORTS XTRA en Español" }
-                ]
-              },
-              {
                 date: "Saturday, 28 November 2026",
                 matches: [
-                  { time: "03:30", teams: "Górnik Zabrze vs Wisła Płock", channel: "beIN SPORTS XTRA, beIN SPORTS XTRA en Español" }
-                ]
-              }
-            ]
-          },
-          {
-            name: "Taça de Portugal",
-            dates: [
-              {
-                date: "Monday, 23 November 2026",
-                matches: [
-                  { time: "04:45", teams: "Torreense vs Benfica", channel: "beIN SPORTS XTRA, beIN SPORTS XTRA en Español" }
-                ]
-              }
-            ]
-          },
-          {
-            name: "Eredivisie",
-            dates: [
-              {
-                date: "Sunday, 22 November 2026",
-                matches: [
-                  { time: "21:30", teams: "Ajax vs ADO Den Haag", channel: "ESPN3 Brazil" }
-                ]
-              }
-            ]
-          },
-          {
-            name: "EFL Championship",
-            dates: [
-              {
-                date: "Sunday, 22 November 2026",
-                matches: [
-                  { time: "20:00", teams: "Burnley vs Blackburn Rovers", channel: "beIN Sports Arabia 6, Setanta Sports 1 Ukraine, beIN Sports MAX 4 France, ESPN Brazil" }
-                ]
-              },
-              {
-                date: "Wednesday, 25 November 2026",
-                matches: [
-                  { time: "04:00", teams: "Wolverhampton Wanderers vs Derby County", channel: "beIN Sports MAX 5 France, ESPN Brazil" }
-                ]
-              },
-              {
-                date: "Thursday, 26 November 2026",
-                matches: [
-                  { time: "04:00", teams: "Stoke City vs Millwall", channel: "beIN Sports MAX 4 France, ESPN4 Brazil" }
-                ]
-              }
-            ]
-          },
-          {
-            name: "NB1",
-            dates: [
-              {
-                date: "Sunday, 22 November 2026",
-                matches: [
-                  { time: "20:30", teams: "Zalaegerszegi TE vs Vasas", channel: "M4 Sports" },
-                  { time: "23:00", teams: "Nyíregyháza Spartacus vs Debrecen", channel: "M4 Sports" }
-                ]
-              },
-              {
-                date: "Monday, 23 November 2026",
-                matches: [
-                  { time: "01:30", teams: "Honvéd vs Paksi SE", channel: "M4 Sports" }
-                ]
-              },
-              {
-                date: "Saturday, 28 November 2026",
-                matches: [
-                  { time: "02:30", teams: "Győri ETO vs Debrecen", channel: "M4 Sports" },
-                  { time: "20:30", teams: "Vasas vs Honvéd", channel: "M4 Sports" },
-                  { time: "23:45", teams: "MTK vs Újpest", channel: "M4 Sports" }
+                  {
+                    time: "01:00",
+                    teams: "Raków Częstochowa vs Piast Gliwice",
+                    channel: "beIN SPORTS USA",
+                    kickoffISO: "2026-11-28T01:00:00+08:00",
+                    durationMinutes: 120
+                  },
+                  {
+                    time: "03:30",
+                    teams: "Górnik Zabrze vs Wisła Płock",
+                    channel: "beIN SPORTS XTRA, beIN SPORTS XTRA en Español, Sport 2 Ukraine",
+                    kickoffISO: "2026-11-28T03:30:00+08:00",
+                    durationMinutes: 120
+                  }
                 ]
               },
               {
                 date: "Sunday, 29 November 2026",
                 matches: [
-                  { time: "02:15", teams: "Várda SE vs Nyíregyháza Spartacus", channel: "M4 Sports" }
+                  {
+                    time: "03:15",
+                    teams: "Wisła Kraków vs Motor Lublin",
+                    channel: "Sport 2 Ukraine",
+                    kickoffISO: "2026-11-29T03:15:00+08:00",
+                    durationMinutes: 120
+                  },
+                  {
+                    time: "21:45",
+                    teams: "Lech Poznań vs Pogoń Szczecin",
+                    channel: "beIN SPORTS XTRA, beIN SPORTS XTRA en Español, Sport 2 Ukraine",
+                    kickoffISO: "2026-11-29T21:45:00+08:00",
+                    durationMinutes: 120
+                  }
+                ]
+              },
+              {
+                date: "Monday, 30 November 2026",
+                matches: [
+                  {
+                    time: "00:30",
+                    teams: "Legia Warszawa vs Wieczysta Kraków",
+                    channel: "beIN SPORTS XTRA",
+                    kickoffISO: "2026-11-30T00:30:00+08:00",
+                    durationMinutes: 120
+                  }
+                ]
+              },
+              {
+                date: "Tuesday, 1 December 2026",
+                matches: [
+                  {
+                    time: "02:00",
+                    teams: "Korona Kielce vs Cracovia Kraków",
+                    channel: "beIN SPORTS XTRA",
+                    kickoffISO: "2026-12-01T02:00:00+08:00",
+                    durationMinutes: 120
+                  }
                 ]
               }
             ]
           },
           {
-            name: "First League",
+            name: "Primeira Liga",
             dates: [
               {
-                date: "Sunday, 22 November 2026",
+                date: "Monday, 30 November 2026",
                 matches: [
-                  { time: "18:00", teams: "Volna vs Gomel", channel: "Belarus 5" }
+                  {
+                    time: "04:30",
+                    teams: "Porto vs Sporting CP",
+                    channel: "beIN Sports 2 France",
+                    kickoffISO: "2026-11-30T04:30:00+08:00",
+                    durationMinutes: 120
+                  }
+                ]
+              },
+              {
+                date: "Tuesday, 1 December 2026",
+                matches: [
+                  {
+                    time: "04:15",
+                    teams: "Benfica vs Famalicão",
+                    channel: "beIN SPORTS USA, beIN Sports 2 France",
+                    kickoffISO: "2026-12-01T04:15:00+08:00",
+                    durationMinutes: 120
+                  },
+                  {
+                    time: "04:15",
+                    teams: "Casa Pia vs Sporting Braga",
+                    channel: "beIN Sports MAX 4 France",
+                    kickoffISO: "2026-12-01T04:15:00+08:00",
+                    durationMinutes: 120
+                  }
                 ]
               }
             ]
           },
           {
-            name: "Uzbekistan Super League",
+            name: "Bundesliga (Austria)",
             dates: [
               {
-                date: "Sunday, 22 November 2026",
+                date: "Sunday, 29 November 2026",
                 matches: [
-                  { time: "19:00", teams: "Dinamo Samarqand vs Bunyodkor", channel: "Futbol TV" }
+                  {
+                    time: "02:30",
+                    teams: "Austria Lustenau vs Rapid Wien",
+                    channel: "5Max",
+                    kickoffISO: "2026-11-29T02:30:00+08:00",
+                    durationMinutes: 120
+                  }
                 ]
               }
             ]
           },
           {
-            name: "Persian Gulf Pro League",
+            name: "Ligat Ha'Al",
+            dates: [
+              {
+                date: "Saturday, 28 November 2026",
+                matches: [
+                  {
+                    time: "23:30",
+                    teams: "Hapoel Ramat Gan vs Ironi Kiryat Shmona",
+                    channel: "5Live",
+                    kickoffISO: "2026-11-28T23:30:00+08:00",
+                    durationMinutes: 120
+                  }
+                ]
+              },
+              {
+                date: "Sunday, 29 November 2026",
+                matches: [
+                  {
+                    time: "00:00",
+                    teams: "Hapoel Haifa vs Ironi Tiberias",
+                    channel: "5Stars",
+                    kickoffISO: "2026-11-29T00:00:00+08:00",
+                    durationMinutes: 120
+                  },
+                  {
+                    time: "02:15",
+                    teams: "Beitar Jerusalem vs Hapoel Katamon",
+                    channel: "5Sport",
+                    kickoffISO: "2026-11-29T02:15:00+08:00",
+                    durationMinutes: 120
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            name: "Liga Leumit",
             dates: [
               {
                 date: "Friday, 27 November 2026",
                 matches: [
-                  { time: "20:45", teams: "Aluminium Arak vs Persepolis", channel: "Shabake 3" },
-                  { time: "21:00", teams: "Esteghlal Khuzestan vs Malavan", channel: "IRIB Baran" }
-                ]
-              },
-              {
-                date: "Saturday, 28 November 2026",
-                matches: [
-                  { time: "19:45", teams: "Tractor Sazi vs Zob Ahan", channel: "IRIB Varzesh" },
-                  { time: "20:45", teams: "Esteghlal vs Sanat Naft", channel: "Shabake 3" }
-                ]
-              },
-              {
-                date: "Wednesday, 2 December 2026",
-                matches: [
-                  { time: "21:00", teams: "Foolad vs Tractor Sazi", channel: "IRIB Varzesh" }
-                ]
-              },
-              {
-                date: "Thursday, 3 December 2026",
-                matches: [
-                  { time: "20:45", teams: "Zob Ahan vs Esteghlal", channel: "Shabake 3" }
-                ]
-              },
-              {
-                date: "Friday, 4 December 2026",
-                matches: [
-                  { time: "20:45", teams: "Persepolis vs Sepahan", channel: "Shabake 3" }
-                ]
-              },
-              {
-                date: "Saturday, 5 December 2026",
-                matches: [
-                  { time: "20:45", teams: "Malavan vs Shams Azar Qazvin", channel: "IRIB Baran" }
-                ]
-              },
-              {
-                date: "Saturday, 12 December 2026",
-                matches: [
-                  { time: "20:45", teams: "Esteghlal vs Shams Azar Qazvin", channel: "Shabake 3" },
-                  { time: "21:00", teams: "Fajr Sepasi vs Tractor Sazi", channel: "IRIB Varzesh" }
+                  {
+                    time: "21:00",
+                    teams: "Hapoel Acre vs Maccabi Herzliya",
+                    channel: "5Live",
+                    kickoffISO: "2026-11-27T21:00:00+08:00",
+                    durationMinutes: 120
+                  },
+                  {
+                    time: "21:00",
+                    teams: "Hapoel Kfar Shalem vs Hapoel Kfar Saba",
+                    channel: "5Stars",
+                    kickoffISO: "2026-11-27T21:00:00+08:00",
+                    durationMinutes: 120
+                  }
                 ]
               }
             ]
           },
           {
-            name: "AFC Champions League Elite",
+            name: "Russian Cup",
             dates: [
-              {
-                date: "Monday, 23 November 2026",
-                matches: [
-                  { time: "21:45", teams: "Neftchi vs Al Hilal", channel: "beIN Sports Arabia 1, ESPN4 Brazil" }
-                ]
-              },
               {
                 date: "Tuesday, 24 November 2026",
                 matches: [
-                  { time: "00:00", teams: "Al Ain vs Esteghlal", channel: "beIN Sports Arabia 2, Shabake 3" },
-                  { time: "00:00", teams: "Al Shamal vs Al-Ahli", channel: "beIN Sports Arabia 1" },
-                  { time: "00:00", teams: "Tractor Sazi vs Al Wasl", channel: "beIN Sports Arabia 3, IRIB Varzesh" },
-                  { time: "02:15", teams: "Al Ittihad vs Pakhtakor", channel: "beIN Sports Arabia 3" },
-                  { time: "02:15", teams: "Al Quwa Al Jawiya vs Al Gharafa", channel: "beIN Sports Arabia 1" }
+                  {
+                    time: "22:00",
+                    teams: "Akron vs CSKA Moskva",
+                    channel: "Sport TV Belarus",
+                    kickoffISO: "2026-11-24T22:00:00+08:00",
+                    durationMinutes: 120
+                  }
                 ]
               },
               {
                 date: "Wednesday, 25 November 2026",
                 matches: [
-                  { time: "02:15", teams: "Al Nassr vs Al Sadd", channel: "ESPN4 Brazil" }
-                ]
-              }
-            ]
-          },
-          {
-            name: "AFC Champions League Two",
-            dates: [
-              {
-                date: "Thursday, 26 November 2026",
-                matches: [
-                  { time: "00:00", teams: "Al Jazira vs Gol Gohar", channel: "IRIB Varzesh" }
-                ]
-              },
-              {
-                date: "Wednesday, 9 December 2026",
-                matches: [
-                  { time: "21:45", teams: "Gol Gohar vs Muharraq", channel: "IRIB Varzesh" }
-                ]
-              }
-            ]
-          },
-          {
-            name: "Jordan Cup",
-            dates: [
-              {
-                date: "Sunday, 22 November 2026",
-                matches: [
-                  { time: "23:00", teams: "Shabab Al Ordon vs Ittihad Al Ramtha", channel: "Jordan TV Sport" }
+                  {
+                    time: "00:30",
+                    teams: "Zenit vs Krylya Sovetov",
+                    channel: "Belarus 5",
+                    kickoffISO: "2026-11-25T00:30:00+08:00",
+                    durationMinutes: 120
+                  },
+                  {
+                    time: "23:00",
+                    teams: "Akhmat Grozny vs Krasnodar",
+                    channel: "Belarus 5",
+                    kickoffISO: "2026-11-25T23:00:00+08:00",
+                    durationMinutes: 120
+                  },
+                  {
+                    time: "23:00",
+                    teams: "Dynamo Makhachkala vs Baltika",
+                    channel: "Sport TV Belarus",
+                    kickoffISO: "2026-11-25T23:00:00+08:00",
+                    durationMinutes: 120
+                  }
                 ]
               },
               {
-                date: "Wednesday, 16 December 2026",
-                matches: [
-                  { time: "23:00", teams: "Al Hussein vs Doqarah", channel: "Jordan TV Sport" }
-                ]
-              }
-            ]
-          },
-          {
-            name: "Jordan League",
-            dates: [
-              {
                 date: "Thursday, 26 November 2026",
                 matches: [
-                  { time: "23:00", teams: "Al Buqa’a vs Al Jazeera", channel: "Jordan TV Sport" }
+                  {
+                    time: "01:30",
+                    teams: "Lokomotiv Moskva vs Rostov",
+                    channel: "Belarus 5",
+                    kickoffISO: "2026-11-26T01:30:00+08:00",
+                    durationMinutes: 120
+                  },
+                  {
+                    time: "22:00",
+                    teams: "Orenburg vs Spartak Moskva",
+                    channel: "Sport TV Belarus",
+                    kickoffISO: "2026-11-26T22:00:00+08:00",
+                    durationMinutes: 120
+                  }
                 ]
               },
               {
                 date: "Friday, 27 November 2026",
                 matches: [
-                  { time: "22:00", teams: "Shabab Al Ordon vs Al Salt", channel: "Jordan TV Sport" }
-                ]
-              },
-              {
-                date: "Saturday, 28 November 2026",
-                matches: [
-                  { time: "00:30", teams: "Al Wihdat vs Doqarah", channel: "Jordan TV Sport" },
-                  { time: "22:00", teams: "Al Arabi vs Al Faisaly", channel: "Jordan TV Sport" }
-                ]
-              },
-              {
-                date: "Sunday, 29 November 2026",
-                matches: [
-                  { time: "00:30", teams: "Al Ramtha vs Al Hussein", channel: "Jordan TV Sport" }
-                ]
-              },
-              {
-                date: "Wednesday, 2 December 2026",
-                matches: [
-                  { time: "23:00", teams: "Doqarah vs Al Buqa’a", channel: "Jordan TV Sport" }
-                ]
-              },
-              {
-                date: "Thursday, 3 December 2026",
-                matches: [
-                  { time: "21:00", teams: "Al Salt vs Al Arabi", channel: "Jordan TV Sport" }
-                ]
-              },
-              {
-                date: "Friday, 4 December 2026",
-                matches: [
-                  { time: "00:00", teams: "Al Jazeera vs Al Hussein", channel: "Jordan TV Sport" },
-                  { time: "21:00", teams: "Al Ramtha vs Shabab Al Ordon", channel: "Jordan TV Sport" }
-                ]
-              },
-              {
-                date: "Saturday, 5 December 2026",
-                matches: [
-                  { time: "00:00", teams: "Al Faisaly vs Al Wihdat", channel: "Jordan TV Sport" }
-                ]
-              },
-              {
-                date: "Friday, 11 December 2026",
-                matches: [
-                  { time: "21:00", teams: "Al Buqa’a vs Al Hussein", channel: "Jordan TV Sport" }
-                ]
-              },
-              {
-                date: "Saturday, 12 December 2026",
-                matches: [
-                  { time: "00:00", teams: "Al Wihdat vs Al Salt", channel: "Jordan TV Sport" },
-                  { time: "21:00", teams: "Al Arabi vs Al Ramtha", channel: "Jordan TV Sport" }
-                ]
-              },
-              {
-                date: "Sunday, 13 December 2026",
-                matches: [
-                  { time: "00:00", teams: "Shabab Al Ordon vs Al Jazeera", channel: "Jordan TV Sport" },
-                  { time: "23:00", teams: "Doqarah vs Al Faisaly", channel: "Jordan TV Sport" }
-                ]
-              }
-            ]
-          },
-          {
-            name: "Asian Cup Qualification",
-            dates: [
-              {
-                date: "Wednesday, 13 January 2027",
-                matches: [
-                  { time: "22:00", teams: "Jordan vs Bahrain", channel: "Bahrain Sport 1" }
-                ]
-              },
-              {
-                date: "Monday, 18 January 2027",
-                matches: [
-                  { time: "22:00", teams: "Uzbekistan vs Bahrain", channel: "Bahrain Sport 1" }
+                  {
+                    time: "00:30",
+                    teams: "Dinamo Moskva vs Fakel",
+                    channel: "Belarus 5",
+                    kickoffISO: "2026-11-27T00:30:00+08:00",
+                    durationMinutes: 120
+                  }
                 ]
               }
             ]
@@ -1715,59 +2216,112 @@
             name: "FIFA U-17 World Cup",
             dates: [
               {
-                date: "Sunday, 22 November 2026",
-                matches: [
-                  { time: "21:30", teams: "France U17 vs Saudi Arabia U17", channel: "L’Equipe" },
-                  { time: "23:30", teams: "Argentina U17 vs Mozambique U17", channel: "TUDN" }
-                ]
-              },
-              {
-                date: "Monday, 23 November 2026",
-                matches: [
-                  { time: "20:30", teams: "Spain U17 vs Fiji U17", channel: "TUDN" },
-                  { time: "23:00", teams: "Morocco U17 vs China PR U17", channel: "TUDN" }
-                ]
-              },
-              {
-                date: "Wednesday, 25 November 2026",
-                matches: [
-                  { time: "21:30", teams: "Uruguay U17 vs France U17", channel: "L’Equipe" }
-                ]
-              }
-            ]
-          },
-          {
-            name: "Major League Soccer",
-            dates: [
-              {
-                date: "Monday, 23 November 2026",
-                matches: [
-                  { time: "05:00", teams: "Nashville SC vs TBD", channel: "Fox Sports 1 USA" },
-                  { time: "07:30", teams: "Chicago Fire vs Charlotte", channel: "Fox Sports 1 USA" }
-                ]
-              },
-              {
                 date: "Tuesday, 24 November 2026",
                 matches: [
-                  { time: "09:00", teams: "St. Louis City vs Los Angeles FC", channel: "Fox Sports 1 USA" }
+                  {
+                    time: "20:30",
+                    teams: "Venezuela U17 vs Romania U17",
+                    channel: "CCTV-5 Sports",
+                    kickoffISO: "2026-11-24T20:30:00+08:00",
+                    durationMinutes: 120
+                  },
+                  {
+                    time: "21:30",
+                    teams: "Mexico U17 vs Cameroon U17",
+                    channel: "Fox Sports 2 USA",
+                    kickoffISO: "2026-11-24T21:30:00+08:00",
+                    durationMinutes: 120
+                  },
+                  {
+                    time: "23:00",
+                    teams: "Brazil U17 vs Tanzania U17",
+                    channel: "CCTV-5 Sports",
+                    kickoffISO: "2026-11-24T23:00:00+08:00",
+                    durationMinutes: 120
+                  },
+                  {
+                    time: "23:30",
+                    teams: "Honduras U17 vs Colombia U17",
+                    channel: "Fox Sports 2 USA",
+                    kickoffISO: "2026-11-24T23:30:00+08:00",
+                    durationMinutes: 120
+                  }
                 ]
               },
               {
                 date: "Wednesday, 25 November 2026",
                 matches: [
-                  { time: "11:00", teams: "SJ Earthquakes vs Houston Dynamo", channel: "Fox Sports 1 USA" }
+                  {
+                    time: "20:30",
+                    teams: "Ecuador U17 vs Korea Republic U17",
+                    channel: "CCTV-5 Sports",
+                    kickoffISO: "2026-11-25T20:30:00+08:00",
+                    durationMinutes: 120
+                  },
+                  {
+                    time: "21:30",
+                    teams: "Uruguay U17 vs France U17",
+                    channel: "Fox Sports 2 USA, L'Equipe",
+                    kickoffISO: "2026-11-25T21:30:00+08:00",
+                    durationMinutes: 120
+                  },
+                  {
+                    time: "23:30",
+                    teams: "Denmark U17 vs Argentina U17",
+                    channel: "Fox Sports 2 USA, CCTV-5 Sports",
+                    kickoffISO: "2026-11-25T23:30:00+08:00",
+                    durationMinutes: 120
+                  }
+                ]
+              },
+              {
+                date: "Thursday, 26 November 2026",
+                matches: [
+                  {
+                    time: "21:00",
+                    teams: "New Zealand U17 vs Belgium U17",
+                    channel: "Fox Sports 2 USA",
+                    kickoffISO: "2026-11-26T21:00:00+08:00",
+                    durationMinutes: 120
+                  },
+                  {
+                    time: "23:00",
+                    teams: "China PR U17 vs Fiji U17",
+                    channel: "CCTV-5 Sports",
+                    kickoffISO: "2026-11-26T23:00:00+08:00",
+                    durationMinutes: 120
+                  },
+                  {
+                    time: "23:00",
+                    teams: "Morocco U17 vs Spain U17",
+                    channel: "Fox Sports 2 USA",
+                    kickoffISO: "2026-11-26T23:00:00+08:00",
+                    durationMinutes: 120
+                  }
+                ]
+              },
+              {
+                date: "Friday, 27 November 2026",
+                matches: [
+                  {
+                    time: "22:00",
+                    teams: "Costa Rica U17 vs Brazil U17",
+                    channel: "Fox Sports 2 USA, CCTV-5 Sports",
+                    kickoffISO: "2026-11-27T22:00:00+08:00",
+                    durationMinutes: 120
+                  }
                 ]
               },
               {
                 date: "Saturday, 28 November 2026",
                 matches: [
-                  { time: "09:00", teams: "Columbus Crew vs Inter Miami", channel: "Fox Sports 1 USA" }
-                ]
-              },
-              {
-                date: "Sunday, 29 November 2026",
-                matches: [
-                  { time: "11:30", teams: "Portland Timbers vs Dallas", channel: "Fox Sports 1 USA" }
+                  {
+                    time: "00:00",
+                    teams: "Venezuela U17 vs Mexico U17",
+                    channel: "Fox Sports 2 USA",
+                    kickoffISO: "2026-11-28T00:00:00+08:00",
+                    durationMinutes: 120
+                  }
                 ]
               }
             ]
@@ -1776,15 +2330,32 @@
             name: "Liga MX",
             dates: [
               {
-                date: "Sunday, 22 November 2026",
+                date: "Sunday, 29 November 2026",
                 matches: [
-                  { time: "11:00", teams: "Tigres UANL vs América", channel: "Telemundo" }
+                  {
+                    time: "05:00",
+                    teams: "Guadalajara vs Pachuca",
+                    channel: "Telemundo",
+                    kickoffISO: "2026-11-29T05:00:00+08:00",
+                    durationMinutes: 120
+                  }
                 ]
-              },
+              }
+            ]
+          },
+          {
+            name: "Copa Libertadores",
+            dates: [
               {
-                date: "Monday, 23 November 2026",
+                date: "Sunday, 29 November 2026",
                 matches: [
-                  { time: "07:07", teams: "Guadalajara vs Cruz Azul", channel: "Telemundo" }
+                  {
+                    time: "04:00",
+                    teams: "Palmeiras vs Estudiantes",
+                    channel: "beIN SPORTS USA, beIN Sports Arabia 6",
+                    kickoffISO: "2026-11-29T04:00:00+08:00",
+                    durationMinutes: 120
+                  }
                 ]
               }
             ]
@@ -1795,7 +2366,58 @@
               {
                 date: "Saturday, 28 November 2026",
                 matches: [
-                  { time: "21:00", teams: "Young Africans vs MC Alger", channel: "beIN Sports Arabia 2" }
+                  {
+                    time: "21:00",
+                    teams: "Young Africans vs MC Alger",
+                    channel: "beIN SPORTS XTRA, beIN Sports Arabia 2, 5Stars",
+                    kickoffISO: "2026-11-28T21:00:00+08:00",
+                    durationMinutes: 120
+                  }
+                ]
+              },
+              {
+                date: "Sunday, 29 November 2026",
+                matches: [
+                  {
+                    time: "00:00",
+                    teams: "ES Tunis vs Wiliete",
+                    channel: "beIN Sports Arabia 4",
+                    kickoffISO: "2026-11-29T00:00:00+08:00",
+                    durationMinutes: 120
+                  },
+                  {
+                    time: "00:00",
+                    teams: "Pyramids FC vs Maghreb Fès",
+                    channel: "5Plus",
+                    kickoffISO: "2026-11-29T00:00:00+08:00",
+                    durationMinutes: 120
+                  },
+                  {
+                    time: "00:00",
+                    teams: "Zamalek vs Club Africain",
+                    channel: "beIN SPORTS XTRA, beIN SPORTS XTRA en Español, beIN Sports Arabia 2",
+                    kickoffISO: "2026-11-29T00:00:00+08:00",
+                    durationMinutes: 120
+                  },
+                  {
+                    time: "03:00",
+                    teams: "RSB Berkane vs Colombe",
+                    channel: "beIN Sports Arabia 4, 5Stars",
+                    kickoffISO: "2026-11-29T03:00:00+08:00",
+                    durationMinutes: 120
+                  }
+                ]
+              },
+              {
+                date: "Monday, 30 November 2026",
+                matches: [
+                  {
+                    time: "03:00",
+                    teams: "Al Hilal Omdurman vs Horoya",
+                    channel: "beIN Sports Arabia 5",
+                    kickoffISO: "2026-11-30T03:00:00+08:00",
+                    durationMinutes: 120
+                  }
                 ]
               }
             ]
@@ -1806,80 +2428,25 @@
               {
                 date: "Friday, 27 November 2026",
                 matches: [
-                  { time: "21:00", teams: "Azam vs Al Ahli Tripoli", channel: "beIN Sports Arabia 1" }
-                ]
-              }
-            ]
-          },
-          {
-            name: "K League 1",
-            dates: [
-              {
-                date: "Sunday, 22 November 2026",
-                matches: [
-                  { time: "13:00", teams: "Gwangju vs Bucheon 1995", channel: "JTBC Sports" }
+                  {
+                    time: "21:00",
+                    teams: "Azam vs Al Ahli Tripoli",
+                    channel: "beIN Sports Arabia 1",
+                    kickoffISO: "2026-11-27T21:00:00+08:00",
+                    durationMinutes: 120
+                  }
                 ]
               },
               {
-                date: "Saturday, 28 November 2026",
+                date: "Monday, 30 November 2026",
                 matches: [
-                  { time: "15:30", teams: "Pohang Steelers vs Gwangju", channel: "JTBC Sports" }
-                ]
-              },
-              {
-                date: "Sunday, 29 November 2026",
-                matches: [
-                  { time: "13:00", teams: "Ulsan vs Jeonbuk Motors", channel: "JTBC Sports" },
-                  { time: "15:30", teams: "Incheon United vs Gangwon", channel: "JTBC Sports" }
-                ]
-              }
-            ]
-          },
-          {
-            name: "I-League",
-            dates: [
-              {
-                date: "Monday, 23 November 2026",
-                matches: [
-                  { time: "21:00", teams: "Real Kashmir vs Dempo", channel: "DD Sports" }
-                ]
-              },
-              {
-                date: "Tuesday, 24 November 2026",
-                matches: [
-                  { time: "18:30", teams: "Samaleswari vs Bengaluru United", channel: "DD Sports" },
-                  { time: "21:00", teams: "Sreenidi Deccan vs Chanmari", channel: "DD Sports" }
-                ]
-              }
-            ]
-          },
-          {
-            name: "Primera División (Argentina)",
-            dates: [
-              {
-                date: "Monday, 23 November 2026",
-                matches: [
-                  { time: "03:00", teams: "Rosario Central vs Gimnasia Mendoza", channel: "ESPN Premium Argentina" },
-                  { time: "06:00", teams: "River Plate vs Lanús", channel: "ESPN Brazil" },
-                  { time: "09:00", teams: "Instituto vs Huracán", channel: "ESPN Premium Argentina" }
-                ]
-              },
-              {
-                date: "Thursday, 26 November 2026",
-                matches: [
-                  { time: "08:00", teams: "Boca Juniors vs Independiente Rivadavia", channel: "ESPN Premium Argentina" }
-                ]
-              }
-            ]
-          },
-          {
-            name: "Primera División (Costa Rica)",
-            dates: [
-              {
-                date: "Sunday, 29 November 2026",
-                matches: [
-                  { time: "09:00", teams: "San Carlos vs Alajuelense", channel: "FOX Costa Rica" },
-                  { time: "09:00", teams: "Sporting San José vs Puntarenas", channel: "FOX Costa Rica" }
+                  {
+                    time: "03:00",
+                    teams: "USM Alger vs Réal Bamako",
+                    channel: "beIN SPORTS XTRA, beIN Sports MAX 5 France",
+                    kickoffISO: "2026-11-30T03:00:00+08:00",
+                    durationMinutes: 120
+                  }
                 ]
               }
             ]
@@ -1888,85 +2455,354 @@
             name: "Serie B",
             dates: [
               {
-                date: "Monday, 23 November 2026",
+                date: "Thursday, 26 November 2026",
                 matches: [
-                  { time: "03:00", teams: "Criciúma vs Fortaleza", channel: "ESPN Brazil" },
-                  { time: "05:30", teams: "Atlético Goianiense vs Vila Nova", channel: "ESPN Brazil" }
-                ]
-              },
-              {
-                date: "Saturday, 28 November 2026",
-                matches: [
-                  { time: "07:00", teams: "Vila Nova vs Atlético Goianiense", channel: "ESPN Brazil" }
-                ]
-              },
-              {
-                date: "Sunday, 29 November 2026",
-                matches: [
-                  { time: "07:00", teams: "Fortaleza vs Criciúma", channel: "ESPN Brazil" }
+                  {
+                    time: "02:00",
+                    teams: "Cremonese vs Avellino",
+                    channel: "5Stars",
+                    kickoffISO: "2026-11-26T02:00:00+08:00",
+                    durationMinutes: 120
+                  }
                 ]
               }
             ]
           },
           {
-            name: "Primera A",
+            name: "DFB Pokal",
             dates: [
               {
-                date: "Wednesday, 25 November 2026",
+                date: "Thursday, 3 December 2026",
                 matches: [
-                  { time: "07:20", teams: "Millonarios vs Atlético Bucaramanga", channel: "Win+ Futbol" },
-                  { time: "09:30", teams: "América de Cali vs Deportivo Cali", channel: "Win+ Futbol" }
+                  {
+                    time: "01:00",
+                    teams: "Bayer Leverkusen vs RB Leipzig",
+                    channel: "ZDF",
+                    kickoffISO: "2026-12-03T01:00:00+08:00",
+                    durationMinutes: 120
+                  }
                 ]
-              },
-              {
-                date: "Thursday, 26 November 2026",
-                matches: [
-                  { time: "07:20", teams: "Santa Fe vs Once Caldas", channel: "Win+ Futbol" },
-                  { time: "09:30", teams: "Atlético Nacional vs Medellín", channel: "Win+ Futbol" }
-                ]
-              },
-              {
-                date: "Saturday, 28 November 2026",
-                matches: [
-                  { time: "07:35", teams: "Deportivo Cali vs Atlético Bucaramanga", channel: "Win+ Futbol" },
-                  { time: "09:40", teams: "Millonarios vs América de Cali", channel: "Win+ Futbol" }
-                ]
-              },
+              }
+            ]
+          },
+          {
+            name: "Super League",
+            dates: [
               {
                 date: "Sunday, 29 November 2026",
                 matches: [
-                  { time: "08:30", teams: "Santa Fe vs Atlético Nacional", channel: "Win+ Futbol" }
+                  {
+                    time: "21:00",
+                    teams: "Luzern vs Lugano",
+                    channel: "Sport 1 Ukraine, Sport 1 Baltic",
+                    kickoffISO: "2026-11-29T21:00:00+08:00",
+                    durationMinutes: 120
+                  },
+                  {
+                    time: "23:30",
+                    teams: "Sion vs Young Boys",
+                    channel: "Sport 1 Baltic",
+                    kickoffISO: "2026-11-29T23:30:00+08:00",
+                    durationMinutes: 120
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            name: "Super Liga",
+            dates: [
+              {
+                date: "Sunday, 29 November 2026",
+                matches: [
+                  {
+                    time: "23:00",
+                    teams: "København vs Midtjylland",
+                    channel: "Sport 1 Ukraine, Sport 1 Baltic",
+                    kickoffISO: "2026-11-29T23:00:00+08:00",
+                    durationMinutes: 120
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            name: "Eliteserien",
+            dates: [
+              {
+                date: "Sunday, 29 November 2026",
+                matches: [
+                  {
+                    time: "01:00",
+                    teams: "Rosenborg vs Molde",
+                    channel: "Sport 2 Ukraine",
+                    kickoffISO: "2026-11-29T01:00:00+08:00",
+                    durationMinutes: 120
+                  }
                 ]
               },
               {
                 date: "Monday, 30 November 2026",
                 matches: [
-                  { time: "07:30", teams: "Medellín vs Once Caldas", channel: "Win+ Futbol" }
-                ]
-              },
-              {
-                date: "Wednesday, 2 December 2026",
-                matches: [
-                  { time: "07:20", teams: "Atlético Bucaramanga vs Deportivo Cali", channel: "Win+ Futbol" },
-                  { time: "09:30", teams: "América de Cali vs Millonarios", channel: "Win+ Futbol" }
-                ]
-              },
-              {
-                date: "Thursday, 3 December 2026",
-                matches: [
-                  { time: "07:20", teams: "Once Caldas vs Medellín", channel: "Win+ Futbol" },
-                  { time: "09:30", teams: "Atlético Nacional vs Santa Fe", channel: "Win+ Futbol" }
+                  {
+                    time: "02:15",
+                    teams: "Viking vs Vålerenga",
+                    channel: "Sport 1 Ukraine, Sport 1 Baltic",
+                    kickoffISO: "2026-11-30T02:15:00+08:00",
+                    durationMinutes: 120
+                  }
                 ]
               }
             ]
           },
           {
-            name: "Primera B",
+            name: "Liga I",
             dates: [
               {
-                date: "Sunday, 22 November 2026",
+                date: "Friday, 27 November 2026",
                 matches: [
-                  { time: "23:00", teams: "San Marcos vs Magallanes", channel: "TNT Sports Chile" }
+                  {
+                    time: "23:30",
+                    teams: "Universitatea Cluj vs Sepsi",
+                    channel: "Prima Sport 1",
+                    kickoffISO: "2026-11-27T23:30:00+08:00",
+                    durationMinutes: 120
+                  }
+                ]
+              },
+              {
+                date: "Saturday, 28 November 2026",
+                matches: [
+                  {
+                    time: "02:30",
+                    teams: "Petrolul 52 vs SCM Argeşul Piteşti",
+                    channel: "Prima Sport 1",
+                    kickoffISO: "2026-11-28T02:30:00+08:00",
+                    durationMinutes: 120
+                  },
+                  {
+                    time: "20:30",
+                    teams: "Voluntari vs CFR Cluj",
+                    channel: "Prima Sport 1",
+                    kickoffISO: "2026-11-28T20:30:00+08:00",
+                    durationMinutes: 120
+                  },
+                  {
+                    time: "23:00",
+                    teams: "Corvinul Hunedoara vs Farul Constanța",
+                    channel: "Prima Sport 1",
+                    kickoffISO: "2026-11-28T23:00:00+08:00",
+                    durationMinutes: 120
+                  }
+                ]
+              },
+              {
+                date: "Sunday, 29 November 2026",
+                matches: [
+                  {
+                    time: "02:00",
+                    teams: "FCSB vs Csikszereda",
+                    channel: "Prima Sport 1",
+                    kickoffISO: "2026-11-29T02:00:00+08:00",
+                    durationMinutes: 120
+                  },
+                  {
+                    time: "21:00",
+                    teams: "Oţelul vs UTA Arad",
+                    channel: "Prima Sport 1",
+                    kickoffISO: "2026-11-29T21:00:00+08:00",
+                    durationMinutes: 120
+                  }
+                ]
+              },
+              {
+                date: "Monday, 30 November 2026",
+                matches: [
+                  {
+                    time: "02:00",
+                    teams: "Rapid Bucureşti vs Botoşani",
+                    channel: "Prima Sport 1",
+                    kickoffISO: "2026-11-30T02:00:00+08:00",
+                    durationMinutes: 120
+                  }
+                ]
+              },
+              {
+                date: "Tuesday, 1 December 2026",
+                matches: [
+                  {
+                    time: "02:00",
+                    teams: "CSU Craiova vs Dinamo Bucureşti",
+                    channel: "Prima Sport 1",
+                    kickoffISO: "2026-12-01T02:00:00+08:00",
+                    durationMinutes: 120
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            name: "Liga II",
+            dates: [
+              {
+                date: "Thursday, 26 November 2026",
+                matches: [
+                  {
+                    time: "22:45",
+                    teams: "Gloria Bistriţa vs Slatina",
+                    channel: "Prima Sport 1",
+                    kickoffISO: "2026-11-26T22:45:00+08:00",
+                    durationMinutes: 120
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            name: "EFL Championship",
+            dates: [
+              {
+                date: "Wednesday, 25 November 2026",
+                matches: [
+                  {
+                    time: "04:00",
+                    teams: "Wolverhampton Wanderers vs Derby County",
+                    channel: "beIN Sports MAX 5 France",
+                    kickoffISO: "2026-11-25T04:00:00+08:00",
+                    durationMinutes: 120
+                  }
+                ]
+              },
+              {
+                date: "Thursday, 26 November 2026",
+                matches: [
+                  {
+                    time: "04:00",
+                    teams: "Stoke City vs Millwall",
+                    channel: "beIN Sports MAX 4 France, Belarus 5",
+                    kickoffISO: "2026-11-26T04:00:00+08:00",
+                    durationMinutes: 120
+                  }
+                ]
+              },
+              {
+                date: "Saturday, 28 November 2026",
+                matches: [
+                  {
+                    time: "04:00",
+                    teams: "Southampton vs Middlesbrough",
+                    channel: "beIN Sports Arabia 4",
+                    kickoffISO: "2026-11-28T04:00:00+08:00",
+                    durationMinutes: 120
+                  },
+                  {
+                    time: "20:30",
+                    teams: "Preston North End vs Norwich City",
+                    channel: "beIN Sports Arabia 6",
+                    kickoffISO: "2026-11-28T20:30:00+08:00",
+                    durationMinutes: 120
+                  }
+                ]
+              },
+              {
+                date: "Sunday, 29 November 2026",
+                matches: [
+                  {
+                    time: "20:00",
+                    teams: "Swansea City vs Cardiff City",
+                    channel: "beIN Sports MAX 4 France",
+                    kickoffISO: "2026-11-29T20:00:00+08:00",
+                    durationMinutes: 120
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            name: "Major League Soccer",
+            dates: [
+              {
+                date: "Wednesday, 25 November 2026",
+                matches: [
+                  {
+                    time: "11:00",
+                    teams: "SJ Earthquakes vs Houston Dynamo",
+                    channel: "Fox Sports 1 USA",
+                    kickoffISO: "2026-11-25T11:00:00+08:00",
+                    durationMinutes: 120
+                  }
+                ]
+              },
+              {
+                date: "Saturday, 28 November 2026",
+                matches: [
+                  {
+                    time: "09:00",
+                    teams: "Columbus Crew vs Inter Miami",
+                    channel: "Fox Sports 1 USA",
+                    kickoffISO: "2026-11-28T09:00:00+08:00",
+                    durationMinutes: 120
+                  },
+                  {
+                    time: "11:00",
+                    teams: "Real Salt Lake vs Vancouver Whitecaps",
+                    channel: "Fox Sports 1 USA",
+                    kickoffISO: "2026-11-28T11:00:00+08:00",
+                    durationMinutes: 120
+                  }
+                ]
+              },
+              {
+                date: "Sunday, 29 November 2026",
+                matches: [
+                  {
+                    time: "11:30",
+                    teams: "Portland Timbers vs Dallas",
+                    channel: "Fox Sports 1 USA",
+                    kickoffISO: "2026-11-29T11:30:00+08:00",
+                    durationMinutes: 120
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            name: "Scottish Premiership",
+            dates: [
+              {
+                date: "Sunday, 29 November 2026",
+                matches: [
+                  {
+                    time: "01:45",
+                    teams: "Motherwell vs Hibernian",
+                    channel: "5Plus",
+                    kickoffISO: "2026-11-29T01:45:00+08:00",
+                    durationMinutes: 120
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            name: "FA Cup",
+            dates: [
+              {
+                date: "Sunday, 6 December 2026",
+                matches: [
+                  {
+                    time: "01:15",
+                    teams: "Dover Athletic vs Leicester City",
+                    channel: "BBC Two",
+                    kickoffISO: "2026-12-06T01:15:00+08:00",
+                    durationMinutes: 120
+                  },
+                  {
+                    time: "20:15",
+                    teams: "Salisbury City vs Blackpool",
+                    channel: "BBC Two",
+                    kickoffISO: "2026-12-06T20:15:00+08:00",
+                    durationMinutes: 120
+                  }
                 ]
               }
             ]
@@ -1976,11 +2812,13 @@
     };
 
     let activePlatformKey = null;
+    let activeFilterIdx = 'ALL';
 
     function openSchedulePage(platformKey) {
       const data = platformSchedules[platformKey];
       if (!data) return;
       activePlatformKey = platformKey;
+      activeFilterIdx = 'ALL';
 
       document.getElementById('schedule-view-title').innerHTML = `<i class="fa-solid fa-calendar-check" style="color: var(--neon-green);"></i> ${data.title}`;
       document.getElementById('schedule-view-subtitle').innerText = data.subtitle;
@@ -1995,6 +2833,7 @@
       filterBar.innerHTML = chipsHtml;
 
       renderScheduleContent(data, 'ALL');
+      updateSchedulePageTimers();
 
       // Switch View (In-Page View, Not Popup)
       document.getElementById('dashboard-main-view').style.display = 'none';
@@ -2005,9 +2844,11 @@
     function filterScheduleLeagues(selectedIdx, btnEl) {
       document.querySelectorAll('#schedule-filter-bar .filter-chip').forEach(c => c.classList.remove('active'));
       if (btnEl) btnEl.classList.add('active');
+      activeFilterIdx = selectedIdx;
       const data = platformSchedules[activePlatformKey];
       if (data) {
         renderScheduleContent(data, selectedIdx);
+        updateSchedulePageTimers();
       }
     }
 
@@ -2033,11 +2874,16 @@
 
           d.matches.forEach(m => {
             const isPostp = m.time.toLowerCase().includes('postp');
+            const kickoffAttr = m.kickoffISO ? `data-kickoff="${m.kickoffISO}"` : '';
+            const durationAttr = `data-duration="${m.durationMinutes || 120}"`;
             html += `
-              <div class="fixture-row">
-                <div class="fixture-top">
-                  <span class="fixture-time ${isPostp ? 'is-postp' : ''}">${m.time}</span>
-                  <span class="fixture-match">${m.teams}</span>
+              <div class="fixture-row schedule-auto-row" ${kickoffAttr} ${durationAttr}>
+                <div class="fixture-top" style="justify-content: space-between; width: 100%;">
+                  <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
+                    <span class="fixture-time ${isPostp ? 'is-postp' : ''}">${m.time}</span>
+                    <span class="fixture-match">${m.teams}</span>
+                  </div>
+                  ${m.kickoffISO ? `<span class="countdown-timer schedule-row-timer"><i class="fa-solid fa-hourglass-half"></i> Loading...</span>` : ''}
                 </div>
                 <div class="fixture-channel">
                   <i class="fa-solid fa-tv" style="color: var(--neon-cyan);"></i> ${m.channel}
@@ -2046,13 +2892,77 @@
             `;
           });
 
-          html += `</div>`;
+          html += `
+              <div class="fixture-row date-empty-msg" style="display: none; text-align: center; color: var(--text-sub); font-size: 0.8rem;">
+                Tiada match aktif pada tarikh ini (match yang sudah tamat telah disembunyikan automatik).
+              </div>
+            </div>`;
         });
 
         html += `</div>`;
       });
 
       container.innerHTML = html;
+    }
+
+    function updateSchedulePageTimers() {
+      const view = document.getElementById('schedule-page-view');
+      if (!view || view.style.display === 'none') return;
+
+      const now = Date.now();
+      document.querySelectorAll('#schedule-content-container .date-group').forEach(group => {
+        let visibleInGroup = 0;
+
+        group.querySelectorAll('.schedule-auto-row').forEach(row => {
+          const kickoffISO = row.getAttribute('data-kickoff');
+          const durationMins = parseInt(row.getAttribute('data-duration') || '120', 10);
+          const timerEl = row.querySelector('.schedule-row-timer');
+
+          if (!kickoffISO) {
+            row.style.display = 'flex';
+            visibleInGroup++;
+            return;
+          }
+
+          const startMs = new Date(kickoffISO).getTime();
+          const endMs = startMs + (durationMins * 60 * 1000);
+
+          // Jika masa sudah melepasi kickoff + tempoh (contoh 120 minit), auto display: none
+          if (now >= endMs) {
+            row.style.display = 'none';
+            return;
+          }
+
+          row.style.display = 'flex';
+          visibleInGroup++;
+
+          if (!timerEl) return;
+
+          if (now >= startMs) {
+            timerEl.classList.add('is-live');
+            timerEl.innerHTML = `<i class="fa-solid fa-satellite-dish"></i> 🔴 LIVE NOW`;
+          } else {
+            timerEl.classList.remove('is-live');
+            const distance = startMs - now;
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            let display = "";
+            if (days > 0) display += `${days}d `;
+            if (hours > 0 || days > 0) display += `${hours}h `;
+            display += `${minutes}m ${seconds}s`;
+
+            timerEl.innerHTML = `<i class="fa-solid fa-hourglass-half"></i> Starts in ${display}`;
+          }
+        });
+
+        const emptyMsg = group.querySelector('.date-empty-msg');
+        if (emptyMsg) {
+          emptyMsg.style.display = visibleInGroup === 0 ? 'flex' : 'none';
+        }
+      });
     }
 
     function closeSchedulePage() {
@@ -2074,51 +2984,11 @@
       };
     }
 
-/* Formula 1 Live Streaming Hub */
+    /* Formula 1 Live Streaming Hub */
     const f1Matches = [
-  createMatch("F1 LIVE STREAMING HUB", [
-    { teams: "LAS VEGAS GP - RACE (50 LAPS)", channel: "Sky Sports Main Event, Sky Sports F1, TSN 5 Canada", hot: true }
-  ], "SUN, NOV 22 • 12:00 PM MYT", "2026-11-22T12:00:00+08:00", 120),
-
-  createMatch("F1 LIVE STREAMING HUB", [
-    { teams: "QATAR GP - FREE PRACTICE 1", channel: "Sky Sports Main Event, Sky Sports F1, TSN 5 Canada", hot: false }
-  ], "FRI, NOV 27 • 09:30 PM MYT", "2026-11-27T21:30:00+08:00", 60),
-
-  createMatch("F1 LIVE STREAMING HUB", [
-    { teams: "QATAR GP - FREE PRACTICE 2", channel: "Sky Sports Main Event, Sky Sports F1, TSN 5 Canada", hot: false }
-  ], "SAT, NOV 28 • 01:00 AM MYT", "2026-11-28T01:00:00+08:00", 60),
-
-  createMatch("F1 LIVE STREAMING HUB", [
-    { teams: "QATAR GP - FREE PRACTICE 3", channel: "Sky Sports Main Event, Sky Sports F1, TSN 5 Canada", hot: false }
-  ], "SAT, NOV 28 • 10:30 PM MYT", "2026-11-28T22:30:00+08:00", 60),
-
-  createMatch("F1 LIVE STREAMING HUB", [
-    { teams: "QATAR GP - QUALIFYING", channel: "Sky Sports Main Event, Sky Sports F1, TSN 5 Canada", hot: false }
-  ], "SUN, NOV 29 • 02:00 AM MYT", "2026-11-29T02:00:00+08:00", 60),
-
-  createMatch("F1 LIVE STREAMING HUB", [
-    { teams: "QATAR GP - RACE (57 LAPS)", channel: "Sky Sports Main Event, Sky Sports F1, TSN 5 Canada", hot: true }
-  ], "MON, NOV 30 • 12:00 AM MYT", "2026-11-30T00:00:00+08:00", 120),
-
-  createMatch("F1 LIVE STREAMING HUB", [
-    { teams: "ABU DHABI GP - FREE PRACTICE 1", channel: "Sky Sports Main Event, Sky Sports F1, TSN 5 Canada", hot: false }
-  ], "FRI, DEC 4 • 05:30 PM MYT", "2026-12-04T17:30:00+08:00", 60),
-
-  createMatch("F1 LIVE STREAMING HUB", [
-    { teams: "ABU DHABI GP - FREE PRACTICE 2", channel: "Sky Sports Main Event, Sky Sports F1, TSN 5 Canada", hot: false }
-  ], "FRI, DEC 4 • 09:00 PM MYT", "2026-12-04T21:00:00+08:00", 60),
-
-  createMatch("F1 LIVE STREAMING HUB", [
-    { teams: "ABU DHABI GP - FREE PRACTICE 3", channel: "Sky Sports Main Event, Sky Sports F1, TSN 5 Canada", hot: false }
-  ], "SAT, DEC 5 • 06:30 PM MYT", "2026-12-05T18:30:00+08:00", 60),
-
-  createMatch("F1 LIVE STREAMING HUB", [
-    { teams: "ABU DHABI GP - QUALIFYING", channel: "Sky Sports Main Event, Sky Sports F1, TSN 5 Canada", hot: false }
-  ], "SAT, DEC 5 • 10:00 PM MYT", "2026-12-05T22:00:00+08:00", 60),
-
-  createMatch("F1 LIVE STREAMING HUB", [
-    { teams: "ABU DHABI GP - RACE (58 LAPS)", channel: "Sky Sports Main Event, Sky Sports F1, TSN 5 Canada", hot: true }
-  ], "SUN, DEC 6 • 09:00 PM MYT", "2026-12-06T21:00:00+08:00", 120)
+      createMatch("F1 LIVE STREAMING HUB", [
+        { teams: "TBD vs TBD", channel: "TBD", hot: false }
+      ], "WED, NOV 25 • 04:00 AM MYT", "2026-11-25T04:00:00+08:00", 120)
     ];
 
     function updateF1Card(now) {
@@ -2127,33 +2997,9 @@
 
     /* MotoGP Live Streaming Hub */
     const motoGpMatches = [
-  createMatch("MOTOGP LIVE STREAMING HUB", [
-    { teams: "PORTUGUESE GP - RACE", channel: "Fancode India", hot: true }
-  ], "SUN, NOV 22 • 09:00 PM MYT", "2026-11-22T21:00:00+08:00", 90),
-
-  createMatch("MOTOGP LIVE STREAMING HUB", [
-    { teams: "VALENCIA GP - FREE PRACTICE 1", channel: "Fancode India", hot: false }
-  ], "FRI, NOV 27 • 05:45 PM MYT", "2026-11-27T17:45:00+08:00", 60),
-
-  createMatch("MOTOGP LIVE STREAMING HUB", [
-    { teams: "VALENCIA GP - PRACTICE", channel: "Fancode India", hot: false }
-  ], "FRI, NOV 27 • 10:00 PM MYT", "2026-11-27T22:00:00+08:00", 60),
-
-  createMatch("MOTOGP LIVE STREAMING HUB", [
-    { teams: "VALENCIA GP - FREE PRACTICE 2", channel: "Fancode India", hot: false }
-  ], "SAT, NOV 28 • 05:10 PM MYT", "2026-11-28T17:10:00+08:00", 60),
-
-  createMatch("MOTOGP LIVE STREAMING HUB", [
-    { teams: "VALENCIA GP - QUALIFYING", channel: "Fancode India", hot: false }
-  ], "SAT, NOV 28 • 05:50 PM MYT", "2026-11-28T17:50:00+08:00", 60),
-
-  createMatch("MOTOGP LIVE STREAMING HUB", [
-    { teams: "VALENCIA GP - SPRINT", channel: "Fancode India", hot: false }
-  ], "SAT, NOV 28 • 10:00 PM MYT", "2026-11-28T22:00:00+08:00", 60),
-
-  createMatch("MOTOGP LIVE STREAMING HUB", [
-    { teams: "VALENCIA GP - RACE", channel: "Fancode India", hot: true }
-  ], "SUN, NOV 29 • 09:00 PM MYT", "2026-11-29T21:00:00+08:00", 90)
+      createMatch("MOTOGP LIVE STREAMING HUB", [
+        { teams: "TBD vs TBD", channel: "TBD", hot: false }
+      ], "WED, NOV 25 • 04:00 AM MYT", "2026-11-25T04:00:00+08:00", 120)
     ];
 
     function updateMotoGpCard(now) {
@@ -2162,7 +3008,9 @@
 
     /* Now Sports Live Event 1 Schedule */
     const nowSports1Matches = [
-      // Masukkan jadual Now Sports 1 di sini menggunakan createMatch(...)
+      createMatch("NOW SPORTS LIVE EVENT 1", [
+        { teams: "TBD vs TBD", channel: "TBD", hot: false }
+      ], "WED, NOV 25 • 04:00 AM MYT", "2026-11-25T04:00:00+08:00", 120)
     ];
 
     function updateNowSports1Card(now) {
@@ -2171,7 +3019,9 @@
 
     /* Now Sports Live Event 2 Schedule */
     const nowSports2Matches = [
-      // Masukkan jadual Now Sports 2 di sini menggunakan createMatch(...)
+      createMatch("NOW SPORTS LIVE EVENT 2", [
+        { teams: "TBD vs TBD", channel: "TBD", hot: false }
+      ], "WED, NOV 25 • 04:00 AM MYT", "2026-11-25T04:00:00+08:00", 120)
     ];
 
     function updateNowSports2Card(now) {
@@ -2180,7 +3030,9 @@
 
     /* Now Sports Live Event 3 Schedule */
     const nowSports3Matches = [
-      // Masukkan jadual Now Sports 3 di sini menggunakan createMatch(...)
+      createMatch("NOW SPORTS LIVE EVENT 3", [
+        { teams: "TBD vs TBD", channel: "TBD", hot: false }
+      ], "WED, NOV 25 • 04:00 AM MYT", "2026-11-25T04:00:00+08:00", 120)
     ];
 
     function updateNowSports3Card(now) {
@@ -2189,7 +3041,9 @@
 
     /* Now Sports Live Event 4 Schedule */
     const nowSports4Matches = [
-      // Masukkan jadual Now Sports 4 di sini menggunakan createMatch(...)
+      createMatch("NOW SPORTS LIVE EVENT 4", [
+        { teams: "TBD vs TBD", channel: "TBD", hot: false }
+      ], "WED, NOV 25 • 04:00 AM MYT", "2026-11-25T04:00:00+08:00", 120)
     ];
 
     function updateNowSports4Card(now) {
@@ -2198,41 +3052,9 @@
 
     /* Premier League Schedule */
     const eplMatches = [
-  createMatch("PREMIER LEAGUE", [
-    { teams: "HULL CITY VS BRIGHTON & HOVE ALBION", channel: "Star Sports Select 1, USA Network, Sky Sports Premier League, Telemundo, FOX Costa Rica, beIN Sports Arabia 5, Setanta Sports 1 Ukraine, Canal+ Foot France, Canal+ Sport Slovakia, ESPN Brazil", hot: false }
-  ], "SUN, NOV 22 • 10:00 PM MYT", "2026-11-22T22:00:00+08:00", 120),
-
-  createMatch("PREMIER LEAGUE", [
-    { teams: "LIVERPOOL VS MANCHESTER UNITED", channel: "Star Sports Select 1, USA Network, Sky Sports Premier League, Telemundo, beIN Sports Arabia 1, IRIB Varzesh, Setanta Sports 1 Ukraine, Canal+ Foot France, Canal+ Sport Slovakia, ESPN Brazil", hot: true }
-  ], "MON, NOV 23 • 12:30 AM MYT", "2026-11-23T00:30:00+08:00", 120),
-
-  createMatch("PREMIER LEAGUE", [
-    { teams: "BRENTFORD VS EVERTON", channel: "Star Sports Select 1, USA Network, Sky Sports Premier League, beIN Sports Arabia 2, Canal+ Foot France, Canal+ Sport Slovakia, ESPN Brazil", hot: false }
-  ], "TUE, NOV 24 • 04:00 AM MYT", "2026-11-24T04:00:00+08:00", 120),
-
-  createMatch("PREMIER LEAGUE", [
-    { teams: "NOTTINGHAM FOREST VS CHELSEA", channel: "Star Sports Select 1, USA Network, Sky Sports Premier League, Shabake 3, Canal+ Foot France, Canal+ Sport Slovakia", hot: false }
-  ], "SAT, NOV 28 • 04:00 AM MYT", "2026-11-28T04:00:00+08:00"),
-
-  createMatch("PREMIER LEAGUE", [
-    { teams: "LEEDS UNITED VS COVENTRY CITY", channel: "USA Network", hot: false }
-  ], "SAT, NOV 28 • 11:00 PM MYT", "2026-11-28T23:00:00+08:00", 120),
-
-  createMatch("PREMIER LEAGUE", [
-    { teams: "IPSWICH TOWN VS ASTON VILLA", channel: "Star Sports Select 1, USA Network, Sky Sports Premier League, Canal+ Sport Slovakia", hot: false }
-  ], "SUN, NOV 29 • 01:30 AM MYT", "2026-11-29T01:30:00+08:00", 120),
-
-  createMatch("PREMIER LEAGUE", [
-    { teams: "EVERTON VS LIVERPOOL", channel: "Star Sports Select 1, USA Network, Canal+ Sport Slovakia", hot: true }
-  ], "SUN, NOV 29 • 08:00 PM MYT", "2026-11-29T20:00:00+08:00", 120),
-
-  createMatch("PREMIER LEAGUE", [
-    { teams: "BRIGHTON & HOVE ALBION VS NEWCASTLE UNITED", channel: "USA Network, Sky Sports Premier League", hot: false }
-  ], "SUN, NOV 29 • 10:05 PM MYT", "2026-11-29T22:05:00+08:00", 120),
-
-  createMatch("PREMIER LEAGUE", [
-    { teams: "ARSENAL VS MANCHESTER CITY", channel: "Star Sports Select 1, USA Network, Sky Sports Premier League, Canal+ Sport Slovakia", hot: true }
-  ], "MON, NOV 30 • 12:30 AM MYT", "2026-11-30T00:30:00+08:00", 120)
+      createMatch("PREMIER LEAGUE", [
+        { teams: "TBD vs TBD", channel: "TBD", hot: false }
+      ], "WED, NOV 25 • 04:00 AM MYT", "2026-11-25T04:00:00+08:00", 120)
     ];
 
     function updateEPLCard(now) {
@@ -2241,29 +3063,9 @@
 
     /* La Liga Schedule */
     const laLigaMatches = [
-  createMatch("LA LIGA", [
-    { teams: "BARCELONA VS VILLARREAL", channel: "beIN Sports Arabia 1, Shabake 3, Setanta Sports 2 Ukraine", hot: true }
-  ], "SUN, NOV 22 • 09:00 PM MYT", "2026-11-22T21:00:00+08:00", 120),
-
-  createMatch("LA LIGA", [
-    { teams: "OSASUNA VS MÁLAGA", channel: "beIN Sports Arabia 2, Belarus 5", hot: false }
-  ], "MON, NOV 23 • 01:30 AM MYT", "2026-11-23T01:30:00+08:00", 120),
-
-  createMatch("LA LIGA", [
-    { teams: "GETAFE VS ATLÉTICO MADRID", channel: "beIN Sports Arabia 1, IRIB Varzesh, Setanta Sports 2 Ukraine, Belarus 5", hot: false }
-  ], "MON, NOV 23 • 04:00 AM MYT", "2026-11-23T04:00:00+08:00", 120),
-
-  createMatch("LA LIGA", [
-    { teams: "LEVANTE VS ELCHE", channel: "beIN Sports Arabia 4", hot: false }
-  ], "TUE, NOV 24 • 04:00 AM MYT", "2026-11-24T04:00:00+08:00", 120),
-
-  createMatch("LA LIGA", [
-    { teams: "REAL SOCIEDAD VS REAL MADRID", channel: "ESPN2 USA", hot: true }
-  ], "THU, DEC 3 • 02:00 AM MYT", "2026-12-03T02:00:00+08:00", 120),
-
-  createMatch("LA LIGA", [
-    { teams: "BARCELONA VS ATLÉTICO MADRID", channel: "ESPN2 USA", hot: true }
-  ], "THU, DEC 3 • 04:30 AM MYT", "2026-12-03T04:30:00+08:00", 120)
+      createMatch("LA LIGA", [
+        { teams: "TBD vs TBD", channel: "TBD", hot: false }
+      ], "WED, NOV 25 • 04:00 AM MYT", "2026-11-25T04:00:00+08:00", 120)
     ];
 
     function updateLaLigaCard(now) {
@@ -2358,6 +3160,7 @@
     function updateCountdowns() {
       const now = new Date().getTime();
 
+      updateSchedulePageTimers();
       updateF1Card(now);
       updateMotoGpCard(now);
       updateNowSports1Card(now);
