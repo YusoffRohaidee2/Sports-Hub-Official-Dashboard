@@ -936,45 +936,75 @@
         </div>
       </a>
 
-      <!-- International Friendlies Hub -->
+<!-- International Friendlies Hub -->
       <a class="link-card" href="https://example.com" target="_blank" rel="noopener noreferrer" data-track-id="intl-friendlies">
         <div class="card-info">
-          <span class="site-name">International Friendlies Hub</span>
-          <div class="match-details" style="margin-top: 2px;">
-            <span><i class="fa-solid fa-circle-info" style="color: var(--neon-cyan);"></i> Stream international friendly matches and warm-up fixtures here!</span>
+          <span class="live-badge" id="intlfriendlies-badge"><span class="live-dot"></span> INTERNATIONAL FRIENDLIES HUB</span>
+
+          <div id="intlfriendlies-matches-body"></div>
+
+          <div class="match-details" style="margin-top: 4px;">
+            <span id="intlfriendlies-time"><i class="fa-regular fa-clock"></i> Loading...</span>
+          </div>
+
+          <div class="countdown-timer" id="intlfriendlies-countdown">
+            <i class="fa-solid fa-hourglass-half"></i> <span class="time-text">Loading...</span>
           </div>
           <span class="click-counter"><i class="fa-solid fa-eye"></i> <span id="click-intl-friendlies">0</span> clicks</span>
         </div>
         <div class="card-right-group">
-          <div class="card-action-icon"><i class="fa-solid fa-arrow-up-right-from-square"></i></div>
+          <button class="fav-btn" data-id="intl-friendlies" title="Favourite" onclick="toggleFav(event, 'intl-friendlies')">
+            <i class="fa-solid fa-star"></i>
+          </button>
+          <div class="card-action-icon"><i class="fa-solid fa-play"></i></div>
         </div>
       </a>
 
       <!-- ASEAN Football Hub -->
       <a class="link-card" href="https://example.com" target="_blank" rel="noopener noreferrer" data-track-id="asean-football">
         <div class="card-info">
-          <span class="site-name">ASEAN Football Hub</span>
-          <div class="match-details" style="margin-top: 2px;">
-            <span><i class="fa-solid fa-circle-info" style="color: var(--neon-cyan);"></i> Stream Southeast Asian football competitions and regional matches here!</span>
+          <span class="live-badge" id="aseanfootball-badge"><span class="live-dot"></span> ASEAN FOOTBALL HUB</span>
+
+          <div id="aseanfootball-matches-body"></div>
+
+          <div class="match-details" style="margin-top: 4px;">
+            <span id="aseanfootball-time"><i class="fa-regular fa-clock"></i> Loading...</span>
+          </div>
+
+          <div class="countdown-timer" id="aseanfootball-countdown">
+            <i class="fa-solid fa-hourglass-half"></i> <span class="time-text">Loading...</span>
           </div>
           <span class="click-counter"><i class="fa-solid fa-eye"></i> <span id="click-asean-football">0</span> clicks</span>
         </div>
         <div class="card-right-group">
-          <div class="card-action-icon"><i class="fa-solid fa-arrow-up-right-from-square"></i></div>
+          <button class="fav-btn" data-id="asean-football" title="Favourite" onclick="toggleFav(event, 'asean-football')">
+            <i class="fa-solid fa-star"></i>
+          </button>
+          <div class="card-action-icon"><i class="fa-solid fa-play"></i></div>
         </div>
       </a>
 
       <!-- Football+ -->
       <a class="link-card" href="https://example.com" target="_blank" rel="noopener noreferrer" data-track-id="football-plus">
         <div class="card-info">
-          <span class="site-name">Football+</span>
-          <div class="match-details" style="margin-top: 2px;">
-            <span><i class="fa-solid fa-circle-info" style="color: var(--neon-cyan);"></i> Watch extra football highlights, replays, and special broadcasts here!</span>
+          <span class="live-badge" id="footballplus-badge"><span class="live-dot"></span> FOOTBALL+</span>
+
+          <div id="footballplus-matches-body"></div>
+
+          <div class="match-details" style="margin-top: 4px;">
+            <span id="footballplus-time"><i class="fa-regular fa-clock"></i> Loading...</span>
+          </div>
+
+          <div class="countdown-timer" id="footballplus-countdown">
+            <i class="fa-solid fa-hourglass-half"></i> <span class="time-text">Loading...</span>
           </div>
           <span class="click-counter"><i class="fa-solid fa-eye"></i> <span id="click-football-plus">0</span> clicks</span>
         </div>
         <div class="card-right-group">
-          <div class="card-action-icon"><i class="fa-solid fa-arrow-up-right-from-square"></i></div>
+          <button class="fav-btn" data-id="football-plus" title="Favourite" onclick="toggleFav(event, 'football-plus')">
+            <i class="fa-solid fa-star"></i>
+          </button>
+          <div class="card-action-icon"><i class="fa-solid fa-play"></i></div>
         </div>
       </a>
 
@@ -1028,31 +1058,51 @@
         </div>
       </a>
 
-      <!-- Home of Motorsports Action+ -->
+<!-- Home of Motorsports Action+ -->
       <a class="link-card" href="https://example.com" target="_blank" rel="noopener noreferrer" data-track-id="motorsports-plus">
         <div class="card-info">
-          <span class="site-name">Home of Motorsports Action+</span>
-          <div class="match-details" style="margin-top: 2px;">
-            <span><i class="fa-solid fa-circle-info" style="color: var(--neon-cyan);"></i> Stream extra motorsport series, rallies, and racing action here!</span>
+          <span class="live-badge" id="motorsports-plus-badge"><span class="live-dot"></span> HOME OF MOTORSPORTS ACTION+</span>
+          
+          <div id="motorsports-plus-matches-body"></div>
+
+          <div class="match-details" style="margin-top: 4px;">
+            <span id="motorsports-plus-time"><i class="fa-regular fa-clock"></i> Loading...</span>
+          </div>
+
+          <div class="countdown-timer" id="motorsports-plus-countdown">
+            <i class="fa-solid fa-hourglass-half"></i> <span class="time-text">Loading...</span>
           </div>
           <span class="click-counter"><i class="fa-solid fa-eye"></i> <span id="click-motorsports-plus">0</span> clicks</span>
         </div>
         <div class="card-right-group">
-          <div class="card-action-icon"><i class="fa-solid fa-arrow-up-right-from-square"></i></div>
+          <button class="fav-btn" data-id="motorsports-plus" title="Favourite" onclick="toggleFav(event, 'motorsports-plus')">
+            <i class="fa-solid fa-star"></i>
+          </button>
+          <div class="card-action-icon"><i class="fa-solid fa-play"></i></div>
         </div>
       </a>
 
       <!-- Sports+ -->
       <a class="link-card" href="https://example.com" target="_blank" rel="noopener noreferrer" data-track-id="sports-plus">
         <div class="card-info">
-          <span class="site-name">Sports+</span>
-          <div class="match-details" style="margin-top: 2px;">
-            <span><i class="fa-solid fa-circle-info" style="color: var(--neon-cyan);"></i> Watch multi-sport live events, combat sports, and special channels here!</span>
+          <span class="live-badge" id="sports-plus-badge"><span class="live-dot"></span> SPORTS+</span>
+          
+          <div id="sports-plus-matches-body"></div>
+
+          <div class="match-details" style="margin-top: 4px;">
+            <span id="sports-plus-time"><i class="fa-regular fa-clock"></i> Loading...</span>
+          </div>
+
+          <div class="countdown-timer" id="sports-plus-countdown">
+            <i class="fa-solid fa-hourglass-half"></i> <span class="time-text">Loading...</span>
           </div>
           <span class="click-counter"><i class="fa-solid fa-eye"></i> <span id="click-sports-plus">0</span> clicks</span>
         </div>
         <div class="card-right-group">
-          <div class="card-action-icon"><i class="fa-solid fa-arrow-up-right-from-square"></i></div>
+          <button class="fav-btn" data-id="sports-plus" title="Favourite" onclick="toggleFav(event, 'sports-plus')">
+            <i class="fa-solid fa-star"></i>
+          </button>
+          <div class="card-action-icon"><i class="fa-solid fa-play"></i></div>
         </div>
       </a>
     </div>
@@ -2796,7 +2846,7 @@
     ];
 
     function updateF1Card(now) {
-      renderGenericSection(now, f1Matches, 'f1-badge', 'f1-matches-body', 'f1-time', 'f1-countdown', 'FORMULA 1 HUB');
+      renderGenericSection(now, f1Matches, 'f1-badge', 'f1-matches-body', 'f1-time', 'f1-countdown', 'FORMULA 1 LIVE STREAMING HUB');
     }
 
     /* MotoGP Live Streaming Hub */
@@ -2856,6 +2906,20 @@
       renderGenericSection(now, nowSports4Matches, 'nowsports4-badge', 'nowsports4-matches-body', 'nowsports4-time', 'nowsports4-countdown', 'NOW SPORTS LIVE EVENT 4');
     }
 
+/* Home of Motorsports Action+ Schedule */
+    const motorsportsPlusMatches = [];
+
+    function updateMotorsportsPlusCard(now) {
+      renderGenericSection(now, motorsportsPlusMatches, 'motorsportsplus-badge', 'motorsportsplus-matches-body', 'motorsportsplus-time', 'motorsportsplus-countdown', 'HOME OF MOTORSPORTS ACTION+');
+    }
+
+    /* Sports+ Schedule */
+    const sportsPlusMatches = [];
+
+    function updateSportsPlusCard(now) {
+      renderGenericSection(now, sportsPlusMatches, 'sportsplus-badge', 'sportsplus-matches-body', 'sportsplus-time', 'sportsplus-countdown', 'SPORTS+');
+    }
+    
 /* Premier League Schedule */
     const eplMatches = [
       createMatch("PREMIER LEAGUE", [
@@ -2983,6 +3047,27 @@
 
     function updateLaLigaCard(now) {
       renderGenericSection(now, laLigaMatches, 'laliga-badge', 'laliga-matches-body', 'laliga-time', 'laliga-countdown', 'HOME OF LA LIGA');
+    }
+
+    /* International Friendlies Hub Schedule */
+    const intlFriendliesMatches = [];
+
+    function updateIntlFriendliesCard(now) {
+      renderGenericSection(now, intlFriendliesMatches, 'intlfriendlies-badge', 'intlfriendlies-matches-body', 'intlfriendlies-time', 'intlfriendlies-countdown', 'INTERNATIONAL FRIENDLIES HUB');
+    }
+
+    /* ASEAN Football Hub Schedule */
+    const aseanFootballMatches = [];
+
+    function updateAseanFootballCard(now) {
+      renderGenericSection(now, aseanFootballMatches, 'aseanfootball-badge', 'aseanfootball-matches-body', 'aseanfootball-time', 'aseanfootball-countdown', 'ASEAN FOOTBALL HUB');
+    }
+
+    /* Football+ Schedule */
+    const footballPlusMatches = [];
+
+    function updateFootballPlusCard(now) {
+      renderGenericSection(now, footballPlusMatches, 'footballplus-badge', 'footballplus-matches-body', 'footballplus-time', 'footballplus-countdown', 'FOOTBALL+');
     }
 
     /* Dynamic Multi-Match Renderer Engine */
