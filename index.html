@@ -2812,263 +2812,541 @@
     }
 
 /* Formula 1 Live Streaming Hub */
-    const f1Matches = [
-      createMatch("F1 QATAR GRAND PRIX", [
-        { teams: "Free Practice 1", channel: "TBD", hot: false }
-      ], "FRI, NOV 27 • 09:30 PM MYT", "2026-11-27T21:30:00+08:00", 75),
-      createMatch("F1 QATAR GRAND PRIX", [
-        { teams: "Free Practice 2", channel: "TBD", hot: false }
-      ], "SAT, NOV 28 • 01:00 AM MYT", "2026-11-28T01:00:00+08:00", 75),
-      createMatch("F1 QATAR GRAND PRIX", [
-        { teams: "Free Practice 3", channel: "TBD", hot: false }
-      ], "SAT, NOV 28 • 10:30 PM MYT", "2026-11-28T22:30:00+08:00", 75),
-      createMatch("F1 QATAR GRAND PRIX", [
-        { teams: "Qualifying", channel: "TBD", hot: false }
-      ], "SUN, NOV 29 • 02:00 AM MYT", "2026-11-29T02:00:00+08:00", 75),
-      createMatch("F1 QATAR GRAND PRIX", [
-        { teams: "Race", channel: "TBD", hot: false }
-      ], "MON, NOV 30 • 12:00 AM MYT", "2026-11-30T00:00:00+08:00", 150),
-      createMatch("F1 ABU DHABI GRAND PRIX", [
-        { teams: "Free Practice 1", channel: "TBD", hot: false }
-      ], "FRI, DEC 4 • 05:30 PM MYT", "2026-12-04T17:30:00+08:00", 75),
-      createMatch("F1 ABU DHABI GRAND PRIX", [
-        { teams: "Free Practice 2", channel: "TBD", hot: false }
-      ], "FRI, DEC 4 • 09:00 PM MYT", "2026-12-04T21:00:00+08:00", 75),
-      createMatch("F1 ABU DHABI GRAND PRIX", [
-        { teams: "Free Practice 3", channel: "TBD", hot: false }
-      ], "SAT, DEC 5 • 06:30 PM MYT", "2026-12-05T18:30:00+08:00", 75),
-      createMatch("F1 ABU DHABI GRAND PRIX", [
-        { teams: "Qualifying", channel: "TBD", hot: false }
-      ], "SAT, DEC 5 • 10:00 PM MYT", "2026-12-05T22:00:00+08:00", 75),
-      createMatch("F1 ABU DHABI GRAND PRIX", [
-        { teams: "Race", channel: "TBD", hot: false }
-      ], "SUN, DEC 6 • 09:00 PM MYT", "2026-12-06T21:00:00+08:00", 150)
-    ];
+const f1Matches = [
+  createMatch("FORMULA 1 QATAR AIRWAYS QATAR GRAND PRIX 2026", [
+    { teams: "Free Practice 1", channel: "TBD", hot: false }
+  ], "FRI, NOV 27 • 09:30 PM MYT", "2026-11-27T21:30:00+08:00", 75),
+  createMatch("FORMULA 1 QATAR AIRWAYS QATAR GRAND PRIX 2026", [
+    { teams: "Free Practice 2", channel: "TBD", hot: false }
+  ], "SAT, NOV 28 • 01:00 AM MYT", "2026-11-28T01:00:00+08:00", 75),
+  createMatch("FORMULA 1 QATAR AIRWAYS QATAR GRAND PRIX 2026", [
+    { teams: "Free Practice 3", channel: "TBD", hot: false }
+  ], "SAT, NOV 28 • 10:30 PM MYT", "2026-11-28T22:30:00+08:00", 75),
+  createMatch("FORMULA 1 QATAR AIRWAYS QATAR GRAND PRIX 2026", [
+    { teams: "Qualifying", channel: "TBD", hot: false }
+  ], "SUN, NOV 29 • 02:00 AM MYT", "2026-11-29T02:00:00+08:00", 75),
+  createMatch("FORMULA 1 QATAR AIRWAYS QATAR GRAND PRIX 2026", [
+    { teams: "Race", channel: "TBD", hot: false }
+  ], "MON, NOV 30 • 12:00 AM MYT", "2026-11-30T00:00:00+08:00", 150),
+  createMatch("FORMULA 1 ETIHAD AIRWAYS ABU DHABI GRAND PRIX 2026", [
+    { teams: "Free Practice 1", channel: "TBD", hot: false }
+  ], "FRI, DEC 4 • 05:30 PM MYT", "2026-12-04T17:30:00+08:00", 75),
+  createMatch("FORMULA 1 ETIHAD AIRWAYS ABU DHABI GRAND PRIX 2026", [
+    { teams: "Free Practice 2", channel: "TBD", hot: false }
+  ], "FRI, DEC 4 • 09:00 PM MYT", "2026-12-04T21:00:00+08:00", 75),
+  createMatch("FORMULA 1 ETIHAD AIRWAYS ABU DHABI GRAND PRIX 2026", [
+    { teams: "Free Practice 3", channel: "TBD", hot: false }
+  ], "SAT, DEC 5 • 06:30 PM MYT", "2026-12-05T18:30:00+08:00", 75),
+  createMatch("FORMULA 1 ETIHAD AIRWAYS ABU DHABI GRAND PRIX 2026", [
+    { teams: "Qualifying", channel: "TBD", hot: false }
+  ], "SAT, DEC 5 • 10:00 PM MYT", "2026-12-05T22:00:00+08:00", 75),
+  createMatch("FORMULA 1 ETIHAD AIRWAYS ABU DHABI GRAND PRIX 2026", [
+    { teams: "Race", channel: "TBD", hot: false }
+  ], "SUN, DEC 6 • 09:00 PM MYT", "2026-12-06T21:00:00+08:00", 150)
+];
 
-    function updateF1Card(now) {
-      renderGenericSection(now, f1Matches, 'f1-badge', 'f1-matches-body', 'f1-time', 'f1-countdown', 'FORMULA 1 LIVE STREAMING HUB');
-    }
+function updateF1Card(now) {
+  renderGenericSection(now, f1Matches, 'f1-badge', 'f1-matches-body', 'f1-time', 'f1-countdown', 'FORMULA 1 LIVE STREAMING HUB');
+}
 
-    /* MotoGP Live Streaming Hub */
-    const motoGpMatches = [
-      createMatch("MOTOGP VALENCIA GRAND PRIX", [
-        { teams: "Free Practice 1", channel: "TBD", hot: false }
-      ], "FRI, NOV 27 • 05:45 PM MYT", "2026-11-27T17:45:00+08:00", 60),
-      createMatch("MOTOGP VALENCIA GRAND PRIX", [
-        { teams: "Practice", channel: "TBD", hot: false }
-      ], "FRI, NOV 27 • 10:00 PM MYT", "2026-11-27T22:00:00+08:00", 75),
-      createMatch("MOTOGP VALENCIA GRAND PRIX", [
-        { teams: "Free Practice 2", channel: "TBD", hot: false }
-      ], "SAT, NOV 28 • 05:10 PM MYT", "2026-11-28T17:10:00+08:00", 60),
-      createMatch("MOTOGP VALENCIA GRAND PRIX", [
-        { teams: "Qualifying", channel: "TBD", hot: false }
-      ], "SAT, NOV 28 • 05:50 PM MYT", "2026-11-28T17:50:00+08:00", 60),
-      createMatch("MOTOGP VALENCIA GRAND PRIX", [
-        { teams: "Sprint", channel: "TBD", hot: false }
-      ], "SAT, NOV 28 • 10:00 PM MYT", "2026-11-28T22:00:00+08:00", 60),
-      createMatch("MOTOGP VALENCIA GRAND PRIX", [
-        { teams: "Warm-up", channel: "TBD", hot: false }
-      ], "SUN, NOV 29 • 04:40 PM MYT", "2026-11-29T16:40:00+08:00", 30),
-      createMatch("MOTOGP VALENCIA GRAND PRIX", [
-        { teams: "Race", channel: "TBD", hot: false }
-      ], "SUN, NOV 29 • 09:00 PM MYT", "2026-11-29T21:00:00+08:00", 75)
-    ];
+/* MotoGP Live Streaming Hub */
+const motoGpMatches = [
+  createMatch("MOTOGP GRAN PREMIO MOTUL DE LA COMUNITAT VALENCIANA 2026", [
+    { teams: "Free Practice 1", channel: "TBD", hot: false }
+  ], "FRI, NOV 27 • 05:45 PM MYT", "2026-11-27T17:45:00+08:00", 60),
+  createMatch("MOTOGP GRAN PREMIO MOTUL DE LA COMUNITAT VALENCIANA 2026", [
+    { teams: "Practice", channel: "TBD", hot: false }
+  ], "FRI, NOV 27 • 10:00 PM MYT", "2026-11-27T22:00:00+08:00", 75),
+  createMatch("MOTOGP GRAN PREMIO MOTUL DE LA COMUNITAT VALENCIANA 2026", [
+    { teams: "Free Practice 2", channel: "TBD", hot: false }
+  ], "SAT, NOV 28 • 05:10 PM MYT", "2026-11-28T17:10:00+08:00", 60),
+  createMatch("MOTOGP GRAN PREMIO MOTUL DE LA COMUNITAT VALENCIANA 2026", [
+    { teams: "Qualifying", channel: "TBD", hot: false }
+  ], "SAT, NOV 28 • 05:50 PM MYT", "2026-11-28T17:50:00+08:00", 60),
+  createMatch("MOTOGP GRAN PREMIO MOTUL DE LA COMUNITAT VALENCIANA 2026", [
+    { teams: "Sprint", channel: "TBD", hot: false }
+  ], "SAT, NOV 28 • 10:00 PM MYT", "2026-11-28T22:00:00+08:00", 60),
+  createMatch("MOTOGP GRAN PREMIO MOTUL DE LA COMUNITAT VALENCIANA 2026", [
+    { teams: "Warm-up", channel: "TBD", hot: false }
+  ], "SUN, NOV 29 • 04:40 PM MYT", "2026-11-29T16:40:00+08:00", 30),
+  createMatch("MOTOGP GRAN PREMIO MOTUL DE LA COMUNITAT VALENCIANA 2026", [
+    { teams: "Race", channel: "TBD", hot: false }
+  ], "SUN, NOV 29 • 09:00 PM MYT", "2026-11-29T21:00:00+08:00", 75)
+];
 
-    function updateMotoGpCard(now) {
-      renderGenericSection(now, motoGpMatches, 'motogp-badge', 'motogp-matches-body', 'motogp-time', 'motogp-countdown', 'MOTOGP LIVE STREAMING HUB');
-    }
+function updateMotoGpCard(now) {
+  renderGenericSection(now, motoGpMatches, 'motogp-badge', 'motogp-matches-body', 'motogp-time', 'motogp-countdown', 'MOTOGP LIVE STREAMING HUB');
+}
 
-    /* Now Sports Live Event 1 Schedule */
-    const nowSports1Matches = [];
+/* Now Sports Live Event 1 Schedule */
+const nowSports1Matches = [];
 
-    function updateNowSports1Card(now) {
-      renderGenericSection(now, nowSports1Matches, 'nowsports1-badge', 'nowsports1-matches-body', 'nowsports1-time', 'nowsports1-countdown', 'NOW SPORTS LIVE EVENT 1');
-    }
+function updateNowSports1Card(now) {
+  renderGenericSection(now, nowSports1Matches, 'nowsports1-badge', 'nowsports1-matches-body', 'nowsports1-time', 'nowsports1-countdown', 'NOW SPORTS LIVE EVENT 1');
+}
 
-    /* Now Sports Live Event 2 Schedule */
-    const nowSports2Matches = [];
+/* Now Sports Live Event 2 Schedule */
+const nowSports2Matches = [];
 
-    function updateNowSports2Card(now) {
-      renderGenericSection(now, nowSports2Matches, 'nowsports2-badge', 'nowsports2-matches-body', 'nowsports2-time', 'nowsports2-countdown', 'NOW SPORTS LIVE EVENT 2');
-    }
+function updateNowSports2Card(now) {
+  renderGenericSection(now, nowSports2Matches, 'nowsports2-badge', 'nowsports2-matches-body', 'nowsports2-time', 'nowsports2-countdown', 'NOW SPORTS LIVE EVENT 2');
+}
 
-    /* Now Sports Live Event 3 Schedule */
-    const nowSports3Matches = [];
+/* Now Sports Live Event 3 Schedule */
+const nowSports3Matches = [];
 
-    function updateNowSports3Card(now) {
-      renderGenericSection(now, nowSports3Matches, 'nowsports3-badge', 'nowsports3-matches-body', 'nowsports3-time', 'nowsports3-countdown', 'NOW SPORTS LIVE EVENT 3');
-    }
+function updateNowSports3Card(now) {
+  renderGenericSection(now, nowSports3Matches, 'nowsports3-badge', 'nowsports3-matches-body', 'nowsports3-time', 'nowsports3-countdown', 'NOW SPORTS LIVE EVENT 3');
+}
 
-    /* Now Sports Live Event 4 Schedule */
-    const nowSports4Matches = [];
+/* Now Sports Live Event 4 Schedule */
+const nowSports4Matches = [];
 
-    function updateNowSports4Card(now) {
-      renderGenericSection(now, nowSports4Matches, 'nowsports4-badge', 'nowsports4-matches-body', 'nowsports4-time', 'nowsports4-countdown', 'NOW SPORTS LIVE EVENT 4');
-    }
+function updateNowSports4Card(now) {
+  renderGenericSection(now, nowSports4Matches, 'nowsports4-badge', 'nowsports4-matches-body', 'nowsports4-time', 'nowsports4-countdown', 'NOW SPORTS LIVE EVENT 4');
+}
 
-    /* Home of Motorsports Action+ Schedule */
-    const motorsportsPlusMatches = [];
+/* Home of Motorsports Action+ Schedule */
+const motorsportsPlusMatches = [];
 
-    function updateMotorSportsPlusCard(now) {
-      renderGenericSection(now, motorsportsPlusMatches, 'motorsportsplus-badge', 'motorsportsplus-matches-body', 'motorsportsplus-time', 'motorsportsplus-countdown', 'HOME OF MOTORSPORTS ACTION+');
-    }
+function updateMotorSportsPlusCard(now) {
+  renderGenericSection(now, motorsportsPlusMatches, 'motorsportsplus-badge', 'motorsportsplus-matches-body', 'motorsportsplus-time', 'motorsportsplus-countdown', 'HOME OF MOTORSPORTS ACTION+');
+}
 
-    /* Sports+ Schedule */
-    const sportsPlusMatches = [];
+/* Sports+ Schedule */
+const sportsPlusMatches = [];
 
-    function updateSportsPlusCard(now) {
-      renderGenericSection(now, sportsPlusMatches, 'sportsplus-badge', 'sportsplus-matches-body', 'sportsplus-time', 'sportsplus-countdown', 'SPORTS+');
-    }
+function updateSportsPlusCard(now) {
+  renderGenericSection(now, sportsPlusMatches, 'sportsplus-badge', 'sportsplus-matches-body', 'sportsplus-time', 'sportsplus-countdown', 'SPORTS+');
+}
 
-    /* Premier League Schedule */
-    const eplMatches = [
-      createMatch("PREMIER LEAGUE", [
-        { teams: "NOTTINGHAM FOREST VS CHELSEA", channel: "Star Sports Select 1, Sky Sports Premier League, Canal+ Foot, beIN Sports Arabia 1, Shabake 3", hot: false }
-      ], "SAT, NOV 28 • 04:00 AM MYT", "2026-11-28T04:00:00+08:00", 120),
-      createMatch("PREMIER LEAGUE", [
-        { teams: "LEEDS UNITED VS COVENTRY CITY", channel: "beIN Sports Arabia 6", hot: false },
-        { teams: "MANCHESTER UNITED VS BRENTFORD", channel: "beIN Sports Arabia 1", hot: false }
-      ], "SAT, NOV 28 • 11:00 PM MYT", "2026-11-28T23:00:00+08:00", 120),
-      createMatch("PREMIER LEAGUE", [
-        { teams: "IPSWICH TOWN VS ASTON VILLA", channel: "Star Sports Select 1, Sky Sports Premier League, Telemundo, beIN Sports Arabia 1", hot: false }
-      ], "SUN, NOV 29 • 01:30 AM MYT", "2026-11-29T01:30:00+08:00", 120),
-      createMatch("PREMIER LEAGUE", [
-        { teams: "EVERTON VS LIVERPOOL", channel: "Star Sports Select 1, beIN Sports Arabia 1, TNT Sports 1", hot: false }
-      ], "SUN, NOV 29 • 08:00 PM MYT", "2026-11-29T20:00:00+08:00", 120),
-      createMatch("PREMIER LEAGUE", [
-        { teams: "BRIGHTON & HOVE ALBION VS NEWCASTLE UNITED", channel: "Sky Sports Premier League, beIN Sports Arabia 5", hot: false },
-        { teams: "CRYSTAL PALACE VS HULL CITY", channel: "beIN Sports Arabia 4", hot: false },
-        { teams: "FULHAM VS AFC BOURNEMOUTH", channel: "beIN Sports Arabia 6", hot: false },
-        { teams: "SUNDERLAND VS TOTTENHAM HOTSPUR", channel: "beIN Sports Arabia 1", hot: false }
-      ], "SUN, NOV 29 • 10:05 PM MYT", "2026-11-29T22:05:00+08:00", 120),
-      createMatch("PREMIER LEAGUE", [
-        { teams: "ARSENAL VS MANCHESTER CITY", channel: "Star Sports Select 1, Sky Sports Premier League, Telemundo, beIN Sports Arabia 1", hot: false }
-      ], "MON, NOV 30 • 12:30 AM MYT", "2026-11-30T00:30:00+08:00", 120),
-      createMatch("PREMIER LEAGUE", [
-        { teams: "CHELSEA VS LIVERPOOL", channel: "TNT Sports 1", hot: false }
-      ], "SAT, DEC 5 • 08:30 PM MYT", "2026-12-05T20:30:00+08:00", 120),
-      createMatch("PREMIER LEAGUE", [
-        { teams: "CRYSTAL PALACE VS MANCHESTER UNITED", channel: "TNT Sports 1", hot: false }
-      ], "MON, DEC 14 • 03:00 AM MYT", "2026-12-14T03:00:00+08:00", 120),
-      createMatch("PREMIER LEAGUE", [
-        { teams: "BRENTFORD VS NEWCASTLE UNITED", channel: "TNT Sports 1", hot: false }
-      ], "SAT, DEC 19 • 08:30 PM MYT", "2026-12-19T20:30:00+08:00", 120),
-      createMatch("PREMIER LEAGUE", [
-        { teams: "ASTON VILLA VS LEEDS UNITED", channel: "TNT Sports 1", hot: false }
-      ], "SAT, DEC 26 • 08:30 PM MYT", "2026-12-26T20:30:00+08:00", 120),
-      createMatch("PREMIER LEAGUE", [
-        { teams: "HULL CITY VS LIVERPOOL", channel: "Sky Sports Premier League", hot: false }
-      ], "SUN, DEC 27 • 01:30 AM MYT", "2026-12-27T01:30:00+08:00", 120),
-      createMatch("PREMIER LEAGUE", [
-        { teams: "NEWCASTLE UNITED VS MANCHESTER CITY", channel: "Sky Sports Premier League", hot: false }
-      ], "SUN, DEC 27 • 04:00 AM MYT", "2026-12-27T04:00:00+08:00", 120),
-      createMatch("PREMIER LEAGUE", [
-        { teams: "COVENTRY CITY VS CHELSEA", channel: "Sky Sports Premier League", hot: false }
-      ], "SUN, DEC 27 • 10:00 PM MYT", "2026-12-27T22:00:00+08:00", 120),
-      createMatch("PREMIER LEAGUE", [
-        { teams: "MANCHESTER UNITED VS NOTTINGHAM FOREST", channel: "Sky Sports Premier League", hot: false }
-      ], "MON, DEC 28 • 12:30 AM MYT", "2026-12-28T00:30:00+08:00", 120),
-      createMatch("PREMIER LEAGUE", [
-        { teams: "CRYSTAL PALACE VS ARSENAL", channel: "Sky Sports Premier League", hot: false }
-      ], "MON, DEC 28 • 03:00 AM MYT", "2026-12-28T03:00:00+08:00", 120),
-      createMatch("PREMIER LEAGUE", [
-        { teams: "BRIGHTON & HOVE ALBION VS MANCHESTER UNITED", channel: "TNT Sports 1", hot: false }
-      ], "SAT, JAN 2 • 08:30 PM MYT", "2027-01-02T20:30:00+08:00", 120),
-      createMatch("PREMIER LEAGUE", [
-        { teams: "COVENTRY CITY VS EVERTON", channel: "TNT Sports 1", hot: false }
-      ], "SAT, JAN 16 • 11:00 PM MYT", "2027-01-16T23:00:00+08:00", 120),
-      createMatch("PREMIER LEAGUE", [
-        { teams: "BRIGHTON & HOVE ALBION VS MANCHESTER CITY", channel: "TNT Sports 1", hot: false }
-      ], "SAT, JAN 23 • 11:00 PM MYT", "2027-01-23T23:00:00+08:00", 120),
-      createMatch("PREMIER LEAGUE", [
-        { teams: "LIVERPOOL VS EVERTON", channel: "TNT Sports 1", hot: false }
-      ], "SAT, JAN 30 • 11:00 PM MYT", "2027-01-30T23:00:00+08:00", 120)
-    ];
+/* Premier League Schedule */
+const eplMatches = [
+  createMatch("PREMIER LEAGUE", [
+    { teams: "NOTTINGHAM FOREST VS CHELSEA", channel: "Star Sports Select 1, Sky Sports Premier League, Canal+ Foot, beIN Sports Arabia 1, Shabake 3", hot: false }
+  ], "SAT, NOV 28 • 04:00 AM MYT", "2026-11-28T04:00:00+08:00", 120),
+  createMatch("PREMIER LEAGUE", [
+    { teams: "LEEDS UNITED VS COVENTRY CITY", channel: "beIN Sports Arabia 6", hot: false },
+    { teams: "MANCHESTER UNITED VS BRENTFORD", channel: "beIN Sports Arabia 1", hot: false }
+  ], "SAT, NOV 28 • 11:00 PM MYT", "2026-11-28T23:00:00+08:00", 120),
+  createMatch("PREMIER LEAGUE", [
+    { teams: "IPSWICH TOWN VS ASTON VILLA", channel: "Star Sports Select 1, Sky Sports Premier League, Telemundo, beIN Sports Arabia 1", hot: false }
+  ], "SUN, NOV 29 • 01:30 AM MYT", "2026-11-29T01:30:00+08:00", 120),
+  createMatch("PREMIER LEAGUE", [
+    { teams: "EVERTON VS LIVERPOOL", channel: "Star Sports Select 1, beIN Sports Arabia 1, TNT Sports 1", hot: false }
+  ], "SUN, NOV 29 • 08:00 PM MYT", "2026-11-29T20:00:00+08:00", 120),
+  createMatch("PREMIER LEAGUE", [
+    { teams: "BRIGHTON & HOVE ALBION VS NEWCASTLE UNITED", channel: "Sky Sports Premier League, beIN Sports Arabia 5", hot: false },
+    { teams: "CRYSTAL PALACE VS HULL CITY", channel: "beIN Sports Arabia 4", hot: false },
+    { teams: "FULHAM VS AFC BOURNEMOUTH", channel: "beIN Sports Arabia 6", hot: false },
+    { teams: "SUNDERLAND VS TOTTENHAM HOTSPUR", channel: "beIN Sports Arabia 1", hot: false }
+  ], "SUN, NOV 29 • 10:05 PM MYT", "2026-11-29T22:05:00+08:00", 120),
+  createMatch("PREMIER LEAGUE", [
+    { teams: "ARSENAL VS MANCHESTER CITY", channel: "Star Sports Select 1, Sky Sports Premier League, Telemundo, beIN Sports Arabia 1", hot: false }
+  ], "MON, NOV 30 • 12:30 AM MYT", "2026-11-30T00:30:00+08:00", 120),
+  createMatch("PREMIER LEAGUE", [
+    { teams: "CHELSEA VS LIVERPOOL", channel: "TNT Sports 1", hot: false }
+  ], "SAT, DEC 5 • 08:30 PM MYT", "2026-12-05T20:30:00+08:00", 120),
+  createMatch("PREMIER LEAGUE", [
+    { teams: "CRYSTAL PALACE VS MANCHESTER UNITED", channel: "TNT Sports 1", hot: false }
+  ], "MON, DEC 14 • 03:00 AM MYT", "2026-12-14T03:00:00+08:00", 120),
+  createMatch("PREMIER LEAGUE", [
+    { teams: "BRENTFORD VS NEWCASTLE UNITED", channel: "TNT Sports 1", hot: false }
+  ], "SAT, DEC 19 • 08:30 PM MYT", "2026-12-19T20:30:00+08:00", 120),
+  createMatch("PREMIER LEAGUE", [
+    { teams: "ASTON VILLA VS LEEDS UNITED", channel: "TNT Sports 1", hot: false }
+  ], "SAT, DEC 26 • 08:30 PM MYT", "2026-12-26T20:30:00+08:00", 120),
+  createMatch("PREMIER LEAGUE", [
+    { teams: "HULL CITY VS LIVERPOOL", channel: "Sky Sports Premier League", hot: false }
+  ], "SUN, DEC 27 • 01:30 AM MYT", "2026-12-27T01:30:00+08:00", 120),
+  createMatch("PREMIER LEAGUE", [
+    { teams: "NEWCASTLE UNITED VS MANCHESTER CITY", channel: "Sky Sports Premier League", hot: false }
+  ], "SUN, DEC 27 • 04:00 AM MYT", "2026-12-27T04:00:00+08:00", 120),
+  createMatch("PREMIER LEAGUE", [
+    { teams: "COVENTRY CITY VS CHELSEA", channel: "Sky Sports Premier League", hot: false }
+  ], "SUN, DEC 27 • 10:00 PM MYT", "2026-12-27T22:00:00+08:00", 120),
+  createMatch("PREMIER LEAGUE", [
+    { teams: "MANCHESTER UNITED VS NOTTINGHAM FOREST", channel: "Sky Sports Premier League", hot: false }
+  ], "MON, DEC 28 • 12:30 AM MYT", "2026-12-28T00:30:00+08:00", 120),
+  createMatch("PREMIER LEAGUE", [
+    { teams: "CRYSTAL PALACE VS ARSENAL", channel: "Sky Sports Premier League", hot: false }
+  ], "MON, DEC 28 • 03:00 AM MYT", "2026-12-28T03:00:00+08:00", 120),
+  createMatch("PREMIER LEAGUE", [
+    { teams: "BRIGHTON & HOVE ALBION VS MANCHESTER UNITED", channel: "TNT Sports 1", hot: false }
+  ], "SAT, JAN 2 • 08:30 PM MYT", "2027-01-02T20:30:00+08:00", 120),
+  createMatch("PREMIER LEAGUE", [
+    { teams: "COVENTRY CITY VS EVERTON", channel: "TNT Sports 1", hot: false }
+  ], "SAT, JAN 16 • 11:00 PM MYT", "2027-01-16T23:00:00+08:00", 120),
+  createMatch("PREMIER LEAGUE", [
+    { teams: "BRIGHTON & HOVE ALBION VS MANCHESTER CITY", channel: "TNT Sports 1", hot: false }
+  ], "SAT, JAN 23 • 11:00 PM MYT", "2027-01-23T23:00:00+08:00", 120),
+  createMatch("PREMIER LEAGUE", [
+    { teams: "LIVERPOOL VS EVERTON", channel: "TNT Sports 1", hot: false }
+  ], "SAT, JAN 30 • 11:00 PM MYT", "2027-01-30T23:00:00+08:00", 120)
+];
 
-    function updateEPLCard(now) {
-      renderGenericSection(now, eplMatches, 'epl-badge', 'epl-matches-body', 'epl-time', 'epl-countdown', 'HOME OF PREMIER LEAGUE');
-    }
+function updateEPLCard(now) {
+  renderGenericSection(now, eplMatches, 'epl-badge', 'epl-matches-body', 'epl-time', 'epl-countdown', 'HOME OF PREMIER LEAGUE');
+}
 
-    /* La Liga Schedule */
-    const laLigaMatches = [
-      createMatch("LA LIGA", [
-        { teams: "LEVANTE VS RACING SANTANDER", channel: "Prima Sport 4, beIN Sports Arabia 3", hot: false }
-      ], "SAT, NOV 28 • 04:00 AM MYT", "2026-11-28T04:00:00+08:00", 120),
-      createMatch("LA LIGA", [
-        { teams: "REAL BETIS VS RAYO VALLECANO", channel: "Belarus 5, Prima Sport 2, beIN Sports Arabia 5", hot: false }
-      ], "SAT, NOV 28 • 09:00 PM MYT", "2026-11-28T21:00:00+08:00", 120),
-      createMatch("LA LIGA", [
-        { teams: "MÁLAGA VS ATHLETIC CLUB", channel: "Prima Sport 2, beIN Sports Arabia 5", hot: false }
-      ], "SAT, NOV 28 • 11:15 PM MYT", "2026-11-28T23:15:00+08:00", 120),
-      createMatch("LA LIGA", [
-        { teams: "ELCHE VS ATLÉTICO MADRID", channel: "Belarus 5, Prima Sport 2, beIN Sports Arabia 5", hot: false }
-      ], "SUN, NOV 29 • 01:30 AM MYT", "2026-11-29T01:30:00+08:00", 120),
-      createMatch("LA LIGA", [
-        { teams: "REAL MADRID VS DEPORTIVO ALAVÉS", channel: "Zoʻr TV, Belarus 5, Prima Sport 2, beIN Sports Arabia 1", hot: false }
-      ], "SUN, NOV 29 • 04:00 AM MYT", "2026-11-29T04:00:00+08:00", 120),
-      createMatch("LA LIGA", [
-        { teams: "VALENCIA VS OSASUNA", channel: "Belarus 5, Prima Sport 5", hot: false }
-      ], "SUN, NOV 29 • 09:00 PM MYT", "2026-11-29T21:00:00+08:00", 120),
-      createMatch("LA LIGA", [
-        { teams: "DEPORTIVO LA CORUÑA VS BARCELONA", channel: "Zoʻr TV, Prima Sport 1, beIN Sports Arabia 2", hot: false }
-      ], "SUN, NOV 29 • 11:15 PM MYT", "2026-11-29T23:15:00+08:00", 120),
-      createMatch("LA LIGA", [
-        { teams: "CELTA DE VIGO VS VILLARREAL", channel: "Belarus 5, Prima Sport 2, beIN Sports Arabia 6", hot: false }
-      ], "MON, NOV 30 • 01:30 AM MYT", "2026-11-30T01:30:00+08:00", 120),
-      createMatch("LA LIGA", [
-        { teams: "REAL SOCIEDAD VS SEVILLA", channel: "Belarus 5, Prima Sport 4, beIN Sports Arabia 6", hot: false }
-      ], "MON, NOV 30 • 04:00 AM MYT", "2026-11-30T04:00:00+08:00", 120),
-      createMatch("LA LIGA", [
-        { teams: "ESPANYOL VS GETAFE", channel: "Prima Sport 3, beIN Sports Arabia 2", hot: false }
-      ], "TUE, DEC 1 • 04:00 AM MYT", "2026-12-01T04:00:00+08:00", 120),
-      createMatch("LA LIGA", [
-        { teams: "REAL SOCIEDAD VS REAL MADRID", channel: "ESPN2 USA", hot: false }
-      ], "THU, DEC 3 • 02:00 AM MYT", "2026-12-03T02:00:00+08:00", 120),
-      createMatch("LA LIGA", [
-        { teams: "BARCELONA VS ATLÉTICO MADRID", channel: "ESPN2 USA", hot: false }
-      ], "THU, DEC 3 • 04:30 AM MYT", "2026-12-03T04:30:00+08:00", 120),
-      createMatch("LA LIGA", [
-        { teams: "BARCELONA VS CELTA DE VIGO", channel: "Zoʻr TV", hot: false }
-      ], "SUN, DEC 6 • 04:00 AM MYT", "2026-12-06T04:00:00+08:00", 120),
-      createMatch("LA LIGA", [
-        { teams: "ATHLETIC CLUB VS REAL MADRID", channel: "Zoʻr TV", hot: false }
-      ], "SUN, DEC 6 • 11:15 PM MYT", "2026-12-06T23:15:00+08:00", 120),
-      createMatch("LA LIGA", [
-        { teams: "MÁLAGA VS BARCELONA", channel: "Zoʻr TV", hot: false }
-      ], "SUN, DEC 13 • 01:30 AM MYT", "2026-12-13T01:30:00+08:00", 120),
-      createMatch("LA LIGA", [
-        { teams: "REAL MADRID VS OSASUNA", channel: "Zoʻr TV", hot: false }
-      ], "MON, DEC 14 • 04:00 AM MYT", "2026-12-14T04:00:00+08:00", 120),
-      createMatch("LA LIGA", [
-        { teams: "BARCELONA VS REAL SOCIEDAD", channel: "Zoʻr TV", hot: false },
-        { teams: "DEPORTIVO LA CORUÑA VS REAL MADRID", channel: "Zoʻr TV", hot: false }
-      ], "MON, DEC 21 • 12:00 AM MYT", "2026-12-21T00:00:00+08:00", 120)
-    ];
+/* La Liga Schedule */
+const laLigaMatches = [
+  createMatch("LA LIGA", [
+    { teams: "LEVANTE VS RACING SANTANDER", channel: "Prima Sport 4, beIN Sports Arabia 3", hot: false }
+  ], "SAT, NOV 28 • 04:00 AM MYT", "2026-11-28T04:00:00+08:00", 120),
+  createMatch("LA LIGA", [
+    { teams: "REAL BETIS VS RAYO VALLECANO", channel: "Belarus 5, Prima Sport 2, beIN Sports Arabia 5", hot: false }
+  ], "SAT, NOV 28 • 09:00 PM MYT", "2026-11-28T21:00:00+08:00", 120),
+  createMatch("LA LIGA", [
+    { teams: "MÁLAGA VS ATHLETIC CLUB", channel: "Prima Sport 2, beIN Sports Arabia 5", hot: false }
+  ], "SAT, NOV 28 • 11:15 PM MYT", "2026-11-28T23:15:00+08:00", 120),
+  createMatch("LA LIGA", [
+    { teams: "ELCHE VS ATLÉTICO MADRID", channel: "Belarus 5, Prima Sport 2, beIN Sports Arabia 5", hot: false }
+  ], "SUN, NOV 29 • 01:30 AM MYT", "2026-11-29T01:30:00+08:00", 120),
+  createMatch("LA LIGA", [
+    { teams: "REAL MADRID VS DEPORTIVO ALAVÉS", channel: "Zoʻr TV, Belarus 5, Prima Sport 2, beIN Sports Arabia 1", hot: false }
+  ], "SUN, NOV 29 • 04:00 AM MYT", "2026-11-29T04:00:00+08:00", 120),
+  createMatch("LA LIGA", [
+    { teams: "VALENCIA VS OSASUNA", channel: "Belarus 5, Prima Sport 5", hot: false }
+  ], "SUN, NOV 29 • 09:00 PM MYT", "2026-11-29T21:00:00+08:00", 120),
+  createMatch("LA LIGA", [
+    { teams: "DEPORTIVO LA CORUÑA VS BARCELONA", channel: "Zoʻr TV, Prima Sport 1, beIN Sports Arabia 2", hot: false }
+  ], "SUN, NOV 29 • 11:15 PM MYT", "2026-11-29T23:15:00+08:00", 120),
+  createMatch("LA LIGA", [
+    { teams: "CELTA DE VIGO VS VILLARREAL", channel: "Belarus 5, Prima Sport 2, beIN Sports Arabia 6", hot: false }
+  ], "MON, NOV 30 • 01:30 AM MYT", "2026-11-30T01:30:00+08:00", 120),
+  createMatch("LA LIGA", [
+    { teams: "REAL SOCIEDAD VS SEVILLA", channel: "Belarus 5, Prima Sport 4, beIN Sports Arabia 6", hot: false }
+  ], "MON, NOV 30 • 04:00 AM MYT", "2026-11-30T04:00:00+08:00", 120),
+  createMatch("LA LIGA", [
+    { teams: "ESPANYOL VS GETAFE", channel: "Prima Sport 3, beIN Sports Arabia 2", hot: false }
+  ], "TUE, DEC 1 • 04:00 AM MYT", "2026-12-01T04:00:00+08:00", 120),
+  createMatch("LA LIGA", [
+    { teams: "REAL SOCIEDAD VS REAL MADRID", channel: "ESPN2 USA", hot: false }
+  ], "THU, DEC 3 • 02:00 AM MYT", "2026-12-03T02:00:00+08:00", 120),
+  createMatch("LA LIGA", [
+    { teams: "BARCELONA VS ATLÉTICO MADRID", channel: "ESPN2 USA", hot: false }
+  ], "THU, DEC 3 • 04:30 AM MYT", "2026-12-03T04:30:00+08:00", 120),
+  createMatch("LA LIGA", [
+    { teams: "BARCELONA VS CELTA DE VIGO", channel: "Zoʻr TV", hot: false }
+  ], "SUN, DEC 6 • 04:00 AM MYT", "2026-12-06T04:00:00+08:00", 120),
+  createMatch("LA LIGA", [
+    { teams: "ATHLETIC CLUB VS REAL MADRID", channel: "Zoʻr TV", hot: false }
+  ], "SUN, DEC 6 • 11:15 PM MYT", "2026-12-06T23:15:00+08:00", 120),
+  createMatch("LA LIGA", [
+    { teams: "MÁLAGA VS BARCELONA", channel: "Zoʻr TV", hot: false }
+  ], "SUN, DEC 13 • 01:30 AM MYT", "2026-12-13T01:30:00+08:00", 120),
+  createMatch("LA LIGA", [
+    { teams: "REAL MADRID VS OSASUNA", channel: "Zoʻr TV", hot: false }
+  ], "MON, DEC 14 • 04:00 AM MYT", "2026-12-14T04:00:00+08:00", 120),
+  createMatch("LA LIGA", [
+    { teams: "BARCELONA VS REAL SOCIEDAD", channel: "Zoʻr TV", hot: false },
+    { teams: "DEPORTIVO LA CORUÑA VS REAL MADRID", channel: "Zoʻr TV", hot: false }
+  ], "MON, DEC 21 • 12:00 AM MYT", "2026-12-21T00:00:00+08:00", 120)
+];
 
-    function updateLaLigaCard(now) {
-      renderGenericSection(now, laLigaMatches, 'laliga-badge', 'laliga-matches-body', 'laliga-time', 'laliga-countdown', 'HOME OF LA LIGA');
-    }
+function updateLaLigaCard(now) {
+  renderGenericSection(now, laLigaMatches, 'laliga-badge', 'laliga-matches-body', 'laliga-time', 'laliga-countdown', 'HOME OF LA LIGA');
+}
 
-    /* International Friendlies Hub Schedule */
-    const intlFriendliesMatches = [];
+/* Football+ Schedule */
+const footballPlusMatches = [
+  /* EFL Championship */
+  createMatch("EFL CHAMPIONSHIP", [
+    { teams: "STOKE CITY VS MILLWALL", channel: "beIN Sports MAX 4 France, Belarus 5", hot: false }
+  ], "THU, NOV 26 • 04:00 AM MYT", "2026-11-26T04:00:00+08:00", 120),
+  createMatch("EFL CHAMPIONSHIP", [
+    { teams: "SOUTHAMPTON VS MIDDLESBROUGH", channel: "beIN Sports Arabia 4", hot: false }
+  ], "SAT, NOV 28 • 04:00 AM MYT", "2026-11-28T04:00:00+08:00", 120),
+  createMatch("EFL CHAMPIONSHIP", [
+    { teams: "PRESTON NORTH END VS NORWICH CITY", channel: "beIN Sports Arabia 6", hot: false }
+  ], "SAT, NOV 28 • 08:30 PM MYT", "2026-11-28T20:30:00+08:00", 120),
+  createMatch("EFL CHAMPIONSHIP", [
+    { teams: "SWANSEA CITY VS CARDIFF CITY", channel: "beIN Sports MAX 4 France", hot: false }
+  ], "SUN, NOV 29 • 08:00 PM MYT", "2026-11-29T20:00:00+08:00", 120),
 
-    function updateIntlFriendliesCard(now) {
-      renderGenericSection(now, intlFriendliesMatches, 'intlfriendlies-badge', 'intlfriendlies-matches-body', 'intlfriendlies-time', 'intlfriendlies-countdown', 'INTERNATIONAL FRIENDLIES HUB');
-    }
+  /* Major League Soccer */
+  createMatch("MAJOR LEAGUE SOCCER", [
+    { teams: "COLUMBUS CREW VS INTER MIAMI", channel: "Fox Sports 1 USA", hot: false }
+  ], "SAT, NOV 28 • 09:00 AM MYT", "2026-11-28T09:00:00+08:00", 120),
+  createMatch("MAJOR LEAGUE SOCCER", [
+    { teams: "REAL SALT LAKE VS VANCOUVER WHITECAPS", channel: "Fox Sports 1 USA", hot: false }
+  ], "SAT, NOV 28 • 11:00 AM MYT", "2026-11-28T11:00:00+08:00", 120),
+  createMatch("MAJOR LEAGUE SOCCER", [
+    { teams: "PORTLAND TIMBERS VS DALLAS", channel: "Fox Sports 1 USA", hot: false }
+  ], "SUN, NOV 29 • 11:30 AM MYT", "2026-11-29T11:30:00+08:00", 120),
 
-    /* ASEAN Football Hub Schedule */
-    const aseanFootballMatches = [];
+  /* A-League */
+  createMatch("A-LEAGUE", [
+    { teams: "WESTERN SYDNEY WANDERERS VS PERTH GLORY", channel: "TNT Sports 1", hot: false }
+  ], "SAT, DEC 5 • 04:40 PM MYT", "2026-12-05T16:40:00+08:00", 120),
+  createMatch("A-LEAGUE", [
+    { teams: "SYDNEY FC VS MELBOURNE VICTORY", channel: "TNT Sports 1", hot: false }
+  ], "SUN, DEC 6 • 02:00 PM MYT", "2026-12-06T14:00:00+08:00", 120),
+  createMatch("A-LEAGUE", [
+    { teams: "PERTH GLORY VS MELBOURNE CITY", channel: "TNT Sports 1", hot: false }
+  ], "FRI, DEC 11 • 06:45 PM MYT", "2026-12-11T18:45:00+08:00", 120),
+  createMatch("A-LEAGUE", [
+    { teams: "WESTERN SYDNEY WANDERERS VS WELLINGTON PHOENIX", channel: "TNT Sports 1", hot: false }
+  ], "SUN, DEC 13 • 02:00 PM MYT", "2026-12-13T14:00:00+08:00", 120),
+  createMatch("A-LEAGUE", [
+    { teams: "ADELAIDE UNITED VS BRISBANE ROAR", channel: "TNT Sports 1", hot: false }
+  ], "TUE, DEC 15 • 04:30 PM MYT", "2026-12-15T16:30:00+08:00", 120),
+  createMatch("A-LEAGUE", [
+    { teams: "MELBOURNE CITY VS MELBOURNE VICTORY", channel: "TNT Sports 1", hot: false }
+  ], "SAT, DEC 19 • 04:40 PM MYT", "2026-12-19T16:40:00+08:00", 120),
+  createMatch("A-LEAGUE", [
+    { teams: "WESTERN SYDNEY WANDERERS VS NEWCASTLE JETS", channel: "TNT Sports 1", hot: false }
+  ], "SAT, DEC 26 • 04:40 PM MYT", "2026-12-26T16:40:00+08:00", 120),
+  createMatch("A-LEAGUE", [
+    { teams: "ADELAIDE UNITED VS CENTRAL COAST MARINERS", channel: "TNT Sports 1", hot: false }
+  ], "SUN, DEC 27 • 05:00 PM MYT", "2026-12-27T17:00:00+08:00", 120),
+  createMatch("A-LEAGUE", [
+    { teams: "SYDNEY FC VS MACARTHUR", channel: "TNT Sports 1", hot: false }
+  ], "MON, DEC 28 • 04:00 PM MYT", "2026-12-28T16:00:00+08:00", 120),
+  createMatch("A-LEAGUE", [
+    { teams: "MELBOURNE VICTORY VS WELLINGTON PHOENIX", channel: "TNT Sports 1", hot: false }
+  ], "TUE, DEC 29 • 04:00 PM MYT", "2026-12-29T16:00:00+08:00", 120),
+  createMatch("A-LEAGUE", [
+    { teams: "BRISBANE ROAR VS PERTH GLORY", channel: "TNT Sports 1", hot: false }
+  ], "WED, DEC 30 • 04:40 PM MYT", "2026-12-30T16:40:00+08:00", 120),
+  createMatch("A-LEAGUE", [
+    { teams: "CENTRAL COAST MARINERS VS MELBOURNE CITY", channel: "TNT Sports 1", hot: false }
+  ], "THU, DEC 31 • 04:00 PM MYT", "2026-12-31T16:00:00+08:00", 120),
+  createMatch("A-LEAGUE", [
+    { teams: "AUCKLAND VS ADELAIDE UNITED", channel: "TNT Sports 1", hot: false }
+  ], "FRI, JAN 1 • 12:00 PM MYT", "2027-01-01T12:00:00+08:00", 120),
 
-    function updateAseanFootballCard(now) {
-      renderGenericSection(now, aseanFootballMatches, 'aseanfootball-badge', 'aseanfootball-matches-body', 'aseanfootball-time', 'aseanfootball-countdown', 'ASEAN FOOTBALL HUB');
-    }
+  /* A-League Women */
+  createMatch("A-LEAGUE WOMEN", [
+    { teams: "CENTRAL COAST MARINERS VS MELBOURNE CITY", channel: "TNT Sports 1", hot: false }
+  ], "THU, DEC 31 • 01:50 PM MYT", "2026-12-31T13:50:00+08:00", 120),
 
-    /* Football+ Schedule */
-    const footballPlusMatches = [];
+  /* Scottish Premiership */
+  createMatch("SCOTTISH PREMIERSHIP", [
+    { teams: "MOTHERWELL VS HIBERNIAN", channel: "5Plus", hot: false }
+  ], "SUN, NOV 29 • 01:45 AM MYT", "2026-11-29T01:45:00+08:00", 120),
 
-    function updateFootballPlusCard(now) {
-      renderGenericSection(now, footballPlusMatches, 'footballplus-badge', 'footballplus-matches-body', 'footballplus-time', 'footballplus-countdown', 'FOOTBALL+');
-    }
+  /* FA Cup */
+  createMatch("FA CUP", [
+    { teams: "WIMBORNE TOWN VS BRADFORD CITY", channel: "TNT Sports 1", hot: false }
+  ], "SAT, DEC 5 • 03:30 AM MYT", "2026-12-05T03:30:00+08:00", 120),
+  createMatch("FA CUP", [
+    { teams: "DOVER ATHLETIC VS LEICESTER CITY", channel: "BBC Two", hot: false }
+  ], "SUN, DEC 6 • 01:15 AM MYT", "2026-12-06T01:15:00+08:00", 120),
+  createMatch("FA CUP", [
+    { teams: "BARROW VS KIDDERMINSTER HARRIERS", channel: "TNT Sports 1", hot: false }
+  ], "SUN, DEC 6 • 04:00 AM MYT", "2026-12-06T04:00:00+08:00", 120),
+  createMatch("FA CUP", [
+    { teams: "SALISBURY CITY VS BLACKPOOL", channel: "BBC Two", hot: false }
+  ], "SUN, DEC 6 • 08:15 PM MYT", "2026-12-06T20:15:00+08:00", 120),
+  createMatch("FA CUP", [
+    { teams: "FYLDE VS LUTON TOWN", channel: "TNT Sports 1", hot: false }
+  ], "SUN, DEC 6 • 10:30 PM MYT", "2026-12-06T22:30:00+08:00", 120),
+  createMatch("FA CUP", [
+    { teams: "PLYMOUTH PARKWAY VS BARNET", channel: "TNT Sports 1", hot: false }
+  ], "MON, DEC 7 • 01:30 AM MYT", "2026-12-07T01:30:00+08:00", 120),
+  createMatch("FA CUP", [
+    { teams: "GUISELEY VS NOTTS COUNTY", channel: "TNT Sports 1", hot: false }
+  ], "TUE, DEC 8 • 03:30 AM MYT", "2026-12-08T03:30:00+08:00", 120)
+];
+
+function updateFootballPlusCard(now) {
+  renderGenericSection(now, footballPlusMatches, 'footballplus-badge', 'footballplus-matches-body', 'footballplus-time', 'footballplus-countdown', 'FOOTBALL+');
+}
+
+/* ASEAN Football Hub Schedule */
+const aseanFootballMatches = [
+  /* AFC Champions League Elite */
+  createMatch("AFC CHAMPIONS LEAGUE ELITE", [
+    { teams: "KASHIMA ANTLERS VS JEONBUK MOTORS", channel: "beIN Sports Arabia 3", hot: false }
+  ], "WED, NOV 25 • 06:00 PM MYT", "2026-11-25T18:00:00+08:00", 120),
+  createMatch("AFC CHAMPIONS LEAGUE ELITE", [
+    { teams: "ESTEGHLAL VS NEFTCHI", channel: "Futbol TV", hot: false }
+  ], "TUE, DEC 8 • 02:15 AM MYT", "2026-12-08T02:15:00+08:00", 120),
+
+  /* AFC Champions League Two */
+  createMatch("AFC CHAMPIONS LEAGUE TWO", [
+    { teams: "PERSIB VS SEOUL", channel: "beIN Sports Arabia 2", hot: false }
+  ], "WED, NOV 25 • 08:15 PM MYT", "2026-11-25T20:15:00+08:00", 120),
+  createMatch("AFC CHAMPIONS LEAGUE TWO", [
+    { teams: "NASAF VS KHALIDIYA", channel: "Futbol TV, beIN Sports Arabia 1", hot: false }
+  ], "WED, NOV 25 • 09:45 PM MYT", "2026-11-25T21:45:00+08:00", 120),
+  createMatch("AFC CHAMPIONS LEAGUE TWO", [
+    { teams: "AL FAISALY VS AL RAYYAN", channel: "beIN Sports Arabia 3", hot: false },
+    { teams: "AL JAZIRA VS GOL GOHAR", channel: "beIN Sports Arabia 1, IRIB Varzesh", hot: false },
+    { teams: "AL KUWAIT VS AL WAHDA", channel: "beIN Sports Arabia 6", hot: false },
+    { teams: "MUHARRAQ VS ARKADAG", channel: "beIN Sports Arabia 5", hot: false }
+  ], "THU, NOV 26 • 12:00 AM MYT", "2026-11-26T00:00:00+08:00", 120),
+  createMatch("AFC CHAMPIONS LEAGUE TWO", [
+    { teams: "AL TAAWON VS AL NAHDA", channel: "beIN Sports Arabia 9", hot: false }
+  ], "THU, NOV 26 • 02:15 AM MYT", "2026-11-26T02:15:00+08:00", 120),
+  createMatch("AFC CHAMPIONS LEAGUE TWO", [
+    { teams: "GANGWON VS KITCHEE", channel: "beIN Sports Arabia 2", hot: false },
+    { teams: "KUCHING CITY VS PHNOM PENH CROWN", channel: "beIN Sports Arabia 3", hot: false },
+    { teams: "TAMPINES ROVERS VS SHANGHAI SHENHUA", channel: "beIN Sports Arabia 4", hot: false }
+  ], "THU, NOV 26 • 06:00 PM MYT", "2026-11-26T18:00:00+08:00", 120),
+  createMatch("AFC CHAMPIONS LEAGUE TWO", [
+    { teams: "BANGKOK GLASS VS LION CITY SAILORS", channel: "beIN Sports Arabia 3", hot: false },
+    { teams: "SVAY RIENG VS MACHIDA ZELVIA", channel: "beIN Sports Arabia 2", hot: false },
+    { teams: "WOFOO TAI PO VS ADELAIDE UNITED", channel: "beIN Sports Arabia 4", hot: false }
+  ], "THU, NOV 26 • 08:15 PM MYT", "2026-11-26T20:15:00+08:00", 120),
+  createMatch("AFC CHAMPIONS LEAGUE TWO", [
+    { teams: "GOL GOHAR VS MUHARRAQ", channel: "IRIB Varzesh", hot: false }
+  ], "WED, DEC 9 • 09:45 PM MYT", "2026-12-09T21:45:00+08:00", 120),
+  createMatch("AFC CHAMPIONS LEAGUE TWO", [
+    { teams: "AL WAHDA VS NASAF", channel: "Futbol TV", hot: false }
+  ], "THU, DEC 10 • 12:00 AM MYT", "2026-12-10T00:00:00+08:00", 120),
+
+  /* Asian Cup Qualification */
+  createMatch("ASIAN CUP QUALIFICATION", [
+    { teams: "UZBEKISTAN VS JORDAN", channel: "Jordan TV Sport", hot: false }
+  ], "FRI, JAN 8 • 10:00 PM MYT", "2027-01-08T22:00:00+08:00", 120),
+  createMatch("ASIAN CUP QUALIFICATION", [
+    { teams: "JORDAN VS BAHRAIN", channel: "Jordan TV Sport, Bahrain Sport 1", hot: false }
+  ], "WED, JAN 13 • 10:00 PM MYT", "2027-01-13T22:00:00+08:00", 120),
+  createMatch("ASIAN CUP QUALIFICATION", [
+    { teams: "IRAQ VS AUSTRALIA", channel: "Al Iraqiya Sports", hot: false }
+  ], "THU, JAN 14 • 10:00 PM MYT", "2027-01-14T22:00:00+08:00", 120),
+  createMatch("ASIAN CUP QUALIFICATION", [
+    { teams: "KOREA DPR VS JORDAN", channel: "Jordan TV Sport", hot: false },
+    { teams: "UZBEKISTAN VS BAHRAIN", channel: "Bahrain Sport 1", hot: false }
+  ], "MON, JAN 18 • 10:00 PM MYT", "2027-01-18T22:00:00+08:00", 120),
+
+  /* Saudi Pro League */
+  createMatch("SAUDI PRO LEAGUE", [
+    { teams: "AL HAZM VS AL NASSR", channel: "Fox Sports 2 USA, Prima Sport 4", hot: false }
+  ], "SAT, NOV 28 • 08:15 PM MYT", "2026-11-28T20:15:00+08:00", 120),
+  createMatch("SAUDI PRO LEAGUE", [
+    { teams: "AL ITTIFAQ VS AL HILAL", channel: "Fox Sports 2 USA", hot: false }
+  ], "SAT, NOV 28 • 10:20 PM MYT", "2026-11-28T22:20:00+08:00", 120),
+
+  /* Persian Gulf Pro League */
+  createMatch("PERSIAN GULF PRO LEAGUE", [
+    { teams: "ALUMINIUM ARAK VS PERSEPOLIS", channel: "Shabake 3", hot: false }
+  ], "FRI, NOV 27 • 08:45 PM MYT", "2026-11-27T20:45:00+08:00", 120),
+  createMatch("PERSIAN GULF PRO LEAGUE", [
+    { teams: "ESTEGHLAL KHUZESTAN VS MALAVAN", channel: "IRIB Baran", hot: false }
+  ], "FRI, NOV 27 • 09:00 PM MYT", "2026-11-27T21:00:00+08:00", 120),
+  createMatch("PERSIAN GULF PRO LEAGUE", [
+    { teams: "TRACTOR SAZI VS ZOB AHAN", channel: "IRIB Varzesh", hot: false }
+  ], "SAT, NOV 28 • 07:45 PM MYT", "2026-11-28T19:45:00+08:00", 120),
+  createMatch("PERSIAN GULF PRO LEAGUE", [
+    { teams: "ESTEGHLAL VS SANAT NAFT", channel: "Shabake 3", hot: false }
+  ], "SAT, NOV 28 • 08:45 PM MYT", "2026-11-28T20:45:00+08:00", 120),
+  createMatch("PERSIAN GULF PRO LEAGUE", [
+    { teams: "SEPAHAN VS NASSAJI MAZANDARAN", channel: "IRIB Tabarestan TV", hot: false }
+  ], "SAT, NOV 28 • 10:00 PM MYT", "2026-11-28T22:00:00+08:00", 120),
+  createMatch("PERSIAN GULF PRO LEAGUE", [
+    { teams: "FOOLAD VS TRACTOR SAZI", channel: "IRIB Varzesh", hot: false }
+  ], "WED, DEC 2 • 09:00 PM MYT", "2026-12-02T21:00:00+08:00", 120),
+  createMatch("PERSIAN GULF PRO LEAGUE", [
+    { teams: "ZOB AHAN VS ESTEGHLAL", channel: "Shabake 3", hot: false }
+  ], "THU, DEC 3 • 08:45 PM MYT", "2026-12-03T20:45:00+08:00", 120),
+  createMatch("PERSIAN GULF PRO LEAGUE", [
+    { teams: "NASSAJI MAZANDARAN VS CHADORMALU SC", channel: "IRIB Tabarestan TV", hot: false }
+  ], "FRI, DEC 4 • 08:30 PM MYT", "2026-12-04T20:30:00+08:00", 120),
+  createMatch("PERSIAN GULF PRO LEAGUE", [
+    { teams: "PERSEPOLIS VS SEPAHAN", channel: "Shabake 3", hot: false }
+  ], "FRI, DEC 4 • 08:45 PM MYT", "2026-12-04T20:45:00+08:00", 120),
+  createMatch("PERSIAN GULF PRO LEAGUE", [
+    { teams: "MALAVAN VS SHAMS AZAR QAZVIN", channel: "IRIB Baran", hot: false }
+  ], "SAT, DEC 5 • 08:45 PM MYT", "2026-12-05T20:45:00+08:00", 120),
+  createMatch("PERSIAN GULF PRO LEAGUE", [
+    { teams: "ESTEGHLAL VS SHAMS AZAR QAZVIN", channel: "Shabake 3", hot: false }
+  ], "SAT, DEC 12 • 08:45 PM MYT", "2026-12-12T20:45:00+08:00", 120),
+  createMatch("PERSIAN GULF PRO LEAGUE", [
+    { teams: "FAJR SEPASI VS TRACTOR SAZI", channel: "IRIB Varzesh", hot: false }
+  ], "SAT, DEC 12 • 09:00 PM MYT", "2026-12-12T21:00:00+08:00", 120),
+
+  /* Jordan League */
+  createMatch("JORDAN LEAGUE", [
+    { teams: "AL BUQA'A VS AL JAZEERA", channel: "Jordan TV Sport", hot: false }
+  ], "THU, NOV 26 • 11:00 PM MYT", "2026-11-26T23:00:00+08:00", 120),
+  createMatch("JORDAN LEAGUE", [
+    { teams: "SHABAB AL ORDON VS AL SALT", channel: "Jordan TV Sport", hot: false }
+  ], "FRI, NOV 27 • 10:00 PM MYT", "2026-11-27T22:00:00+08:00", 120),
+  createMatch("JORDAN LEAGUE", [
+    { teams: "AL WIHDAT VS DOQARAH", channel: "Jordan TV Sport", hot: false }
+  ], "SAT, NOV 28 • 12:30 AM MYT", "2026-11-28T00:30:00+08:00", 120),
+  createMatch("JORDAN LEAGUE", [
+    { teams: "AL ARABI VS AL FAISALY", channel: "Jordan TV Sport", hot: false }
+  ], "SAT, NOV 28 • 10:00 PM MYT", "2026-11-28T22:00:00+08:00", 120),
+  createMatch("JORDAN LEAGUE", [
+    { teams: "AL RAMTHA VS AL HUSSEIN", channel: "Jordan TV Sport", hot: false }
+  ], "SUN, NOV 29 • 12:30 AM MYT", "2026-11-29T00:30:00+08:00", 120),
+  createMatch("JORDAN LEAGUE", [
+    { teams: "DOQARAH VS AL BUQA'A", channel: "Jordan TV Sport", hot: false }
+  ], "WED, DEC 2 • 11:00 PM MYT", "2026-12-02T23:00:00+08:00", 120),
+  createMatch("JORDAN LEAGUE", [
+    { teams: "AL SALT VS AL ARABI", channel: "Jordan TV Sport", hot: false }
+  ], "THU, DEC 3 • 09:00 PM MYT", "2026-12-03T21:00:00+08:00", 120),
+  createMatch("JORDAN LEAGUE", [
+    { teams: "AL JAZEERA VS AL HUSSEIN", channel: "Jordan TV Sport", hot: false }
+  ], "FRI, DEC 4 • 12:00 AM MYT", "2026-12-04T00:00:00+08:00", 120),
+  createMatch("JORDAN LEAGUE", [
+    { teams: "AL RAMTHA VS SHABAB AL ORDON", channel: "Jordan TV Sport", hot: false }
+  ], "FRI, DEC 4 • 09:00 PM MYT", "2026-12-04T21:00:00+08:00", 120),
+  createMatch("JORDAN LEAGUE", [
+    { teams: "AL FAISALY VS AL WIHDAT", channel: "Jordan TV Sport", hot: false }
+  ], "SAT, DEC 5 • 12:00 AM MYT", "2026-12-05T00:00:00+08:00", 120),
+  createMatch("JORDAN LEAGUE", [
+    { teams: "AL BUQA'A VS AL HUSSEIN", channel: "Jordan TV Sport", hot: false }
+  ], "FRI, DEC 11 • 09:00 PM MYT", "2026-12-11T21:00:00+08:00", 120),
+  createMatch("JORDAN LEAGUE", [
+    { teams: "AL WIHDAT VS AL SALT", channel: "Jordan TV Sport", hot: false }
+  ], "SAT, DEC 12 • 12:00 AM MYT", "2026-12-12T00:00:00+08:00", 120),
+  createMatch("JORDAN LEAGUE", [
+    { teams: "AL ARABI VS AL RAMTHA", channel: "Jordan TV Sport", hot: false }
+  ], "SAT, DEC 12 • 09:00 PM MYT", "2026-12-12T21:00:00+08:00", 120),
+  createMatch("JORDAN LEAGUE", [
+    { teams: "SHABAB AL ORDON VS AL JAZEERA", channel: "Jordan TV Sport", hot: false }
+  ], "SUN, DEC 13 • 12:00 AM MYT", "2026-12-13T00:00:00+08:00", 120),
+  createMatch("JORDAN LEAGUE", [
+    { teams: "DOQARAH VS AL FAISALY", channel: "Jordan TV Sport", hot: false }
+  ], "SUN, DEC 13 • 11:00 PM MYT", "2026-12-13T23:00:00+08:00", 120),
+  createMatch("JORDAN LEAGUE", [
+    { teams: "AL SALT VS DOQARAH", channel: "Jordan TV Sport", hot: false }
+  ], "WED, DEC 23 • 09:00 PM MYT", "2026-12-23T21:00:00+08:00", 120),
+  createMatch("JORDAN LEAGUE", [
+    { teams: "AL HUSSEIN VS SHABAB AL ORDON", channel: "Jordan TV Sport", hot: false }
+  ], "THU, DEC 24 • 12:00 AM MYT", "2026-12-24T00:00:00+08:00", 120),
+  createMatch("JORDAN LEAGUE", [
+    { teams: "AL JAZEERA VS AL ARABI", channel: "Jordan TV Sport", hot: false }
+  ], "THU, DEC 24 • 09:00 PM MYT", "2026-12-24T21:00:00+08:00", 120),
+  createMatch("JORDAN LEAGUE", [
+    { teams: "AL RAMTHA VS AL WIHDAT", channel: "Jordan TV Sport", hot: false }
+  ], "FRI, DEC 25 • 12:00 AM MYT", "2026-12-25T00:00:00+08:00", 120),
+  createMatch("JORDAN LEAGUE", [
+    { teams: "AL FAISALY VS AL BUQA'A", channel: "Jordan TV Sport", hot: false }
+  ], "SAT, DEC 26 • 11:00 PM MYT", "2026-12-26T23:00:00+08:00", 120),
+  createMatch("JORDAN LEAGUE", [
+    { teams: "AL WIHDAT VS AL JAZEERA", channel: "Jordan TV Sport", hot: false }
+  ], "TUE, DEC 29 • 11:00 PM MYT", "2026-12-29T23:00:00+08:00", 120),
+
+  /* Jordan Cup */
+  createMatch("JORDAN CUP", [
+    { teams: "AL HUSSEIN VS DOQARAH", channel: "Jordan TV Sport", hot: false }
+  ], "WED, DEC 16 • 11:00 PM MYT", "2026-12-16T23:00:00+08:00", 120)
+];
+
+function updateAseanFootballCard(now) {
+  renderGenericSection(now, aseanFootballMatches, 'aseanfootball-badge', 'aseanfootball-matches-body', 'aseanfootball-time', 'aseanfootball-countdown', 'ASEAN FOOTBALL HUB');
+}
+
+/* International Friendlies Hub Schedule */
+const intlFriendliesMatches = [
+  createMatch("WOMEN'S INTERNATIONAL FRIENDLY", [
+    { teams: "FRANCE VS VENEZUELA", channel: "France 4", hot: false }
+  ], "SAT, NOV 28 • 04:00 AM MYT", "2026-11-28T04:00:00+08:00", 120),
+  createMatch("INTERNATIONAL FRIENDLY", [
+    { teams: "USA VS JAMAICA", channel: "Telemundo", hot: false }
+  ], "MON, DEC 14 • 04:30 AM MYT", "2026-12-14T04:30:00+08:00", 120)
+];
+
+function updateIntlFriendliesCard(now) {
+  renderGenericSection(now, intlFriendliesMatches, 'intlfriendlies-badge', 'intlfriendlies-matches-body', 'intlfriendlies-time', 'intlfriendlies-countdown', 'INTERNATIONAL FRIENDLIES HUB');
+}
 
     /* Dynamic Multi-Match Renderer Engine */
     function renderGenericSection(now, schedule, badgeId, bodyId, timeId, timerId, defaultCategoryName) {
