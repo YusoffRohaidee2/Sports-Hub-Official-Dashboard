@@ -2906,7 +2906,7 @@
       renderGenericSection(now, nowSports4Matches, 'nowsports4-badge', 'nowsports4-matches-body', 'nowsports4-time', 'nowsports4-countdown', 'NOW SPORTS LIVE EVENT 4');
     }
 
-/* Home of Motorsports Action+ Schedule */
+    /* Home of Motorsports Action+ Schedule */
     const motorsportsPlusMatches = [];
 
     function updateMotorSportsPlusCard(now) {
@@ -2914,13 +2914,13 @@
     }
 
     /* Sports+ Schedule */
-    const SportsPlusMatches = [];
+    const sportsPlusMatches = [];
 
     function updateSportsPlusCard(now) {
       renderGenericSection(now, sportsPlusMatches, 'sportsplus-badge', 'sportsplus-matches-body', 'sportsplus-time', 'sportsplus-countdown', 'SPORTS+');
     }
-    
-/* Premier League Schedule */
+
+    /* Premier League Schedule */
     const eplMatches = [
       createMatch("PREMIER LEAGUE", [
         { teams: "NOTTINGHAM FOREST VS CHELSEA", channel: "Star Sports Select 1, Sky Sports Premier League, Canal+ Foot, beIN Sports Arabia 1, Shabake 3", hot: false }
@@ -3098,7 +3098,7 @@
       if (activeSlot) {
         const isLive = !!currentSlot;
         const matchCount = activeSlot.matches.length;
-        
+
         badgeEl.innerHTML = `<span class="live-dot"></span> ${defaultCategoryName} • ${activeSlot.week}${matchCount > 1 ? ` (${matchCount} MATCHES)` : ''}`;
         timeEl.innerHTML = `<i class="fa-regular fa-clock"></i> ${activeSlot.displayTime}`;
 
@@ -3147,15 +3147,15 @@
           timerEl.innerHTML = `<i class="fa-solid fa-hourglass-half"></i> Starts in ${display}`;
         }
       } else {
-        badgeEl.innerHTML = `<span class="live-dot"></span> ${defaultCategoryName} COMPLETED`;
-        bodyEl.innerHTML = `<span class="match-teams">ALL MATCHES COMPLETED</span>`;
-        timeEl.innerHTML = `<i class="fa-regular fa-clock"></i> Check back later for upcoming fixtures!`;
+        badgeEl.innerHTML = `<span class="live-dot"></span> ${defaultCategoryName}`;
+        bodyEl.innerHTML = `<span class="match-teams">NO SCHEDULED EVENTS YET</span>`;
+        timeEl.innerHTML = `<i class="fa-regular fa-clock"></i> Check back later for upcoming schedules!`;
         timerEl.classList.remove('is-live');
-        timerEl.innerHTML = `<i class="fa-solid fa-flag-checkered"></i> COMPLETED`;
+        timerEl.innerHTML = `<i class="fa-solid fa-clock"></i> SCHEDULE TBA`;
       }
     }
 
-function updateCountdowns() {
+    function updateCountdowns() {
       const now = new Date().getTime();
 
       updateSchedulePageTimers();
