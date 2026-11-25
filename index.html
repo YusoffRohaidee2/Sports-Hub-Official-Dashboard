@@ -2909,12 +2909,12 @@
 /* Home of Motorsports Action+ Schedule */
     const motorsportsPlusMatches = [];
 
-    function updateMotorsportsPlusCard(now) {
+    function updateMotorSportsPlusCard(now) {
       renderGenericSection(now, motorsportsPlusMatches, 'motorsportsplus-badge', 'motorsportsplus-matches-body', 'motorsportsplus-time', 'motorsportsplus-countdown', 'HOME OF MOTORSPORTS ACTION+');
     }
 
     /* Sports+ Schedule */
-    const sportsPlusMatches = [];
+    const SportsPlusMatches = [];
 
     function updateSportsPlusCard(now) {
       renderGenericSection(now, sportsPlusMatches, 'sportsplus-badge', 'sportsplus-matches-body', 'sportsplus-time', 'sportsplus-countdown', 'SPORTS+');
@@ -3161,7 +3161,7 @@ function updateCountdowns() {
       updateSchedulePageTimers();
       updateF1Card(now);
       updateMotoGpCard(now);
-      updateMotorsportsPlusCard(now);
+      updateMotorSportsPlusCard(now);
       updateSportsPlusCard(now);
       updateIntlFriendliesCard(now);
       updateAseanFootballCard(now);
