@@ -3155,12 +3155,17 @@
       }
     }
 
-    function updateCountdowns() {
+function updateCountdowns() {
       const now = new Date().getTime();
 
       updateSchedulePageTimers();
       updateF1Card(now);
       updateMotoGpCard(now);
+      updateMotorsportsPlusCard(now);
+      updateSportsPlusCard(now);
+      updateIntlFriendliesCard(now);
+      updateAseanFootballCard(now);
+      updateFootballPlusCard(now);
       updateNowSports1Card(now);
       updateNowSports2Card(now);
       updateNowSports3Card(now);
