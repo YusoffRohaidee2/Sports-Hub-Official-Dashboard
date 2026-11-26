@@ -2210,127 +2210,99 @@ function updateFootballPlusCard(now) {
   renderGenericSection(now, footballPlusMatches, 'footballplus-badge', 'footballplus-matches-body', 'footballplus-time', 'footballplus-countdown', 'FOOTBALL+');
 }
 
-/* ASEAN Football Hub Schedule */
-const aseanFootballMatches = [
-  /* AFC Champions League Elite */
-  createMatch("AFC CHAMPIONS LEAGUE ELITE", [
-    { teams: "ESTEGHLAL VS NEFTCHI", channel: "Futbol TV", hot: false }
-  ], "TUE, DEC 8 • 02:15 AM MYT", "2026-12-08T02:15:00+08:00", 120),
-
-  /* AFC Champions League Two */
-  createMatch("AFC CHAMPIONS LEAGUE TWO", [
-    { teams: "BANGKOK GLASS VS LION CITY SAILORS", channel: "beIN Sports Arabia 3", hot: false },
-    { teams: "SVAY RIENG VS MACHIDA ZELVIA", channel: "beIN Sports Arabia 2", hot: false },
-    { teams: "WOFOO TAI PO VS ADELAIDE UNITED", channel: "beIN Sports Arabia 4", hot: false }
-  ], "THU, NOV 26 • 08:15 PM MYT", "2026-11-26T20:15:00+08:00", 120),
-  createMatch("AFC CHAMPIONS LEAGUE TWO", [
-    { teams: "GOL GOHAR VS MUHARRAQ", channel: "IRIB Varzesh", hot: false }
-  ], "WED, DEC 9 • 09:45 PM MYT", "2026-12-09T21:45:00+08:00", 120),
-  createMatch("AFC CHAMPIONS LEAGUE TWO", [
-    { teams: "AL WAHDA VS NASAF", channel: "Futbol TV", hot: false }
-  ], "THU, DEC 10 • 12:00 AM MYT", "2026-12-10T00:00:00+08:00", 120),
-
-  /* Asian Cup Qualification */
-  createMatch("ASIAN CUP QUALIFICATION", [
-    { teams: "UZBEKISTAN VS JORDAN", channel: "Jordan TV Sport", hot: false }
-  ], "FRI, JAN 8 • 10:00 PM MYT", "2027-01-08T22:00:00+08:00", 120),
-  createMatch("ASIAN CUP QUALIFICATION", [
-    { teams: "JORDAN VS BAHRAIN", channel: "Jordan TV Sport, Bahrain Sport 1", hot: false }
-  ], "WED, JAN 13 • 10:00 PM MYT", "2027-01-13T22:00:00+08:00", 120),
-  createMatch("ASIAN CUP QUALIFICATION", [
-    { teams: "IRAQ VS AUSTRALIA", channel: "Al Iraqiya Sports", hot: false }
-  ], "THU, JAN 14 • 10:00 PM MYT", "2027-01-14T22:00:00+08:00", 120),
-  createMatch("ASIAN CUP QUALIFICATION", [
-    { teams: "KOREA DPR VS JORDAN", channel: "Jordan TV Sport", hot: false },
-    { teams: "UZBEKISTAN VS BAHRAIN", channel: "Bahrain Sport 1", hot: false }
-  ], "MON, JAN 18 • 10:00 PM MYT", "2027-01-18T22:00:00+08:00", 120),
-
-  /* Saudi Pro League */
-  createMatch("SAUDI PRO LEAGUE", [
-    { teams: "AL HAZM VS AL NASSR", channel: "Fox Sports 2 USA, Prima Sport 4", hot: false }
-  ], "SAT, NOV 28 • 08:15 PM MYT", "2026-11-28T20:15:00+08:00", 120),
-  createMatch("SAUDI PRO LEAGUE", [
-    { teams: "AL ITTIFAQ VS AL HILAL", channel: "Fox Sports 2 USA", hot: false }
-  ], "SAT, NOV 28 • 10:20 PM MYT", "2026-11-28T22:20:00+08:00", 120),
-  createMatch("SAUDI PRO LEAGUE", [
-    { teams: "AL KHOLOOD VS AL HILAL", channel: "Fox Sports 2 USA", hot: false }
-  ], "FRI, DEC 11 • 10:50 PM MYT", "2026-12-11T22:50:00+08:00", 120),
-
-  /* Persian Gulf Pro League */
+/* November 2026 */
+  createMatch("JORDAN LEAGUE", [
+    { teams: "AL BUQA'A VS AL JAZEERA", channel: "Jordan TV Sport", hot: false }
+  ], "THU, NOV 26 • 11:00 PM MYT", "2026-11-26T23:00:00+08:00", 120),
   createMatch("PERSIAN GULF PRO LEAGUE", [
     { teams: "ALUMINIUM ARAK VS PERSEPOLIS", channel: "Shabake 3", hot: false }
   ], "FRI, NOV 27 • 08:45 PM MYT", "2026-11-27T20:45:00+08:00", 120),
   createMatch("PERSIAN GULF PRO LEAGUE", [
     { teams: "ESTEGHLAL KHUZESTAN VS MALAVAN", channel: "IRIB Baran", hot: false }
   ], "FRI, NOV 27 • 09:00 PM MYT", "2026-11-27T21:00:00+08:00", 120),
-  createMatch("PERSIAN GULF PRO LEAGUE", [
-    { teams: "TRACTOR SAZI VS ZOB AHAN", channel: "IRIB Varzesh", hot: false }
-  ], "SAT, NOV 28 • 07:45 PM MYT", "2026-11-28T19:45:00+08:00", 120),
-  createMatch("PERSIAN GULF PRO LEAGUE", [
-    { teams: "ESTEGHLAL VS SANAT NAFT", channel: "Shabake 3", hot: false }
-  ], "SAT, NOV 28 • 08:45 PM MYT", "2026-11-28T20:45:00+08:00", 120),
-  createMatch("PERSIAN GULF PRO LEAGUE", [
-    { teams: "SEPAHAN VS NASSAJI MAZANDARAN", channel: "IRIB Tabarestan TV", hot: false }
-  ], "SAT, NOV 28 • 10:00 PM MYT", "2026-11-28T22:00:00+08:00", 120),
-  createMatch("PERSIAN GULF PRO LEAGUE", [
-    { teams: "FOOLAD VS TRACTOR SAZI", channel: "IRIB Varzesh", hot: false }
-  ], "WED, DEC 2 • 09:00 PM MYT", "2026-12-02T21:00:00+08:00", 120),
-  createMatch("PERSIAN GULF PRO LEAGUE", [
-    { teams: "ZOB AHAN VS ESTEGHLAL", channel: "Shabake 3", hot: false }
-  ], "THU, DEC 3 • 08:45 PM MYT", "2026-12-03T20:45:00+08:00", 120),
-  createMatch("PERSIAN GULF PRO LEAGUE", [
-    { teams: "NASSAJI MAZANDARAN VS CHADORMALU SC", channel: "IRIB Tabarestan TV", hot: false }
-  ], "FRI, DEC 4 • 08:30 PM MYT", "2026-12-04T20:30:00+08:00", 120),
-  createMatch("PERSIAN GULF PRO LEAGUE", [
-    { teams: "PERSEPOLIS VS SEPAHAN", channel: "Shabake 3", hot: false }
-  ], "FRI, DEC 4 • 08:45 PM MYT", "2026-12-04T20:45:00+08:00", 120),
-  createMatch("PERSIAN GULF PRO LEAGUE", [
-    { teams: "MALAVAN VS SHAMS AZAR QAZVIN", channel: "IRIB Baran", hot: false }
-  ], "SAT, DEC 5 • 08:45 PM MYT", "2026-12-05T20:45:00+08:00", 120),
-  createMatch("PERSIAN GULF PRO LEAGUE", [
-    { teams: "ESTEGHLAL VS SHAMS AZAR QAZVIN", channel: "Shabake 3", hot: false }
-  ], "SAT, DEC 12 • 08:45 PM MYT", "2026-12-12T20:45:00+08:00", 120),
-  createMatch("PERSIAN GULF PRO LEAGUE", [
-    { teams: "FAJR SEPASI VS TRACTOR SAZI", channel: "IRIB Varzesh", hot: false }
-  ], "SAT, DEC 12 • 09:00 PM MYT", "2026-12-12T21:00:00+08:00", 120),
-
-  /* Jordan League */
-  createMatch("JORDAN LEAGUE", [
-    { teams: "AL BUQA'A VS AL JAZEERA", channel: "Jordan TV Sport", hot: false }
-  ], "THU, NOV 26 • 11:00 PM MYT", "2026-11-26T23:00:00+08:00", 120),
   createMatch("JORDAN LEAGUE", [
     { teams: "SHABAB AL ORDON VS AL SALT", channel: "Jordan TV Sport", hot: false }
   ], "FRI, NOV 27 • 10:00 PM MYT", "2026-11-27T22:00:00+08:00", 120),
   createMatch("JORDAN LEAGUE", [
     { teams: "AL WIHDAT VS DOQARAH", channel: "Jordan TV Sport", hot: false }
   ], "SAT, NOV 28 • 12:30 AM MYT", "2026-11-28T00:30:00+08:00", 120),
+  createMatch("PERSIAN GULF PRO LEAGUE", [
+    { teams: "TRACTOR SAZI VS ZOB AHAN", channel: "IRIB Varzesh", hot: false }
+  ], "SAT, NOV 28 • 07:45 PM MYT", "2026-11-28T19:45:00+08:00", 120),
+  createMatch("SAUDI PRO LEAGUE", [
+    { teams: "AL HAZM VS AL NASSR", channel: "Fox Sports 2 USA, Prima Sport 4", hot: false }
+  ], "SAT, NOV 28 • 08:15 PM MYT", "2026-11-28T20:15:00+08:00", 120),
+  createMatch("PERSIAN GULF PRO LEAGUE", [
+    { teams: "ESTEGHLAL VS SANAT NAFT", channel: "Shabake 3", hot: false }
+  ], "SAT, NOV 28 • 08:45 PM MYT", "2026-11-28T20:45:00+08:00", 120),
+  createMatch("PERSIAN GULF PRO LEAGUE", [
+    { teams: "SEPAHAN VS NASSAJI MAZANDARAN", channel: "IRIB Tabarestan TV", hot: false }
+  ], "SAT, NOV 28 • 10:00 PM MYT", "2026-11-28T22:00:00+08:00", 120),
   createMatch("JORDAN LEAGUE", [
     { teams: "AL ARABI VS AL FAISALY", channel: "Jordan TV Sport", hot: false }
   ], "SAT, NOV 28 • 10:00 PM MYT", "2026-11-28T22:00:00+08:00", 120),
+  createMatch("SAUDI PRO LEAGUE", [
+    { teams: "AL ITTIFAQ VS AL HILAL", channel: "Fox Sports 2 USA", hot: false }
+  ], "SAT, NOV 28 • 10:20 PM MYT", "2026-11-28T22:20:00+08:00", 120),
   createMatch("JORDAN LEAGUE", [
     { teams: "AL RAMTHA VS AL HUSSEIN", channel: "Jordan TV Sport", hot: false }
   ], "SUN, NOV 29 • 12:30 AM MYT", "2026-11-29T00:30:00+08:00", 120),
+
+  /* December 2026 */
+  createMatch("PERSIAN GULF PRO LEAGUE", [
+    { teams: "FOOLAD VS TRACTOR SAZI", channel: "IRIB Varzesh", hot: false }
+  ], "WED, DEC 2 • 09:00 PM MYT", "2026-12-02T21:00:00+08:00", 120),
   createMatch("JORDAN LEAGUE", [
     { teams: "DOQARAH VS AL BUQA'A", channel: "Jordan TV Sport", hot: false }
   ], "WED, DEC 2 • 11:00 PM MYT", "2026-12-02T23:00:00+08:00", 120),
+  createMatch("PERSIAN GULF PRO LEAGUE", [
+    { teams: "ZOB AHAN VS ESTEGHLAL", channel: "Shabake 3", hot: false }
+  ], "THU, DEC 3 • 08:45 PM MYT", "2026-12-03T20:45:00+08:00", 120),
   createMatch("JORDAN LEAGUE", [
     { teams: "AL SALT VS AL ARABI", channel: "Jordan TV Sport", hot: false }
   ], "THU, DEC 3 • 09:00 PM MYT", "2026-12-03T21:00:00+08:00", 120),
   createMatch("JORDAN LEAGUE", [
     { teams: "AL JAZEERA VS AL HUSSEIN", channel: "Jordan TV Sport", hot: false }
   ], "FRI, DEC 4 • 12:00 AM MYT", "2026-12-04T00:00:00+08:00", 120),
+  createMatch("PERSIAN GULF PRO LEAGUE", [
+    { teams: "NASSAJI MAZANDARAN VS CHADORMALU SC", channel: "IRIB Tabarestan TV", hot: false }
+  ], "FRI, DEC 4 • 08:30 PM MYT", "2026-12-04T20:30:00+08:00", 120),
+  createMatch("PERSIAN GULF PRO LEAGUE", [
+    { teams: "PERSEPOLIS VS SEPAHAN", channel: "Shabake 3", hot: false }
+  ], "FRI, DEC 4 • 08:45 PM MYT", "2026-12-04T20:45:00+08:00", 120),
   createMatch("JORDAN LEAGUE", [
     { teams: "AL RAMTHA VS SHABAB AL ORDON", channel: "Jordan TV Sport", hot: false }
   ], "FRI, DEC 4 • 09:00 PM MYT", "2026-12-04T21:00:00+08:00", 120),
   createMatch("JORDAN LEAGUE", [
     { teams: "AL FAISALY VS AL WIHDAT", channel: "Jordan TV Sport", hot: false }
   ], "SAT, DEC 5 • 12:00 AM MYT", "2026-12-05T00:00:00+08:00", 120),
+  createMatch("PERSIAN GULF PRO LEAGUE", [
+    { teams: "MALAVAN VS SHAMS AZAR QAZVIN", channel: "IRIB Baran", hot: false }
+  ], "SAT, DEC 5 • 08:45 PM MYT", "2026-12-05T20:45:00+08:00", 120),
+  createMatch("AFC CHAMPIONS LEAGUE ELITE", [
+    { teams: "ESTEGHLAL VS NEFTCHI", channel: "Futbol TV", hot: false }
+  ], "TUE, DEC 8 • 02:15 AM MYT", "2026-12-08T02:15:00+08:00", 120),
+  createMatch("AFC CHAMPIONS LEAGUE TWO", [
+    { teams: "GOL GOHAR VS MUHARRAQ", channel: "IRIB Varzesh", hot: false }
+  ], "WED, DEC 9 • 09:45 PM MYT", "2026-12-09T21:45:00+08:00", 120),
+  createMatch("AFC CHAMPIONS LEAGUE TWO", [
+    { teams: "AL WAHDA VS NASAF", channel: "Futbol TV", hot: false }
+  ], "THU, DEC 10 • 12:00 AM MYT", "2026-12-10T00:00:00+08:00", 120),
   createMatch("JORDAN LEAGUE", [
     { teams: "AL BUQA'A VS AL HUSSEIN", channel: "Jordan TV Sport", hot: false }
   ], "FRI, DEC 11 • 09:00 PM MYT", "2026-12-11T21:00:00+08:00", 120),
+  createMatch("SAUDI PRO LEAGUE", [
+    { teams: "AL KHOLOOD VS AL HILAL", channel: "Fox Sports 2 USA", hot: false }
+  ], "FRI, DEC 11 • 10:50 PM MYT", "2026-12-11T22:50:00+08:00", 120),
   createMatch("JORDAN LEAGUE", [
     { teams: "AL WIHDAT VS AL SALT", channel: "Jordan TV Sport", hot: false }
   ], "SAT, DEC 12 • 12:00 AM MYT", "2026-12-12T00:00:00+08:00", 120),
+  createMatch("PERSIAN GULF PRO LEAGUE", [
+    { teams: "ESTEGHLAL VS SHAMS AZAR QAZVIN", channel: "Shabake 3", hot: false }
+  ], "SAT, DEC 12 • 08:45 PM MYT", "2026-12-12T20:45:00+08:00", 120),
+  createMatch("PERSIAN GULF PRO LEAGUE", [
+    { teams: "FAJR SEPASI VS TRACTOR SAZI", channel: "IRIB Varzesh", hot: false }
+  ], "SAT, DEC 12 • 09:00 PM MYT", "2026-12-12T21:00:00+08:00", 120),
   createMatch("JORDAN LEAGUE", [
     { teams: "AL ARABI VS AL RAMTHA", channel: "Jordan TV Sport", hot: false }
   ], "SAT, DEC 12 • 09:00 PM MYT", "2026-12-12T21:00:00+08:00", 120),
@@ -2340,6 +2312,9 @@ const aseanFootballMatches = [
   createMatch("JORDAN LEAGUE", [
     { teams: "DOQARAH VS AL FAISALY", channel: "Jordan TV Sport", hot: false }
   ], "SUN, DEC 13 • 11:00 PM MYT", "2026-12-13T23:00:00+08:00", 120),
+  createMatch("JORDAN CUP", [
+    { teams: "AL HUSSEIN VS DOQARAH", channel: "Jordan TV Sport", hot: false }
+  ], "WED, DEC 16 • 11:00 PM MYT", "2026-12-16T23:00:00+08:00", 120),
   createMatch("JORDAN LEAGUE", [
     { teams: "AL SALT VS DOQARAH", channel: "Jordan TV Sport", hot: false }
   ], "WED, DEC 23 • 09:00 PM MYT", "2026-12-23T21:00:00+08:00", 120),
@@ -2359,10 +2334,20 @@ const aseanFootballMatches = [
     { teams: "AL WIHDAT VS AL JAZEERA", channel: "Jordan TV Sport", hot: false }
   ], "TUE, DEC 29 • 11:00 PM MYT", "2026-12-29T23:00:00+08:00", 120),
 
-  /* Jordan Cup */
-  createMatch("JORDAN CUP", [
-    { teams: "AL HUSSEIN VS DOQARAH", channel: "Jordan TV Sport", hot: false }
-  ], "WED, DEC 16 • 11:00 PM MYT", "2026-12-16T23:00:00+08:00", 120)
+  /* January 2027 */
+  createMatch("ASIAN CUP QUALIFICATION", [
+    { teams: "UZBEKISTAN VS JORDAN", channel: "Jordan TV Sport", hot: false }
+  ], "FRI, JAN 8 • 10:00 PM MYT", "2027-01-08T22:00:00+08:00", 120),
+  createMatch("ASIAN CUP QUALIFICATION", [
+    { teams: "JORDAN VS BAHRAIN", channel: "Jordan TV Sport, Bahrain Sport 1", hot: false }
+  ], "WED, JAN 13 • 10:00 PM MYT", "2027-01-13T22:00:00+08:00", 120),
+  createMatch("ASIAN CUP QUALIFICATION", [
+    { teams: "IRAQ VS AUSTRALIA", channel: "Al Iraqiya Sports", hot: false }
+  ], "THU, JAN 14 • 10:00 PM MYT", "2027-01-14T22:00:00+08:00", 120),
+  createMatch("ASIAN CUP QUALIFICATION", [
+    { teams: "KOREA DPR VS JORDAN", channel: "Jordan TV Sport", hot: false },
+    { teams: "UZBEKISTAN VS BAHRAIN", channel: "Bahrain Sport 1", hot: false }
+  ], "MON, JAN 18 • 10:00 PM MYT", "2027-01-18T22:00:00+08:00", 120)
 ];
 
 function updateAseanFootballCard(now) {
